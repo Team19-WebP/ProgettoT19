@@ -1,13 +1,9 @@
-target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.idea
 *.iws
 *.iml
 *.ipr
@@ -33,9 +29,6 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### Mac OS ###
-.DS_Store
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,intellij,windows,linux,maven,java
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,intellij,windows,linux,maven,java
@@ -89,7 +82,6 @@ cmake-build-*/
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
 
-
 # IntelliJ
 out/
 
@@ -122,6 +114,7 @@ fabric.properties
 
  modules.xml
  .idea/misc.xml
+
 
 # Sonarlint plugin
 # https://plugins.jetbrains.com/plugin/7973-sonarlint
@@ -192,6 +185,7 @@ replay_pid*
 
 ### macOS ###
 # General
+.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -223,7 +217,9 @@ Temporary Items
 *.icloud
 
 ### Maven ###
+target/
 pom.xml.tag
+pom.xml
 pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
