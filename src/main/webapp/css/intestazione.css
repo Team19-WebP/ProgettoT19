@@ -1,0 +1,87 @@
+/* File di stile per l'intestazione e la toolbar. */
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+/* Logo e scritta presente in tutte le pagine. */
+.intestazione {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Darumadrop One', cursive;
+    font-size: 16px;
+}
+.logo {
+    max-width: 60px;
+    height: auto;
+}
+#logoLeft {
+    transform: scale(-1);
+}
+.toolbar {
+    display: flex;
+    justify-content: center;
+    background-color: #FFB3BF;
+    overflow: visible;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+.toolbar a {
+    float: left;
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.toolbar a:hover {
+    background-color: #FFE6F2;
+    color: #000;
+}
+
+.toolbar .dropdown {
+    float: left;
+    position: relative;
+}
+
+.toolbar .dropdown .dropbtn {
+    font-weight: bold;
+}
+
+.toolbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FFB3BF;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.toolbar .dropdown-content a {
+    float: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.toolbar .dropdown-content a:hover {
+    background-color: #FFE6F2;
+    /*color: #000;*/
+}
+
+.toolbar .dropdown:hover .dropdown-content {
+    display: block;
+}
