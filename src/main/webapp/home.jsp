@@ -22,7 +22,13 @@
     </div>
   </div>
   <div class="containerDescrizioneFoto">
-    <jsp:include page="frasiInspiranti.jsp"></jsp:include>
+    <div>
+      <jsp:include page="frasiInspiranti.jsp"></jsp:include>
+      <div>
+        <a href="linkPerIlDownload"> Download Info
+        </a>
+      </div>
+    </div>
     <div class="imageContainer">
       <img id="imgAssociazione" src="https://images.pexels.com/photos/3856033/pexels-photo-3856033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Persone Diverse Positive Che Fanno Le Facce Alla Macchina Fotografica">
     </div>
