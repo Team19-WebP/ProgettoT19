@@ -262,3 +262,8 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,intellij,windows,linux,maven,java
 .idea/vcs.xml
+.mvn/wrapper/maven-wrapper.properties
+.idea/misc.xml
+.idea/vcs.xml
+.idea/webContexts.xml
+.mvn/wrapper/maven-wrapper.jar
