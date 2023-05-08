@@ -2,6 +2,9 @@
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### compiler Enrico ###
+.idea/compiler.xml
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
