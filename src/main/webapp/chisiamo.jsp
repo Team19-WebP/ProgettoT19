@@ -141,8 +141,8 @@
 
 <jsp:include page="footer.jsp"></jsp:include>
 
-/*
+<!--
   TODO:
    fixare problema di freccia destra
     vedere se mettere sopra o sotto
-*/
+-->
