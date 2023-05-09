@@ -24,7 +24,7 @@
   </div>
   <div class="containerDescrizioneFoto">
     <div>
-      <a href="linkPerIlDownload"> Download Info
+      <a href="immagini/leaflet.png" download> Download Leaflet
       </a>
     </div>
     <div class="imageContainer">
