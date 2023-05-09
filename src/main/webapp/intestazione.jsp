@@ -26,7 +26,7 @@
         </div>
     </header>
 
-    <nav class="toolbar">
+    <nav class="menu">
         <a href="home.jsp">Home</a>
         <a href="chisiamo.jsp">Chi Siamo</a>
         <div class="dropdown">
@@ -40,7 +40,7 @@
         </div>
         <a href="contatti.jsp">Contatti</a>
         <a href="signin.jsp">Sign-in</a>
-        <a href="#login">Login</a>
+        <a href="login.jsp">Login</a>
     </nav>
 
     </br>
