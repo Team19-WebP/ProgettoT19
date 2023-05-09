@@ -5,11 +5,22 @@
     align-items: flex-start;
     flex-wrap: wrap;
     font-size: 10px;
-}
+}/*
 footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
+}*/
+
+footer {
+    background-color: #FFB3BF;
+    border-top: solid 2px black;
 }
+
+/*
+
+TODO
+verificare footer: posizionamento, colore e bordo
+ */
