@@ -12,6 +12,19 @@ body {
 textarea {
     resize: none;
 }
+form{
+    alignment: center;
+    justify-content: center;
+}
+input[type = submit] {
+    background-color: #B6EAFA;
+    color: black;
+    resize: none;
+}
+input[type = reset] {
+
+    resize: none;
+}
 
 .containerLogoFrase {
     display: flex;

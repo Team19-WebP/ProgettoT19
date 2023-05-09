@@ -10,15 +10,13 @@
 <main>
     <body>
         <form>
-            <label for="nome">Nome: </label><br><br>
+            <label for="nome">Nome: </label>
             <input type="text" id="nome" name="nome" maxlength="50" size="50" required><br><br>
-            <label for="cognome">Cognome: </label><br><br>
+            <label for="cognome">Cognome: </label>
             <input type="text" id="cognome" name="cognome" maxlength="50" size="50" required><br><br>
-            <label for="email">Indirizzo email: </label><br><br>
+            <label for="email">Indirizzo email: </label>
             <input type="text" id="email" name="email" maxlength="50" size="50" required><br><br>
-            <div>
-                Indica il motivo del contatto:
-            </div><br>
+            <label for="comboBox"> Indica il motivo del contatto:</label>
             <%--<input type="radio" id="unirsi" name="altroRadio" value="Mi piacerebbe unirmi all'associazione Tum4world."
             required>
             <label for="unirsi">Mi piacerebbe unirmi all'associazione Tum4world.</label><br><br>
@@ -49,12 +47,12 @@
                     }
                 }
             </script>--%>
-            <select for="comboBox" name="comboBox">
+            <select id="comboBox" name="comboBox">
                 <option value="unirsi">Mi piacerebbe unirmi all'associazione Tum4world</option>
                 <option value="info">Vorrei saperne di più su quello che fate</option>
                 <option value="altro">Altro...</option>
             </select><br><br>
-            <label for="richiesta">Se vuoi puoi specificare una particolare richiesta:</label><br><br>
+            <label for="richiesta">Se vuoi puoi specificare una particolare richiesta:</label>
             <textarea id="richiesta" name="richiesta" maxlength="300" cols="100" rows="3"></textarea><br><br>
             <input type="submit" value="Invia">
             <input type="reset" value="Reset">
