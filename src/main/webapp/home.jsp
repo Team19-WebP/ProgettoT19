@@ -10,7 +10,7 @@
 <main>
   <div class="containerLogoFrase">
     <div class="imageContainer">
-      <img id="logoHome" src="immagini/logo_home.png" alt="Logo con la scritta Tum4World.">
+      <img id="logoHome" src="immagini/logo_home_new.png" alt="Logo con la scritta Tum4World.">
     </div>
     <div class="containerDescrizione">
       <h2>Legami che tessono comunità, un'attività alla volta!</h2>
