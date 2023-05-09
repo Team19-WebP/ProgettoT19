@@ -100,12 +100,24 @@ input[type = reset] {
     /*left: 50%;*/
     /*transform: translate(-50%);*/
     padding: 1%;
-
     box-sizing: border-box;
     display: block;
     justify-content: center;
     font-family: 'Darumadrop One', cursive;
     background: linear-gradient(to bottom, #FFB3BF, transparent);
+}
+/* @todo con schermo piccolo le frasi vengono nascoste quando il menu wrappa
+      usando media non va bene perché il menu wrappa con misure diverse a seconda della pagina?!
+      in più su Brave non cambia mai posizione assoluta
+*/
+@media screen and (max-width: 427px){
+    .frasiInspiranti {
+        top: 175px;
+    }
+    body {
+        padding-top: 190px;
+    }
+
 }
 
 html {
