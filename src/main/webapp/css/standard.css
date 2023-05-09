@@ -48,17 +48,15 @@ input[type = reset] {
 
 .containerLogoDescrizione {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
     /*gap: 4em;*/
 }
 .containerFoto {
-    padding: 1%;
+    /*padding: 1%;*/
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    flex-wrap: wrap;
-    gap :4em;
 }
 /* Proprietà font per tutte le parti di descrizione. */
 .containerDescrizione {
@@ -67,7 +65,8 @@ input[type = reset] {
     line-height: 1.5;
 }
 #descrizioneHome {
-    padding-top: 0;
+    /*padding-left: 20%;*/
+    /*padding-right: 20%;*/
     max-width: 400px;
     min-width: 300px;
 }
@@ -75,23 +74,40 @@ input[type = reset] {
     padding-left: 20%;
     padding-right: 20%;
 }
-
+/* Logo della home in parte alla descrizioneHome */
 #logoHome {
     max-width: 250px;
     height: auto;
 }
 
 #imgAssociazione {
-    max-width: 600px;
+    max-width: 650px;
     height: auto;
 }
 
-.frasiInspiranti {
+#downloadLeaflet {
     display: flex;
     justify-content: center;
-    font-family: 'Darumadrop One', cursive;
-
+    padding: 2%;
 }
+
+.frasiInspiranti {
+    /* Misure calcolate con chrome! */
+    position: fixed;
+    max-width: 250px;
+    top: 132px;
+    /* Scommentare se vogliamo le frasi ispiranti in centro */
+    /*left: 50%;*/
+    /*transform: translate(-50%);*/
+    padding: 1%;
+
+    box-sizing: border-box;
+    display: block;
+    justify-content: center;
+    font-family: 'Darumadrop One', cursive;
+    background: linear-gradient(to bottom, #FFB3BF, transparent);
+}
+
 html {
     -webkit-text-size-adjust: 100%;
 }
