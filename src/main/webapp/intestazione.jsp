@@ -37,7 +37,7 @@
                 <a href="#attivita3">Attività 3</a>
             </div>
         </div>
-        <a href="#contatti">Contatti</a>
+        <a href="contatti.jsp">Contatti</a>
         <a href="#signin">Sign-in</a>
         <a href="#login">Login</a>
     </nav>
