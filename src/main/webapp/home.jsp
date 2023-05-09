@@ -9,11 +9,11 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <main>
   <jsp:include page="frasiInspiranti.jsp"></jsp:include>
-  <div class="containerLogoFrase">
+  <div class="containerLogoDescrizione">
     <div class="imageContainer">
       <img id="logoHome" src="immagini/logo_home_new.png" alt="Logo con la scritta Tum4World.">
     </div>
-    <div class="containerDescrizione">
+    <div class="containerDescrizione" id="descrizioneHome">
       <h2>Legami che tessono comunità, un'attività alla volta!</h2>
       <p>
         Come associazione <strong>Tum4World</strong> si impegna a promuovere l'inclusione sociale,
@@ -22,7 +22,7 @@
       </p>
     </div>
   </div>
-  <div class="containerDescrizioneFoto">
+  <div class="containerFoto">
     <div>
       <a href="immagini/leaflet.png" download> Download Leaflet
       </a>

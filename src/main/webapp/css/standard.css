@@ -11,13 +11,13 @@ body {
 }
 
 textarea {
-    background-color: rgba(254, 233, 255, 0);
+    background-color: #ffffff; /* rgba(254, 233, 255, 0);*/
     resize: none;
-    border: 3px solid #B6EAFA;
+    border: 3px solid #A998A5;
 }
 input[type = text]{
-    background-color: rgba(254, 233, 255, 0);
-    border: 3px solid #B6EAFA;
+    background-color: #ffffff; /*rgba(254, 233, 255, 0);*/
+    border: 3px solid #A998A5;
 }
 input[type = submit]:hover{
     opacity: 0.8;
@@ -46,13 +46,13 @@ input[type = reset] {
     height: 4%;
 }
 
-.containerLogoFrase {
+.containerLogoDescrizione {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
     /*gap: 4em;*/
 }
-.containerDescrizioneFoto {
+.containerFoto {
     padding: 1%;
     display: flex;
     justify-content: center;
@@ -60,14 +60,20 @@ input[type = reset] {
     flex-wrap: wrap;
     gap :4em;
 }
-/* Proprietà testo descrizione. */
+/* Proprietà font per tutte le parti di descrizione. */
 .containerDescrizione {
-    padding-top: 0;
     font-weight: normal;
     font-size: 14px;
     line-height: 1.5;
+}
+#descrizioneHome {
+    padding-top: 0;
     max-width: 400px;
     min-width: 300px;
+}
+#descrizioneChiSiamo {
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 #logoHome {
