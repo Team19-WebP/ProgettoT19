@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<jsp:include page="intestazione.html"></jsp:include>
+<jsp:include page="intestazione.jsp"></jsp:include>
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
