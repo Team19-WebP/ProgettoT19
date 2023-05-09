@@ -8,6 +8,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 <main>
+  <jsp:include page="frasiInspiranti.jsp"></jsp:include>
   <div class="containerLogoFrase">
     <div class="imageContainer">
       <img id="logoHome" src="immagini/logo_home_new.png" alt="Logo con la scritta Tum4World.">
@@ -23,11 +24,8 @@
   </div>
   <div class="containerDescrizioneFoto">
     <div>
-      <jsp:include page="frasiInspiranti.jsp"></jsp:include>
-      <div>
-        <a href="linkPerIlDownload"> Download Info
-        </a>
-      </div>
+      <a href="linkPerIlDownload"> Download Info
+      </a>
     </div>
     <div class="imageContainer">
       <img id="imgAssociazione" src="https://images.pexels.com/photos/3856033/pexels-photo-3856033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Persone Diverse Positive Che Fanno Le Facce Alla Macchina Fotografica">
