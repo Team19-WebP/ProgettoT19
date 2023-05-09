@@ -17,6 +17,9 @@ footer {
 footer {
     background-color: #FFB3BF;
     border-top: solid 2px black;
+    position: fixed;
+    bottom: 0;
+
 }
 
 /*

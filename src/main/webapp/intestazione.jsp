@@ -43,4 +43,3 @@
         <a href="login.jsp">Login</a>
     </nav>
 
-    </br>
