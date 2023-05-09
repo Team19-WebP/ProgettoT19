@@ -8,6 +8,11 @@ body {
     background: linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #ffffff 100%);
     font-family: 'Raleway', sans-serif;
 }
+
+textarea {
+    resize: none;
+}
+
 .containerLogoFrase {
     display: flex;
     justify-content: space-evenly;
@@ -45,4 +50,3 @@ body {
 .frasiInspiranti {
     font-family: 'Darumadrop One', cursive;
 }
-
