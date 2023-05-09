@@ -1,3 +1,13 @@
+
+/* TODO
+    Commenti
+*/
+
+/*Impostiamo:
+ + di default l'immagine non visibile
+ + l'animazione customizzata dal nome fade
+ + la durata dell'animazione
+ + la transizione TODO cosa è ??*/
 .singleImage {
     display: none;
     animation-name: fade;
@@ -5,16 +15,23 @@
     transition: 0.6s ease;
 }
 
+/*TODO spiegare questo*/
+
 @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
 }
+
+/*Definiamo posizione, margini e larghezza massima del nostro slideshow*/
 
 .collezioneDiImmagini {
     max-width: 100%;
     position: relative;
     margin: auto;
 }
+
+/*Definiamo le proprietà dei bottoni per andare a destra e a sinistra scorrendo le immagini
+Impostiamo anche cosa succede se ci siamo sopra col mouse*/
 
 .next {
     right: 0;
@@ -40,6 +57,8 @@
     background-color: rgba(0,0,0,0.8);
 }
 
+/*Per un eventuale didascalia dell'immagine*/
+
 .text {
     color: #f2f2f2;
     font-size: 15px;
@@ -51,6 +70,8 @@
     display: none;
 }
 
+/*Per avere inforamzioni su che immagine stiamo guaurdando*/
+
 .numbertext {
     color: #f2f2f2;
     font-size: 12px;
@@ -59,6 +80,8 @@
     top: 0;
     background-color: gray;
 }
+
+/*Per i puntini che dicono su che immagine siamo*/
 
 .dot {
     cursor: pointer;
@@ -74,6 +97,8 @@
 .active, .dot:hover {
     background-color: #717171;
 }
+
+/*Larghezza, lunghezza e allineamento dell'immagine*/
 
 img {
     height: 50%;
