@@ -5,7 +5,7 @@
       <div class="infoLegali">
         <h3>Legal Information</h3>
         <ul>
-          <li><a href="manca">Termini e condizioni.</a></li>
+          <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Termini e condizioni.</a></li>
           <li><a href="manca">Informativa sulla Privacy.</a></li>
           <li><a href="manca">Copyright</a></li>
         </ul>

@@ -10,7 +10,19 @@ body {
 }
 
 textarea {
+    background-color: rgba(254, 233, 255, 0);
     resize: none;
+    border: 3px solid #B6EAFA;
+}
+input[type = text]{
+    background-color: rgba(254, 233, 255, 0);
+    border: 3px solid #B6EAFA;
+}
+input[type = submit]:hover{
+    opacity: 0.8;
+}
+input[type = reset]:hover{
+    opacity: 0.8;
 }
 form{
     alignment: center;
@@ -18,12 +30,19 @@ form{
 }
 input[type = submit] {
     background-color: #B6EAFA;
+    border-radius: 20px;
     color: black;
     resize: none;
+    width: 5%;
+    height: 4%;
 }
 input[type = reset] {
-
+    background-color: #ec7777;
+    border-radius: 20px;
+    color: black;
     resize: none;
+    width: 5%;
+    height: 4%;
 }
 
 .containerLogoFrase {

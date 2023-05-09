@@ -52,10 +52,10 @@
                 <option value="info">Vorrei saperne di più su quello che fate</option>
                 <option value="altro">Altro...</option>
             </select><br><br>
-            <label for="richiesta">Se vuoi puoi specificare una particolare richiesta:</label>
+            <label for="richiesta">Se vuoi puoi specificare una particolare richiesta:</label><br>
             <textarea id="richiesta" name="richiesta" maxlength="300" cols="100" rows="3"></textarea><br><br>
-            <input type="submit" value="Invia">
             <input type="reset" value="Reset">
+            <input type="submit" value="Invia">
         </form>
     </body>
 </main>

@@ -38,7 +38,7 @@
             </div>
         </div>
         <a href="contatti.jsp">Contatti</a>
-        <a href="#signin">Sign-in</a>
+        <a href="signin.jsp">Sign-in</a>
         <a href="#login">Login</a>
     </nav>
 
