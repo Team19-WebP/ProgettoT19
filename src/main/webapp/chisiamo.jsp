@@ -1,6 +1,39 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 
+<link rel="stylesheet" href="css/galleria.css">
+
+<script>
+ let slideIndex = 1;
+ showSlides(slideIndex);
+
+ // Next/previous controls
+ function plusSlides(n) {
+  showSlides(slideIndex += n);
+ }
+
+ // Thumbnail image controls
+ function currentSlide(n) {
+  showSlides(slideIndex = n);
+ }
+
+ function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("singleImage");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+   slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+   dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+ }
+</script>
+
  <main>
  <div class="descrizione">
    <h2>
@@ -56,6 +89,60 @@
   </section>
 
  </div>
+
+  <div class="collezioneDiImmagini">
+
+   <div class="singleImage" style="display: inline;">
+    <div class="numbertext">1 / 5</div>
+    <img src="immagini/galleria/img1.jpg">
+    <div class="text">Caption One</div>
+   </div>
+
+   <div class="singleImage">
+    <div class="numbertext">2 / 5</div>
+    <img src="immagini/galleria/img2.jpg">
+    <div class="text">Caption Two</div>
+   </div>
+
+   <div class="singleImage">
+    <div class="numbertext">3 / 5</div>
+    <img src="immagini/galleria/img3.jpg">
+    <div class="text">Caption Three</div>
+   </div>
+
+   <div class="singleImage">
+    <div class="numbertext">4 / 5</div>
+    <img src="immagini/galleria/img4.jpg">
+    <div class="text">Caption Four</div>
+   </div>
+
+   <div class="singleImage">
+    <div class="numbertext">5 / 5</div>
+    <img src="immagini/galleria/img5.jpg">
+    <div class="text">Caption Five</div>
+   </div>
+
+   <a class="prev" onclick="plusSlides(-1)">❮</a>
+   <a class="next" onclick="plusSlides(1)">❯</a>
+
+  </div>
+
+  <br>
+
+  <div style="text-align:center;">
+   <span class="dot" onclick="currentSlide(1)"></span>
+   <span class="dot" onclick="currentSlide(2)"></span>
+   <span class="dot" onclick="currentSlide(3)"></span>
+   <span class="dot" onclick="currentSlide(4)"></span>
+   <span class="dot" onclick="currentSlide(5)"></span>
+  </div>
+
  </main>
 
 <jsp:include page="footer.jsp"></jsp:include>
+
+/*
+  TODO:
+   fixare problema di freccia destra
+    vedere se mettere sopra o sotto
+*/
