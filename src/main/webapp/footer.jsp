@@ -1,6 +1,6 @@
   <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
   <hr>
-  <footer>
+  <footer>  
     <div class="pieDiPagina">
       <div class="infoLegali">
         <h3>Legal Information</h3>

@@ -27,14 +27,14 @@
 
     <nav class="toolbar">
         <a href="home.jsp">Home</a>
-        <a href="#chi-siamo">Chi Siamo</a>
+        <a href="chisiamo.jsp">Chi Siamo</a>
         <div class="dropdown">
-            <a class="dropbtn" href="#attivita">Attività
+            <a class="dropbtn" href="attivita.jsp">Attività
             </a>
             <div class="dropdown-content">
-                <a href="#attivita1">Attività 1</a>
-                <a href="#attivita2">Attività 2</a>
-                <a href="#attivita3">Attività 3</a>
+                <a href="attivita1.jsp">Attività 1</a>
+                <a href="attivita2.jsp">Attività 2</a>
+                <a href="attivita3.jsp">Attività 3</a>
             </div>
         </div>
         <a href="#contatti">Contatti</a>
