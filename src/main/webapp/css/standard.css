@@ -75,12 +75,15 @@ input[type = reset] {
 }
 
 #imgAssociazione {
-    max-width: 400px;
+    max-width: 600px;
     height: auto;
 }
 
 .frasiInspiranti {
+    display: flex;
+    justify-content: center;
     font-family: 'Darumadrop One', cursive;
+
 }
 html {
     -webkit-text-size-adjust: 100%;
