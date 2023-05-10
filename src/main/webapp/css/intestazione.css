@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
 /* Logo e scritta presente in tutte le pagine. */
 .intestazione {
-    background: #FFFFFF;
+    background: linear-gradient(to top, #FFB3BF, #ffffff);
+
 
     /* Fissiamo l'intestazione on top*/
     position: fixed;

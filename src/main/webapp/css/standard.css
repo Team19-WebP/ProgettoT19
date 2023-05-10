@@ -112,17 +112,26 @@ input[type = reset] {
 .frasiInspiranti {
     /* Misure calcolate con chrome! */
     position: fixed;
-    max-width: 250px;
+
+    /* Scommentare qua sotto per metterlo a sinistra */
+    /*max-width: 250px;*/
+    /* Scommentare qua sopra per metterlo a sinistra */
+
+    /* Commentare la riga sotto per metterlo a sinistra*/
+    width: 100%;
+    /* Commentare la riga sopra per metterlo a sinistra*/
     top: 132px;
+    left: 0;
+    padding: 1%;
     /* Scommentare se vogliamo le frasi ispiranti in centro */
     /*left: 50%;*/
     /*transform: translate(-50%);*/
-    padding: 1%;
     box-sizing: border-box;
     display: block;
     justify-content: center;
     font-family: 'Darumadrop One', cursive;
     background: linear-gradient(to bottom, #FFB3BF, transparent);
+    text-align: center;
 }
 
 /* @todo con schermo piccolo le frasi vengono nascoste quando il menu wrappa
