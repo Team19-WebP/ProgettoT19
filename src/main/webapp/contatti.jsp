@@ -9,14 +9,14 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <main>
     <body>
-        <form>
+        <form action="ServletFormContatti" method="post">
             <label for="nome">Nome: </label>
             <input type="text" id="nome" name="nome" maxlength="50" size="50" required><br><br>
             <label for="cognome">Cognome: </label>
             <input type="text" id="cognome" name="cognome" maxlength="50" size="50" required><br><br>
             <label for="email">Indirizzo email: </label>
             <input type="text" id="email" name="email" maxlength="50" size="50" required><br><br>
-            <label for="comboBox"> Indica il motivo del contatto:</label>
+            <label for="comboBox">Indica il motivo del contatto:</label>
             <%--<input type="radio" id="unirsi" name="altroRadio" value="Mi piacerebbe unirmi all'associazione Tum4world."
             required>
             <label for="unirsi">Mi piacerebbe unirmi all'associazione Tum4world.</label><br><br>
@@ -48,9 +48,10 @@
                 }
             </script>--%>
             <select id="comboBox" name="comboBox">
-                <option value="unirsi">Mi piacerebbe unirmi all'associazione Tum4world</option>
-                <option value="info">Vorrei saperne di più su quello che fate</option>
-                <option value="altro">Altro...</option>
+                <option value="Mi piacerebbe unirmi alla vostra associazione">Mi piacerebbe unirmi alla vostra
+                associazione</option>
+                <option value="Vorrei saperne di più su quello che fate">Vorrei saperne di più su quello che fate</option>
+                <option value="Altro...">Altro...</option>
             </select><br><br>
             <label for="richiesta">Se vuoi puoi specificare una particolare richiesta:</label><br>
             <textarea id="richiesta" name="richiesta" maxlength="300" cols="100" rows="3"></textarea><br><br>
