@@ -24,7 +24,7 @@ public class ServletFormContatti extends HttpServlet {
         String cognome = request.getParameter("cognome");
         String email = request.getParameter("email");
         String comboBox = request.getParameter("comboBox");
-        String richiesta = request.getParameter("richiesta");
+        String altroTextarea = request.getParameter("altroTextarea");
         */
 
         response.sendRedirect("./invioConfermato.jsp");

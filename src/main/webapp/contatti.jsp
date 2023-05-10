@@ -17,15 +17,21 @@
             <h2>Per saperne di più, inserisci i tuoi dati:</h2>
         </div>
 
-        <form action="ServletFormContatti" method="post">
+        <form action="ServletFormContatti" method="post" onsubmit="return validaEmail(email.value)">
             <label for="nome">Nome: </label>
-            <input type="text" id="nome" name="nome" placeholder="inserisci il tuo nome..." maxlength="50" size="50" required><br><br>
+            <input type="text" id="nome" name="nome" placeholder="inserisci il tuo nome..." maxlength="50" size="50"
+            required><br><br>
             <label for="cognome">Cognome: </label>
-            <input type="text" id="cognome" name="cognome" placeholder="inserisci il tuo cognome..." maxlength="50" size="50" required><br><br>
+            <input type="text" id="cognome" name="cognome" placeholder="inserisci il tuo cognome..." maxlength="50"
+            size="50" required><br><br>
             <label for="email">Email: </label>
-            <input type="text" id="email" name="email" placeholder="inserisci la tua email..." maxlength="50" size="50" required><br><br>
+            <input type="text" id="email" name="email" placeholder="inserisci la tua email..." maxlength="50" size="50"
+            required><br><br>
             <label for="comboBox">Motivo del contatto:</label>
-            <%-- <input type="radio" id="unirsi" name="altroRadio" value="Mi piacerebbe unirmi all'associazione
+
+            <%-- per utilizzare input radio al posto della comboBox...
+
+            <input type="radio" id="unirsi" name="altroRadio" value="Mi piacerebbe unirmi all'associazione
             Tum4world." required>
             <label for="unirsi">Mi piacerebbe unirmi all'associazione Tum4world.</label><br><br>
             <input type="radio" id="info" name="altroRadio" value="Vorrei saperne di più su quello che fate." required>
@@ -55,15 +61,14 @@
                     }
                 }
             </script> --%>
+
             <select id="comboBox" name="comboBox">
-                <option value="iscrizione">Mi piacerebbe unirmi alla
-                vostra associazione</option>
-                <option value="info">Vorrei saperne di più su quello che
-                fate</option>
+                <option value="iscrizione">Mi piacerebbe unirmi alla vostra associazione</option>
+                <option value="info">Vorrei saperne di più su quello che fate</option>
                 <option value="altro">Altro...</option>
             </select><br><br>
             <%-- <label for="altroTextarea">Se vuoi puoi specificare una richiesta:</label><br> --%>
-            <textarea id="altroTextarea" name="altroTextarea" maxlength="300" cols="100" rows="3"></textarea><br><br>
+            <textarea id="altroTextarea" name="altroTextarea" maxlength="300" cols="100" rows="3" required></textarea><br><br>
 
             <%-- script che abilita la textarea solo se viene selezionata l'opzione "altro" dalla comboBox --%>
             <script>
@@ -92,6 +97,22 @@
 
             <input type="reset" value="Reset">
             <input type="submit" value="Invia">
+
+            <%-- script che verifica la validita' dell'email --%>
+            <script>
+                function validaEmail(email) {
+                    var regex = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
+
+                    if (!regex.test(email))
+                    {
+                        alert('Email non valida');
+                        return false;
+                    }
+
+                    return true;
+                }
+            </script>
+
         </form>
     </body>
 </main>
