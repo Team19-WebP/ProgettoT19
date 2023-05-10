@@ -68,7 +68,8 @@
                 <option value="altro">Altro...</option>
             </select><br><br>
             <%-- <label for="altroTextarea">Se vuoi puoi specificare una richiesta:</label><br> --%>
-            <textarea id="altroTextarea" name="altroTextarea" maxlength="300" cols="100" rows="3" hidden="true"></textarea><br><br>
+            <textarea id="altroTextarea" name="altroTextarea" maxlength="300" cols="100" rows="3" hidden="true"
+            required></textarea><br><br>
 
             <%-- script che abilita la textarea solo se viene selezionata l'opzione "altro" dalla comboBox --%>
             <script>
