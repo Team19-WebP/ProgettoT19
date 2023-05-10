@@ -15,25 +15,20 @@ textarea {
     resize: none;
     border: 3px solid #A998A5;
 }
-
 input[type = text]{
     background-color: #ffffff; /*rgba(254, 233, 255, 0);*/
     border: 3px solid #A998A5;
 }
-
 input[type = submit]:hover{
     opacity: 0.8;
 }
-
 input[type = reset]:hover{
     opacity: 0.8;
 }
-
 form{
     alignment: center;
     justify-content: center;
 }
-
 input[type = submit] {
     background-color: #B6EAFA;
     border-radius: 20px;
@@ -42,7 +37,6 @@ input[type = submit] {
     width: 5%;
     height: 4%;
 }
-
 input[type = reset] {
     background-color: #ec7777;
     border-radius: 20px;
@@ -58,40 +52,28 @@ input[type = reset] {
     align-items: flex-start;
     /*gap: 4em;*/
 }
-
-.containerInvioConfermato {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    /*gap: 4em;*/
-}
-
 .containerFoto {
     /*padding: 1%;*/
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
-
 /* Proprietà font per tutte le parti di descrizione. */
 .containerDescrizione {
     font-weight: normal;
     font-size: 14px;
     line-height: 1.5;
 }
-
 #descrizioneHome {
     /*padding-left: 20%;*/
     /*padding-right: 20%;*/
     max-width: 400px;
     min-width: 300px;
 }
-
 #descrizioneChiSiamo {
     padding-left: 20%;
     padding-right: 20%;
 }
-
 /* Logo della home in parte alla descrizioneHome */
 #logoHome {
     max-width: 250px;
@@ -124,7 +106,6 @@ input[type = reset] {
     font-family: 'Darumadrop One', cursive;
     background: linear-gradient(to bottom, #FFB3BF, transparent);
 }
-
 /* @todo con schermo piccolo le frasi vengono nascoste quando il menu wrappa
       usando media non va bene perché il menu wrappa con misure diverse a seconda della pagina?!
       in più su Brave non cambia mai posizione assoluta
@@ -136,6 +117,7 @@ input[type = reset] {
     body {
         padding-top: 190px;
     }
+
 }
 
 html {
