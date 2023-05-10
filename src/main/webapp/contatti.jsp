@@ -69,6 +69,7 @@
             </select><br><br>
             <%-- <label for="altroTextarea">Se vuoi puoi specificare una richiesta:</label><br> --%>
             <textarea id="altroTextarea" name="altroTextarea" maxlength="300" cols="100" rows="3" hidden="true"></textarea><br><br>
+
             <%-- script che abilita la textarea solo se viene selezionata l'opzione "altro" dalla comboBox --%>
             <script>
                 let comboBox = document.querySelector("#comboBox");
@@ -80,7 +81,7 @@
 
                 function stateHandleTextarea() {
                     if (comboBox.value == "altro") {
-                        altroTextarea.disabled = false;     /* TODO fare scomparire la textarea con reset */
+                        altroTextarea.disabled = false;
                         altroTextarea.hidden = false;
                         <%-- per selezionare la textarea --%>
                         altroTextarea.focus();
@@ -96,21 +97,25 @@
                 }
             </script>
 
-            <input type="reset" value="Reset">
+            <input type="reset" value="Reset" onclick="nascondiTextarea()">
             <input type="submit" value="Invia">
 
             <%-- script che verifica la validita' dell'email --%>
             <script>
                 function validaEmail(email) {
                     var regex = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
-
-                    if (!regex.test(email))
-                    {
+                    if (!regex.test(email)) {
                         alert('Email non valida');
                         return false;
                     }
-
                     return true;
+                }
+            </script>
+
+            <%-- script che nasconde la textarea --%>
+            <script>
+                function nascondiTextarea() {
+                    altroTextarea.hidden = true;
                 }
             </script>
 
