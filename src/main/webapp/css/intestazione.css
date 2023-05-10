@@ -2,8 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
 /* Logo e scritta presente in tutte le pagine. */
 .intestazione {
-    background: linear-gradient(to top, #FFB3BF, #ffffff);
+    /* Rosa non ci piaceva! */
+    /*background: linear-gradient(to top, #FFB3BF, #ffffff);*/
 
+    /* Verde ebete forse?!*/
+    /*background: linear-gradient(to top, #31372b, #ffffff);*/
+
+    background: #ffffff;
 
     /* Fissiamo l'intestazione on top*/
     position: fixed;
