@@ -68,8 +68,7 @@
                 <option value="altro">Altro...</option>
             </select><br><br>
             <%-- <label for="altroTextarea">Se vuoi puoi specificare una richiesta:</label><br> --%>
-            <textarea id="altroTextarea" name="altroTextarea" maxlength="300" cols="100" rows="3" required></textarea><br><br>
-
+            <textarea id="altroTextarea" name="altroTextarea" maxlength="300" cols="100" rows="3" hidden="true"></textarea><br><br>
             <%-- script che abilita la textarea solo se viene selezionata l'opzione "altro" dalla comboBox --%>
             <script>
                 let comboBox = document.querySelector("#comboBox");
@@ -81,13 +80,15 @@
 
                 function stateHandleTextarea() {
                     if (comboBox.value == "altro") {
-                        altroTextarea.disabled = false;
+                        altroTextarea.disabled = false;     /* TODO fare scomparire la textarea con reset */
+                        altroTextarea.hidden = false;
                         <%-- per selezionare la textarea --%>
                         altroTextarea.focus();
                         altroTextarea.scrollIntoView();
                         altroTextarea.placeholder = "inserisci il motivo del contatto...";
                     } else {
                         altroTextarea.disabled = true;
+                        altroTextarea.hidden = true;
                         <%-- per cancellare il contenuto della textarea --%>
                         altroTextarea.value = "";
                         altroTextarea.placeholder = "";
