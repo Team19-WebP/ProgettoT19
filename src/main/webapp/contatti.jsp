@@ -9,13 +9,21 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <main>
     <body>
+        <div class="containerDescrizione">
+            <ul>
+                <li><h3>Email: tum4world@nessunonoluogonoesiste.com</h3></li>
+                <li><h3>Telefono: +39 0461 123456</h3></li>
+            </ul><br><br>
+            <h2>Per saperne di più, inserisci i tuoi dati:</h2>
+        </div>
+
         <form action="ServletFormContatti" method="post">
             <label for="nome">Nome: </label>
             <input type="text" id="nome" name="nome" placeholder="inserisci il tuo nome..." maxlength="50" size="50" required><br><br>
             <label for="cognome">Cognome: </label>
             <input type="text" id="cognome" name="cognome" placeholder="inserisci il tuo cognome..." maxlength="50" size="50" required><br><br>
-            <label for="email">Indirizzo email: </label>
-            <input type="text" id="email" name="email" placeholder="inserisci il tuo indirizzo email..." maxlength="50" size="50" required><br><br>
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email" placeholder="inserisci la tua email..." maxlength="50" size="50" required><br><br>
             <label for="comboBox">Motivo del contatto:</label>
             <%-- <input type="radio" id="unirsi" name="altroRadio" value="Mi piacerebbe unirmi all'associazione
             Tum4world." required>
