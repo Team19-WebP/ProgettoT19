@@ -41,7 +41,7 @@
 </style>
 
 <main>
-    <div class="descrizioneAttivita">
+    <div class="containerDescrizione">
         <section>
             <h2> Le nostre attività </h2>
             <p> Le nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attività

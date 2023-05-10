@@ -57,23 +57,30 @@ input[type = reset] {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    gap: 2em;
+}
+
+.immagineAttività {
+    padding: 2px;
 }
 /* Proprietà font per tutte le parti di descrizione. */
 .containerDescrizione {
     font-weight: normal;
     font-size: 14px;
     line-height: 1.5;
-}
-#descrizioneHome {
-    /*padding-left: 20%;*/
-    /*padding-right: 20%;*/
-    max-width: 400px;
-    min-width: 300px;
-}
-#descrizioneChiSiamo {
     padding-left: 20%;
     padding-right: 20%;
 }
+#descrizioneHome {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 400px;
+    min-width: 300px;
+}
+/*#descrizioneChiSiamo {
+    padding-left: 20%;
+    padding-right: 20%;
+}*/
 /* Logo della home in parte alla descrizioneHome */
 #logoHome {
     max-width: 250px;
