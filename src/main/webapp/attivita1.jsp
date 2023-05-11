@@ -2,6 +2,7 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 
 <main>
+
     <div class="containerDescrizione">
     <h2> Attività 1 </h2>
 

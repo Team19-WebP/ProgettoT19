@@ -2,7 +2,6 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 
 <link rel="stylesheet" href="css/galleria.css">
-
 <script>
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -135,8 +134,6 @@ dots[slideIndex-1].className += " active";
   </section>
 
  </div>
-
-
 
  </main>
 

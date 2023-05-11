@@ -8,8 +8,8 @@
         float: none;
         overflow: hidden;
         text-align: center;
-        width: 30%;
-        height: auto;
+        width: 400px;
+        height: 240px;
         /* background-color: red; */
         padding-bottom: 40px;
         display: inline-block;
@@ -28,6 +28,7 @@
     div.immagine figure img {
         width: 100%;
         height: auto;
+        max-height: 200px;
     }
 
     div.gallery figcaption {
@@ -80,30 +81,37 @@
 
     </div>
 
-    <div class="immagine">
-        <figure>
-            <a href="attivita1.jsp">
-                <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività">
-            </a>
-            <figcaption>Attività 1</figcaption>
-        </figure>
+    <div style="text-align: center; margin: auto">
+        <div class="immagine">
+            <figure>
+                <a href="attivita1.jsp">
+                    <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività">
+                </a>
+                <figcaption> <br> <b><i>Attività 1</i></b> </figcaption>
+            </figure>
+        </div>
+        <div class="immagine">
+            <figure>
+                <a href="attivita2.jsp">
+                    <img src="immagini/galleria/img2.jpg" alt="Immagine seconda attività">
+                </a>
+                <br>
+                <figcaption> <br> <b><i>Attività 2</i></b> </figcaption>
+            </figure>
+        </div>
+        <div class="immagine">
+            <figure>
+                <a href="attivita3.jsp">
+                    <img src="immagini/galleria/img3.jpg" alt="Immagine terza attività">
+                </a>
+                <br>
+                <figcaption> <br> <b><i>Attività 3</i></b>  </figcaption>
+            </figure>
+        </div>
     </div>
-    <div class="immagine">
-        <figure>
-            <a href="attivita2.jsp">
-                <img src="immagini/galleria/img2.jpg" alt="Immagine seconda attività">
-            </a>
-            <figcaption>Attività 2</figcaption>
-        </figure>
-    </div>
-    <div class="immagine">
-        <figure>
-            <a href="attivita3.jsp">
-                <img src="immagini/galleria/img3.jpg" alt="Immagine terza attività">
-            </a>
-            <figcaption>Attività 3</figcaption>
-        </figure>
-    </div>
+
+
+    <br><br>
 
 </main>
 
