@@ -15,8 +15,8 @@
     <span id="ageAlert" class="requirements">(* per registrarisi è necessario essere maggiorenni)</span><br><br> <!-- TODO controllare che l'eta sia >= 18 anni-->
 
     <label for="email">Indirizzo email: </label><!-- TODO controllare che sia una mail (abbia @ ecc..)-->
-    <input type="text" id="email" name="email" maxlength="50" size="50" placeholder="mario.rossi@gmail.com" required> <br class="alert" id="emailAlertBr">
-    <span id="emailAlert" class="alert" hidden="true">(* mail non valida)</span><br><br>
+    <input type="text" id="email" name="email" maxlength="50" size="50" placeholder="mario.rossi@gmail.com" required> <br>
+    <span id="emailAlert" class="alert" hidden="true">(* mail non valida)</span><br>
 
     <label for="telefono">numero di telefono: </label>  <!-- TODO permettere inserimento solo numeri e + all'inizio-->
     <input type="tel" id="telefono" name="telefono" maxlength="15" size="15" placeholder="345 1234567" pattern="[0-9]{10}" required><br><br>
@@ -28,21 +28,41 @@
     </select><br><br>
 
     <label for="username">Username: </label>
-    <input type="text" id="username" name="username" maxlength="50" size="50" placeholder="_RMario_" required> <br class="alert" id="userAlertBr"> <!-- TODO controllare che non ci sia un utente con questo username-->
-    <span class="alert" id="userAlert" hidden="true">(* username gia preso) </span><br><br>
+    <input type="text" id="username" name="username" maxlength="50" size="50" placeholder="_RMario_" required> <br> <!-- TODO controllare che non ci sia un utente con questo username-->
+    <span class="alert" id="userAlert" hidden="true">(* username gia preso) </span><br>
 
     <label for="passwordVal">Password: </label>
     <input type="password" id="passwordVal" name="passwordVal" maxlength="50" size="50" required><br> <!-- TODO controllare che 8 caratteri le iniziali dei nostri nomi un numero una maiuscola e uno tra $  !  ?-->
     <span class="requirements" id="passAlert">(* la password deve contenere almeno 8 caratteri di cui anmeno uno maiuscolo, un numero, le lettere [E,F,G] e uno tra[$,!,?])</span><br><br>
 
     <label for="confpassword">Conferma Password: </label>
-    <input type="password" id="confpassword" name="confpassword" maxlength="50" size="50" required> <br class="alert" id="confPassAlertBr"> <!-- TODO controllare che sia uguale a quella sopra-->
+    <input type="password" id="confpassword" name="confpassword" maxlength="50" size="50" required> <br> <!-- TODO controllare che sia uguale a quella sopra-->
     <span class="alert" id="confPassAlert" hidden="true">(* le password non coincidono)</span><br><br>
 
-    <input type="reset" value="Reset">
+    <input type="reset" value="Reset" onclick="resetForm()">
     <input type="submit" value="Invia">
 
     <script>
+
+      function resetForm(){
+        let ageAlert = document.querySelector("#ageAlert");
+        let emailAlert = document.querySelector("#emailAlert");
+        let passAlert = document.querySelector("#passAlert");
+        let confPassAlert = document.querySelector("#confPassAlert");
+        let emailAlertBr = document.querySelector("#emailAlertBr");
+        let confPassAlertBr = document.querySelector("#confPassAlertBr");
+
+        ageAlert.style.color = "#000000";
+        ageAlert.style.fontSize = "xx-small";
+        emailAlert.hidden = true;
+        emailAlertBr.hidden = true;      //nascondo tutti gli i messaggi di errore
+        passAlert.style.color = "#000000";
+        passAlert.style.fontSize = "xx-small";
+        confPassAlert.hidden = true;
+        confPassAlertBr.hidden = true;
+
+      }
+
       function validaForm(datadinascita, email, username, passwordVal, confpassword) {
         let ageAlert = document.querySelector("#ageAlert");
         let emailAlert = document.querySelector("#emailAlert");
@@ -53,10 +73,12 @@
         let confPassAlertBr = document.querySelector("#confPassAlertBr");
 
 
-        ageAlert.color = "#000000";
+        ageAlert.style.color = "#000000";
+        ageAlert.style.fontSize = "xx-small";
         emailAlert.hidden = true;
         emailAlertBr.hidden = true;      //nascondo tutti gli i messaggi di errore
-        passAlert.color = "#000000";
+        passAlert.style.color = "#000000";
+        passAlert.style.fontSize = "xx-small";
         confPassAlert.hidden = true;
         confPassAlertBr.hidden = true;
 
@@ -70,6 +92,7 @@
                 ((nowDate.getFullYear() - dataNascita.getFullYear() === 18) && (nowDate.getMonth() === dataNascita.getMonth()) && (nowDate.getDate() < dataNascita.getDate()))
         ){
           ageAlert.style.color = "#FF0000";       //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
+          ageAlert.style.fontSize = "small";
           datadinascita.focus();
           alert('non sei maggiorenne!');
           return false;
@@ -81,6 +104,7 @@
           return false;
         }else if(!regexPass.test(passwordVal.value)){
           passAlert.style.color = "#FF0000";
+          passAlert.style.fontSize = "small";
           passwordVal.focus();              //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
           alert('Password non valida!');
           return false;

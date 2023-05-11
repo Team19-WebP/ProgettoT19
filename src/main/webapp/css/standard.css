@@ -10,6 +10,12 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+select{
+    background-color: #ffffff; /* rgba(254, 233, 255, 0);*/
+    resize: none;
+    border: 3px solid #A998A5;
+}
+
 textarea {
     background-color: #ffffff; /* rgba(254, 233, 255, 0);*/
     resize: none;
@@ -17,7 +23,7 @@ textarea {
 }
 span.alert{
     color: red;
-    font-size: xx-small;
+    font-size: small;
 }
 span.requirements{
     font-size: xx-small;
