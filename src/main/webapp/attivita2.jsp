@@ -2,13 +2,14 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 
 <main>
-    <h2> Attività 2 </h2>
-    <!-- TODO Capire come per mettere le immagini e il testo vicini così-->
-    <div><img src="immagini/galleria/img2.jpg" alt="Immagine della prima attivita" style="width: 300px; height: auto;">
-        Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2
-        Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2
-        Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2
-        Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2
+    <div class="containerAttivita">
+        <img src="immagini/galleria/img2.jpg" alt="Immagine della prima attivita" style="width:100%;">
+        <div class="content">
+            <h2>Attività ricreative per giovani</h2>
+            <p>
+                L’associazione <strong>Tum4World</strong> si impegna ad organizzare attività ricreative per permettere ai giovani di fare nuove amicizie e avvicinarsi al mondo dello sport di squadra.
+            </p>
+        </div>
     </div>
 </main>
 

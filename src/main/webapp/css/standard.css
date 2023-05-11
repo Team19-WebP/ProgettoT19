@@ -93,6 +93,22 @@ input[type = reset] {
     /*gap: 4em;*/
 }
 
+.containerAttivita {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.containerAttivita .content {
+    position: absolute;
+    bottom: 0; /* contenuto posto in fondo all'immagine */
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* sfondo nero con opacità 0.5*/
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
 .containerFoto {
     /*padding: 1%;*/
     display: flex;
