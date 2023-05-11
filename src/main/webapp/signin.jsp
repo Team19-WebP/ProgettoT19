@@ -2,7 +2,7 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <main>
   <body>
-  <form action="ServletSignin" method="post" onsubmit="return validaEmail(datadinascita.value, email.value, username.value, passwordVal.value, confpassword.value )">
+  <form action="ServletSignin" method="post" onsubmit="return validaForm(datadinascita, email, username, passwordVal, confpassword )">
 
     <label for="nome">Nome: </label>
     <input  type="text" id="nome" name="nome" maxlength="50" size="50" placeholder="Mario" required><br><br> <!-- TODO style="margin-left: 4ch"-->
@@ -19,7 +19,7 @@
     <span id="emailAlert" class="alert" hidden="true">(* mail non valida)</span><br><br>
 
     <label for="telefono">numero di telefono: </label>  <!-- TODO permettere inserimento solo numeri e + all'inizio-->
-    <input type="text" id="telefono" name="telefono" maxlength="15" size="15" placeholder="345 1234567" required><br><br>
+    <input type="tel" id="telefono" name="telefono" maxlength="15" size="15" placeholder="345 1234567" pattern="[0-9]{10}" required><br><br>
 
     <label for="comboBox"> Voglio iscrivermi come:</label>
     <select id="comboBox" name="comboBox">
@@ -59,28 +59,39 @@
         passAlert.color = "#000000";
         confPassAlert.hidden = true;
         confPassAlertBr.hidden = true;
+
         const regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
         const regexPass = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/; //TODO regula exp da cambiare con quella giusta
+        let nowDate = new Date();  // data di ora
+        let dataNascita = new Date(datadinascita.value);
 
-        if (false){                 //TODO controllare maggiorenne
-          ageAlert.color = "#FF0000";       //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
+        if (  (nowDate.getFullYear() - dataNascita.getFullYear() < 18) ||  //if per controllare che la data di nascita inserita sia di un maggiorenne
+                ((nowDate.getFullYear() - dataNascita.getFullYear() === 18) && (nowDate.getMonth() < dataNascita.getMonth() )) ||
+                ((nowDate.getFullYear() - dataNascita.getFullYear() === 18) && (nowDate.getMonth() === dataNascita.getMonth()) && (nowDate.getDate() < dataNascita.getDate()))
+        ){
+          ageAlert.style.color = "#FF0000";       //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
           datadinascita.focus();
+          alert('non sei maggiorenne!');
           return false;
-        }else if(!regexEmail.test(email)){
+        }else if(!regexEmail.test(email.value)){
           emailAlert.hidden = false;
           emailAlertBr.hidden = false;      //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
           email.focus();
+          alert('Email non valida!');
           return false;
-        }else if(!regexPass.test(passwordVal)){
-          passAlert.color = "#FF0000";
+        }else if(!regexPass.test(passwordVal.value)){
+          passAlert.style.color = "#FF0000";
           passwordVal.focus();              //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
+          alert('Password non valida!');
           return false;
-        }else if(passwordVal!==confpassword){
+        }else if(passwordVal.value!==confpassword.value){
           confPassAlert.hidden = false;     //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
           confPassAlertBr.hidden = false;
           passwordVal.focus();
+          alert('Password non valida!');
           return false;
-        }else return true;
+        }
+        return true;
       }
     </script>
 

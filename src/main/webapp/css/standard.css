@@ -27,6 +27,12 @@ input[type = text]{
     background-color: #ffffff; /*rgba(254, 233, 255, 0);*/
     border: 3px solid #A998A5;
 }
+
+input[type = tel]{
+    background-color: #ffffff; /*rgba(254, 233, 255, 0);*/
+    border: 3px solid #A998A5; /*TODO farlo funzionare o cambiare in number o di nuovo in text*/
+}
+
 input[type = password]{
     background-color: #ffffff; /*rgba(254, 233, 255, 0);*/
     border: 3px solid #A998A5;
