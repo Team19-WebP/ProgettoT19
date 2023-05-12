@@ -44,43 +44,20 @@
 
     <script>
 
-      function resetForm(){
-        let ageAlert = document.querySelector("#ageAlert");
-        let emailAlert = document.querySelector("#emailAlert");
-        let passAlert = document.querySelector("#passAlert");
-        let confPassAlert = document.querySelector("#confPassAlert");
-        let emailAlertBr = document.querySelector("#emailAlertBr");
-        let confPassAlertBr = document.querySelector("#confPassAlertBr");
-
-        ageAlert.style.color = "#000000";
-        ageAlert.style.fontSize = "xx-small";
-        emailAlert.hidden = true;
-        emailAlertBr.hidden = true;      //nascondo tutti gli i messaggi di errore
-        passAlert.style.color = "#000000";
-        passAlert.style.fontSize = "xx-small";
-        confPassAlert.hidden = true;
-        confPassAlertBr.hidden = true;
-
-      }
 
       function validaForm(datadinascita, email, username, passwordVal, confpassword) {
         let ageAlert = document.querySelector("#ageAlert");
         let emailAlert = document.querySelector("#emailAlert");
         let passAlert = document.querySelector("#passAlert");
         let confPassAlert = document.querySelector("#confPassAlert");
-        let emailAlertBr = document.querySelector("#emailAlertBr");
-        let userAlertBr = document.querySelector("#userAlertBr");  // TODO controllare che l'username non sia gia preso, credo da servlet o abbiamo un BEAN??
-        let confPassAlertBr = document.querySelector("#confPassAlertBr");
 
 
         ageAlert.style.color = "#000000";
         ageAlert.style.fontSize = "xx-small";
         emailAlert.hidden = true;
-        emailAlertBr.hidden = true;      //nascondo tutti gli i messaggi di errore
         passAlert.style.color = "#000000";
         passAlert.style.fontSize = "xx-small";
         confPassAlert.hidden = true;
-        confPassAlertBr.hidden = true;
 
         const regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
         const regexPass = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/; //TODO regula exp da cambiare con quella giusta
@@ -97,8 +74,7 @@
           alert('non sei maggiorenne!');
           return false;
         }else if(!regexEmail.test(email.value)){
-          emailAlert.hidden = false;
-          emailAlertBr.hidden = false;      //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
+          emailAlert.hidden = false;       //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
           email.focus();
           alert('Email non valida!');
           return false;
@@ -110,13 +86,29 @@
           return false;
         }else if(passwordVal.value!==confpassword.value){
           confPassAlert.hidden = false;     //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
-          confPassAlertBr.hidden = false;
           passwordVal.focus();
           alert('Password non valida!');
           return false;
         }
         return true;
       }
+
+
+      function resetForm(){
+        let ageAlert = document.querySelector("#ageAlert");
+        let emailAlert = document.querySelector("#emailAlert");
+        let passAlert = document.querySelector("#passAlert");
+        let confPassAlert = document.querySelector("#confPassAlert");
+
+        ageAlert.style.color = "#000000";
+        ageAlert.style.fontSize = "xx-small";
+        emailAlert.hidden = true;       //nascondo tutti gli i messaggi di errore
+        passAlert.style.color = "#000000";
+        passAlert.style.fontSize = "xx-small";
+        confPassAlert.hidden = true;
+
+      }
+
     </script>
 
   </form>
