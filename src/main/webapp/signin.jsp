@@ -12,13 +12,13 @@
 
     <label for="datadinascita">Data di nascita: </label>
     <input type="date" id="datadinascita" name="datadinascita" maxlength="50" size="50" required><br>
-    <span id="ageAlert" class="requirements">(* per registrarisi è necessario essere maggiorenni)</span><br><br> <!-- TODO controllare che l'eta sia >= 18 anni-->
+    <span id="ageAlert" class="requirements">(* per registrarisi è necessario essere maggiorenni)</span><br><br>
 
-    <label for="email">Indirizzo email: </label><!-- TODO controllare che sia una mail (abbia @ ecc..)-->
+    <label for="email">Indirizzo email: </label>
     <input type="text" id="email" name="email" maxlength="50" size="50" placeholder="mario.rossi@gmail.com" required> <br>
     <span id="emailAlert" class="alert" hidden="true">(* mail non valida)</span><br>
 
-    <label for="telefono">numero di telefono: </label>  <!-- TODO permettere inserimento solo numeri e + all'inizio-->
+    <label for="telefono">numero di telefono: </label>  <!-- TODO permettere inserimento solo numeri-->
     <input type="tel" id="telefono" name="telefono" maxlength="15" size="15" placeholder="345 1234567" pattern="[0-9]{10}" required><br><br>
 
     <label for="comboBox"> Voglio iscrivermi come:</label>
@@ -32,11 +32,11 @@
     <span class="alert" id="userAlert" hidden="true">(* username gia preso) </span><br>
 
     <label for="passwordVal">Password: </label>
-    <input type="password" id="passwordVal" name="passwordVal" maxlength="50" size="50" required><br> <!-- TODO controllare che 8 caratteri le iniziali dei nostri nomi un numero una maiuscola e uno tra $  !  ?-->
+    <input type="password" id="passwordVal" name="passwordVal" maxlength="50" size="50" required><br>
     <span class="requirements" id="passAlert">(* la password deve contenere almeno 8 caratteri di cui anmeno uno maiuscolo, un numero, le lettere [E,F,G] e uno tra[$,!,?])</span><br><br>
 
     <label for="confpassword">Conferma Password: </label>
-    <input type="password" id="confpassword" name="confpassword" maxlength="50" size="50" required> <br> <!-- TODO controllare che sia uguale a quella sopra-->
+    <input type="password" id="confpassword" name="confpassword" maxlength="50" size="50" required> <br>
     <span class="alert" id="confPassAlert" hidden="true">(* le password non coincidono)</span><br><br>
 
     <input type="reset" value="Reset" onclick="resetForm()">
@@ -92,7 +92,6 @@
         }
         return true;
       }
-
 
       function resetForm(){
         let ageAlert = document.querySelector("#ageAlert");
