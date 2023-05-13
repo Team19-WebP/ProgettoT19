@@ -38,10 +38,6 @@
         margin: auto;
     }
 
-    img:hover {
-        opacity: 0.7;
-    }
-
     figure:hover {
         opacity: 0.7;
     }
