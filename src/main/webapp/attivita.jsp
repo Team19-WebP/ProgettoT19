@@ -1,25 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<jsp:include page="intestazione.jsp"></jsp:include>
-
 <style>
-
-    div.immagine {
-        border: 2px solid #ccc;
-        float: none;
-        overflow: hidden;
-        text-align: center;
-        width: 400px;
-        height: 240px;
-        /* background-color: red; */
-        padding-bottom: 40px;
-        display: inline-block;
-        margin: auto;
-    }
-
-    div.immagine:hover {
-        border: 2px solid #777;
-        background-color: #FFB3BF;
-    }
 
     div.im1 figure {
         text-align: center;
@@ -38,15 +17,41 @@
         margin: auto;
     }
 
-    figure:hover {
-        opacity: 0.7;
-    }
-
-    figcaption:hover {
+    a.linkImg:hover {
+        opacity: 0.4;
         cursor: pointer;
     }
 
+    a.linkImg:hover > img {
+        border: 3px solid rgb(0, 0, 0);
+    }
+
+    a.linkImg:hover > .text {
+        opacity: 1;
+    }
+
+    /*TODO fixare posizione del testo dentro l'immagine e colore*/
+
+
+    .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+        opacity: 0;
+    }
+
+
 </style>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<jsp:include page="intestazione.jsp"></jsp:include>
+
+
 
 <main>
     <div class="containerDescrizione">
@@ -60,11 +65,12 @@
         </section>
 
         <div class="im1">
-            <figure>
-                <a href="attivita1.jsp">
-                    <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività">
+            <figure id="img1">
+                <a class="linkImg" href="attivita1.jsp">
+                    <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività" onmouseover="showCaption()" onmouseout="hideCaption()">
+                    <div class="text">Scopri di più...</div>
                 </a>
-                <figcaption> <br> <b><i>Attività 1</i></b> </figcaption>
+                <figcaption> <b><i>Attività 1</i></b> </figcaption>
             </figure>
         </div>
         <section>
@@ -78,11 +84,11 @@
 
         <div class="im1">
             <figure>
-                <a href="attivita2.jsp">
+                <a class="linkImg" href="attivita2.jsp">
                     <img src="immagini/galleria/img2.jpg" alt="Immagine seconda attività">
                 </a>
                 <br>
-                <figcaption> <br> <b><i>Attività 2</i></b> </figcaption>
+                <figcaption>  <b><i>Attività 2</i></b> </figcaption>
             </figure>
         </div>
         <section>
@@ -96,11 +102,11 @@
 
         <div class="im1">
             <figure>
-                <a href="attivita3.jsp">
+                <a class="linkImg" href="attivita3.jsp">
                     <img src="immagini/galleria/img3.jpg" alt="Immagine terza attività">
                 </a>
                 <br>
-                <figcaption> <br> <b><i>Attività 3</i></b>  </figcaption>
+                <figcaption> <b><i>Attività 3</i></b>  </figcaption>
             </figure>
         </div>
         <section>
@@ -114,41 +120,8 @@
 
     </div>
 
-   <!--
-    <div style="text-align: center; margin: auto">
-        <div class="immagine">
-            <figure>
-                <a href="attivita2.jsp">
-                    <img src="immagini/galleria/img2.jpg" alt="Immagine seconda attività">
-                </a>
-                <br>
-                <figcaption> <br> <b><i>Attività 2</i></b> </figcaption>
-            </figure>
-        </div>
-        <div class="immagine">
-            <figure>
-                <a href="attivita2.jsp">
-                    <img src="immagini/galleria/img2.jpg" alt="Immagine seconda attività">
-                </a>
-                <br>
-                <figcaption> <br> <b><i>Attività 2</i></b> </figcaption>
-            </figure>
-        </div>
-        <div class="immagine">
-            <figure>
-                <a href="attivita2.jsp">
-                    <img src="immagini/galleria/img2.jpg" alt="Immagine seconda attività">
-                </a>
-                <br>
-                <figcaption> <br> <b><i>Attività 2</i></b> </figcaption>
-            </figure>
-        </div>
-    </div>
-    -->
-
 
     <!-- todo mettere le cazzo di immagini e il cazzo di section tutti sulla stessa linea invece che uno sotto l'altro-->
-    <!-- TODO Cambiare contenitore immagini-->
     <br><br>
 
 </main>
