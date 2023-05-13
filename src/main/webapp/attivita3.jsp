@@ -2,15 +2,22 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 
 <main>
-    <h2> Attività 3 </h2>
-    <!-- TODO Capire come per mettere le immagini e il testo vicini così-->
-    <div><img src="immagini/galleria/img3.jpg" alt="Immagine della prima attivita" style="width: 300px; height: auto;">
-        Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
-        Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
-        Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
-        Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
+    <div class="containerAttivita">
+        <img src="immagini/galleria/img3.jpg" alt="Immagine della prima attivita" style="width: 100%; max-width: 800px">
+        <div class="content">
+            <h2>Attività 3</h2>
+            <p>
+                L’associazione <strong>Tum4World</strong> si impegna ad organizzare attività ricreative per permettere ai giovani di fare nuove amicizie e avvicinarsi al mondo dello sport di squadra.
+            </p>
+        </div>
     </div>
-
+    <div class="containerAttivita containerDescrizione">
+        <h3> In che cosa consiste? </h3>
+        <p> Descrizione dell'attività
+            Descrizione dell'attivitàDescrizione dell'attivitàDescrizione dell'attivitàDescrizione dell'attivitàDescrizione dell'attivitàDescrizione dell'attivitàDescrizione dell'attivitàDescrizione dell'attivitàDescrizione dell'attivitàDescrizione dell'attività
+        </p>
+    </div>
 </main>
+
 
 <jsp:include page="footer.jsp"></jsp:include>

@@ -103,16 +103,16 @@ input[type = reset] {
 .containerAttivita {
     position: relative;
     max-width: 800px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .containerAttivita .content {
     position: absolute;
     bottom: 0; /* contenuto posto in fondo all'immagine */
-    background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.5); /* sfondo nero con opacità 0.5*/
     color: #f1f1f1;
-    width: 100%;
+    width: 100%; /*TODO fixare che va un po' fuori dalla zona*/
     padding: 20px;
 }
 
