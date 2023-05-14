@@ -16,7 +16,7 @@
             </ul><br><br>
             <h2>Per saperne di più, inserisci i tuoi dati:</h2>
         </div>
-
+        <div style="height: 60%"> <%-- TODO metterlo in un css --%>
         <form action="ServletFormContatti" method="post" onsubmit="return validaEmail(email.value)">
             <label for="nome">Nome: </label>
             <input type="text" id="nome" name="nome" placeholder="inserisci il tuo nome..." maxlength="50" size="50"
@@ -121,6 +121,7 @@
             </script>
 
         </form>
+        </div>
     </body>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>

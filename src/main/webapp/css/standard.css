@@ -96,7 +96,7 @@ input[type = reset] {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 79%;
+    height: 85%;
     /*gap: 4em;*/
 }
 
