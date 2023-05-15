@@ -60,6 +60,7 @@ input.cancellaIscrizione[type = submit] {
     width: 15%;
     height: 6%;
 }
+
 .containerInvioConfermato {
     display: flex;
     justify-content: center;
@@ -67,7 +68,6 @@ input.cancellaIscrizione[type = submit] {
     height: 85%;
     /*gap: 4em;*/
 }
-
 
 /* @todo con schermo piccolo le frasi vengono nascoste quando il menu wrappa
       usando media non va bene perché il menu wrappa con misure diverse a seconda della pagina?!

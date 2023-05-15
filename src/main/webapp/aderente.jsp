@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
+<link rel="stylesheet" href="css/aderente.css">
 <main>
   <body>
   <div class="containerInvioConfermato">
@@ -14,15 +15,15 @@
     <table>
       <tr>
         <td>
-          <form action="visualizzaDati()">
-            <input type="submit" value="visualizza dati personali">
+          <form onsubmit="visualizzaDati();">
+            <input class="aderente" type="submit" value="visualizza dati personali"><br>
           </form>
         </td>
       </tr>
       <tr>
         <td>
           <div id="dati" hidden="true">
-            <h1>dati dati dati dati e altri dati </h1>  <%--TODO aggiungere i dati --%>
+            <h1>dati dati dati dati e altri dati </h1><br>  <%--TODO aggiungere i dati --%>
           </div>
         </td>
       </tr>
@@ -30,24 +31,24 @@
         <td>
             <form action="ServletDonazione">
               <label for="donazione">Importo:</label>
-              <input type="number" id="donazione" name="donazione">
-              <input type="submit" value="dona">
+              <input type="text" placeholder="420.69"  id="donazione" name="donazione" required> <br> <%-- TODO pattern="/^[0-9]+(.[0-9])/"  regex per mettere solo soldi(numeri con la virgola)--%>
+              <input class="aderente" type="submit" value="dona">
             </form>
         </td>
       </tr>
       <tr>
         <td>
           <div id="attivita">
-            <form>                <%--TODO aggiungere immagini e rendere decente--%>
+            <form action="serrvletUtile">                <%--TODO aggiungere immagini e rendere decente e capire se si fa da servlet o con una funz o entrambe--%>
               <label for="attivita1"> attività 1</label>
               <input id="attivita1" name="attivita1" type="checkbox" value="attività 1">
-              <img src="attivita1.jpg" alt="immagine attività 1">
+              <img src="immagini/attivita1.png" alt="immagine attività 1" onclick="clickImage(attivita1);" class="attivita">
               <label for="attivita2"> attività 2</label>
               <input id="attivita2" name="attivita2" type="checkbox" value="attività 2">
-              <img src="attivita2.jpg" alt="immagine attività 2">
+              <img src="immagini/attivita1.png" alt="immagine attività 2" onclick="clickImage(attivita2);" class="attivita">
               <label for="attivita3"> attività 3</label>
-              <input id="attivita3" name="attivita3" type="checkbox" value="attività 3" >
-              <img src="attivita3.jpg" alt="immagine attività 3" onclick="attivita1();">
+              <input id="attivita3" name="attivita3" type="checkbox" value="attività 3">
+              <img src="immagini/attivita1.png" alt="immagine attività 3" onclick="clickImage(attivita3);" class="attivita">
               <input class="aderente" type="submit" value="conferma">
             </form>
           </div>
@@ -67,8 +68,8 @@
 
     <script>
 
-      function attivita1(){
-        <%--TODO capire coṁe checkare la checkbox--%>
+      function clickImage(attivita){
+        attivita.checked = !attivita.checked; // fa si che quando viene cliccata l'immagine di un attività essa venga selezionata
       }
 
       function confermaCancellaIscrizione(){

@@ -34,7 +34,7 @@ dots[slideIndex-1].className += " active";
 </script>
 
  <main>
-  <jsp:include page="frasiInspiranti.jsp"></jsp:include>
+  <jsp:include page="frasiIspiranti.jsp"></jsp:include>
  <div class="containerDescrizione" id="descrizioneChiSiamo">
    <h2>
     Legami che tessono comunità, un'attività alla volta!
