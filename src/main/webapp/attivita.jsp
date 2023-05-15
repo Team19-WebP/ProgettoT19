@@ -64,6 +64,14 @@
             </p>
         </section>
 
+        <section>
+            <h3> Attività 1 </h3>
+            <p> Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1
+                Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1
+                Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1
+                Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1
+            </p>
+        </section>
         <div class="im1">
             <figure id="img1">
                 <a class="linkImg" href="attivita1.jsp">
@@ -73,33 +81,31 @@
                 <figcaption> <b><i>Attività 1</i></b> </figcaption>
             </figure>
         </div>
+
         <section>
-            <h3> Attività 1 </h3>
-            <p> Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1
-                Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1
-                Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1
-                Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1
+            <h3>Team4World</h3>
+            <p>
+                L'associazione organizza attività di ricreazione per dare la possibilità a bambini e ragazzi di collaborare tra loro con spirito di squadra e, insieme, raggiungere una meta comune.
             </p>
         </section>
-
         <div class="im1">
             <figure>
                 <a class="linkImg" href="attivita2.jsp">
                     <img src="immagini/galleria/img2.jpg" alt="Immagine seconda attività">
                 </a>
                 <br>
-                <figcaption>  <b><i>Attività 2</i></b> </figcaption>
+                <figcaption>  <b><i>Team4World</i></b> </figcaption>
             </figure>
         </div>
+
         <section>
-            <h3> Attività 2 </h3>
-            <p> Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2
-                Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2
-                Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2
-                Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2Attività 2
+            <h3> Attività 3 </h3>
+            <p> Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
+                Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
+                Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
+                Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
             </p>
         </section>
-
         <div class="im1">
             <figure>
                 <a class="linkImg" href="attivita3.jsp">
@@ -109,15 +115,6 @@
                 <figcaption> <b><i>Attività 3</i></b>  </figcaption>
             </figure>
         </div>
-        <section>
-            <h3> Attività 3 </h3>
-            <p> Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
-                Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
-                Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
-                Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
-            </p>
-        </section>
-
     </div>
 
 

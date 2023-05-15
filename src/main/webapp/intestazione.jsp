@@ -34,7 +34,7 @@
             </a>
             <div class="dropdown-content">
                 <a href="attivita1.jsp">Attività 1</a>
-                <a href="attivita2.jsp">Attività 2</a>
+                <a href="attivita2.jsp">Team4World</a>
                 <a href="attivita3.jsp">Attività 3</a>
             </div>
         </div>
