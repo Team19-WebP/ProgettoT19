@@ -3,18 +3,20 @@
 
 <main>
     <div class="containerAttivita">
-        <img src="immagini/galleria/img2.jpg" alt="Immagine della prima attivita" style="width: 100%; max-width: 800px">
+        <img src="immagini/galleria/img2.jpg" alt="Immagine della prima attivita" style="width: 100%;">
         <div class="content">
-            <h2>Team4World</h2>
-            <p>
-                L’associazione <strong>Tum4World</strong> si impegna a organizzare attività ricreative per permettere a bambini e ragazzi di conoscere nuovi amici e imparare a collaborare tra loro con vero spirito di squadra.
-            </p>
+            <div style="padding: 20px">
+                <h2>Team4World</h2>
+                <p>
+                    L’associazione <strong>Tum4World</strong> si impegna a organizzare attività ricreative per permettere a bambini e ragazzi di conoscere nuovi amici e imparare a collaborare tra loro con vero spirito di squadra.
+                </p>
+            </div>
         </div>
     </div>
     <div class="containerAttivita containerDescrizione">
         <h3>In cosa consiste?</h3>
         <p>
-            Il progetto Team4World si occupa di organizzare settimane di incontri recreativi, per consentire ai giovani di dare svago alla mente e allo spirito, fare comunità e conoscere l'importante significato del lavoro di squadra.
+            Il progetto Team4World si occupa di organizzare settimane di incontri ricreativi, per consentire ai giovani di dare svago alla mente e allo spirito, fare comunità e conoscere l'importante significato del lavoro di squadra.
         </p>
         <p>
             A tale scopo, l'associazione invita bambini e ragazzi a pertecipare ad attività di gruppo, permettendo loro di stare uno accanto all'altro, colaborare e raggiungere così obbiettivi comuni. La scelta delle attività è lasciata agli animatori volontari che spesso organizzano tornei di calcio, rugby, pallamano, ma anche cacce al tesoro e altre competizioni a squadre. In tutte le settimane, almeno una giornata viene sempre dedicata ai lavori sociali, in modo da rispondere ai bisogni delle comunità locali.
