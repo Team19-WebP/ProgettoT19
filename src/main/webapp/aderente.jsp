@@ -7,86 +7,76 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
-<link rel="stylesheet" href="css/aderente.css">
+<link rel="stylesheet" href="css/simpatizzante.css">
 <main>
   <body>
+  <div class="menu2">
+    <nav>
+      <button onclick="visualizzaDati();">dati personali</button>
+      <button onclick="visualizzaDonation();">dona alla associazione</button>
+      <button onclick="visualizzaAttivita();">partecipa alle attività</button>
+      <button onclick="visualizzaDanger();">danger zone</button>
+    </nav>
+  </div>
   <div class="containerInvioConfermato">
 
-    <table>
-      <tr>
-        <td>
-          <form onsubmit="visualizzaDati();">
-            <input class="aderente" type="submit" value="visualizza dati personali"><br>
-          </form>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div id="dati" hidden="true">
-            <h1>dati dati dati dati e altri dati </h1><br>  <%--TODO aggiungere i dati --%>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-            <form action="ServletDonazione">
-              <label for="donazione">Importo:</label>
-              <input type="text" placeholder="420.69"  id="donazione" name="donazione" required> <br> <%-- TODO pattern="/^[0-9]+(.[0-9])/"  regex per mettere solo soldi(numeri con la virgola)--%>
-              <input class="aderente" type="submit" value="dona">
-            </form>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div id="attivita">
-            <form action="serrvletUtile">                <%--TODO aggiungere immagini e rendere decente e capire se si fa da servlet o con una funz o entrambe--%>
-              <label for="attivita1"> attività 1</label>
-              <input id="attivita1" name="attivita1" type="checkbox" value="attività 1">
-              <img src="immagini/attivita1.png" alt="immagine attività 1" onclick="clickImage(attivita1);" class="attivita">
-              <label for="attivita2"> attività 2</label>
-              <input id="attivita2" name="attivita2" type="checkbox" value="attività 2">
-              <img src="immagini/attivita1.png" alt="immagine attività 2" onclick="clickImage(attivita2);" class="attivita">
-              <label for="attivita3"> attività 3</label>
-              <input id="attivita3" name="attivita3" type="checkbox" value="attività 3">
-              <img src="immagini/attivita1.png" alt="immagine attività 3" onclick="clickImage(attivita3);" class="attivita">
-              <input class="aderente" type="submit" value="conferma">
-            </form>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <form action="Servlet??" onsubmit="return confermaCancellaIscrizione();">  <%--TODO servlet che elimina l'utente dal DB--%>
-            <input class="cancellaIscrizione" type="submit" value="cancella iscrizione">
-          </form>
-        </td>
-      </tr>
+    <div id="dati" hidden="false">
+      <br>
+      <br>
+      <label for="nome">Nome:</label>
+      <span id="nome"> Mario </span>
+      <label for="cognome"> Cognome:</label>
+      <span id="cognome"> Rossi </span> <br>
+      <label for="ddn">Data Di nascita:</label>
+      <span id="ddn"> 08/11/2002 </span> <br>
+      <label for="email"> E-mail:</label>
+      <span id="email"> mario.rossi@gmail.com </span> <br>
+      <label for="tel"> Telefono:</label>
+      <span id="tel"> +39 377 373 7733</span> <br>
+      <label for="potere"> Tipo di iscrizione:</label>
+      <span id="potere"> Simpatizzante</span> <br>
+      <label for="username"> Username:</label>
+      <span id="username"> _RMario_ </span> <br>  <%--TODO aggiungere i dati in maniera dinamica--%>
+    </div>
 
-    </table>
+    <div id="attivita" hidden="true">
+      <br>
+      <br>
+      <form action="serrvletUtile">                <%--TODO aggiungere immagini e rendere decente e capire se si fa da servlet o con una funz o entrambe--%>
+        <label for="attivita1"> attività 1</label>
+        <input id="attivita1" name="attivita1" type="checkbox" value="attività 1">
+        <img src="immagini/attivita1.png" alt="immagine attività 1" onclick="clickImage(attivita1);" class="attivita">
+        <label for="attivita2"> attività 2</label>
+        <input id="attivita2" name="attivita2" type="checkbox" value="attività 2">
+        <img src="immagini/attivita1.png" alt="immagine attività 2" onclick="clickImage(attivita2);" class="attivita">
+        <label for="attivita3"> attività 3</label>
+        <input id="attivita3" name="attivita3" type="checkbox" value="attività 3">
+        <img src="immagini/attivita1.png" alt="immagine attività 3" onclick="clickImage(attivita3);" class="attivita">
+        <input class="aderente" type="submit" value="conferma">
+      </form>
+    </div>
+
+    <div id="donation" hidden="true">
+      <br>
+      <br>
+      <form action="ServletDonazione">
+        <label for="donazione">Importo:</label>
+        <input type="text" placeholder="420.69"  id="donazione" name="donazione" required> <br> <%-- TODO pattern="/^[0-9]+(.[0-9])/"  regex per mettere solo soldi(numeri con la virgola)--%>
+        <input class="aderente" type="submit" value="dona">
+      </form>
+    </div>
+
+    <div id="danger" hidden="true">
+      <div>
+        <b><h6> attenzione, tutte le azioni in questa pagina sono IRREVERSIBILI!!</h6></b>
+      </div>
+      <form action="Servlet??" onsubmit="return confermaCancellaIscrizione();">  <%--TODO servlet che elimina l'utente dal DB--%>
+        <input class="cancellaIscrizione" type="submit" value="cancella iscrizione">
+      </form>
+    </div>
 
 
-
-    <script>
-
-      function clickImage(attivita){
-        attivita.checked = !attivita.checked; // fa si che quando viene cliccata l'immagine di un attività essa venga selezionata
-      }
-
-      function confermaCancellaIscrizione(){
-        <%--TODO qualcosa tipo pop up che chieda la conferma e se dici si return true altrimenti false--%>
-      }
-
-      function visualizzaDati(){
-        let dati = document.querySelector("#dati");
-        dati.hidden = !dati.hidden;
-      }
-
-      function dona(){
-        let donazione = document.querySelector("#donazione"); // forse è inutile, ma forse no
-        donazione.value
-      }
-
-    </script>
+    <script rel="script" src="scripts/paginePrivate.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
 
   </div>
   </body>
