@@ -30,8 +30,9 @@
         opacity: 1;
     }
 
-    /*TODO fixare posizione del testo dentro l'immagine e colore*/
+    /*TODO fixare posizione del testo dentro l'immagine e colore forse è quello che ha fixato @ENRICO e quindi è apposto*/
 
+    /*TODO volete lasciarlo qui o è meglio spostarlo in un css?*/
 
     .text {
         color: white;

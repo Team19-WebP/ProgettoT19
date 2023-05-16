@@ -68,7 +68,7 @@
     </div>
 
 
-    <script rel="script" src="scripts/paginePrivate.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
+    <script rel="script" src="scripts/paginePrivate.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e modulare--%>
 
   </div>
   </body>

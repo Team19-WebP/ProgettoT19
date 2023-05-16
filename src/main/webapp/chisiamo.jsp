@@ -2,36 +2,7 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 
 <link rel="stylesheet" href="css/galleria.css">
-<script>
- let slideIndex = 1;
- showSlides(slideIndex);
-
- // Next/previous controls
- function plusSlides(n) {
- showSlides(slideIndex += n);
- }
-
- // Thumbnail image controls
- function currentSlide(n) {
- showSlides(slideIndex = n);
- }
-
- function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("singleImage");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-   slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-   dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
- }
-</script>
+<script src="scripts/chiSiamo.js" rel="script"></script> <%-- includo lo script che fa funzionare la galleria delle immagini da un file esterno per modularità --%>
 
  <main>
   <jsp:include page="frasiIspiranti.jsp"></jsp:include>
@@ -139,8 +110,4 @@
 
 <jsp:include page="footer.jsp"></jsp:include>
 
-<!--
-  TODO:
-   fixare problema di freccia destra
-    vedere se mettere sopra o sotto
--->
+<!-- TODO: fixare problema di freccia destra vedere se mettere sopra o sotto -->

@@ -71,32 +71,8 @@
             <textarea id="altroTextarea" name="altroTextarea" maxlength="300" cols="100" rows="3" hidden="true"
             required></textarea><br><br>
 
-            <%-- script che abilita la textarea solo se viene selezionata l'opzione "altro" dalla comboBox --%>
-            <script>
-                let comboBox = document.querySelector("#comboBox");
-                let altroTextarea = document.querySelector("#altroTextarea");
 
-                altroTextarea.disabled = true;
-
-                comboBox.addEventListener("change", stateHandleTextarea);
-
-                function stateHandleTextarea() {
-                    if (comboBox.value == "altro") {
-                        altroTextarea.disabled = false;
-                        altroTextarea.hidden = false;
-                        <%-- per selezionare la textarea --%>
-                        altroTextarea.focus();
-                        altroTextarea.scrollIntoView();
-                        altroTextarea.placeholder = "inserisci il motivo del contatto...";
-                    } else {
-                        altroTextarea.disabled = true;
-                        altroTextarea.hidden = true;
-                        <%-- per cancellare il contenuto della textarea --%>
-                        altroTextarea.value = "";
-                        altroTextarea.placeholder = "";
-                    }
-                }
-            </script>
+            <script rel="script" src="scripts/contatti.js"></script> <%-- includo gli script da un file esterno per modularità --%>
 
             <input type="reset" value="Reset" onclick="nascondiTextarea()">
             <input type="submit" value="Invia">
@@ -113,12 +89,7 @@
                 }
             </script>
 
-            <%-- script che nasconde la textarea --%>
-            <script>
-                function nascondiTextarea() {
-                    altroTextarea.hidden = true;
-                }
-            </script>
+
 
         </form>
         </div>

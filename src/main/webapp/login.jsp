@@ -12,7 +12,7 @@
             <input type="reset" value="Reset">
             <input type="submit" value="Invia">
 
-            <script src="scripts/login.js" rel="script"></script>
+            <script src="scripts/login.js" rel="script"></script> <%-- inporto lo script da un file esterno per modularità --%>
         </form>
 
     </div>

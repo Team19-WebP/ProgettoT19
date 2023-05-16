@@ -60,8 +60,9 @@
       <br>
       <br>
       <form action="ServletDonazione">
-        <label for="donazione">Importo:</label>
+        <label for="donazione">Importo: </label>
         <input type="text" placeholder="420.69"  id="donazione" name="donazione" required> <br> <%-- TODO pattern="/^[0-9]+(.[0-9])/"  regex per mettere solo soldi(numeri con la virgola)--%>
+        <br><br>
         <input class="aderente" type="submit" value="dona">
       </form>
     </div>

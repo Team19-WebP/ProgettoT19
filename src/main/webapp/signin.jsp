@@ -44,19 +44,20 @@
       <input type="submit" value="Invia">
 
       <script>
+
+        let ageAlert = document.querySelector("#ageAlert");
+        let emailAlert = document.querySelector("#emailAlert");
+        let passAlert = document.querySelector("#passAlert");
+        let confPassAlert = document.querySelector("#confPassAlert");
+
+        const regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
+        const regexPass = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/; //TODO regula exp da cambiare con quella giusta
+
+
         function validaForm(datadinascita, email, username, passwordVal, confpassword) {
-          let ageAlert = document.querySelector("#ageAlert");
-          let emailAlert = document.querySelector("#emailAlert");
-          let passAlert = document.querySelector("#passAlert");
-          let confPassAlert = document.querySelector("#confPassAlert");
-
           resetForm();
-
-          const regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
-          const regexPass = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/; //TODO regula exp da cambiare con quella giusta
           let nowDate = new Date();  // data di ora
           let dataNascita = new Date(datadinascita.value);
-
           if (  (nowDate.getFullYear() - dataNascita.getFullYear() < 18) ||  //if per controllare che la data di nascita inserita sia di un maggiorenne
                   ((nowDate.getFullYear() - dataNascita.getFullYear() === 18) && (nowDate.getMonth() < dataNascita.getMonth() )) ||
                   ((nowDate.getFullYear() - dataNascita.getFullYear() === 18) && (nowDate.getMonth() === dataNascita.getMonth()) && (nowDate.getDate() < dataNascita.getDate()))
@@ -87,11 +88,6 @@
         }
 
         function resetForm(){
-          let ageAlert = document.querySelector("#ageAlert");
-          let emailAlert = document.querySelector("#emailAlert");
-          let passAlert = document.querySelector("#passAlert");
-          let confPassAlert = document.querySelector("#confPassAlert");
-
           ageAlert.style.color = "#000000";
           ageAlert.style.fontSize = "xx-small";
           emailAlert.hidden = true;       //nascondo tutti gli i messaggi di errore
@@ -103,8 +99,7 @@
 
       </script>
 
-      <%-- <script rel="script" src="/scripts/signin.js"></script> TODO capire perchè non funziona importando
-      --%>
+      <%-- <script rel="script" src="/scripts/signin.js"></script> TODO capire perchè non funziona importando--%>
     </form>
   </div>
   </body>

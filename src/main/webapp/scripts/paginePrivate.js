@@ -1,9 +1,9 @@
-function visualizzaDati(){
-    let dati = document.querySelector("#dati");
-    let danger = document.querySelector("#danger");
-    let attivita = document.querySelector("#attivita");
-    let donation = document.querySelector("#donation");
+let dati = document.querySelector("#dati");
+let danger = document.querySelector("#danger");
+let attivita = document.querySelector("#attivita");
+let donation = document.querySelector("#donation");
 
+function visualizzaDati(){
     dati.hidden = false;
     danger.hidden = true;
     attivita.hidden = true;
@@ -11,11 +11,6 @@ function visualizzaDati(){
 }
 
 function visualizzaAttivita(){
-    let dati = document.querySelector("#dati");
-    let danger = document.querySelector("#danger");
-    let attivita = document.querySelector("#attivita");
-    let donation = document.querySelector("#donation");
-
     dati.hidden = true;
     danger.hidden = true;
     attivita.hidden = false;
@@ -23,11 +18,6 @@ function visualizzaAttivita(){
 }
 
 function visualizzaDanger(){
-    let dati = document.querySelector("#dati");
-    let danger = document.querySelector("#danger");
-    let attivita = document.querySelector("#attivita");
-    let donation = document.querySelector("#donation");
-
     dati.hidden = true;
     danger.hidden = false;
     attivita.hidden = true;
@@ -35,11 +25,6 @@ function visualizzaDanger(){
 }
 
 function visualizzaDonation(){
-    let dati = document.querySelector("#dati");
-    let danger = document.querySelector("#danger");
-    let attivita = document.querySelector("#attivita");
-    let donation = document.querySelector("#donation");
-
     dati.hidden = true;
     danger.hidden = true;
     attivita.hidden = true;
@@ -54,9 +39,7 @@ function confermaCancellaIscrizione(){
     //--TODO qualcosa tipo pop up che chieda la conferma e se dici si return true altrimenti false
 }
 
-
-
 function dona(){
-    let donazione = document.querySelector("#donazione"); // forse è inutile, ma forse no
+    let donazione = document.querySelector("#donazione"); // TODO forse è inutile, ma forse no e forse vogliamo fare i fighi con qualeche animazione BLL
     donazione.value
 }

@@ -51,22 +51,16 @@
 </nav>
 
 <style>
-
     .infondo {
         float: right;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-
-    }
-
-
+    }       <%-- TODO maby mettiamoli nel css dell'intestazione, ma maby questa jsp è inutile e basta [hidden?]--%>
     #logout {
         background-color: red;
     }
-
     #logout:hover {
         background-color: #810000;
     }
-
 </style>
