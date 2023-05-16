@@ -44,21 +44,13 @@
       <input type="submit" value="Invia">
 
       <script>
-
-
         function validaForm(datadinascita, email, username, passwordVal, confpassword) {
           let ageAlert = document.querySelector("#ageAlert");
           let emailAlert = document.querySelector("#emailAlert");
           let passAlert = document.querySelector("#passAlert");
           let confPassAlert = document.querySelector("#confPassAlert");
 
-
-          ageAlert.style.color = "#000000";
-          ageAlert.style.fontSize = "xx-small";
-          emailAlert.hidden = true;
-          passAlert.style.color = "#000000";
-          passAlert.style.fontSize = "xx-small";
-          confPassAlert.hidden = true;
+          resetForm();
 
           const regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
           const regexPass = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/; //TODO regula exp da cambiare con quella giusta
@@ -106,11 +98,13 @@
           passAlert.style.color = "#000000";
           passAlert.style.fontSize = "xx-small";
           confPassAlert.hidden = true;
-
         }
+
 
       </script>
 
+      <%-- <script rel="script" src="/scripts/signin.js"></script> TODO capire perchè non funziona importando
+      --%>
     </form>
   </div>
   </body>

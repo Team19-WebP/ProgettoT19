@@ -4,9 +4,9 @@
 body {
     padding-top: 160px;
     background: #DCD6F7;
-    background: -moz-linear-gradient(45deg, #DCD6F7 0%, #DCD6F7 0%, #FFFFFF 100%);
-    background: -webkit-linear-gradient(45deg, #DCD6F7 0%, #DCD6F7 0%, #eae7f6 100%);
-    background: linear-gradient(45deg, #DCD6F7 0%, #DCD6F7 0%, #ffffff 100%);
+    background: -moz-linear-gradient(45deg, #EAFDFC 0%, #EAFDFC 0%, #f9fdfc  100%);
+    background: -webkit-linear-gradient(45deg, #EAFDFC 0%, #EAFDFC 0%, #f9fdfc 100%);
+    background: linear-gradient(45deg, #EAFDFC 0%, #EAFDFC 0%, #f9fdfc 100%);
     font-family: 'Raleway', sans-serif;
 }
 
@@ -65,7 +65,7 @@ input.cancellaIscrizione[type = submit] {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 85%;
+    height: 79%;
     /*gap: 4em;*/
 }
 .menu2{
@@ -77,10 +77,10 @@ input.cancellaIscrizione[type = submit] {
     align-items: flex-start;
 }
 
-button{
-    background-color: #F4EEFF;
-    border-color: #A6B1E1;
-    color: #424874;
+.menu2 button{
+    background-color: #BFEAF5;
+    border-color: #91D8E4;
+    color: #82AAE3;
 }
 
 h6{

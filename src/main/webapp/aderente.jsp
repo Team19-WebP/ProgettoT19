@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
-<link rel="stylesheet" href="css/simpatizzante.css">
+<link rel="stylesheet" href="css/aderente.css">
 <main>
   <body>
   <div class="menu2">
