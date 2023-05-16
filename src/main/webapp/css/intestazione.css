@@ -17,7 +17,7 @@
     /* Width allarga l'elemento per tutta la viewport */
     width: 100%;
     /* Z-index alto in modo tale che stia sopra agli altri elementi */
-    z-index: 9999;
+    z-index: 9996;
 
     display: flex;
     justify-content: center;

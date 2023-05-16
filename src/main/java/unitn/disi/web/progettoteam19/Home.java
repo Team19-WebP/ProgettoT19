@@ -11,7 +11,7 @@ import javax.servlet.annotation.*;
 @WebServlet(name = "Home", value = "/Home")
 public class Home extends HttpServlet {
 
-    //Idealmente così per tutte le pagine!
+    //Idealmente così per tutte le pagine! Questa roba possiamo farla coi filtri
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         if(session == null || session.getAttribute("auth").equals("false")){

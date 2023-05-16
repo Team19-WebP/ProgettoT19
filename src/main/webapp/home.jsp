@@ -5,10 +5,17 @@
   Time: 13:15
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" session="false" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 <main>
   <jsp:include page="frasiIspiranti.jsp"></jsp:include>
+
+  <%-- CODICE PROVA DEBUG --%>
+  <%
+    HttpSession session = request.getSession(false);
+    String nuovaSessione = (String) session.getAttribute("provaFilter");
+  %>
+  <h1>Questa è solo una prova per il filtro. La sessione è nuova? <%= nuovaSessione %></h1>
   <div class="containerLogoDescrizione">
     <div class="imageContainer">
       <img id="logoHome" src="immagini/logo_home_new.png" alt="Logo con la scritta Tum4World.">
@@ -29,5 +36,6 @@
     <a href="immagini/leafletLR.pdf" download> Download Leaflet
     </a>
   </div>
+
 </main>
 <jsp:include page="footer.jsp"></jsp:include>

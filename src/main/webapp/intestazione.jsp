@@ -1,5 +1,5 @@
 <!-- <!DOCTYPE html> -->
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" session="false"%>
 
 <html lang="ita">
 
@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="css/standard.css">
     <link rel="stylesheet" href="css/intestazione.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cookies.css">
 
 </head>
+<%-- Imposto la classe css per rendere opaco e inattivo tutto il body finchè l'utente non prende una decisione. --%>
+<body class='<%= request.getSession().getAttribute("bannerCookies").equals(true) ? "copertoCookies" : "" %>'>
 
-<body>
-
-    <header class="intestazione">
+    <header class="intestazione" class='<%= request.getSession().getAttribute("bannerCookies").equals(true) ? "copertoCookies" : "" %>'>
         <div>
             <img class="logo" id="logoLeft" src="immagini/logoTransparent.png" alt="logo">
         </div>
@@ -26,7 +27,7 @@
         </div>
     </header>
 
-    <nav class="menu">
+    <nav class="menu" class='<%= request.getSession().getAttribute("bannerCookies").equals(true) ? "copertoCookies" : "" %>'>
         <a href="home.jsp">Home</a>
         <a href="chisiamo.jsp">Chi Siamo</a>
         <div class="dropdown">
@@ -42,4 +43,10 @@
         <a href="signin.jsp">Sign-in</a>
         <a href="login.jsp">Login</a>
     </nav>
+    <%--
+          Controllo se bisogna mostrare il banner, l'attributo bannerCookies viene impostato su true dal filtro
+          userFilter.java se la sessione è nuova
+     --%>
+    <jsp:include page="cookiesBanner.jsp"></jsp:include>
+
 

@@ -24,6 +24,7 @@ public class ServletLogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String username = (String) request.getAttribute("username");
+        String password = (String) request.getAttribute("password");
 
 
         utente = database(username);
