@@ -1,14 +1,13 @@
 package unitn.disi.web.progettoteam19;
 
-import argo.jdom.JdomParser;
-import argo.jdom.JsonNode;
+
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-import static argo.jdom.JsonNodeFactories.*;
+
 
 @WebServlet(name = "SessionServlet", value = "/SessionServlet")
 public class SessionServlet extends HttpServlet {
