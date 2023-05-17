@@ -11,9 +11,10 @@
 <main>
   <div class="menu2">
     <nav>
-      <button onclick="visualizzaDati();">dati personali</button>
-      <button onclick="visualizzaAttivita();">partecipa alle attività</button>
-      <button onclick="visualizzaDanger();">danger zone</button>
+      <button onclick="visualizzaDati();" id="buttonDati">dati personali</button>
+      <button onclick="visualizzaAttivita();" id="buttonAttivita">partecipa alle attività</button>
+      <button onclick="visualizzaDanger();" id="buttonDanger">danger zone</button>
+      <button id="buttonDonation" hidden="true"> </button>  <%-- serve solo per non fare comparire errori nella console per lo script che non lo trova --%>
     </nav>
   </div>
   <div class="containerInvioConfermato">
