@@ -4,6 +4,10 @@ let boxInformativaCookies = document.getElementById("boxInformativaCookies");
 function chiudiInformativa() {
     boxInformativaCookies.style.display = "none";
 }
+function apriInformativa() {
+    boxInformativaCookies.style.display = "block";
+}
+
 // funzione per controllare se i cookies siano già stati impostati
 function controllaPreferenza() {
     let xhttp = new XMLHttpRequest();
@@ -13,9 +17,9 @@ function controllaPreferenza() {
                 let prefCookies = this.responseText;
                 /** DEBUG **/
                 console.log(prefCookies); //
-                /* Se sono settati allora nascondo l'informativa. */
-                if(prefCookies === "true" || prefCookies ==="false") {
-                    chiudiInformativa();
+                /* Se non sono settati allora apro l'informativa. */
+                if(prefCookies !== "true" && prefCookies !=="false") {
+                    apriInformativa();
                 }
             } else {
                 /** DEBUG **/
