@@ -34,9 +34,9 @@
             <a class="dropbtn" href="attivita.jsp">Attività
             </a>
             <div class="dropdown-content">
-                <a href="attivita1.jsp">Attività 1</a>
+                <a href="attivita1.jsp">Aisha</a>
                 <a href="attivita2.jsp">Team4World</a>
-                <a href="attivita3.jsp">Attività 3</a>
+                <a href="attivita3.jsp">Abc4Future</a>
             </div>
         </div>
         <a href="contatti.jsp">Contatti</a>

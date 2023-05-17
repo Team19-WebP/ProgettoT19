@@ -3,26 +3,27 @@
 
 <main>
     <div class="containerAttivita">
-        <img src="immagini/galleria/img2.jpg" alt="Immagine della prima attivita" style="width: 100%;">
+        <img src="immagini/attivita/img2.jpg" alt="Immagine di Team4World" style="width: 100%;">
         <div class="content">
             <div style="padding: 20px">
-                <h2>Team4World</h2>
-                <p>
-                    L’associazione <strong>Tum4World</strong> si impegna a organizzare attività ricreative per permettere a bambini e ragazzi di conoscere nuovi amici e imparare a collaborare tra loro con vero spirito di squadra.
-                </p>
+                <h1>Team4World</h1>
+                <h3>Come il lavoro di squadra può consentire la realizzazione dei propri sogni</h3>
             </div>
         </div>
     </div>
     <div class="containerAttivita containerDescrizione">
         <h3>In cosa consiste?</h3>
         <p>
-            Il progetto Team4World si occupa di organizzare settimane di incontri ricreativi, per consentire ai giovani di dare svago alla mente e allo spirito, fare comunità e conoscere l'importante significato del lavoro di squadra.
+            Il progetto Team4World ha l'obbiettivo di offrire oppurtunità e sostegno ai giovani. A tale scopo, uno dei programmi principali è l'organizzazione di settimane di incontri ricreativi per promuovere la collaborazione e insegnare l'importanza del lavoro di squadra.
         </p>
         <p>
-            A tale scopo, l'associazione invita bambini e ragazzi a pertecipare ad attività di gruppo, permettendo loro di stare uno accanto all'altro, colaborare e raggiungere così obbiettivi comuni. La scelta delle attività è lasciata agli animatori volontari che spesso organizzano tornei di calcio, rugby, pallamano, ma anche cacce al tesoro e altre competizioni a squadre. In tutte le settimane, almeno una giornata viene sempre dedicata ai lavori sociali, in modo da rispondere ai bisogni delle comunità locali.
+            Durante queste settimane, i ragazzi provenienti dalle comunità locali vengono invitati a partecipare a una serie di attività di team building. I giovani vengono suddivisi in squadre e vengono proposte loro delle sfide che richiedono un forte spirito di cooperazione per essere superate. Attraverso queste attività, i giovani imparano  a mettersi in gioco, condividere idee e raggiungere insieme l'obbiettivo prefissato.
         </p>
         <p>
-            Il fondatore di Tum4World è presente all'inizio di ogni settimana per salutare i giovani e ricordare loro che "<strong>da soli si può poco, insieme si può tutto</strong>". Oltre che regalare momenti di gioia a bambini e ragazzi, tutte le attività hanno infatti il proposito di mostrare la smisurata forza del gruppo, spiegare che insieme, collaborando si può raggiungere qualunque obbiettivo.
+            In aggiunta, vengono organizzati incontri con personaggi di successo che con impegno e costanza sono riusciti a realizzare i propri sogni. Questi ospiti portano le loro esperienze professionali e personali, incoraggiando i ragazzi a credere in se stessi e nelle proprie capacità.<br>Nel 2019, in Somalia, abbiamo avuto l'onore di ospitare il professor Federico Lo Voce, brillante docente di Informatica che in breve è riuscito a portare la sua piccola azienda al successo. Raccontava: "Ho iniziato nel garage di casa, insieme a un gruppo di amici, e insieme, rispettosi l'uno dell'altro, siamo giunti dove siamo ora".
+        </p>
+        <p>
+            Oltre a sottolineare l'importante valore del lavoro di squadra, il progetto Team4World si preoccupa di offrire ai giovani anche un ambiente di supporto e solidarietà. Molti ragazzi provengono da contesti socioeconomici ed educativi svantaggiati; Team4world vuole rappresentare un bagliore di speranza per questi giovani, spingendoli a non gettare mai la spugna e perseguire i propri sogni.
         </p>
     </div>
 </main>

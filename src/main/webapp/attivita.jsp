@@ -1,7 +1,6 @@
 <style>
-
     div.im1 figure {
-        text-align: center;
+        text-align: left;
     }
 
     div.im1 figure img {
@@ -18,7 +17,7 @@
     }
 
     a.linkImg:hover {
-        opacity: 0.4;
+        opacity: 0.6;
         cursor: pointer;
     }
 
@@ -30,7 +29,7 @@
         opacity: 1;
     }
 
-    /*TODO fixare posizione del testo dentro l'immagine e colore forse è quello che ha fixato @ENRICO e quindi è apposto*/
+    /*TODO fixare posizione del testo dentro l'immagine e colore*/
 
     /*TODO volete lasciarlo qui o è meglio spostarlo in un css?*/
 
@@ -40,88 +39,75 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        text-align: center;
         opacity: 0;
     }
-
-
 </style>
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 
-
-
 <main>
-    <div class="containerDescrizione">
+    <div class="containerAttivita containerDescrizione">
         <section>
-            <h2> Le nostre attività </h2>
-            <p> Le nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attività
-                Le nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attività
-                Le nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attività
-                Le nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attivitàLe nostre attività
-            </p>
-        </section>
-
-        <section>
-            <h3> Attività 1 </h3>
-            <p> Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1
-                Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1
-                Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1
-                Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1Attività 1
-            </p>
-        </section>
-        <div class="im1">
-            <figure id="img1">
-                <a class="linkImg" href="attivita1.jsp">
-                    <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività" onmouseover="showCaption()" onmouseout="hideCaption()">
-                    <div class="text">Scopri di più...</div>
-                </a>
-                <figcaption> <b><i>Attività 1</i></b> </figcaption>
-            </figure>
-        </div>
-
-        <section>
-            <h3>Team4World</h3>
+            <h2>Le nostre attività</h2>
             <p>
-                L'associazione organizza attività di ricreazione per dare la possibilità a bambini e ragazzi di collaborare tra loro con spirito di squadra e, insieme, raggiungere una meta comune.
+                L'associazione Tum4World si impegna a fornire cibo e acqua potabile ai paesi più poveri dell'Africa, portando speranza e felicità nei villaggi. Promuove il lavoro di squadra tra i giovani, formando i leader di domani e offre opportunità di istruzione digitale alle comunità rurali, per un futuro più inclusivo e tecnologicamente avanzato.
             </p>
         </section>
-        <div class="im1">
-            <figure>
-                <a class="linkImg" href="attivita2.jsp">
-                    <img src="immagini/galleria/img2.jpg" alt="Immagine seconda attività">
-                </a>
-                <br>
-                <figcaption>  <b><i>Team4World</i></b> </figcaption>
-            </figure>
-        </div>
+        <br><br>
 
-        <section>
-            <h3> Attività 3 </h3>
-            <p> Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
-                Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
-                Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
-                Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3Attività 3
+        <section style="display: flex; align-items: center;">
+            <div class="im1">
+                <figure>
+                    <h3>Aisha</h3>
+                    <a class="linkImg" href="attivita1.jsp">
+                        <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività" onmouseover="showCaption()" onmouseout="hideCaption()">
+                        <div class="text">Scopri di più...</div>
+                    </a>
+                    <%--<br><figcaption><b><i>Attività 1</i></b></figcaption>--%>
+                </figure>
+            </div>
+            <p>
+                L'associazione Tum4World si dedica con passione a fornire cibo e acqua potabile ai paesi più poveri dell'Africa. Con il tuo aiuto prezioso, possiamo portare speranza e felicità ai bambini e alle famiglie dei villaggi più sperduti e a volte dimenticati.
             </p>
         </section>
-        <div class="im1">
-            <figure>
-                <a class="linkImg" href="attivita3.jsp">
-                    <img src="immagini/galleria/img3.jpg" alt="Immagine terza attività">
-                </a>
-                <br>
-                <figcaption> <b><i>Attività 3</i></b>  </figcaption>
-            </figure>
-        </div>
+        <br><br>
+
+        <section style="display: flex; align-items: center">
+            <div class="im1">
+                <figure>
+                    <h3>Team4World</h3>
+                    <a class="linkImg" href="attivita2.jsp">
+                        <img src="immagini/attivita/img2.jpg" alt="Immagine di Team4World">
+                        <div class="text">Scopri di più...</div>
+                    </a>
+                    <%--<br><figcaption> <b><i>Team4World</i></b> </figcaption>--%>
+                </figure>
+            </div>
+            <p>
+                Il progetto Team4World si impegna a offrire opportunità e sostegno ai giovani attraverso la promozione del lavoro di squadra. Le settimane ricreative organizzate coinvolgono i partecipanti in attività di team building che favoriscono la collaborazione.
+            </p>
+        </section>
+        <br><br>
+
+        <section style="display: flex; align-items: center;">
+            <div class="im1">
+                <figure>
+                    <h3>Abc4Future</h3>
+                    <a class="linkImg" href="attivita3.jsp">
+                        <img src="immagini/attivita/img3.jpg" alt="Immagine di Abc4Future">
+                        <div class="text">Scopri di più...</div>
+                    </a>
+                    <%--<br><figcaption> <b><i>Abc4Future</i></b> </figcaption>--%>
+                </figure>
+            </div>
+            <p>
+                Il progetto Abc4Future mira a offrire opportunità di istruzione digitale alle comunità rurali dell'Africa. Attraverso la costruzione di scuole e l'apporto di volontari esperti, il progetto fornisce conoscenze di base sulle tecnologie digitali.
+            </p>
+        </section>
     </div>
-
-
-    <!-- todo mettere le cazzo di immagini e il cazzo di section tutti sulla stessa linea invece che uno sotto l'altro-->
     <br><br>
-
 </main>
 
 <jsp:include page="footer.jsp"></jsp:include>
