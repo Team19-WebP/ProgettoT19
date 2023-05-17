@@ -1,5 +1,5 @@
 <!-- <!DOCTYPE html> -->
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
 
 <html lang="ita">
 
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/standard.css">
     <link rel="stylesheet" href="css/intestazione.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/infoCookies.css">
 
 </head>
 
@@ -42,4 +43,5 @@
         <a href="signin.jsp">Sign-in</a>
         <a href="login.jsp">Login</a>
     </nav>
+    <jsp:include page="informativaCookies.jsp"></jsp:include>
 
