@@ -9,7 +9,6 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <link rel="stylesheet" href="css/simpatizzante.css">
 <main>
-  <body>
   <div class="menu2">
     <nav>
       <button onclick="visualizzaDati();">dati personali</button>
@@ -67,10 +66,8 @@
       </form>
     </div>
 
-
     <script rel="script" src="scripts/paginePrivate.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e modulare--%>
 
   </div>
-  </body>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>

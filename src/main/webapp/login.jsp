@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 <main>
-    <body>
     <div class="containerInvioConfermato">
 
         <form action="ServletLogin" method="post" onsubmit="return validaFormLogin(username,password)">
@@ -16,7 +15,5 @@
         </form>
 
     </div>
-
-    </body>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>

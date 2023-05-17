@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 <main>
-  <body>
   <div class="containerInvioConfermato">
     <form action="ServletSignin" method="post" onsubmit="return validaForm(datadinascita, email, username, passwordVal, confpassword )">
 
@@ -44,7 +43,6 @@
       <input type="submit" value="Invia">
 
       <script>
-
         let ageAlert = document.querySelector("#ageAlert");
         let emailAlert = document.querySelector("#emailAlert");
         let passAlert = document.querySelector("#passAlert");
@@ -52,7 +50,6 @@
 
         const regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
         const regexPass = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/; //TODO regula exp da cambiare con quella giusta
-
 
         function validaForm(datadinascita, email, username, passwordVal, confpassword) {
           resetForm();
@@ -95,13 +92,9 @@
           passAlert.style.fontSize = "xx-small";
           confPassAlert.hidden = true;
         }
-
-
       </script>
-
-      <%-- <script rel="script" src="/scripts/signin.js"></script> TODO capire perchè non funziona importando--%>
+      <%-- <script rel="script" src="/scripts/signin.js"></script> TODO capire perchè non funziona importando (ALERT) --%>
     </form>
   </div>
-  </body>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>
