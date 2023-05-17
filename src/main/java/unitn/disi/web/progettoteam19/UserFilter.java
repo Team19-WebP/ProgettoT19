@@ -18,7 +18,7 @@ public class UserFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest req = (HttpServletRequest) request;
-        HttpSession session = req.getSession(false);
+        HttpSession session = req.getSession(true);
         if(session.getAttribute("bannerCookies") == null) {
             session.setAttribute("provaFilter", "sono una nuova sessione");
             session.setAttribute("bannerCookies", true);

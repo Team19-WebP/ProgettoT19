@@ -1,0 +1,110 @@
+/* File di stile per tutte le parti pubbliche */
+
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Raleway:wght@300&display=swap'); /* Importa raleway da google font */
+body {
+    padding-top: 160px;
+    background: #DCD6F7;
+    background: -moz-linear-gradient(45deg, #DCD6F7 0%, #DCD6F7 0%, #FFFFFF 100%);
+    background: -webkit-linear-gradient(45deg, #DCD6F7 0%, #DCD6F7 0%, #eae7f6 100%);
+    background: linear-gradient(45deg, #DCD6F7 0%, #DCD6F7 0%, #ffffff 100%);
+    font-family: 'Raleway', sans-serif;
+}
+
+table{
+    alignment: center;
+    height: available;
+    width: available;
+    align-content: center;
+}
+img.attivita{
+    max-width: 250px;
+    height: auto;
+}
+tr{
+    height: auto;
+    align-content: center;
+}
+
+input.aderente[type = submit]:hover{
+    opacity: 0.8;
+}
+
+input.cancellaIscrizione[type = submit]:hover{
+    opacity: 0.8;
+}
+
+form{
+    text-align: center;
+    margin: auto;
+    width: fit-content;
+}
+
+h6{
+    color: red;
+}
+
+input.aderente[type = submit] {
+    background-color: #b8fab6;
+    border-radius: 20px;
+    color: black;
+    min-width: 25ch;
+    min-height: 3ch;
+    width: 15%;
+    height: 6%;
+}
+input.aderente[type = text]{
+    background-color: #ffffff00; /*rgba(254, 233, 255, 0);*/
+    border: 3px solid #A6B1E1;
+}
+
+input.cancellaIscrizione[type = submit] {
+    margin-top: 50%;
+    alignment: bottom;
+    background-color: #ec7777;
+    border-radius: 20px;
+    color: black;
+    min-width: 25ch;
+    min-height: 3ch;
+    width: 15%;
+    height: 6%;
+}
+.containerInvioConfermato {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 79%;
+    /*gap: 4em;*/
+}
+
+.menu2{
+    background-color: #F4EEFF00;
+    alignment: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+button{
+    background-color: #F4EEFF;
+    border-color: #A6B1E1;
+    color: #424874;
+}
+
+
+/* @todo con schermo piccolo le frasi vengono nascoste quando il menu wrappa
+      usando media non va bene perché il menu wrappa con misure diverse a seconda della pagina?!
+      in più su Brave non cambia mai posizione assoluta
+*/
+@media screen and (max-width: 427px){
+    .frasiInspiranti {
+        top: 175px;
+    }
+    body {
+        padding-top: 190px;
+    }
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
