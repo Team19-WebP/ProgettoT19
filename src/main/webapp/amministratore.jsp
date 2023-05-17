@@ -11,11 +11,11 @@
 <main>
   <div class="menu2">
     <nav>
-      <button onclick="visualizzaUtenti();">elenco di tutti gli utenti</button>
-      <button onclick="visualizzaSimpatizzanti();">elenco di tutti i simpatizzanti</button>
-      <button onclick="visualizzaAderenti();">elenco di tutti gli aderenti</button>
-      <button onclick="visualizzaVisite();">statistiche visite al sito</button>
-      <button onclick="visualizzaDonations();">statistiche donazioni</button>
+      <button onclick="visualizzaUtenti();" id="buttonUtenti" style="background-color: #A6B1E1">elenco di tutti gli utenti</button>
+      <button onclick="visualizzaSimpatizzanti();" id="buttonSimpatizzanti">elenco di tutti i simpatizzanti</button>
+      <button onclick="visualizzaAderenti();" id="buttonAderenti">elenco di tutti gli aderenti</button>
+      <button onclick="visualizzaVisite();" id="buttonVisite">statistiche visite al sito</button>
+      <button onclick="visualizzaDonations();" id="buttonDonations">statistiche donazioni</button>  <%--TODO siamo sicuri che l'amministratore non debba poter fare anche lui le cose che fa un adrerente (disiscriversi o donare) --%>
     </nav>
   </div>
   <div class="containerInvioConfermato">
@@ -82,7 +82,6 @@
         <p> Grafico delle donazioni a Tum4World mese per mese</p> <%--TODO capire come si fanno i grafici con la lib della prof--%>
       </div>
     </div>
-
 
     <script rel="script" src="scripts/amministratore.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
 
