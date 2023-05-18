@@ -2,41 +2,38 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <jsp:include page="frasiIspiranti.jsp"></jsp:include>
 <main>
-  <style>
+    <style>
 
-  </style>
+    </style>
     <div class="formContSignLog">
-    <p>Hai già un account? Esegui il <a href="login.jsp">login</a>!</p>
-        <form action="ServletSignin" method="post"
-              onsubmit="return validaForm(datadinascita, email, username, passwordVal, confpassword )">
+        <p>Hai già un account? Esegui il <a href="login.jsp">login</a>!</p>
+        <form action="ServletSignin"  method="post"
+               onsubmit="return validaForm()">
             <div class="inputAndLabel">
                 <label for="nome">Nome: </label>
-                <input type="text" id="nome" name="nome" maxlength="50" size="50" placeholder="Mario" required>
-                <!-- TODO style="margin-left: 4ch"-->
+                <input type="text" id="nome" name="nome" maxlength="50" size="50" placeholder="Mario">
             </div>
             <br>
             <div class="inputAndLabel">
                 <label for="cognome">Cognome: </label>
-                <input type="text" id="cognome" name="cognome" maxlength="50" size="50" placeholder="Rossi" required>
+                <input type="text" id="cognome" name="cognome" maxlength="50" size="50" placeholder="Rossi" >
             </div>
             <br><br>
             <div class="inputAndLabel">
                 <label for="datadinascita">Data di nascita: </label>
-                <input type="date" id="datadinascita" name="datadinascita" maxlength="50" size="50" required>
+                <input type="date" id="datadinascita" name="datadinascita" maxlength="50" size="50" >
                 <span id="ageAlert" class="requirements">(* per registrarisi è necessario essere maggiorenni)</span>
             </div>
             <br><br>
             <div class="inputAndLabel">
                 <label for="email">Indirizzo email: </label>
-                <input type="text" id="email" name="email" maxlength="50" size="50" placeholder="mario.rossi@gmail.com"
-                       required>
+                <input type="text" id="email" name="email" maxlength="50" size="50" placeholder="mario.rossi@gmail.com">
                 <span id="emailAlert" class="alert" hidden="true">(* mail non valida)</span><br>
             </div>
             <br>
             <div class="inputAndLabel">
-                <label for="telefono">numero di telefono: </label>  <!-- TODO permettere inserimento solo numeri-->
-                <input type="tel" id="telefono" name="telefono" maxlength="15" size="15" placeholder="345 1234567"
-                       pattern="[0-9]{10}" required>
+                <label for="telefono">numero di telefono: </label>
+                <input type="text" id="telefono" name="telefono" maxlength="15" size="15" placeholder="345 1234567">
             </div>
             <br><br>
             <div class="inputAndLabel">
@@ -49,20 +46,19 @@
             <br><br>
             <div class="inputAndLabel">
                 <label for="username">Username: </label>
-                <input type="text" id="username" name="username" maxlength="50" size="50" placeholder="_RMario_"
-                       required> <br> <!-- TODO controllare che non ci sia un utente con questo username-->
+                <input type="text" id="username" name="username" maxlength="50" size="50" placeholder="_RMario_">
                 <span class="alert" id="userAlert" hidden="true">(* username gia preso) </span>
             </div>
             <br><br>
             <div class="inputAndLabel">
                 <label for="passwordVal">Password: </label>
-                <input type="password" id="passwordVal" name="passwordVal" maxlength="50" size="50" required>
+                <input type="password" id="passwordVal" name="passwordVal" maxlength="50" size="50">
                 <span class="requirements" id="passAlert">(* la password deve contenere almeno 8 caratteri di cui anmeno uno maiuscolo, un numero, le lettere [E,F,G] e uno tra[$,!,?])</span>
             </div>
             <br>
             <div class="inputAndLabel">
                 <label for="confpassword">Conferma Password: </label>
-                <input type="password" id="confpassword" name="confpassword" maxlength="50" size="50" required>
+                <input type="password" id="confpassword" name="confpassword" maxlength="50" size="50">
                 <span class="alert" id="confPassAlert" hidden="true">(* le password non coincidono)</span>
             </div>
             <br>
@@ -76,43 +72,112 @@
                 let passAlert = document.querySelector("#passAlert");
                 let confPassAlert = document.querySelector("#confPassAlert");
 
-                const regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
-                const regexPass = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/; //TODO regula exp da cambiare con quella giusta
+                const regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+\.{1}[a-zA-Z0-9]+$/;
+                const regexPass = /^[EFGefg](?=.*[A-Za-z])(?=.*\d)(?=.*[$!?\S]).{7,}$/;
+                const regexNumero = /^([+]?)([0-9]{9,12})$/;
 
-                function validaForm(datadinascita, email, username, passwordVal, confpassword) {
+                function validaForm(event) {
+                    /*Senza manda il submit anche se non è validato*/
+                    // event.preventDefault();
+                    /*restto i messaggi di errore*/
                     resetForm();
+                    /*metto dentro un array tutti i campi obbligatori*/
+                    let requiredElements = document.querySelectorAll(".inputAndLabel input[type='text'], .inputAndLabel input[type='date'], .inputAndLabel input[type='password']");
+                    /*setto il valore da ritornare su valido*/
+                    let valido = true;
+                    /*faccio il controllo su tutti gli elementi obbligatori*/
+                    requiredElements.forEach(function (element) {
+                        /*DEBUG*/
+                        console.log("Controllando " + element.name);
+                        /*DEBUG*/
+                        /*se il campo è vuoto*/
+                        if (element.value === "") {
+                            /*facilito la userEXP rimandando il focus e lo screen sul campo mancante
+                            * evidenziando di rosso il bordo e aggiungendo un messaggio di errore sotto
+                            * il campo
+                            * */
+                            element.focus();
+                            element.scrollIntoView({ behavior: "smooth", block: "center"});
+                            element.style.borderColor = "#FF0000";
+                            const messaggioErrore = document.createElement("span");
+                            messaggioErrore.className = "errore";
+                            messaggioErrore.textContent = "Questo campo è obbligatorio!";
+                            messaggioErrore.style.fontSize = "x-small";
+                            messaggioErrore.style.color = "#FF0000";
+                            element.parentNode.appendChild(messaggioErrore);
+                            /*invalido la submit*/
+                            valido = false;
+                        } else {
+                            element.style.borderColor = "#000000";
+                        }
+                    });
                     let nowDate = new Date();  // data di ora
-                    let dataNascita = new Date(datadinascita.value);
-                    if ((nowDate.getFullYear() - dataNascita.getFullYear() < 18) ||  //if per controllare che la data di nascita inserita sia di un maggiorenne
-                        ((nowDate.getFullYear() - dataNascita.getFullYear() === 18) && (nowDate.getMonth() < dataNascita.getMonth())) ||
-                        ((nowDate.getFullYear() - dataNascita.getFullYear() === 18) && (nowDate.getMonth() === dataNascita.getMonth()) && (nowDate.getDate() < dataNascita.getDate()))
+                    let dataInserita = document.querySelector("#datadinascita");
+                    let email = document.querySelector("#email");
+                    let passwordVal = document.querySelector("#passwordVal");
+                    let confpassword = document.querySelector("#confpassword");
+                    let dataNascita = new Date(dataInserita.value);
+                    let numero = document.querySelector("#telefono");
+                    if (
+                        nowDate.getFullYear() - dataNascita.getFullYear() < 18 ||  //if per controllare che la data di nascita inserita sia di un maggiorenne
+                        (nowDate.getFullYear() - dataNascita.getFullYear() === 18 && nowDate.getMonth() < dataNascita.getMonth()) ||
+                        (nowDate.getFullYear() - dataNascita.getFullYear() === 18 && nowDate.getMonth() === dataNascita.getMonth() && nowDate.getDate() < dataNascita.getDate())
                     ) {
                         ageAlert.style.color = "#FF0000";       //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
                         ageAlert.style.fontSize = "small";
-                        datadinascita.focus();
-                        alert('non sei maggiorenne!');
-                        return false;
+                        dataInserita.focus();
+                        dataInserita.scrollIntoView({ behavior: "smooth", block: "center"});
+                        dataInserita.style.borderColor = "#FF0000";
+                        // alert('non sei maggiorenne!');
+                        valido = false;
                     } else if (!regexEmail.test(email.value)) {
                         emailAlert.hidden = false;       //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
                         email.focus();
-                        alert('Email non valida!');
-                        return false;
-                    } else if (!regexPass.test(passwordVal.value)) {
+                        email.scrollIntoView({ behavior: "smooth", block: "center"});
+                        email.style.borderColor = "#FF0000";
+                        // alert('Email non valida!');
+                        valido = false;
+                    } else if (!regexNumero.test(numero.value)) {
+                        numero.focus();
+                        numero.scrollIntoView({behavior: "smooth", block: "center"});
+                        numero.style.borderColor = "#FF0000";
+                        const messaggioErrore = document.createElement("span");
+                        messaggioErrore.className = "errore";
+                        messaggioErrore.textContent = "Inserire un numero di telefono valido!";
+                        messaggioErrore.style.fontSize = "x-small";
+                        messaggioErrore.style.color = "#FF0000";
+                        numero.parentNode.appendChild(messaggioErrore);
+                        valido = false;
+                    }
+                    else if (!regexPass.test(passwordVal.value)) {
                         passAlert.style.color = "#FF0000";
                         passAlert.style.fontSize = "small";
                         passwordVal.focus();              //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
-                        alert('Password non valida!');
-                        return false;
+                        passwordVal.scrollIntoView({ behavior: "smooth", block: "center"});
+                        passwordVal.style.borderColor = "#FF0000";
+                        // alert('Password non valida!');
+                        valido = false;
                     } else if (passwordVal.value !== confpassword.value) {
                         confPassAlert.hidden = false;     //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
                         passwordVal.focus();
-                        alert('Password non valida!');
-                        return false;
+                        passwordVal.scrollIntoView({ behavior: "smooth", block: "center"});
+                        passwordVal.style.borderColor = "#FF0000";
+                        // alert('Password non valida!');
+                        valido = false;
                     }
-                    return true;
+                    return valido;
                 }
 
                 function resetForm() {
+                    /*
+                    * recupero tutti i messaggi di errore fatti precedentemente e li elimino
+                    * */
+                    let messaggiErrore = document.querySelectorAll(".inputAndLabel .errore");
+                    if (messaggiErrore !== null) {
+                        messaggiErrore.forEach(function(element) {
+                            element.remove();
+                        });
+                    }
                     ageAlert.style.color = "#000000";
                     ageAlert.style.fontSize = "xx-small";
                     emailAlert.hidden = true;       //nascondo tutti gli i messaggi di errore
@@ -121,7 +186,6 @@
                     confPassAlert.hidden = true;
                 }
             </script>
-            <%-- <script rel="script" src="/scripts/signin.js"></script>  TODO capire perchè non funziona importando (ALERT) --%>
         </form>
     </div>
 </main>
