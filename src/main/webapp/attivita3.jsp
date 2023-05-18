@@ -4,7 +4,7 @@
 <main>
     <div class="containerAttivita">
         <img src="immagini/attivita/img3.jpg" alt="Immagine di Abc4Future" style="width: 100%; max-width: 800px">
-        <div class="content">
+        <div class="testoImmagine">
             <div style="padding: 20px">
                 <h1>Abc4Future</h1>
                 <h3>Programma di alfabetizzazione digitale per offrire nuove opportunità future</h3>

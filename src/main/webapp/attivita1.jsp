@@ -1,14 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
-
+<jsp:include page="frasiIspiranti.jsp"></jsp:include>
 <main>
     <div class="containerAttivita">
-        <img src="immagini/attivita/img1.jpg" alt="Immagine di Aisha" style="width: 100%; max-width: 800px">
-        <div class="content">
-            <div style="padding: 20px">
-                <h1>Aisha</h1>
-                <h3>Combattiamo insieme la malnutrizione per un mondo migliore</h3>
-            </div>
+        <img src="immagini/attivita/img1.jpg" alt="Immagine di Aisha"> <%--style="width: 100%; max-width: 800px"--%>
+        <div class="testoImmagine">
+            <h1>Aisha</h1>
+            <h3>Combattiamo insieme la malnutrizione per un mondo migliore</h3>
         </div>
     </div>
     <div class="containerAttivita containerDescrizione">

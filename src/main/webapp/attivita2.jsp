@@ -4,7 +4,7 @@
 <main>
     <div class="containerAttivita">
         <img src="immagini/attivita/img2.jpg" alt="Immagine di Team4World" style="width: 100%;">
-        <div class="content">
+        <div class="testoImmagine">
             <div style="padding: 20px">
                 <h1>Team4World</h1>
                 <h3>Come il lavoro di squadra può consentire la realizzazione dei propri sogni</h3>
