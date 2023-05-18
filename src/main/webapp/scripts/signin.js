@@ -6,6 +6,7 @@ let confPassAlert = document.querySelector("#confPassAlert");
 const regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
 const regexPass = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/; //TODO regula exp da cambiare con quella giusta
 
+const document = window.document;
 
 function validaForm(datadinascita, email, username, passwordVal, confpassword) {
     resetForm();
@@ -18,7 +19,7 @@ function validaForm(datadinascita, email, username, passwordVal, confpassword) {
         ageAlert.style.color = "#FF0000";       //se la regola non è rispettata mostro il messaggio di errore e metto li il focus
         ageAlert.style.fontSize = "small";
         datadinascita.focus();
-        alert('non sei maggiorenne!');
+        document.alert('non sei maggiorenne!');
         return false;
     }else if(!regexEmail.test(email.value)){
         emailAlert.hidden = false;       //se la regola non è rispettata mostro il messaggio di errore e metto li il focus

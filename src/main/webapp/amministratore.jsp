@@ -68,9 +68,25 @@
     <div id="visite" hidden="true">
       <br>
       <br>
-      <div> il sito è stato visitato 7183210 volte </div> <%--TODO prendere il numero di visite da un BEAN e aggiungerlo dinamicamente--%>
+      <div> il sito è stato visitato XXXX volte in totale.</div> <%--TODO prendere il numero di visite da un BEAN e aggiungerlo dinamicamente--%>
       <div id="grafico visite">
-        <p> Grafico delle visite del sito</p> <%--TODO capire come si fanno i grafici con la lib della prof--%>
+        <p> Grafico delle visite del sito</p>
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/data.js"></script>
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+        <figure class="highcharts-figure">
+          <div id="GraficoVisite"></div>
+          <p class="highcharts-description">    <%--TODO capire come si fanno i grafici [bene] con sta figata di lib--%>
+            Grafico delle visite del sito.
+          </p>
+        </figure>
+
       </div>
     </div>
 

@@ -93,7 +93,7 @@
           confPassAlert.hidden = true;
         }
       </script>
-      <%-- <script rel="script" src="/scripts/signin.js"></script> TODO capire perchè non funziona importando (ALERT) --%>
+      <%-- <script rel="script" src="/scripts/signin.js"></script>  TODO capire perchè non funziona importando (ALERT) --%>
     </form>
   </div>
 </main>
