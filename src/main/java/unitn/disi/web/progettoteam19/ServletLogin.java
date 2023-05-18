@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.Objects;
 
 @WebServlet(name = "ServletLogin", value = "/ServletLogin")
 public class ServletLogin extends HttpServlet {
@@ -33,11 +34,11 @@ public class ServletLogin extends HttpServlet {
 
         //TODO cambiare intestazione con intestazioneLoggato (forse non ha senso copiare il codice in ogni servlet ma chiamare una servlet chiamata tipo servlet sessione che gestisce quello e poi richiama questa)
 
-        if(utente.permesso=="aderente"){
+        if(Objects.equals(utente.permesso, "aderente")){
             response.sendRedirect("./aderente.jsp");
-        } else if (utente.permesso=="simpatizzante") {
+        } else if (Objects.equals(utente.permesso, "simpatizzante")) {
             response.sendRedirect("./simpatizzante.jsp");
-        }else if (utente.permesso=="amministratore") {
+        }else if (Objects.equals(utente.permesso, "amministratore")) {
             response.sendRedirect("./amministratore.jsp");
         }else response.sendRedirect("./error.jsp");
     }

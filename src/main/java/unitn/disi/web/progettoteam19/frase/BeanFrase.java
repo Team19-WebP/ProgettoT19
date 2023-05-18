@@ -23,12 +23,12 @@ public class BeanFrase implements Serializable {
         frasiIspiranti.add("Il tempo non è bravo a nascondersi, se lo cerchi lo trovi sempre.");
     }
 
-    public String getFraseIsipirante() {
+    public String getFraseIspirante() {
         int index = (int) Math.random()*frasiIspiranti.size();
         return frasiIspiranti.get(index);
     }
 
-//    public void setFraseIsipirante() {
+//    public void setFraseIspirante() {
 //       //collegamento al DB
 //    }
 }

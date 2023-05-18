@@ -11,7 +11,7 @@
 <main>
   <div class="menu2">
     <nav>
-      <button onclick="visualizzaDati();" id="buttonDati">dati personali</button>
+      <button onclick="visualizzaDati();" id="buttonDati" style="background-color: #A6B1E1">dati personali</button>
       <button onclick="visualizzaDonation();" id="buttonDonation">dona alla associazione</button>
       <button onclick="visualizzaAttivita();" id="buttonAttivita">partecipa alle attività</button>
       <button onclick="visualizzaDanger();" id="buttonDanger">danger zone</button>
@@ -76,7 +76,7 @@
     </div>
 
 
-    <script rel="script" src="scripts/paginePrivate.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
+    <script rel="script" src="scripts/aderente.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
 
   </div>
 </main>
