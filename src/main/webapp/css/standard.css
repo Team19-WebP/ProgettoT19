@@ -103,9 +103,9 @@ input[type = reset] {
 }
 
 .containerAttivita {
-    position: relative;
+    /*position: relative;*/
     max-width: 800px;
-    margin: 0 auto;
+    margin: 5vw auto;
 }
 
 .containerAttivita .content {
@@ -173,6 +173,16 @@ input[type = reset] {
     }
     body {
         padding-top: 250px;
+    }
+    .sectionAttività {
+        flex-wrap: wrap;
+        align-content: center;
+        text-align: center;
+    }
+    .containerAttivita {
+        text-align: center;
+        padding-left: 1vw;
+        padding-right: 1vw;
     }
 }
 

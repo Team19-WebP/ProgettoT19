@@ -1,7 +1,7 @@
 <style>
-    div.im1 figure {
-        text-align: left;
-    }
+    /*div.im1 figure {*/
+    /*    text-align: left;*/
+    /*}*/
 
     div.im1 figure img {
         width: 300px;
@@ -43,6 +43,7 @@
         display: flex;
         align-items: center;
     }
+
     .text {
         color: white;
         font-size: 20px;
