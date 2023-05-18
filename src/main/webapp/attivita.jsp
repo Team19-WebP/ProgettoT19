@@ -1,14 +1,17 @@
 <style>
-    /*div.im1 figure {*/
-    /*    text-align: left;*/
-    /*}*/
+    .im1 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 
     div.im1 figure img {
         width: 300px;
         height: auto;
         max-height: 300px;
         /*z-index:1;*/
-        position: relative;
     }
 
     div.gallery figcaption {
@@ -42,19 +45,26 @@
     /*TODO fixare posizione del testo dentro l'immagine e colore*/
 
     /*TODO volete lasciarlo qui o è meglio spostarlo in un css?*/
-    .sectionAttività {
+    .sectionTesto, .sectionTitolo {
         display: flex;
         align-items: center;
+        width: 60vw;
     }
+    .sectionTitolo {
+        flex-direction: column;
+     }
 
     .text {
-        color: white;
+        color: #000000;
         font-size: 20px;
         position: absolute;
-        top: 50%;
+        bottom: 10%;
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
+    }
+    .text:hover {
+        opacity: 1;
     }
 
 </style>
@@ -65,7 +75,7 @@
 
 <main>
     <div class="containerAttivita containerDescrizione">
-        <section>
+        <section class="sectionTitolo">
             <h2>Le nostre attività</h2>
             <p>
                 L'associazione Tum4World si impegna a fornire cibo e acqua potabile ai paesi più poveri dell'Africa, portando speranza e felicità nei villaggi. Promuove il lavoro di squadra tra i giovani, formando i leader di domani e offre opportunità di istruzione digitale alle comunità rurali, per un futuro più inclusivo e tecnologicamente avanzato.
@@ -73,13 +83,13 @@
         </section>
         <br><br>
 
-        <section class="sectionAttività">
+        <section class="sectionTesto">
 <%--        <section class="containerLogoDescrizione">&lt;%&ndash;&ndash;%&gt;--%>
             <div class="im1">
                 <figure>
                     <h3>Aisha</h3>
                     <a class="linkImg" href="attivita1.jsp">
-                        <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività" onmouseover="showCaption()" onmouseout="hideCaption()">
+                        <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività">
                         <div class="text">Scopri di più...</div>
                     </a>
                     <%--<br><figcaption><b><i>Attività 1</i></b></figcaption>--%>
@@ -92,7 +102,7 @@
         </section>
         <br><br>
 
-        <section class="sectionAttività">
+        <section class="sectionTesto">
             <div class="im1">
                 <figure>
                     <h3>Team4World</h3>
@@ -109,7 +119,7 @@
         </section>
         <br><br>
 
-        <section class="sectionAttività">
+        <section class="sectionTesto">
             <div class="im1">
                 <figure>
                     <h3>Abc4Future</h3>

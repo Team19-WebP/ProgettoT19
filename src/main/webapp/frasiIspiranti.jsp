@@ -42,7 +42,7 @@
         align-items: center;
         font-family: 'Darumadrop One', cursive;
         /*background: linear-gradient(to bottom, #31372b, transparent);*/
-        background-color: #31372b;
+        background-color: #31372BFF;
         text-align: center;
         color: #FFB3BF;
         height: 50px;

@@ -35,18 +35,20 @@ Impostiamo anche cosa succede se ci siamo sopra col mouse*/
 
 .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
+}
+.prev {
+    left:0;
 }
 
 .prev, .next {
-    background-color: gray;
+    background-color: #31372BFF;
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: white;
+    color: #FFB3BF;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -73,12 +75,12 @@ Impostiamo anche cosa succede se ci siamo sopra col mouse*/
 /*Per avere inforamzioni su che immagine stiamo guaurdando*/
 
 .numbertext {
-    color: #f2f2f2;
+    color: #FFB3BF;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
     top: 0;
-    background-color: gray;
+    background-color: #31372BFF;
 }
 
 /*Per i puntini che dicono su che immagine siamo*/
@@ -88,20 +90,24 @@ Impostiamo anche cosa succede se ci siamo sopra col mouse*/
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: #31372BFF;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-    background-color: #717171;
+    background-color: #FFB3BF;
 }
 
+
+.singleImage {
+    width: 60vw;
+}
 /*Larghezza, lunghezza e allineamento dell'immagine*/
 
 img {
-    height: 50%;
     width: 100%;
+    height: auto;
     horiz-align: center;
 }
