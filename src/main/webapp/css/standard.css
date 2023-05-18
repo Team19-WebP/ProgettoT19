@@ -90,6 +90,7 @@ input[type = reset] {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    flex-wrap: wrap;
     /*gap: 4em;*/
 }
 
@@ -134,6 +135,7 @@ input[type = reset] {
     /*padding-right: 20%;*/
     max-width: 400px;
     min-width: 300px;
+    width: 90vw;
 }
 
 #descrizioneChiSiamo {
@@ -148,8 +150,9 @@ input[type = reset] {
 }
 
 #imgAssociazione {
-    max-width: 650px;
+    max-width: 450px;
     height: auto;
+    width: 90vw;
 }
 
 #downloadLeaflet {
@@ -157,7 +160,21 @@ input[type = reset] {
     justify-content: center;
     padding: 2%;
 }
-/*Non so se serve questo*/
-/*html {*/
-/*    -webkit-text-size-adjust: 100%;*/
-/*}*/
+
+
+/* @todo con schermo piccolo le frasi vengono nascoste quando il menu wrappa
+      usando media non va bene perché il menu wrappa con misure diverse a seconda della pagina?!
+      in più su Brave non cambia mai posizione assoluta
+*/
+@media screen and (max-width: 427px){
+    .frasiInspiranti {
+        top: 175px;
+    }
+    body {
+        padding-top: 250px;
+    }
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}

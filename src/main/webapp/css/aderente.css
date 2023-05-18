@@ -91,20 +91,3 @@ button{
     color: #424874;
 }
 
-
-/* @todo con schermo piccolo le frasi vengono nascoste quando il menu wrappa
-      usando media non va bene perché il menu wrappa con misure diverse a seconda della pagina?!
-      in più su Brave non cambia mai posizione assoluta
-*/
-@media screen and (max-width: 427px){
-    .frasiInspiranti {
-        top: 175px;
-    }
-    body {
-        padding-top: 190px;
-    }
-}
-
-html {
-    -webkit-text-size-adjust: 100%;
-}
