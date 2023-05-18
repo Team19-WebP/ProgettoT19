@@ -7,6 +7,8 @@
         width: 300px;
         height: auto;
         max-height: 300px;
+        /*z-index:1;*/
+        position: relative;
     }
 
     div.gallery figcaption {
@@ -17,7 +19,8 @@
     }
     a.linkImg {
         position: relative;
-        display: inline-block;
+        /*display: inline-block;*/
+
     }
     a.linkImg > img {
         border: 3px solid transparent;
@@ -58,6 +61,7 @@
 
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
+<jsp:include page="frasiIspiranti.jsp"></jsp:include>
 
 <main>
     <div class="containerAttivita containerDescrizione">

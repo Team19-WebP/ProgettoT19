@@ -37,30 +37,26 @@
         /*left: 50%;*/
         /*transform: translate(-50%);*/
         box-sizing: border-box;
-        display: block;
+        display: flex;
         justify-content: center;
+        align-items: center;
         font-family: 'Darumadrop One', cursive;
         /*background: linear-gradient(to bottom, #31372b, transparent);*/
         background-color: #31372b;
         text-align: center;
         color: #FFB3BF;
         height: 50px;
+        z-index: 9998;
     }
-
-    /* @todo con schermo piccolo le frasi vengono nascoste quando il menu wrappa
-          usando media non va bene perché il menu wrappa con misure diverse a seconda della pagina?!
-          in più su Brave non cambia mai posizione assoluta
-    */
-    @media screen and (max-width: 427px){
+    @media screen and (max-width: 538px) {
         .frasiInspiranti {
             top: 175px;
+            height: 60px;
         }
-        body {
-            padding-top: 190px;
+        .frasiInspiranti i {
+            vertical-align: central;
         }
     }
-
-
 
 </style>
 <script>
@@ -84,6 +80,6 @@
         }, 1000);
     }
     cambiaFrase();
-    setInterval(cambiaFrase, 20000);
+    setInterval(cambiaFrase, 5000);
 </script>
 

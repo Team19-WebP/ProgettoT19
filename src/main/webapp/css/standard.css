@@ -167,15 +167,14 @@ input[type = reset] {
       usando media non va bene perché il menu wrappa con misure diverse a seconda della pagina?!
       in più su Brave non cambia mai posizione assoluta
 */
-@media screen and (max-width: 427px){
-    .frasiInspiranti {
-        top: 175px;
-    }
+@media screen and (max-width: 538px){
+
     body {
         padding-top: 250px;
     }
     .sectionAttività {
         flex-wrap: wrap;
+        justify-content: center;
         align-content: center;
         text-align: center;
     }
