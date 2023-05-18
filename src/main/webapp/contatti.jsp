@@ -7,26 +7,72 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
+<jsp:include page="frasiIspiranti.jsp"></jsp:include>
+<style>
+    .contatti {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-right: 20vw;
+        margin-left: 20vw;
+        font-size: 18px;
+        text-align: center;
+    }
+    .inputAndLabel {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .inputAndLabel input {
+        height: 40px;
+    }
+    #submitReset {
+        justify-content: space-evenly;
+    }
+    #comboBoxLabel {
+        margin-bottom: 5px;
+    }
+</style>
 <main>
-    <div class="containerDescrizione">
-        <ul>
-            <li><h3>Email: tum4world@nessunonoluogonoesiste.com</h3></li>
-            <li><h3>Telefono: +39 0461 123456</h3></li>
-        </ul><br><br>
-        <h2>Per saperne di più, inserisci i tuoi dati:</h2>
+    <div class="contatti containerDescrizione" >
+        <p>
+            Per qualsiasi domanda o informazione non esitare a contattarci scrivendoci a tum4world@nessunluogonoesiste.com,
+            chiamandoci allo +39 0461 123456 dal lunedì al venerdì dalle 8:00 alle 17:00 oppure contattaci utilizzando il form
+            presente qui sotto, ti risponderemo al più presto!
+        </p>
+<%--        <ul>--%>
+<%--            <li><h3>Email: </h3></li>--%>
+<%--            <li><h3>Telefono: +39 0461 123456</h3></li>--%>
+<%--        </ul><br><br>--%>
+<%--        <h2>Per saperne di più, inserisci i tuoi dati:</h2>--%>
     </div>
-    <div style="height: 60%"> <%-- TODO metterlo in un css --%>
+    <br>
+    <div> <%-- TODO metterlo in un css  style="height: 60%"--%>
     <form action="ServletFormContatti" method="post" onsubmit="return validaEmail(email.value)">
-        <label for="nome">Nome: </label>
-        <input type="text" id="nome" name="nome" placeholder="inserisci il tuo nome..." maxlength="50" size="50"
-        required><br><br>
-        <label for="cognome">Cognome: </label>
-        <input type="text" id="cognome" name="cognome" placeholder="inserisci il tuo cognome..." maxlength="50"
-        size="50" required><br><br>
-        <label for="email">Email: </label>
-        <input type="text" id="email" name="email" placeholder="inserisci la tua email..." maxlength="50" size="50"
-        required><br><br>
-        <label for="comboBox">Motivo del contatto:</label>
+        <div class="inputAndLabel">
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome" name="nome" placeholder="inserisci il tuo nome..." maxlength="50" size="100"
+            required>
+        </div>
+        <br><br>
+        <div class="inputAndLabel">
+            <label for="cognome">Cognome: </label>
+            <input type="text" id="cognome" name="cognome" placeholder="inserisci il tuo cognome..." maxlength="50"
+            size="100" required>
+        </div>
+        <br><br>
+        <div class="inputAndLabel">
+
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email" placeholder="inserisci la tua email..." maxlength="50" size="100"
+            required>
+        </div>
+        <br><br>
+        <div class="inputAndLabel">
+            <label for="comboBox" id="comboBoxLabel">Motivo del contatto:</label><br>
 
         <%-- per utilizzare input radio al posto della comboBox...
 
@@ -61,20 +107,23 @@
             }
         </script> --%>
 
-        <select id="comboBox" name="comboBox">
-            <option value="iscrizione">Mi piacerebbe unirmi alla vostra associazione</option>
-            <option value="info">Vorrei saperne di più su quello che fate</option>
-            <option value="altro">Altro...</option>
-        </select><br><br>
+            <select id="comboBox" name="comboBox">
+                <option value="iscrizione">Mi piacerebbe unirmi alla vostra associazione</option>
+                <option value="info">Vorrei saperne di più su quello che fate</option>
+                <option value="altro">Altro...</option>
+            </select>
+        </div>
+        <br><br>
         <%-- <label for="altroTextarea">Se vuoi puoi specificare una richiesta:</label><br> --%>
         <textarea id="altroTextarea" name="altroTextarea" maxlength="300" cols="100" rows="3" hidden="true"
         required></textarea><br><br>
 
 
         <script rel="script" src="scripts/contatti.js"></script> <%-- includo gli script da un file esterno per modularità --%>
-
-        <input type="reset" value="Reset" onclick="nascondiTextarea()">
-        <input type="submit" value="Invia">
+        <div class="inputAndLabel" id="submitReset">
+            <input type="reset" value="Reset" onclick="nascondiTextarea()">
+            <input type="submit" value="Invia">
+        </div>
 
         <%-- script che verifica la validita' dell'email --%>
         <script>

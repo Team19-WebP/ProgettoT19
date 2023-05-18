@@ -29,9 +29,12 @@ span.alert{
 span.requirements{
     font-size: xx-small;
 }
-input[type = text]{
-    background-color: #ffffff; /*rgba(254, 233, 255, 0);*/
-    border: 3px solid #A998A5;
+input[type = text], #comboBox{
+    background-color: transparent; /*rgba(254, 233, 255, 0);*/
+    border: none;
+    border-bottom: 3px solid #31372BFF;
+    width: 60vw;
+    /*border-radius: 6px;*/
 }
 
 input[type = tel]{
@@ -58,33 +61,54 @@ input[type = reset]:hover{
 
 form{
     text-align: center;
-    margin: auto;
-    width: fit-content;
+    margin-left: 20vw;
+    margin-right: 20vw;
 }
-
+/*todo mettere insieme i bottono dei cookies con questi*/
+input[type = submit], input[type = reset ] {
+    border-radius: 12px;
+    border: 2px solid #000000;
+    background-color: transparent;
+    opacity: 0.7;
+    width: 80px;
+    /*background-color: #B6EAFA;*/
+    /*border-radius: 20px;*/
+    /*color: black;*/
+    /*resize: none;*/
+    /*min-width: 60px;*/
+    /*min-height: 25px;*/
+    /*width: 5%;*/
+    /*height: 4%;*/
+    /*margin-left: 4%;*/
+}
 input[type = submit] {
-    background-color: #B6EAFA;
-    border-radius: 20px;
-    color: black;
-    resize: none;
-    min-width: 60px;
-    min-height: 25px;
-    width: 5%;
-    height: 4%;
-    margin-left: 4%;
+    color: darkgreen;
 }
-
 input[type = reset] {
-    background-color: #ec7777;
-    border-radius: 20px;
-    color: black;
-    resize: none;
-    min-width: 60px;
-    min-height: 25px;
-    width: 5%;
-    height: 4%;
-    margin-right: 4%;
+    color: darkred;
 }
+input[type = submit]:hover, input[type = reset ]:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+input[type = submit]:hover {
+    background-color: darkgreen;
+}
+input[type = reset]:hover {
+    background-color: darkred;
+}
+/*input[type = reset] {*/
+/*    background-color: #ec7777;*/
+/*    border-radius: 20px;*/
+/*    color: black;*/
+/*    resize: none;*/
+/*    min-width: 60px;*/
+/*    min-height: 25px;*/
+/*    width: 5%;*/
+/*    height: 4%;*/
+/*    margin-right: 4%;*/
+/*}*/
 
 .containerLogoDescrizione {
     display: flex;
