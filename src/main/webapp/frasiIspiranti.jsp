@@ -20,7 +20,7 @@
     }
     .frasiInspiranti {
 
-        /* Misure calcolate con chrome! */
+        /* Misure calcolate con il browser nellla sezione computed! */
         position: fixed;
 
         /* Scommentare qua sotto per metterlo a sinistra */
