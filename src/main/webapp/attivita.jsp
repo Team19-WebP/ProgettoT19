@@ -15,6 +15,9 @@
         text-align: center;
         margin: auto;
     }
+    a.linkImg > img {
+        border: 3px solid transparent;
+    }
 
     a.linkImg:hover {
         opacity: 0.6;
