@@ -15,6 +15,10 @@
         text-align: center;
         margin: auto;
     }
+    a.linkImg {
+        position: relative;
+        display: inline-block;
+    }
     a.linkImg > img {
         border: 3px solid transparent;
     }
@@ -35,7 +39,10 @@
     /*TODO fixare posizione del testo dentro l'immagine e colore*/
 
     /*TODO volete lasciarlo qui o è meglio spostarlo in un css?*/
-
+    .sectionAttività {
+        display: flex;
+        align-items: center;
+    }
     .text {
         color: white;
         font-size: 20px;
@@ -45,6 +52,7 @@
         transform: translate(-50%, -50%);
         opacity: 0;
     }
+
 </style>
 
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
@@ -60,7 +68,8 @@
         </section>
         <br><br>
 
-        <section style="display: flex; align-items: center;">
+        <section class="sectionAttività">
+<%--        <section class="containerLogoDescrizione">&lt;%&ndash;&ndash;%&gt;--%>
             <div class="im1">
                 <figure>
                     <h3>Aisha</h3>
@@ -74,10 +83,11 @@
             <p>
                 L'associazione Tum4World si dedica con passione a fornire cibo e acqua potabile ai paesi più poveri dell'Africa. Con il tuo aiuto prezioso, possiamo portare speranza e felicità ai bambini e alle famiglie dei villaggi più sperduti e a volte dimenticati.
             </p>
+
         </section>
         <br><br>
 
-        <section style="display: flex; align-items: center">
+        <section class="sectionAttività">
             <div class="im1">
                 <figure>
                     <h3>Team4World</h3>
@@ -94,7 +104,7 @@
         </section>
         <br><br>
 
-        <section style="display: flex; align-items: center;">
+        <section class="sectionAttività">
             <div class="im1">
                 <figure>
                     <h3>Abc4Future</h3>
