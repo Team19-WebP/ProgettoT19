@@ -27,38 +27,29 @@ span.alert{
     font-size: small;
 }
 span.requirements{
-    font-size: xx-small;
+    font-size: x-small;
 }
-input[type = text], #comboBox{
+input, #comboBox{
     background-color: transparent; /*rgba(254, 233, 255, 0);*/
     border: none;
     border-bottom: 3px solid #31372BFF;
-    width: 60vw;
+    width: 50vw;
     /*border-radius: 6px;*/
 }
 
-input[type = tel]{
-    background-color: #ffffff; /*rgba(254, 233, 255, 0);*/
-    border: 3px solid #A998A5; /*TODO farlo funzionare o cambiare in number o di nuovo in text*/
-}
+/*input[type = tel]{*/
+/*    background-color: #ffffff; !*rgba(254, 233, 255, 0);*!*/
+/*    border: 3px solid #A998A5; !*TODO farlo funzionare o cambiare in number o di nuovo in text*!*/
+/*}*/
 
-input[type = password]{
-    background-color: #ffffff; /*rgba(254, 233, 255, 0);*/
-    border: 3px solid #A998A5;
-}
-input[type = date]{
-    background-color: #ffffff; /*rgba(254, 233, 255, 0);*/
-    border: 3px solid #A998A5;
-}
-
-input[type = submit]:hover{
-    opacity: 0.8;
-}
-
-input[type = reset]:hover{
-    opacity: 0.8;
-}
-
+/*input[type = password]{*/
+/*    background-color: #ffffff; !*rgba(254, 233, 255, 0);*!*/
+/*    border: 3px solid #A998A5;*/
+/*}*/
+/*input[type = date]{*/
+/*    background-color: #ffffff; !*rgba(254, 233, 255, 0);*!*/
+/*    border: 3px solid #A998A5;*/
+/*}*/
 form{
     text-align: center;
     margin-left: 20vw;
@@ -98,6 +89,34 @@ input[type = submit]:hover {
 input[type = reset]:hover {
     background-color: darkred;
 }
+
+/** FORM PER PAGINA CONTATTI, SIGN IN E LOG IN **/
+.formContSignLog {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    font-size: 18px;
+    text-align: center;
+}
+.inputAndLabel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.inputAndLabel input {
+    height: 40px;
+}
+#submitReset {
+    justify-content: space-evenly;
+}
+#comboBoxLabel {
+    margin-bottom: 5px;
+}
 /*input[type = reset] {*/
 /*    background-color: #ec7777;*/
 /*    border-radius: 20px;*/
@@ -109,7 +128,9 @@ input[type = reset]:hover {
 /*    height: 4%;*/
 /*    margin-right: 4%;*/
 /*}*/
-
+#divLogin {
+    padding-bottom: 10vw;
+}
 .containerLogoDescrizione {
     display: flex;
     justify-content: center;

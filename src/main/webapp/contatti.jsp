@@ -9,35 +9,10 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <jsp:include page="frasiIspiranti.jsp"></jsp:include>
 <style>
-    .contatti {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        margin-right: 20vw;
-        margin-left: 20vw;
-        font-size: 18px;
-        text-align: center;
-    }
-    .inputAndLabel {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: baseline;
-    }
-    .inputAndLabel input {
-        height: 40px;
-    }
-    #submitReset {
-        justify-content: space-evenly;
-    }
-    #comboBoxLabel {
-        margin-bottom: 5px;
-    }
+
 </style>
 <main>
-    <div class="contatti containerDescrizione" >
+    <div class="formContSignLog containerDescrizione" >
         <p>
             Per qualsiasi domanda o informazione non esitare a contattarci scrivendoci a tum4world@nessunluogonoesiste.com,
             chiamandoci allo +39 0461 123456 dal lunedì al venerdì dalle 8:00 alle 17:00 oppure contattaci utilizzando il form
