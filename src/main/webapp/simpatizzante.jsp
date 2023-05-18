@@ -11,10 +11,9 @@
 <main>
   <div class="menu2">
     <nav>
-      <button onclick="visualizzaDati();" id="buttonDati">dati personali</button>
+      <button onclick="visualizzaDati();" id="buttonDati" style="background-color: #A6B1E1">dati personali</button>
       <button onclick="visualizzaAttivita();" id="buttonAttivita">partecipa alle attività</button>
       <button onclick="visualizzaDanger();" id="buttonDanger">danger zone</button>
-      <button id="buttonDonation" hidden="true"> </button>  <%-- serve solo per non fare comparire errori nella console per lo script che non lo trova --%>
     </nav>
   </div>
   <div class="containerInvioConfermato">
@@ -37,9 +36,6 @@
       <label for="username"> Username:</label>
       <span id="username"> _RMario_ </span> <br>  <%--TODO aggiungere i dati in maniera dinamica--%>
     </div>
-
-    <div id="donation" hidden="true"> </div>
-
 
     <div id="attivita" hidden="true">
       <br>
@@ -67,7 +63,7 @@
       </form>
     </div>
 
-    <script rel="script" src="scripts/paginePrivate.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e modulare--%>
+    <script rel="script" src="scripts/simpatizzante.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e modulare--%>
 
   </div>
 </main>

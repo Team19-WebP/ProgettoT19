@@ -64,8 +64,8 @@ function visualizzaVisite(){
 
 
     buttonUtenti.style.backgroundColor = "#F4EEFF";
-    buttonSimpatizzanti.style.backgroundColor = "#F4EEFF"; //TODO forse ho fatto una boiata a creare un solo js condiviso per aderente e simpatizzante
-    buttonAderenti.style.backgroundColor = "#F4EEFF";      // perché se mettiamo due css diversi tutte queste parti devono essere diverse e quindi sarà da duplicare
+    buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
+    buttonAderenti.style.backgroundColor = "#F4EEFF";
     buttonVisite.style.backgroundColor = "#A6B1E1";
     buttonDonations.style.backgroundColor = "#F4EEFF";
 }
