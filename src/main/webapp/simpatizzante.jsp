@@ -19,22 +19,93 @@
   <div class="containerInvioConfermato">
 
     <div id="dati" hidden="false">
-      <br>
-      <br>
-      <label for="nome">Nome:</label>
-      <span id="nome"> Mario </span>
-      <label for="cognome"> Cognome:</label>
-      <span id="cognome"> Rossi </span> <br>
-      <label for="ddn">Data Di nascita:</label>
-      <span id="ddn"> 08/11/2002 </span> <br>
-      <label for="email"> E-mail:</label>
-      <span id="email"> mario.rossi@gmail.com </span> <br>
-      <label for="tel"> Telefono:</label>
-      <span id="tel"> +39 377 373 7733</span> <br>
-      <label for="potere"> Tipo di iscrizione:</label>
-      <span id="potere"> Simpatizzante</span> <br>
-      <label for="username"> Username:</label>
-      <span id="username"> _RMario_ </span> <br>  <%--TODO aggiungere i dati in maniera dinamica--%>
+
+      <style>
+        table{
+          border: #424874 solid 2px;
+          margin: 15%;
+          width: max-content;
+          border-collapse: collapse;
+        }
+        tr{
+          border: #424874 solid 2px;
+          border-collapse: collapse;   <%-- TODO @FEDERICO lascio fare a te questi stili e metterli nel css perche non so cosa sto facendo--%>
+          margin: 15%;
+          padding: 15%;
+        }
+        th{
+          border: #424874 solid 2px;
+          border-collapse: collapse;
+          padding: 5%;
+          margin: 10%;
+        }
+      </style>
+
+      <table>
+        <tr>
+          <th>
+            <label for="nome">Nome:</label>
+          </th>
+          <th>
+            <span id="nome"> Mario </span>
+          </th>
+        </tr>
+
+        <tr>
+          <th>
+            <label for="cognome"> Cognome:</label>
+          </th>
+          <th>
+            <span id="cognome"> Rossi </span>
+          </th>
+        </tr>
+
+        <tr>
+          <th>
+            <label for="ddn">Data Di nascita:</label>
+          </th>
+          <th>
+            <span id="ddn"> 08/11/2002 </span>
+          </th>
+        </tr>
+
+        <tr>
+          <th>
+            <label for="email"> E-mail:</label>
+          </th>
+          <th>
+            <span id="email"> mario.rossi@gmail.com </span> <br>
+          </th>
+        </tr>
+
+        <tr>
+          <th>
+            <label for="tel"> Telefono:</label>
+          </th>
+          <th>
+            <span id="tel"> +39 377 373 7733</span>
+          </th>
+        </tr>
+
+        <tr>
+          <th>
+            <label for="potere"> Tipo di iscrizione:</label>
+          </th>
+          <th>
+            <span id="potere"> Simpatizzante</span>
+          </th>
+        </tr>
+        <%--TODO aggiungere i dati in maniera dinamica ( già mezzo fatto nel js)--%>
+        <tr>
+          <th>
+            <label for="username"> Username:</label>
+          </th>
+          <th>
+            <span id="username"> _RMario_ </span>
+          </th>
+        </tr>
+
+      </table>
     </div>
 
     <div id="attivita" hidden="true">

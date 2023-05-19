@@ -76,6 +76,16 @@
                 const regexPass = /^[EFGefg](?=.*[A-Za-z])(?=.*\d)(?=.*[$!?\S]).{7,}$/;
                 const regexNumero = /^([+]?)([0-9]{9,12})$/;
 
+                let nome = document.querySelector("#nome");
+                let cognome = document.querySelector("#cognome");
+                let datadinascita = document.querySelector("#datadinascita");
+                let email = document.querySelector("#email");
+                let telefono = document.querySelector("#telefono");
+                let username = document.querySelector("#username");
+                let passwordVal = document.querySelector("#passwordVal");
+                let confpassword = document.querySelector("#confpassword");
+
+
                 function validaForm(event) {
                     /*Senza manda il submit anche se non è validato*/
                     // event.preventDefault();
@@ -184,6 +194,16 @@
                     passAlert.style.color = "#000000";
                     passAlert.style.fontSize = "xx-small";
                     confPassAlert.hidden = true;
+
+                    nome.style.borderBottomColor =  "black";
+                    cognome.style.borderBottomColor =  "black";
+                    email.style.borderBottomColor =  "black";
+                    datadinascita.style.borderBottomColor =  "black";
+                    telefono.style.borderBottomColor =  "black";
+                    passwordVal.style.borderBottomColor =  "black";
+                    username.style.borderBottomColor =  "black";
+                    confpassword.style.borderBottomColor =  "black";
+
                 }
             </script>
         </form>

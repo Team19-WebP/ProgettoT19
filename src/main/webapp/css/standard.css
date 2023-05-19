@@ -129,6 +129,7 @@ input[type = reset]:hover {
 /*    margin-right: 4%;*/
 /*}*/
 #divLogin {
+    justify-content: space-evenly;
     padding-bottom: 15vw;
 }
 .containerLogoDescrizione {

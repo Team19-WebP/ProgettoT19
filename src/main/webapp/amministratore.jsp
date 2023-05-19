@@ -23,15 +23,123 @@
     <div id="utenti" hidden="false">
       <br>
       <br>
+      <hr>
       <div onclick="showOrHide(this.id);" id="UtenteN">Mario Rossi</div> <%--TODO aggiungere la lista di utenti in una forma simile a questa dove cliccando il nome ti vengono fuori le altre info--%>
+      <hr>
       <div id="infoUtenteN" hidden="true">
-        <p> DATI E ALTRI DATI di Mario Rossi</p>
-        <%--TODO dati inpaginati bene dell'utente (magari non troppi dati sensibili tipo password)--%>
+        <style>
+          table{
+            border-collapse: collapse;
+            border: black solid 1px;
+          }
+        </style>
+        <table>
+          <tr>
+            <th>
+              <label for="ddn">Data Di nascita:</label>
+            </th>
+            <th>
+              <span id="ddn"> 08/11/2002 </span>
+            </th>
+          </tr>
+
+          <tr>
+            <th>
+              <label for="email"> E-mail:</label>
+            </th>
+            <th>
+              <span id="email"> mario.rossi@gmail.com </span> <br>
+            </th>
+          </tr>
+
+          <tr>
+            <th>
+              <label for="tel"> Telefono:</label>
+            </th>
+            <th>
+              <span id="tel"> +39 377 373 7733</span>
+            </th>
+          </tr>
+
+          <tr>
+            <th>
+              <label for="potere"> Tipo di iscrizione:</label>
+            </th>
+            <th>
+              <span id="potere"> Simpatizzante</span>
+            </th>
+          </tr>
+          <%--TODO aggiungere i dati in maniera dinamica ( già mezzo fatto nel js)--%>
+          <tr>
+            <th>
+              <label for="username"> Username:</label>
+            </th>
+            <th>
+              <span id="username"> _RMario_ </span>
+            </th>
+          </tr>
+
+        </table>
+        <hr>
+        <%--TODO dati inpaginati bene dell'utente (magari non troppi dati sensibili tipo password) [bisogna fare una funz js che li carica dinamici obv]--%>
       </div>
       <div onclick="showOrHide(this.id);" id="UtenteM">Marco D'Ambrosio</div>
+      <hr>
       <div id="infoUtenteM" hidden="true">
-        <p> DATI E ALTRI DATI di Marco D'Ambrosio</p>
-        <%--TODO dati inpaginati bene dell'utente (magari non troppi dati sensibili tipo password)--%>
+        <style>
+          table{
+            border-collapse: collapse;
+            border: black solid 1px;
+          }
+        </style>
+        <table>
+          <tr>
+            <th>
+              <label for="ddnUtenteM">Data Di nascita:</label>
+            </th>
+            <th>
+              <span id="ddnUtenteM"> 08/11/2002 </span>
+            </th>
+          </tr>
+
+          <tr>
+            <th>
+              <label for="emailUtenteM"> E-mail:</label>
+            </th>
+            <th>
+              <span id="emailUtenteM"> mario.rossi@gmail.com </span> <br>
+            </th>
+          </tr>
+
+          <tr>
+            <th>
+              <label for="telUtenteM"> Telefono:</label>
+            </th>
+            <th>
+              <span id="telUtenteM"> +39 377 373 7733</span>
+            </th>
+          </tr>
+
+          <tr>
+            <th>
+              <label for="potereUtenteM"> Tipo di iscrizione:</label>
+            </th>
+            <th>
+              <span id="potereUtenteM"> Simpatizzante</span>
+            </th>
+          </tr>
+          <%--TODO aggiungere i dati in maniera dinamica ( già mezzo fatto nel js)--%>
+          <tr>
+            <th>
+              <label for="usernameUtenteM"> Username:</label>
+            </th>
+            <th>
+              <span id="usernameUtenteM"> _RMario_ </span>
+            </th>
+          </tr>
+
+        </table>
+        <hr>
       </div>
     </div>
 
@@ -41,12 +149,11 @@
       <div onclick="showOrHide(this.id);" id="SimpatizzanteN">Gabriele Murru</div> <%--TODO aggiungere la lista di simpatizzanti in una forma simile a questa dove cliccando il nome ti vengono fuori le altre info--%>
       <div id="infoSimpatizzanteN" hidden="true">
         <p> DATI E ALTRI DATI di Gabriele Murru</p>
-        <%--TODO dati inpaginati bene dell'simpatizzante (magari non troppi dati sensibili tipo password)--%>
+        <%--TODO dati inpaginati bene dell'simpatizzante (magari non troppi dati sensibili tipo password) [bisogna fare una funz js che li carica dinamici obv]--%>
       </div>
       <div onclick="showOrHide(this.id);" id="SimpatizzanteM">Kevin Goldoni</div>
       <div id="infoSimpatizzanteM" hidden="true">
         <p> DATI E ALTRI DATI di Kevin Goldoni</p>
-        <%--TODO dati inpaginati bene dell'simpatizzante (magari non troppi dati sensibili tipo password)--%>
       </div>
     </div>
 
@@ -56,12 +163,11 @@
       <div onclick="showOrHide(this.id);" id="AderenteN">Andrea Casulli</div> <%--TODO aggiungere la lista di aderenti in una forma simile a questa dove cliccando il nome ti vengono fuori le altre info--%>
       <div id="infoAderenteN" hidden="true">
         <p> DATI E ALTRI DATI di Andrea Casulli</p>
-        <%--TODO dati inpaginati bene dell'aderente (magari non troppi dati sensibili tipo password)--%>
+        <%--TODO dati inpaginati bene dell'aderente (magari non troppi dati sensibili tipo password) [bisogna fare una funz js che li carica dinamici obv]--%>
       </div>
       <div onclick="showOrHide(this.id);" id="AderenteM">Carmen Delugan</div>
       <div id="infoAderenteM" hidden="true">
         <p> DATI E ALTRI DATI di Carmen Delugan</p>
-        <%--TODO dati inpaginati bene dell'aderente (magari non troppi dati sensibili tipo password)--%>
       </div>
     </div>
 
