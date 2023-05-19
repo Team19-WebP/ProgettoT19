@@ -26,25 +26,23 @@
     </div>
     <br>
     <div> <%-- TODO metterlo in un css  style="height: 60%"--%>
-    <form action="ServletFormContatti" method="post" onsubmit="return validaEmail(email.value)">
+    <form action="ServletFormContatti" method="post" onsubmit="return validaEmail()">
         <div class="inputAndLabel">
             <label for="nome">Nome: </label>
-            <input type="text" id="nome" name="nome" placeholder="inserisci il tuo nome..." maxlength="50" size="100"
-            required>
+            <input type="text" id="nome" name="nome" placeholder="inserisci il tuo nome..." maxlength="50" size="100">
         </div>
         <br><br>
         <div class="inputAndLabel">
             <label for="cognome">Cognome: </label>
             <input type="text" id="cognome" name="cognome" placeholder="inserisci il tuo cognome..." maxlength="50"
-            size="100" required>
+            size="100">
         </div>
         <br><br>
         <div class="inputAndLabel">
-
             <label for="email">Email: </label>
-            <input type="text" id="email" name="email" placeholder="inserisci la tua email..." maxlength="50" size="100"
-            required>
+            <input type="text" id="email" name="email" placeholder="inserisci la tua email..." maxlength="50" size="100">
         </div>
+        <span id="emailAlert" class="alert" hidden="true">(* mail non valida)</span><br>
         <br><br>
         <div class="inputAndLabel">
             <label for="comboBox" id="comboBoxLabel">Motivo del contatto:</label><br>
@@ -90,30 +88,14 @@
         </div>
         <br><br>
         <%-- <label for="altroTextarea">Se vuoi puoi specificare una richiesta:</label><br> --%>
-        <textarea id="altroTextarea" name="altroTextarea" maxlength="300" cols="100" rows="3" hidden="true"
-        required></textarea><br><br>
+        <textarea id="altroTextarea" name="altroTextarea" maxlength="300" cols="100" rows="3" hidden="true"></textarea><br><br>
 
 
         <script rel="script" src="scripts/contatti.js"></script> <%-- includo gli script da un file esterno per modularità --%>
         <div class="inputAndLabel" id="submitReset">
-            <input type="reset" value="Reset" onclick="nascondiTextarea()">
+            <input type="reset" value="Reset" onclick="resetContatti()">
             <input type="submit" value="Invia">
         </div>
-
-        <%-- script che verifica la validita' dell'email --%>
-        <script>
-            function validaEmail(email) {
-                var regex = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
-                if (!regex.test(email)) {
-                    alert('Email non valida');
-                    return false;
-                }
-                return true;
-            }
-        </script>
-
-
-
     </form>
     </div>
 </main>
