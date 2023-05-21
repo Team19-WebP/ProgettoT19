@@ -171,23 +171,21 @@
       </div>
     </div>
 
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>      <%--vari script delle librerie necessari per la visualizzazione dei grafici--%>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> <%--questo nello specifico è essenziale--%>
+
     <div id="visite" hidden="true">
-      <br>
       <br>
       <div> il sito è stato visitato XXXX volte in totale.</div> <%--TODO prendere il numero di visite da un BEAN e aggiungerlo dinamicamente--%>
       <div id="grafico visite">
-        <p> Grafico delle visite del sito</p>
-
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/data.js"></script>
-        <script src="https://code.highcharts.com/modules/series-label.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        <script src="https://code.highcharts.com/modules/export-data.js"></script>
-        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
         <figure class="highcharts-figure">
-          <div id="GraficoVisite"></div>
+          <div id="GraficoVisite"></div>  <%--div che viene utilizzato dalle librerie per riempirlo con il grafico interattivo--%>
           <p class="highcharts-description">    <%--TODO capire come si fanno i grafici [bene] con sta figata di lib--%>
             Grafico delle visite del sito.
           </p>
@@ -197,12 +195,16 @@
     </div>
 
     <div id="donations" hidden="true">
-      <br>
-      <br>
-      <div> sono stati donati 3244978€ a Tum4World </div> <%--TODO prendere il numero di soldi donati dal DB e aggiungerlo dinamicamente--%>
-      <div id="grafico donazioni">
-        <p> Grafico delle donazioni a Tum4World mese per mese</p> <%--TODO capire come si fanno i grafici con la lib della prof--%>
-      </div>
+
+      <div> il sito ha ricevuto XXXX€ in totale.</div> <%--TODO prendere il numero di visite da un BEAN e aggiungerlo dinamicamente--%>
+
+      <figure class="highcharts-figure">
+        <div id="GraficoDonazioni"></div>  <%--div che viene utilizzato dalle librerie per riempirlo con il grafico interattivo--%>
+        <p class="highcharts-description">    <%--TODO capire come si fanno i grafici [bene] con sta figata di lib--%>
+          Grafico delle donazioni al sito.
+        </p>
+      </figure>
+
     </div>
 
     <script rel="script" src="scripts/amministratore.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>

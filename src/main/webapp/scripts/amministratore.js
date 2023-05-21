@@ -110,7 +110,7 @@ function stampaUtenti(){  //TODO faccio la stessa cosa per aderenti e simpatizza
 ////////////////////////////////////////////////////GRAFICI/////////////////////////////////////////////////////////////
 // A point click event that uses the Renderer to draw a label next to the point
 // On subsequent clicks, move the existing label instead of creating a new one.
-Highcharts.addEvent(Highcharts.Point, 'click', function () {
+Highcharts.addEvent(Highcharts.Point, 'click', function () {   //aggiunge l'evento che fa si che quando clicchi rimangano le informazioni fissate
     if (this.series.options.className.indexOf('popup-on-click') !== -1) {
         const chart = this.series.chart;
         const date = Highcharts.dateFormat('%A, %b %e, %Y', this.x);
@@ -145,8 +145,32 @@ Highcharts.addEvent(Highcharts.Point, 'click', function () {
     }
 });
 
+function getViewsData(){
+    let d = [];
 
-Highcharts.chart('GraficoVisite', {
+    for(let i=0; i<12;i++){
+        //d[i] = unQualcheBean.sommaDonazioniMese[i]; TODO creare bean e popolarlo con i  dati del DB aggiornati
+        //d[i] = [(10*i)+i - (i%3)*i*i,"2017-"+i+"-18 00:00:00"];
+        d[i] = (10*i)+i - (i%2)*i*i;//valori più o meno a caso temporanei
+    }
+    return d;
+}
+
+function getViewsUserData(){
+
+    let d = [];
+
+    for(let i=0; i<12;i++){
+        //d[i] = unQualcheBean.sommaDonazioniMese[i]; TODO creare bean e popolarlo con i  dati del DB aggiornati
+        //d[i] = [(10*i)+i - (i%3)*i*i,"2017-"+i+"-18 00:00:00"];
+        d[i] = (10*i)+i - (i%7)*i*i; //valori più o meno a caso temporanei
+    }
+    return d;
+}
+
+
+
+Highcharts.chart('GraficoVisite', {  //chiama la funzione della libreria chart che crea un grafico nel div con id ARG1 e con i dati nel JSON ARG2
 
     chart: {
         scrollablePlotArea: {
@@ -154,20 +178,20 @@ Highcharts.chart('GraficoVisite', {
         }
     },
 
-    data: {
+    /*data: {
         csvURL: 'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/analytics.csv',
         beforeParse: function (csv) {
             return csv.replace(/\n\n/g, '\n');
         }
-    },
+    },*/
 
     title: {
-        text: 'Daily sessions at www.highcharts.com',
+        text: 'Daily views at www.Tum4World.com',
         align: 'left'
     },
 
     subtitle: {
-        text: 'Source: Google Analytics',
+        text: 'Source: Tum4World Analytics',
         align: 'left'
     },
 
@@ -231,13 +255,129 @@ Highcharts.chart('GraficoVisite', {
     },
 
     series: [{
-        name: 'All sessions',
+        name: 'users',
+        lineWidth: 2,
+        data: getViewsUserData()
+        }, {
+        name: 'views',
         lineWidth: 4,
         marker: {
             radius: 4
+        },
+        data: getViewsData()
+    }
+    /*,{
+        name: 'month',
+        data: ["2017-01-18 00:00:00","2017-02-18 00:00:00","2017-03-18 00:00:00","2017-04-18 00:00:00","2017-05-18 00:00:00","2017-06-18 00:00:00","2017-07-18 00:00:00","2017-08-18 00:00:00","2017-09-18 00:00:00","2017-10-18 00:00:00","2017-11-18 00:00:00","2017-12-18 00:00:00"]
+    }*/
+    ]
+});
+
+function getDonationData(){
+
+    let d = [];
+
+    for(let i=0; i<12;i++){
+        //d[i] = unQualcheBean.sommaDonazioniMese[i]; TODO creare bean e popolarlo con i  dati del DB aggiornati
+        d[i] = (10*i)+i - (i%3)*i*i; //valori più o meno a caso temporanei
+    }
+
+    //let t = ["2017-12-18 00:00:00","2017-12-19 00:00:00","2017-12-20 00:00:00","2017-12-21 00:00:00","2017-12-22 00:00:00","2017-12-23 00:00:00","2017-12-24 00:00:00",];
+    return d;
+}
+
+
+Highcharts.chart('GraficoDonazioni', {  //chiama la funzione della libreria chart che crea un grafico nel div con id ARG1 e con i dati nel JSON ARG2
+
+    chart: {
+        scrollablePlotArea: {
+            minWidth: 700
         }
-    }, {
-        name: 'New users'
+    },
+
+    /*data: {
+        csvURL: './test.csv',
+        beforeParse: function (csv) {    così si importano i dati da un file esterno ma non ci serve e comunque vada panta rei ah no scusate comunque non funziona
+            return csv.replace(/\n\n/g, '\n');
+        }
+    },*/
+
+    title: {
+        text: 'Daily donations for www.Tum4World.com',
+        align: 'left'
+    },
+
+    subtitle: {
+        text: 'Source: Tum4World Analytics',
+        align: 'left'
+    },
+
+    xAxis: {
+        tickInterval: 7 * 24 * 3600 * 1000, // one week
+        tickWidth: 0,
+        gridLineWidth: 1,
+        labels: {
+            align: 'left',
+            x: 3,
+            y: -3
+        }
+    },
+
+    yAxis: [{ // left y axis
+        title: {
+            text: null
+        },
+        labels: {
+            align: 'left',
+            x: 3,
+            y: 16,
+            format: '{value:.,0f}'
+        },
+        showFirstLabel: false
+    }, { // right y-axis
+        linkedTo: 0,
+        gridLineWidth: 0,
+        opposite: true,
+        title: {
+            text: null
+        },
+        labels: {
+            align: 'right',
+            x: -3,
+            y: 16,
+            format: '{value:.,0f}'
+        },
+        showFirstLabel: false
+    }],
+
+    legend: {
+        align: 'left',
+        verticalAlign: 'top',
+        borderWidth: 0
+    },
+
+    tooltip: {
+        shared: true,
+        crosshairs: true
+    },
+
+    plotOptions: {
+        series: {
+            cursor: 'pointer',
+            className: 'popup-on-click',
+            marker: {
+                lineWidth: 1
+            }
+        }
+    },
+
+    series: [{
+        name: 'Donations',
+        lineWidth: 4,
+        marker: {
+            radius: 4
+        },
+        data: getDonationData(),
     }]
 });
 ////////////////////////////////////////////////////GRAFICI/////////////////////////////////////////////////////////////
