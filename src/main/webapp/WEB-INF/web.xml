@@ -8,18 +8,6 @@
     </welcome-file-list>
 
     <filter>
-        <filter-name>UserFilter</filter-name>
-        <filter-class>unitn.disi.web.progettoteam19.UserFilter</filter-class>
-    </filter>
-
-    <filter-mapping>
-        <filter-name>UserFilter</filter-name>
-        <url-pattern>/aderente.jsp</url-pattern>
-        <url-pattern>/amministratore.jsp</url-pattern>
-        <url-pattern>/simpatizzante.jsp</url-pattern>
-    </filter-mapping>
-
-    <filter>
         <filter-name>FiltroAderente</filter-name>
         <filter-class>unitn.disi.web.progettoteam19.FiltroAderente</filter-class>
     </filter>
@@ -47,6 +35,19 @@
     <filter-mapping>
         <filter-name>FiltroAmministratore</filter-name>
         <url-pattern>/amministratore.jsp</url-pattern>
+    </filter-mapping>
+
+
+    <filter>
+        <filter-name>UserFilter</filter-name>
+        <filter-class>unitn.disi.web.progettoteam19.UserFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>UserFilter</filter-name>
+        <url-pattern>/aderente.jsp</url-pattern>
+        <url-pattern>/amministratore.jsp</url-pattern>
+        <url-pattern>/simpatizzante.jsp</url-pattern>
     </filter-mapping>
 
     <session-config>
