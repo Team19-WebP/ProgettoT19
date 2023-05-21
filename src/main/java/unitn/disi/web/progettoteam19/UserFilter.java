@@ -24,6 +24,11 @@ public class UserFilter implements Filter {
         HttpSession session = req.getSession(false);
 
         if(session == null || session.getAttribute("auth") == null || session.getAttribute("auth").equals("false")) {
+            ServletContext servletContext = request.getServletContext();
+            String cookies = (String) servletContext.getAttribute("cookies");
+            if(cookies == null || cookies.equals("false")){
+                servletContext.setAttribute("cookies", null);
+            }
             req.getRequestDispatcher(res.encodeURL("./login.jsp")).forward(req, res);
         } else {
             chain.doFilter(request, response);

@@ -48,6 +48,18 @@ function visualizzaDanger(){
     buttonDonation.style.backgroundColor = "#F4EEFF";
 }
 
+function logout(){
+    let xht = new XMLHttpRequest();
+    xht.onreadystatechange = function()  {
+        if(this.readyState == 4 && this.status == 200) {
+            document.location.href = "home.jsp";
+            window.alert("Logout effettuato con successo!");
+        }
+    }
+    xht.open("POST", "/progettoteam19/ServletLogout", true);
+    xht.send();
+}
+
 function visualizzaDonation(){
     dati.hidden = true;
     danger.hidden = true;

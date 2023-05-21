@@ -1,10 +1,8 @@
 package unitn.disi.web.progettoteam19;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.NumberFormat;
@@ -14,6 +12,15 @@ import javax.servlet.annotation.*;
 @WebServlet(name = "ServletLogout", value = "/ServletLogout")
 public class ServletLogout extends HttpServlet {
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.setAttribute("auth", null);
+        session.setAttribute("type", null);
+        session.invalidate();
+        ServletContext servletContext = request.getServletContext();
+        if(servletContext.getAttribute("cookies").equals("false")){
+            servletContext.setAttribute("cookies", null);
+        }
+        //response.sendRedirect("./logout.jsp");
     }
 
     @Override
