@@ -13,8 +13,8 @@ import java.io.IOException;
 public class SessionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(true);
-        String cookiesPref = (String) session.getAttribute("cookies");
+        ServletContext servletContext = request.getServletContext();
+        String cookiesPref = (String) servletContext.getAttribute("cookies");
         if(cookiesPref != null) {
             response.getWriter().print(cookiesPref);
         } else {
@@ -26,14 +26,21 @@ public class SessionServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String cookiesPref = request.getParameter("cookies");
         if (cookiesPref != null) {
-            HttpSession session = request.getSession();
 
-            if (session.getAttribute("cookies") == null ) {
-                session.setAttribute("cookies", cookiesPref);
+            HttpSession session = request.getSession();
+            session.setAttribute("auth", "false");
+
+            ServletContext servletContext = request.getServletContext();
+
+            if (servletContext.getAttribute("cookies") == null ) {
+                servletContext.setAttribute("cookies", cookiesPref);
                 response.getWriter().write("Cookies preferences are set on " + cookiesPref + " and they saved for this session.");
             } else {
-                response.getWriter().write("Cookies preferences were already set as " + session.getAttribute("cookies"));
+                response.getWriter().write("Cookies preferences were already set as " + servletContext.getAttribute("cookies"));
             }
+        }
+        else {
+            request.getRequestDispatcher(response.encodeURL("./error.jsp")).forward(request, response);
         }
     }
 }

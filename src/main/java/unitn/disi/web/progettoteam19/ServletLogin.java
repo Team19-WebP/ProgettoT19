@@ -18,8 +18,7 @@ public class ServletLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String username = (String) request.getAttribute("username");
-
+        String username = request.getParameter("username");
 
         //TODO fare i controlli da backend tipo che esista account e che password sia quella giusta
 
@@ -27,14 +26,31 @@ public class ServletLogin extends HttpServlet {
 
         //TODO cambiare intestazione con intestazioneLoggato (forse non ha senso copiare il codice in ogni servlet ma chiamare una servlet chiamata tipo servlet sessione che gestisce quello e poi richiama questa)
 
-        boolean aderente = true, simpatizzante = true, amministratore = true;
+        boolean aderente = false, simpatizzante = false, amministratore = false;
 
+
+        if(username.equals("aderente")){
+            aderente = true;
+        } else if(username.equals("simpatizzante")) {
+            simpatizzante = true;
+        } else {
+            amministratore = true;
+        }
+
+        HttpSession session = request.getSession(true);
+        session.setAttribute("auth", "true");
         if(aderente){
-            response.sendRedirect("./aderente.jsp");
+            session.setAttribute("type", "aderente");
+            response.sendRedirect(response.encodeURL("./aderente.jsp"));
         } else if (simpatizzante) {
-            response.sendRedirect("./simpatizzante.jsp");
+            session.setAttribute("type", "simpatizzante");
+            response.sendRedirect(response.encodeURL("./simpatizzante.jsp"));
         }else if (amministratore) {
-            response.sendRedirect("./amministratore.jsp");
-        }else response.sendRedirect("./error.jsp");
+            session.setAttribute("type", "amministratore");
+            response.sendRedirect(response.encodeURL("./amministratore.jsp"));
+        }else {
+            response.sendRedirect(response.encodeURL("./error.jsp"));
+        }
+
     }
 }
