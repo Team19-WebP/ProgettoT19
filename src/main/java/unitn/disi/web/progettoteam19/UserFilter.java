@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 
 @WebFilter(filterName = "UserFilter")
 public class UserFilter implements Filter {
+
     public void init(FilterConfig config) throws ServletException {
     }
 
@@ -25,7 +26,6 @@ public class UserFilter implements Filter {
         } else {
             session.setAttribute("provaFilter", "non sono una nuova sessione");
         }
-//        if (session.getAttribute("auth").equals(false))
         chain.doFilter(request, response);
     }
 }

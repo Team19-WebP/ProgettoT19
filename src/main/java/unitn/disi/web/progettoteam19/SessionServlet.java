@@ -15,7 +15,6 @@ public class SessionServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(true);
         String cookiesPref = (String) session.getAttribute("cookies");
-//        response.setContentType("application/x-www-form-urlencoded");
         if(cookiesPref != null) {
             response.getWriter().print(cookiesPref);
         } else {

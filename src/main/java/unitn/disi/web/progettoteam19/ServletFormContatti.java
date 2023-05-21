@@ -27,6 +27,8 @@ public class ServletFormContatti extends HttpServlet {
         String altroTextarea = request.getParameter("altroTextarea");
         */
 
+        //simuliamo l'invio della mail
+
         response.sendRedirect("./invioConfermato.jsp");
     }
 }
