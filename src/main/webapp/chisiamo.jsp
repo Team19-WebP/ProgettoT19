@@ -92,7 +92,7 @@
 
     Sul territorio nazionale è anche presente una sede nella capitale, a Roma, per coordinare l'operato con altre associazioni di volontariato italiane.
 
-    Stiamo attualmente lavorando alla costruzione di una sede a Gitega, in Burundi, e a Freetown, in Sierra Leone, per permettere ai volontari sul territorio di avere una base sicura
+    Stiamo attualmente lavorando alla costruzione di una sede a Gitega, in Burundi, e a Freetown, in Sierra Leone, per permettere ai volontari sul territorio di avere una base sicura.
   </section>
 
   <section>
