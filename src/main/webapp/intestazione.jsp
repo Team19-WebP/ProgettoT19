@@ -40,8 +40,27 @@
             </div>
         </div>
         <a href="contatti.jsp">Contatti</a>
-        <a href="signin.jsp">Sign-in</a>   <%--TODO mettiamo il l--%>
+        <%
+            if(session == null || session.getAttribute("auth") == null || session.getAttribute("auth").equals("false") || session.getAttribute("type") == null) {
+        %>
+        <a href="signin.jsp">Sign-in</a>
         <a href="login.jsp">Login</a>
+        <% } else {
+            if(session.getAttribute("type").equals("amministratore")){
+        %>
+        <a href="amministratore.jsp">Pagina personale</a>
+        <%
+            } else if(session.getAttribute("type").equals("aderente")) {
+        %>
+        <a href="aderente.jsp">Pagina personale</a>
+        <%
+            } else if(session.getAttribute("type").equals("simpatizzante")) {
+        %>
+        <a href="simpatizzante.jsp">Pagina personale</a>
+        <% }
+        %>
+        <a href="ServletLogout">Logout</a>
+        <%}%>
     </nav>
     <jsp:include page="informativaCookies.jsp"></jsp:include>
 

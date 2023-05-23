@@ -12,6 +12,7 @@
   <div class="containerInvioConfermato">
     <div class="containerDescrizione">
       <h2>Logout effettuato con successo</h2>
+      <p>Torna alla <a href="home.jsp">home</a>!</p>
     </div>
   </div>
 </main>
