@@ -2,6 +2,7 @@ package unitn.disi.web.progettoteam19;
 
 import java.sql.*;
 
+//TODO decidere se ce ne fottiamo della Varni e facciamo con una classe o se assecondiamo e facciamo una servlet
 public class AccessoDB {
 
     Class c1 =  Class.forName("org.apache.derby.jdbc.ClientDriver");

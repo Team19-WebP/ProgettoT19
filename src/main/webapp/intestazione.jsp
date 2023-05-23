@@ -40,7 +40,7 @@
             </div>
         </div>
         <a href="contatti.jsp">Contatti</a>
-        <a href="signin.jsp">Sign-in</a>
+        <a href="signin.jsp">Sign-in</a>   <%--TODO mettiamo il l--%>
         <a href="login.jsp">Login</a>
     </nav>
     <jsp:include page="informativaCookies.jsp"></jsp:include>

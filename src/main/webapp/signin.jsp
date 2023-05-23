@@ -2,9 +2,6 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <jsp:include page="frasiIspiranti.jsp"></jsp:include>
 <main>
-    <style>
-
-    </style>
     <div class="formContSignLog">
         <p>Hai già un account? Esegui il <a href="login.jsp">login</a>!</p>
         <form action="ServletSignin"  method="post"

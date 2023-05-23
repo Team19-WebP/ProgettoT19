@@ -1,12 +1,11 @@
 package unitn.disi.web.progettoteam19;
 
 import javax.servlet.*;
-import javax.servlet.annotation.*;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebFilter(filterName = "FiltroAmministratore")
 public class FiltroAmministratore implements Filter {

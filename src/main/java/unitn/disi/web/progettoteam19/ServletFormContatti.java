@@ -1,12 +1,11 @@
 package unitn.disi.web.progettoteam19;
 
-import java.io.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
 import javax.servlet.ServletException;
-import java.io.PrintWriter;
-import java.text.NumberFormat;
-import java.text.ParseException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @WebServlet(name = "ServletFormContatti", value = "/ServletFormContatti")
 public class ServletFormContatti extends HttpServlet {
