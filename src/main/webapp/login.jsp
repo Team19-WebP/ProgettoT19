@@ -16,7 +16,7 @@
                 <input type="password" id="password" name="password" maxlength="50" size="50"><br><br>
             </div>
             <div class="inputAndLabel" id="submitReset">
-                <input type="reset" value="Reset">
+                <input type="reset" value="Reset" onclick="resetForm()">
                 <input type="submit" value="Invia">
             </div>
 
