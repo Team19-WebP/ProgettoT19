@@ -15,7 +15,6 @@
       <button onclick="visualizzaDonation();" id="buttonDonation">dona alla associazione</button>
       <button onclick="visualizzaAttivita();" id="buttonAttivita">partecipa alle attività</button>
       <button onclick="visualizzaDanger();" id="buttonDanger">danger zone</button>
-      <button onclick="logout();" id="logout">Logout</button>
     </nav>
   </div>
   <div class="containerInvioConfermato">

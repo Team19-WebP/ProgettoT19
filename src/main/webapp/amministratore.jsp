@@ -16,7 +16,6 @@
       <button onclick="visualizzaAderenti();" id="buttonAderenti">elenco di tutti gli aderenti</button>
       <button onclick="visualizzaVisite();" id="buttonVisite">statistiche visite al sito</button>
       <button onclick="visualizzaDonations();" id="buttonDonations">statistiche donazioni</button>  <%--TODO siamo sicuri che l'amministratore non debba poter fare anche lui le cose che fa un adrerente (disiscriversi o donare) --%>
-      <button onclick="logout();" id="logout">Logout</button>
     </nav>
   </div>
   <div class="containerInvioConfermato">

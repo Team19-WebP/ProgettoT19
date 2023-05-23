@@ -6,19 +6,6 @@ let buttonDati = document.querySelector("#buttonDati");         //
 let buttonDanger = document.querySelector("#buttonDanger");     // Button delle varie sezioni da mostrare/nascondere
 let buttonAttivita = document.querySelector("#buttonAttivita"); // servono qui per cambiare il colore del bottone della sezione in cui siamo
 
-function logout(){
-    let xht = new XMLHttpRequest();
-    xht.onreadystatechange = function()  {
-        if(this.readyState == 4 && this.status == 200) {
-            document.location.href = "home.jsp";        //funzione che riporta alla home ed effettua il logout informando l'utente
-            window.alert("Logout effettuato con successo!");
-        }
-    }
-    xht.open("POST", "/progettoteam19/ServletLogout", true);   //faccio fare il logout vero e proprio alla ServletLogout
-    xht.send();
-}
-
-
 function visualizzaDati(){
     dati.hidden = false;
     danger.hidden = true;

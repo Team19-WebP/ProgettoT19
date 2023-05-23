@@ -14,7 +14,6 @@
       <button onclick="visualizzaDati();" id="buttonDati" style="background-color: #A6B1E1">dati personali</button>
       <button onclick="visualizzaAttivita();" id="buttonAttivita">partecipa alle attività</button>
       <button onclick="visualizzaDanger();" id="buttonDanger">danger zone</button>
-      <button onclick="logout();" id="logout">Logout</button>  <%-- TODO credo sia più bello messo nel menù principale al posto di login/signin con affianco il link alla pagina privata--%>
     </nav>
   </div>
   <div class="containerInvioConfermato">
