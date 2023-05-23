@@ -1,10 +1,23 @@
+<%@ page import="unitn.disi.web.progettoteam19.Counter" %>
 <!-- Ho messo la frase dentro al Bean -->
+
+<%
+    Counter counter = (Counter) application.getAttribute("counter");
+    if(counter == null) {
+        counter = new Counter();
+        application.setAttribute("counter", counter);
+    }
+        counter.addHit();
+%>
 
 <div class="frasiInspiranti">
 <%--    <jsp:useBean id="fraseTMP" class="unitn.disi.web.progettoteam19.frase.BeanFrase" scope="session"/>--%>
 <%--    <i id="fi">  <jsp:getProperty name="fraseTMP" property="fraseIsipirante" /> </i>--%>
     <i id="fraseInMostra"></i>
+    <i><%= counter %></i>
 </div>
+
+
 <style>
     #fraseInMostra {
         box-sizing: border-box;

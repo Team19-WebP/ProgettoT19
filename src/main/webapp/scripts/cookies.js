@@ -10,6 +10,7 @@ function apriInformativa() {
 
 // funzione per controllare se i cookies siano già stati impostati
 function controllaPreferenza() {
+
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4) {
@@ -30,6 +31,7 @@ function controllaPreferenza() {
     xhttp.open("GET", "/progettoteam19/SessionServlet", true);
     xhttp.send();
 }
+
 // richiesta alla servlet SessionServlet per settare la scelta dell'utente
 function preferenzaCookies(pref) {
     let xhttp = new XMLHttpRequest();

@@ -8,8 +8,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebFilter(filterName = "UserFilter")
-public class UserFilter implements Filter {
+@WebFilter(filterName = "FiltroAderente")
+public class FiltroAderente implements Filter {
 
     public void init(FilterConfig config) throws ServletException {
     }
@@ -23,15 +23,11 @@ public class UserFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
 
-        if(session == null || session.getAttribute("auth") == null || session.getAttribute("auth").equals("false")) {
-            ServletContext servletContext = request.getServletContext();
-            String cookies = (String) servletContext.getAttribute("cookies");
-            if(cookies == null || cookies.equals("false")){
-                servletContext.setAttribute("cookies", null);
-            }
-            req.getRequestDispatcher(res.encodeURL("./login.jsp")).forward(req, res);
-        } else {
+        if(session != null && session.getAttribute("type") != null && session.getAttribute("type").equals("aderente")){
             chain.doFilter(request, response);
+        } else {
+            req.getRequestDispatcher(res.encodeURL("./home.jsp")).forward(req, res);
         }
+
     }
 }

@@ -9,6 +9,20 @@ let buttonSimpatizzanti = document.querySelector("#buttonSimpatizzanti");   //
 let buttonAderenti = document.querySelector("#buttonAderenti");             // Button delle varie sezioni da mostrare/nascondere
 let buttonVisite = document.querySelector("#buttonVisite");                 // servono qui per cambiare il colore del bottone della sezione in cui siamo
 let buttonDonations = document.querySelector("#buttonDonations");           //
+
+function logout(){
+    let xht = new XMLHttpRequest();
+    xht.onreadystatechange = function()  {
+        if(this.readyState == 4 && this.status == 200) {
+            document.location.href = "home.jsp";
+            window.alert("Logout effettuato con successo!");
+        }
+    }
+    xht.open("POST", "/progettoteam19/ServletLogout", true);
+    xht.send();
+}
+
+
 function visualizzaUtenti(){
     utenti.hidden = false;
     stampaUtenti();

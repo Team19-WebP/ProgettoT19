@@ -8,13 +8,7 @@ import java.util.Objects;
 
 @WebServlet(name = "ServletLogin", value = "/ServletLogin")
 public class ServletLogin extends HttpServlet {
-    Utente utente;
 
-    protected Utente database(String username){
-        Utente u = new Utente();
-        //TODO accedo ala DB e prendo l'utente di nome username
-        return u;
-    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,22 +18,39 @@ public class ServletLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String username = (String) request.getAttribute("username");
+        String username = request.getParameter("username");
 
-
-        utente = database(username);
         //TODO fare i controlli da backend tipo che esista account e che password sia quella giusta
 
         //TODO prendere dati utente dal DB
 
         //TODO cambiare intestazione con intestazioneLoggato (forse non ha senso copiare il codice in ogni servlet ma chiamare una servlet chiamata tipo servlet sessione che gestisce quello e poi richiama questa)
 
-        if(Objects.equals(utente.permesso, "aderente")){
-            response.sendRedirect("./aderente.jsp");
-        } else if (Objects.equals(utente.permesso, "simpatizzante")) {
-            response.sendRedirect("./simpatizzante.jsp");
-        }else if (Objects.equals(utente.permesso, "amministratore")) {
-            response.sendRedirect("./amministratore.jsp");
-        }else response.sendRedirect("./error.jsp");
+        boolean aderente = false, simpatizzante = false, amministratore = false;
+
+
+        if(username.equals("aderente")){
+            aderente = true;
+        } else if(username.equals("simpatizzante")) {
+            simpatizzante = true;
+        } else {
+            amministratore = true;
+        }
+
+        HttpSession session = request.getSession(true);
+        session.setAttribute("auth", "true");
+        if(aderente){
+            session.setAttribute("type", "aderente");
+            response.sendRedirect(response.encodeURL("./aderente.jsp"));
+        } else if (simpatizzante) {
+            session.setAttribute("type", "simpatizzante");
+            response.sendRedirect(response.encodeURL("./simpatizzante.jsp"));
+        }else if (amministratore) {
+            session.setAttribute("type", "amministratore");
+            response.sendRedirect(response.encodeURL("./amministratore.jsp"));
+        }else {
+            response.sendRedirect(response.encodeURL("./error.jsp"));
+        }
+
     }
 }
