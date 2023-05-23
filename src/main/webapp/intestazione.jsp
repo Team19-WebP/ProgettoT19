@@ -42,11 +42,14 @@
         <a href="contatti.jsp">Contatti</a>
         <%
             if(session == null || session.getAttribute("auth") == null || session.getAttribute("auth").equals("false") || session.getAttribute("type") == null) {
+                //se l'utente non è loggato allora farò vedere i bottoni login e signin
         %>
         <a href="signin.jsp">Sign-in</a>
         <a href="login.jsp">Login</a>
         <% } else {
+                //altrimenti al loro posto vi saranno logout e la pagina privata
             if(session.getAttribute("type").equals("amministratore")){
+                //che però deve mandare alla pagina giusta in base ai privilegi dell'utente
         %>
         <a href="amministratore.jsp">Pagina personale</a>
         <%

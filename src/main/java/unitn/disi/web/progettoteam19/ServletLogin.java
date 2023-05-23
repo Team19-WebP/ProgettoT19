@@ -25,10 +25,10 @@ public class ServletLogin extends HttpServlet {
 
 
         //TODO prendere dati utente dal DB
+
         //TODO fare i controlli da backend tipo che esista account e che password sia quella giusta
 
-        //TODO cambiare intestazione con intestazioneLoggato (forse non ha senso copiare il codice in ogni servlet ma chiamare una servlet chiamata tipo servlet sessione che gestisce quello e poi richiama questa)
-
+        //TODO aggiungere ad un BEAN o alla sessione TUTTI i dati dell'utente tranne la password
         boolean aderente = false, simpatizzante = false, amministratore = false;
 
 

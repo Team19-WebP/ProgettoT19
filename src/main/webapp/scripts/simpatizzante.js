@@ -39,17 +39,6 @@ function visualizzaDanger(){
     buttonAttivita.style.backgroundColor = "#F4EEFF";
 }
 
-function visualizzaDonation(){
-    dati.hidden = true;
-    danger.hidden = true;
-    attivita.hidden = true;
-
-
-    buttonDati.style.backgroundColor = "#F4EEFF";
-    buttonDanger.style.backgroundColor = "#F4EEFF";
-    buttonAttivita.style.backgroundColor = "#F4EEFF";
-}
-
 function clickImage(attivita){
     attivita.checked = !attivita.checked; // fa si che quando viene cliccata l'immagine di un attività essa venga selezionata
 }
