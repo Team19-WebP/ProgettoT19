@@ -3,6 +3,28 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <jsp:include page="frasiIspiranti.jsp"></jsp:include>
 
+<main>
+    <div class="formContSignLog" id="divLogin">
+        <p>Non hai un account? Registrati <a href="signin.jsp">qui</a>!</p>
+        <form action="ServletLogin" method="post" onsubmit="return validaFormLogin()">
+            <div class="inputAndLabel">
+                <label for="username">Username: </label>
+                <input type="text" id="username" name="username" maxlength="50" size="50"><br><br> <!-- TODO controllare che non ci sia un utente con questo username-->
+            </div>
+            <div class="inputAndLabel">
+                <label for="password">Password: </label>
+                <input type="password" id="password" name="password" maxlength="50" size="50"><br><br>
+            </div>
+            <div class="inputAndLabel" id="submitReset">
+                <input type="reset" value="Reset">
+                <input type="submit" value="Invia">
+            </div>
+
+
+        </form>
+    </div>
+</main>
+
 <script>
     /* Ho tirato via la regex della password, così può entrare anche l'amministratore.*/
     let user = document.getElementById("username");
@@ -51,26 +73,5 @@
     }
 
 </script>
-<main>
-    <div class="formContSignLog" id="divLogin">
-        <p>Non hai un account? Registrati <a href="signin.jsp">qui</a>!</p>
-        <form action="ServletLogin" method="post" onsubmit="return validaFormLogin()">
-            <div class="inputAndLabel">
-                <label for="username">Username: </label>
-                <input type="text" id="username" name="username" maxlength="50" size="50" required><br><br> <!-- TODO controllare che non ci sia un utente con questo username-->
-            </div>
-            <div class="inputAndLabel">
-                <label for="password">Password: </label>
-                <input type="password" id="password" name="password" maxlength="50" size="50" required><br><br>
-            </div>
-            <div class="inputAndLabel" id="submitReset">
-                <input type="reset" value="Reset">
-                <input type="submit" value="Invia">
-            </div>
-
-
-        </form>
-    </div>
-</main>
 
 <jsp:include page="footer.jsp"></jsp:include>
