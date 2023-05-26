@@ -1,11 +1,52 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: missge8urt
-  Date: 07/05/2023
-  Time: 13:15
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.sql.Statement" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
+
+<%!
+
+  String dbURL = "jdbc:derby://localhost:1527/PrimoDB";
+
+  String user = "App";
+  String password = "pw";
+  Connection conn = null;
+
+  public void jspInit(){
+    try {
+      Class.forName("org.apache.derby.jdbc.ClientDriver");
+      conn = DriverManager.getConnection(dbURL, user, password);
+
+      Statement stmt = conn.createStatement();
+      stmt.executeUpdate("INSERT INTO Utenti VALUES ('Gabriele', 'Volani', 21)");
+      stmt.executeUpdate("INSERT INTO Utenti VALUES ('Stefano', 'Baldi', 15)");
+      stmt.executeUpdate("INSERT INTO Utenti VALUES ('Mirco', 'Nardin', 68)");
+      stmt.executeUpdate("INSERT INTO Utenti VALUES ('Leonardo', 'Goller', 28)");
+      stmt.executeUpdate("INSERT INTO Utenti VALUES ('Nicolas', 'Gonzalez', 24)");
+      stmt.close();
+
+    } catch (ClassNotFoundException | SQLException ex) {
+      ex.printStackTrace();
+    }
+  }
+
+  public void jspDestroy(){
+    try {
+      Statement stmt = conn.createStatement();
+      stmt.executeUpdate("DROP TABLE Utenti");
+
+      conn.close();
+    } catch (SQLException ex) {
+      ex.printStackTrace();
+    }
+  }
+
+%>
+
+<%
+  application.setAttribute("conn", conn);
+%>
+
 <jsp:include page="intestazione.jsp"></jsp:include>
 <main>
   <jsp:include page="frasiIspiranti.jsp"></jsp:include>

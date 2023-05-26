@@ -11,7 +11,7 @@
 <main>
   <div class="menu2">
     <nav>
-      <button onclick="visualizzaUtenti();" id="buttonUtenti" style="background-color: #A6B1E1">elenco di tutti gli utenti</button>
+      <button onclick="visualizzaUtenti();" id="buttonUtenti">elenco di tutti gli utenti</button>
       <button onclick="visualizzaSimpatizzanti();" id="buttonSimpatizzanti">elenco di tutti i simpatizzanti</button>
       <button onclick="visualizzaAderenti();" id="buttonAderenti">elenco di tutti gli aderenti</button>
       <button onclick="visualizzaVisite();" id="buttonVisite">statistiche visite al sito</button>
@@ -20,7 +20,7 @@
   </div>
   <div class="containerInvioConfermato">
 
-    <div id="utenti" hidden="false">
+    <div id="utenti" hidden="true">
       <br>
       <br>
       <hr>
@@ -169,6 +169,10 @@
       <div id="infoAderenteM" hidden="true">
         <p> DATI E ALTRI DATI di Carmen Delugan</p>
       </div>
+    </div>
+
+    <div id="default" hidden="false">
+      <p> Pagina privata! </p>
     </div>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>

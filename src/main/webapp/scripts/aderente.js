@@ -9,56 +9,69 @@ let buttonAttivita = document.querySelector("#buttonAttivita"); // servono qui p
 let buttonDonation = document.querySelector("#buttonDonation"); //
 
 function visualizzaDati(){
-    dati.hidden = false;
-    //TODO stampaDati();
-    danger.hidden = true;
-    attivita.hidden = true;
-    donation.hidden = true;
+    if(dati.hidden == true){
+        dati.hidden = false;
+        //TODO stampaDati();
+        danger.hidden = true;
+        attivita.hidden = true;
+        donation.hidden = true;
 
-
-    buttonDati.style.backgroundColor = "#A6B1E1";
-    buttonDanger.style.backgroundColor = "#F4EEFF";
-    buttonAttivita.style.backgroundColor = "#F4EEFF";
-    buttonDonation.style.backgroundColor = "#F4EEFF";
+        buttonDati.style.backgroundColor = "#A6B1E1";
+        buttonDanger.style.backgroundColor = "#F4EEFF";
+        buttonAttivita.style.backgroundColor = "#F4EEFF";
+        buttonDonation.style.backgroundColor = "#F4EEFF";
+    } else {
+        dati.hidden = true;
+        buttonDati.style.backgroundColor = "#F4EEFF";
+    }
 }
-
 function visualizzaAttivita(){
-    dati.hidden = true;
-    danger.hidden = true;
-    attivita.hidden = false;
-    donation.hidden = true;
+    if(attivita.hidden==true){
+        dati.hidden = true;
+        danger.hidden = true;
+        attivita.hidden = false;
+        donation.hidden = true;
 
-
-    buttonDati.style.backgroundColor = "#F4EEFF";
-    buttonDanger.style.backgroundColor = "#F4EEFF";
-    buttonAttivita.style.backgroundColor = "#A6B1E1";
-    buttonDonation.style.backgroundColor = "#F4EEFF";
+        buttonDati.style.backgroundColor = "#F4EEFF";
+        buttonDanger.style.backgroundColor = "#F4EEFF";
+        buttonAttivita.style.backgroundColor = "#A6B1E1";
+        buttonDonation.style.backgroundColor = "#F4EEFF";
+    } else {
+        attivita.hidden = true;
+        buttonAttivita.style.backgroundColor = "#F4EEFF";
+    }
 }
-
 function visualizzaDanger(){
-    dati.hidden = true;
-    danger.hidden = false;
-    attivita.hidden = true;
-    donation.hidden = true;
+    if(danger.hidden == true){
+        dati.hidden = true;
+        danger.hidden = false;
+        attivita.hidden = true;
+        donation.hidden = true;
 
-
-    buttonDati.style.backgroundColor = "#F4EEFF";
-    buttonDanger.style.backgroundColor = "#A6B1E1";
-    buttonAttivita.style.backgroundColor = "#F4EEFF";
-    buttonDonation.style.backgroundColor = "#F4EEFF";
+        buttonDati.style.backgroundColor = "#F4EEFF";
+        buttonDanger.style.backgroundColor = "#A6B1E1";
+        buttonAttivita.style.backgroundColor = "#F4EEFF";
+        buttonDonation.style.backgroundColor = "#F4EEFF";
+    } else {
+        danger.hidden = true;
+        buttonDanger.style.backgroundColor = "#F4EEFF";
+    }
 }
-
 function visualizzaDonation(){
-    dati.hidden = true;
-    danger.hidden = true;
-    attivita.hidden = true;
-    donation.hidden = false;
+    if(donation.hidden == true){
+        dati.hidden = true;
+        danger.hidden = true;
+        attivita.hidden = true;
+        donation.hidden = false;
 
-
-    buttonDati.style.backgroundColor = "#F4EEFF";
-    buttonDanger.style.backgroundColor = "#F4EEFF";
-    buttonAttivita.style.backgroundColor = "#F4EEFF";
-    buttonDonation.style.backgroundColor = "#A6B1E1";
+        buttonDati.style.backgroundColor = "#F4EEFF";
+        buttonDanger.style.backgroundColor = "#F4EEFF";
+        buttonAttivita.style.backgroundColor = "#F4EEFF";
+        buttonDonation.style.backgroundColor = "#A6B1E1";
+    } else {
+        donation.hidden = true;
+        buttonDonation.style.backgroundColor = "#F4EEFF";
+    }
 }
 
 function stampaDati(){

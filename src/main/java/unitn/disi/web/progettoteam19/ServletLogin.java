@@ -11,7 +11,6 @@ import java.io.IOException;
 @WebServlet(name = "ServletLogin", value = "/ServletLogin")
 public class ServletLogin extends HttpServlet {
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -30,7 +29,6 @@ public class ServletLogin extends HttpServlet {
 
         //TODO aggiungere ad un BEAN o alla sessione TUTTI i dati dell'utente tranne la password
         boolean aderente = false, simpatizzante = false, amministratore = false;
-
 
         if(username.equals("aderente")){
             aderente = true;

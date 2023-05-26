@@ -12,78 +12,106 @@ let buttonDonations = document.querySelector("#buttonDonations");           //
 
 
 function visualizzaUtenti(){
-    utenti.hidden = false;
-    stampaUtenti();
-    simpatizzanti.hidden = true;
-    aderenti.hidden = true;
-    visite.hidden = true;
-    donations.hidden = true;
+    if(utenti.hidden == true){
+        utenti.hidden = false;
+        stampaUtenti();
+        simpatizzanti.hidden = true;
+        aderenti.hidden = true;
+        visite.hidden = true;
+        donations.hidden = true;
 
 
-    buttonUtenti.style.backgroundColor = "#A6B1E1";
-    buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
-    buttonAderenti.style.backgroundColor = "#F4EEFF";
-    buttonVisite.style.backgroundColor = "#F4EEFF";
-    buttonDonations.style.backgroundColor = "#F4EEFF";
+        buttonUtenti.style.backgroundColor = "#A6B1E1";
+        buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
+        buttonAderenti.style.backgroundColor = "#F4EEFF";
+        buttonVisite.style.backgroundColor = "#F4EEFF";
+        buttonDonations.style.backgroundColor = "#F4EEFF";
+    } else {
+        utenti.hidden = true;
+        buttonUtenti.style.backgroundColor = "#F4EEFF";
+    }
 }
 
 function visualizzaSimpatizzanti(){
-    utenti.hidden = true;
-    simpatizzanti.hidden = false;
-    aderenti.hidden = true;
-    visite.hidden = true;
-    donations.hidden = true;
+    if(simpatizzanti.hidden == true){
+        utenti.hidden = true;
+        simpatizzanti.hidden = false;
+        aderenti.hidden = true;
+        visite.hidden = true;
+        donations.hidden = true;
 
 
-    buttonUtenti.style.backgroundColor = "#F4EEFF";
-    buttonSimpatizzanti.style.backgroundColor = "#A6B1E1";
-    buttonAderenti.style.backgroundColor = "#F4EEFF";
-    buttonVisite.style.backgroundColor = "#F4EEFF";
-    buttonDonations.style.backgroundColor = "#F4EEFF";
+        buttonUtenti.style.backgroundColor = "#F4EEFF";
+        buttonSimpatizzanti.style.backgroundColor = "#A6B1E1";
+        buttonAderenti.style.backgroundColor = "#F4EEFF";
+        buttonVisite.style.backgroundColor = "#F4EEFF";
+        buttonDonations.style.backgroundColor = "#F4EEFF";
+    } else {
+        simpatizzanti.hidden = true;
+        buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
+    }
+
 }
 
 function visualizzaAderenti(){
-    utenti.hidden = true;
-    simpatizzanti.hidden = true;
-    aderenti.hidden = false;
-    visite.hidden = true;
-    donations.hidden = true;
+    if(aderenti.hidden == true){
+        utenti.hidden = true;
+        simpatizzanti.hidden = true;
+        aderenti.hidden = false;
+        visite.hidden = true;
+        donations.hidden = true;
 
 
-    buttonUtenti.style.backgroundColor = "#F4EEFF";
-    buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
-    buttonAderenti.style.backgroundColor = "#A6B1E1";
-    buttonVisite.style.backgroundColor = "#F4EEFF";
-    buttonDonations.style.backgroundColor = "#F4EEFF";
+        buttonUtenti.style.backgroundColor = "#F4EEFF";
+        buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
+        buttonAderenti.style.backgroundColor = "#A6B1E1";
+        buttonVisite.style.backgroundColor = "#F4EEFF";
+        buttonDonations.style.backgroundColor = "#F4EEFF";
+    } else {
+        aderenti.hidden = true;
+        buttonAderenti.style.backgroundColor = "#F4EEFF";
+    }
+
 }
 
 function visualizzaVisite(){
-    utenti.hidden = true;
-    simpatizzanti.hidden = true;
-    aderenti.hidden = true;
-    visite.hidden = false;
-    donations.hidden = true;
+    if(visite.hidden == true){
+        utenti.hidden = true;
+        simpatizzanti.hidden = true;
+        aderenti.hidden = true;
+        visite.hidden = false;
+        donations.hidden = true;
 
 
-    buttonUtenti.style.backgroundColor = "#F4EEFF";
-    buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
-    buttonAderenti.style.backgroundColor = "#F4EEFF";
-    buttonVisite.style.backgroundColor = "#A6B1E1";
-    buttonDonations.style.backgroundColor = "#F4EEFF";
+        buttonUtenti.style.backgroundColor = "#F4EEFF";
+        buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
+        buttonAderenti.style.backgroundColor = "#F4EEFF";
+        buttonVisite.style.backgroundColor = "#A6B1E1";
+        buttonDonations.style.backgroundColor = "#F4EEFF";
+    } else {
+        visite.hidden = true;
+        buttonVisite.style.backgroundColor = "#F4EEFF";
+    }
+
 }
 function visualizzaDonations(){
-    utenti.hidden = true;
-    simpatizzanti.hidden = true;
-    aderenti.hidden = true;
-    visite.hidden = true;
-    donations.hidden = false;
+    if(donations.hidden == true){
+        utenti.hidden = true;
+        simpatizzanti.hidden = true;
+        aderenti.hidden = true;
+        visite.hidden = true;
+        donations.hidden = false;
 
+        buttonUtenti.style.backgroundColor = "#F4EEFF";
+        buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
+        buttonAderenti.style.backgroundColor = "#F4EEFF";
+        buttonVisite.style.backgroundColor = "#F4EEFF";
+        buttonDonations.style.backgroundColor = "#A6B1E1";
+    } else {
+        donations.hidden = true;
+        buttonDonations.style.backgroundColor = "#F4EEFF";
+    }
 
-    buttonUtenti.style.backgroundColor = "#F4EEFF";
-    buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
-    buttonAderenti.style.backgroundColor = "#F4EEFF";
-    buttonVisite.style.backgroundColor = "#F4EEFF";
-    buttonDonations.style.backgroundColor = "#A6B1E1";
 }
 
 function showOrHide(id){

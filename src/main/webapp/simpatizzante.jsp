@@ -18,7 +18,7 @@
   </div>
   <div class="containerInvioConfermato">
 
-    <div id="dati" hidden="false">
+    <div id="dati">
 
       <style>
         table{
@@ -132,6 +132,10 @@
       <form action="Servlet??" onsubmit="return confermaCancellaIscrizione();">  <%--TODO servlet che elimina l'utente dal DB--%>
         <input class="cancellaIscrizione" type="submit" value="cancella iscrizione">
       </form>
+    </div>
+
+    <div id="default" hidden="true">
+      <p> Pagina privata! </p>
     </div>
 
     <script rel="script" src="scripts/simpatizzante.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e modulare--%>
