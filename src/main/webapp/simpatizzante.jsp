@@ -111,7 +111,7 @@
     <div id="attivita" hidden="true">
       <br>
       <br>
-      <form action="serrvletUtile">                <%--TODO aggiungere immagini e rendere decente e capire se si fa da servlet o con una funz o entrambe--%>
+      <form action="ServletPartecipaAttivita">                <%--TODO aggiungere immagini e rendere decente e capire se si fa da servlet o con una funz o entrambe--%>
         <label for="attivita1"> attività 1</label>
         <input id="attivita1" name="attivita1" type="checkbox" value="attività 1">
         <img src="immagini/attivita1.png" alt="immagine attività 1" onclick="clickImage(attivita1);" class="attivita">
@@ -129,7 +129,7 @@
       <div>
         <b><h6 style="color: red"> attenzione, tutte le azioni in questa pagina sono IRREVERSIBILI!!</h6></b>
       </div>
-      <form action="Servlet??" onsubmit="return confermaCancellaIscrizione();">  <%--TODO servlet che elimina l'utente dal DB--%>
+      <form action="ServletEliminaProfilo" onsubmit="return confermaCancellaIscrizione();">  <%--TODO servlet che elimina l'utente dal DB--%>
         <input class="cancellaIscrizione" type="submit" value="cancella iscrizione">
       </form>
     </div>

@@ -29,6 +29,7 @@ public class UserFilter implements Filter {
             if(cookies == null || cookies.equals("false")){
                 servletContext.setAttribute("cookies", null);
             }
+            req.setAttribute("expired", "true");
             req.getRequestDispatcher(res.encodeURL("./login.jsp")).forward(req, res);
         } else {
             chain.doFilter(request, response);

@@ -11,11 +11,9 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "ServletDonazione", value = "/ServletDonazione")
-public class ServletDonazione extends HttpServlet {
+@WebServlet(name = "ServletEliminaProfilo", value = "/ServletEliminaProfilo")
+public class ServletEliminaProfilo extends HttpServlet {
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //salva nel DB
-
     }
 
     @Override

@@ -1,7 +1,19 @@
+<%@ page import="java.io.PrintWriter" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <jsp:include page="intestazione.jsp"></jsp:include>
 <jsp:include page="frasiIspiranti.jsp"></jsp:include>
+
+<%
+    if(request.getParameter("expired") != null && request.getParameter("expired").equals("true")) {
+
+%>
+
+<script>
+    alert("Sessione scaduta!\n Si prega di rieffettuare l'accesso!");
+</script>
+
+<% } %>
 
 <main>
     <div class="formContSignLog" id="divLogin">

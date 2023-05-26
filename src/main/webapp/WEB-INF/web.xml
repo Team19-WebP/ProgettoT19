@@ -7,6 +7,7 @@
         <welcome-file>home.jsp</welcome-file>
     </welcome-file-list>
 
+    <!-- Filtro per verifica sessione -->
     <filter>
         <filter-name>UserFilter</filter-name>
         <filter-class>unitn.disi.web.progettoteam19.UserFilter</filter-class>
@@ -17,13 +18,16 @@
         <url-pattern>/aderente.jsp</url-pattern>
         <url-pattern>/amministratore.jsp</url-pattern>
         <url-pattern>/simpatizzante.jsp</url-pattern>
+        <url-pattern>/ServletDonazione</url-pattern>
+        <url-pattern>/ServletEliminaProfilo</url-pattern>
+        <url-pattern>/ServletPartecipaAttivita</url-pattern>
     </filter-mapping>
 
+    <!-- Filtri per le varie pagine private -->
     <filter>
         <filter-name>FiltroAderente</filter-name>
         <filter-class>unitn.disi.web.progettoteam19.FiltroAderente</filter-class>
     </filter>
-
     <filter-mapping>
         <filter-name>FiltroAderente</filter-name>
         <url-pattern>/aderente.jsp</url-pattern>
@@ -33,7 +37,6 @@
         <filter-name>FiltroSimpatizzante</filter-name>
         <filter-class>unitn.disi.web.progettoteam19.FiltroSimpatizzante</filter-class>
     </filter>
-
     <filter-mapping>
         <filter-name>FiltroSimpatizzante</filter-name>
         <url-pattern>/simpatizzante.jsp</url-pattern>
@@ -43,7 +46,6 @@
         <filter-name>FiltroAmministratore</filter-name>
         <filter-class>unitn.disi.web.progettoteam19.FiltroAmministratore</filter-class>
     </filter>
-
     <filter-mapping>
         <filter-name>FiltroAmministratore</filter-name>
         <url-pattern>/amministratore.jsp</url-pattern>
