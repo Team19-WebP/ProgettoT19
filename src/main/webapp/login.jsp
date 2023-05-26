@@ -5,7 +5,7 @@
 <jsp:include page="frasiIspiranti.jsp"></jsp:include>
 
 <%
-    if(request.getParameter("expired") != null && request.getParameter("expired").equals("true")) {
+    if(request.getAttribute("expired") != null && request.getAttribute("expired").equals("true")) {
 
 %>
 

@@ -40,7 +40,6 @@ public class ServletLogin extends HttpServlet {
 
         HttpSession session = request.getSession(true);
         session.setAttribute("auth", "true");
-        request.setAttribute("expired", "false");
         if(aderente){
             session.setAttribute("type", "aderente");
             response.sendRedirect(response.encodeURL("./aderente.jsp"));
