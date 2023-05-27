@@ -5,8 +5,8 @@ body {
     /* Spazio da lasciare per l'intestazione */
     padding-top: 200px;
     background: #FEE9FF;
-    background: -moz-linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #FFFFFF 100%);
-    background: -webkit-linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #FFFFFF 100%);
+    /*background: -moz-linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #FFFFFF 100%);*/
+    /*background: -webkit-linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #FFFFFF 100%);*/
     background: linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #ffffff 100%);
     font-family: 'Raleway', sans-serif;
 }
@@ -176,6 +176,72 @@ input[type = reset]:hover, input[type = reset]:focus {
     box-sizing: border-box;
     text-align: center;
 }
+
+/* style per attività e forse anche aderente per le immagini */
+    .im1 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    div.im1 figure img {
+        width: 300px;
+        height: auto;
+        max-height: 300px;
+        /*z-index:1;*/
+}
+
+div.gallery figcaption {
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    margin: auto;
+}
+
+a.linkImg > img {
+    border: 1px solid transparent;
+}
+
+a.linkImg:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+a.linkImg:hover > img {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+a.linkImg:hover > .text {
+    opacity: 1;
+}
+
+/*TODO fixare posizione del testo dentro l'immagine e colore*/
+
+/*TODO volete lasciarlo qui o è meglio spostarlo in un css?*/
+.sectionTesto, .sectionTitolo {
+    display: flex;
+    align-items: center;
+    width: 60vw;
+}
+.sectionTitolo {
+    flex-direction: column;
+}
+
+.text {
+    color: #000000;
+    font-size: 20px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.text:hover {
+    opacity: 1;
+}
+
 
 .containerFoto {
     /*padding: 1%;*/

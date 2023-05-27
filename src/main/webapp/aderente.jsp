@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 <link rel="stylesheet" href="css/aderente.css">
-<main id="main">
+<main id="mainAderente">
+  <div class="containerAderente">
   <div class="menu2">
     <nav>
       <button onclick="visualizzaDati();" id="buttonDati">dati personali</button>
@@ -20,28 +21,10 @@
       </form>
     </nav>
   </div>
-  <div class="containerInvioConfermato">
 
     <div id="dati" hidden="true">
       <style>
-        table{
-          border: #424874 solid 2px;
-          margin: 15%;
-          width: max-content;
-          border-collapse: collapse;
-        }
-        tr{
-          border: #424874 solid 2px;
-          border-collapse: collapse;   <%-- TODO @FEDERICO lascio fare a te questi stili e metterli nel css perche non so cosa sto facendo--%>
-          margin: 15%;
-          padding: 15%;
-        }
-        th{
-          border: #424874 solid 2px;
-          border-collapse: collapse;
-          padding: 5%;
-          margin: 10%;
-        }
+
       </style>
       <table>
 
@@ -113,20 +96,64 @@
 
     </div>
 
-    <div id="attivita" hidden="true">
+    <div id="attivitaAderente" hidden="true">
       <br>
       <br>
       <form action="ServletPartecipaAttivita">                <%--TODO aggiungere immagini e rendere decente e capire se si fa da servlet o con una funz o entrambe--%>
-        <label for="attivita1"> attività 1</label>
-        <input id="attivita1" name="attivita1" type="checkbox" value="attività 1">
-        <img src="immagini/attivita1.png" alt="immagine attività 1" onclick="clickImage(attivita1);" class="attivita">
-        <label for="attivita2"> attività 2</label>
-        <input id="attivita2" name="attivita2" type="checkbox" value="attività 2">
-        <img src="immagini/attivita1.png" alt="immagine attività 2" onclick="clickImage(attivita2);" class="attivita">
-        <label for="attivita3"> attività 3</label>
-        <input id="attivita3" name="attivita3" type="checkbox" value="attività 3">
-        <img src="immagini/attivita1.png" alt="immagine attività 3" onclick="clickImage(attivita3);" class="attivita">
-        <input class="aderente" type="submit" value="partecipa">
+        <div class="aderenteImmaginiAttivita">
+          <div class="aderenteImgCheckAtt">
+            <div>
+              <label for="attivita1">Aisha</label>
+              <input id="attivita1" name="attivita1" type="checkbox" value="attività 1">
+              <%--          <img src="immagini/attivita/img1.jpg" alt="immagine attività 1" onclick="clickImage(attivita1);" class="immagineAttAderente">--%>
+            </div>
+            <div class="im1">
+              <figure style="margin: 0px">
+                <a class="linkImg" onclick="seleziona('attivita1')" id="imgattivita1">
+                  <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività">
+                  <div class="text">Partecipa ad Aisha!</div>
+                </a>
+                <%--<br><figcaption><b><i>Attività 1</i></b></figcaption>--%>
+              </figure>
+            </div>
+          </div>
+          <div class="aderenteImgCheckAtt">
+            <div>
+              <label for="attivita2">Team4World</label>
+              <input id="attivita2" name="attivita2" type="checkbox" value="attività 2">
+              <%--          <img src="immagini/attivita/img2.jpg" alt="immagine attività 2" onclick="clickImage(attivita2);" class="immagineAttAderente">--%>
+            </div>
+            <div class="im1">
+              <figure style="margin: 0px">
+                <a class="linkImg" onclick="seleziona('attivita2')" id="imgattivita2">
+                  <img src="immagini/attivita/img2.jpg" alt="Immagine di Team4World">
+                  <div class="text">Partecipa a Team4World!</div>
+                </a>
+                <%--<br><figcaption> <b><i>Team4World</i></b> </figcaption>--%>
+              </figure>
+            </div>
+          </div>
+          <div class="aderenteImgCheckAtt">
+            <div>
+              <label for="attivita3">AbcFuture</label>
+              <input id="attivita3" name="attivita3" type="checkbox" value="attività 3">
+              <%--          <img src="immagini/attivita/img3.jpg" alt="immagine attività 3" onclick="clickImage(attivita3);" class="immagineAttAderente">--%>
+            </div>
+            <div class="im1">
+              <figure style="margin: 0px">
+                <a class="linkImg" onclick="seleziona('attivita3')" id="imgattivita3">
+                  <img src="immagini/attivita/img3.jpg" alt="Immagine di Abc4Future">
+                  <div class="text">Partecipa a Abc4Future!</div>
+                </a>
+                <%--<br><figcaption> <b><i>Abc4Future</i></b> </figcaption>--%>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div>
+          <input class="aderente" type="submit" value="partecipa" style="width:90px; height:35px">
+        </div>
       </form>
     </div>
 

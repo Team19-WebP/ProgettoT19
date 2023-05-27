@@ -1,93 +1,187 @@
-/* File di stile per tutte le parti pubbliche */
 
-@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Raleway:wght@300&display=swap'); /* Importa raleway da google font */
+/* Cambia i colori come vuoi per la parte di aderente*/
 body {
-    padding-top: 160px;
-    background: #DCD6F7;
-    background: -moz-linear-gradient(45deg, #DCD6F7 0%, #DCD6F7 0%, #FFFFFF 100%);
-    background: -webkit-linear-gradient(45deg, #DCD6F7 0%, #DCD6F7 0%, #eae7f6 100%);
-    background: linear-gradient(45deg, #DCD6F7 0%, #DCD6F7 0%, #ffffff 100%);
-    font-family: 'Raleway', sans-serif;
+    padding-top: 200px;
+    background: #ffffff;
+    /*font-family: 'Comic Sans MS', sans-serif;*/
 }
-
+.intestazione {
+    background-color: #ffffff;
+}
+footer {
+    background-color: silver;
+}
+.menu {
+    background-color: #000000;
+}
+.menu a{
+    color: #ffffff;
+}
+.menu a:hover{
+    background-color: #ffffff;
+    color: black;
+}
+.menu .dropdown-content {
+    background-color: black;
+}
+input [type = submit] {
+}
 table{
-    alignment: center;
-    height: available;
-    width: available;
-    align-content: center;
-}
-img.attivita{
-    max-width: 250px;
-    height: auto;
+    border: #424874 solid 1px;
+    width: fit-content;
+    border-collapse: collapse;
 }
 tr{
+    border: #424874 solid 2px;
+    border-collapse: collapse;
+    margin: 15%;
+    padding: 15%;
+}
+th {
+    border: #424874 solid 2px;
+    border-collapse: collapse;
+    padding: 5%;
+    width: 200px;
+    word-wrap: break-word;
+}
+
+.containerAderente {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 20px;
+}
+.aderenteImmaginiAttivita {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.aderenteImmaginiAttivita img {
+    display: flex;
+    max-width: 600px;
     height: auto;
-    align-content: center;
-}
-
-input.aderente[type = submit]:hover{
-    opacity: 0.8;
-}
-
-input.cancellaIscrizione[type = submit]:hover{
-    opacity: 0.8;
-}
-
-form{
-    text-align: center;
-    margin: auto;
-    width: fit-content;
-}
-
-h6{
-    color: red;
-}
-
-input.aderente[type = submit] {
-    background-color: #b8fab6;
-    border-radius: 20px;
-    color: black;
-    min-width: 25ch;
-    min-height: 3ch;
-    width: 15%;
-    height: 6%;
-}
-input.aderente[type = text]{
-    background-color: #ffffff00; /*rgba(254, 233, 255, 0);*/
-    border: 3px solid #A6B1E1;
-}
-
-input.cancellaIscrizione[type = submit] {
-    margin-top: 50%;
-    alignment: bottom;
-    background-color: #ec7777;
-    border-radius: 20px;
-    color: black;
-    min-width: 25ch;
-    min-height: 3ch;
-    width: 15%;
-    height: 6%;
-}
-.containerInvioConfermato {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 79%;
-    /*gap: 4em;*/
-}
-
-.menu2{
-    background-color: #F4EEFF00;
-    alignment: center;
     width: 100%;
+}
+.aderenteImgCheckAtt {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+}
+.aderenteImgCheckAtt div {
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.aderenteImgCheckAtt input {
+    width: auto;
+}
+form {
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
-button{
-    background-color: #F4EEFF;
-    border-color: #A6B1E1;
-    color: #424874;
-}
+/*p.linkImg > img {*/
+/*    border: 1px solid transparent;*/
+/*}*/
+/*p.linkImg {*/
+/*    position: relative;*/
+/*    !*display: inline-block;*!*/
+
+/*}*/
+/*p.linkImg:hover {*/
+/*    opacity: 0.6;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*p.linkImg:hover > img {*/
+/*    border: 1px solid rgb(0, 0, 0);*/
+/*}*/
+
+/*p.linkImg:hover > .text {*/
+/*    opacity: 1;*/
+/*}*/
+/*#attivitaAderente div {*/
+/*    max-width: 300px;*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-evenly;*/
+/*}*/
+/*table{*/
+/*    alignment: center;*/
+/*    height: available;*/
+/*    width: auto;*/
+/*    align-content: center;*/
+/*}*/
+/*img.attivita{*/
+/*    max-width: 250px;*/
+/*    height: auto;*/
+/*}*/
+/*tr{*/
+/*    height: auto;*/
+/*    align-content: center;*/
+/*}*/
+
+/*input.aderente[type = submit]:hover{*/
+/*    opacity: 0.8;*/
+/*}*/
+
+/*input.cancellaIscrizione[type = submit]:hover{*/
+/*    opacity: 0.8;*/
+/*}*/
+
+/*form{*/
+/*    text-align: center;*/
+/*    margin: auto;*/
+/*    width: fit-content;*/
+/*}*/
+
+/*h6{*/
+/*    color: red;*/
+/*}*/
+
+/*input.aderente[type = submit] {*/
+/*    background-color: #b8fab6;*/
+/*    border-radius: 20px;*/
+/*    color: black;*/
+/*    min-width: 25ch;*/
+/*    min-height: 3ch;*/
+/*    width: 15%;*/
+/*    height: 6%;*/
+/*}*/
+/*input.aderente[type = text]{*/
+/*    background-color: #ffffff00; !*rgba(254, 233, 255, 0);*!*/
+/*    border: 3px solid #A6B1E1;*/
+/*}*/
+
+/*input.cancellaIscrizione[type = submit] {*/
+/*    margin-top: 50%;*/
+/*    alignment: bottom;*/
+/*    background-color: #ec7777;*/
+/*    border-radius: 20px;*/
+/*    color: black;*/
+/*    min-width: 25ch;*/
+/*    min-height: 3ch;*/
+/*    width: 15%;*/
+/*    height: 6%;*/
+/*}*/
+
+
+/*.menu2{*/
+/*    background-color: #F4EEFF00;*/
+/*    alignment: center;*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: flex-start;*/
+/*}*/
+
+/*button{*/
+/*    background-color: #F4EEFF;*/
+/*    border-color: #A6B1E1;*/
+/*    color: #424874;*/
+/*}*/
 

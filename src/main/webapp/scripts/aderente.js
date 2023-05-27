@@ -1,6 +1,6 @@
 let dati = document.querySelector("#dati");         //
 let danger = document.querySelector("#danger");     // DIV delle varie sezioni da mostrare/nascondere
-let attivita = document.querySelector("#attivita"); //
+let attivita = document.querySelector("#attivitaAderente"); //
 let donation = document.querySelector("#donation"); //
 
 let buttonDati = document.querySelector("#buttonDati");         //
@@ -103,4 +103,18 @@ function confermaCancellaIscrizione(){
 function dona(){
     let donazione = document.querySelector("#donazione"); // TODO forse è inutile, ma forse no e forse vogliamo fare i fighi con qualeche animazione BLL
     donazione.value
+}
+
+function seleziona(selezione) {
+    let checkBox = document.querySelector("#" + selezione);
+    let img = document.querySelector("#img"+selezione);
+    let txt = document.querySelector("#img" + selezione + "> .text");
+    checkBox.checked = !checkBox.checked;
+    if(checkBox.checked) {
+        img.style.opacity = "0.6";
+        txt.style.opacity = "1";
+    } else {
+        img.style.opacity = "1";
+        txt.style.opacity = "0";
+    }
 }
