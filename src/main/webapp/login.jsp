@@ -21,11 +21,11 @@
         <form action="ServletLogin" method="post" onsubmit="return validaFormLogin()">
             <div class="inputAndLabel">
                 <label for="username">Username: </label>
-                <input type="text" id="username" name="username" maxlength="50" size="50"><br><br> <!-- TODO controllare che non ci sia un utente con questo username-->
+                <input type="text" id="username" name="username" maxlength="50" size="50" placeholder="inserisci il tuo username..."><br><br> <!-- TODO controllare che non ci sia un utente con questo username-->
             </div>
             <div class="inputAndLabel">
                 <label for="password">Password: </label>
-                <input type="password" id="password" name="password" maxlength="50" size="50"><br><br>
+                <input type="password" id="password" name="password" placeholder="inserisci la tua password..." maxlength="50" size="50"><br><br>
             </div>
             <div class="inputAndLabel" id="submitReset">
                 <input type="reset" value="Reset" onclick="resetForm()">
