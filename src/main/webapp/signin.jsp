@@ -8,33 +8,33 @@
                onsubmit="return validaForm()">
             <div class="inputAndLabel">
                 <label for="nome">Nome: </label>
-                <input type="text" id="nome" name="nome" maxlength="50" size="50" placeholder="Mario">
+                <input type="text" id="nome" name="nome" placeholder="inserisci il tuo nome..." maxlength="50" size="50">
             </div>
             <br>
             <div class="inputAndLabel">
                 <label for="cognome">Cognome: </label>
-                <input type="text" id="cognome" name="cognome" maxlength="50" size="50" placeholder="Rossi" >
+                <input type="text" id="cognome" name="cognome" placeholder="inserisci il tuo cognome..." maxlength="50" size="50">
             </div>
             <br><br>
             <div class="inputAndLabel">
                 <label for="datadinascita">Data di nascita: </label>
-                <input type="date" id="datadinascita" name="datadinascita" maxlength="50" size="50" >
-                <span id="ageAlert" class="requirements">(* per registrarisi è necessario essere maggiorenni)</span>
+                <input type="date" id="datadinascita" name="datadinascita" maxlength="50" size="50">
+                <span id="ageAlert" class="requirements">(* per registrarsi è necessario essere maggiorenni)</span>
             </div>
             <br><br>
             <div class="inputAndLabel">
                 <label for="email">Indirizzo email: </label>
-                <input type="text" id="email" name="email" maxlength="50" size="50" placeholder="mario.rossi@gmail.com">
+                <input type="text" id="email" name="email" placeholder="inserisci la tua email..." maxlength="50" size="50">
                 <span id="emailAlert" class="alert" hidden="true">(* mail non valida)</span><br>
             </div>
             <br>
             <div class="inputAndLabel">
                 <label for="telefono">numero di telefono: </label>
-                <input type="text" id="telefono" name="telefono" maxlength="15" size="15" placeholder="345 1234567">
+                <input type="text" id="telefono" name="telefono" placeholder="inserisci il tuo numero di telefono..." maxlength="15" size="15">
             </div>
             <br><br>
             <div class="inputAndLabel">
-                <label for="comboBox" id="comboBoxLabel"> Voglio iscrivermi come:</label>
+                <label for="comboBox" id="comboBoxLabel">Voglio iscrivermi come: </label>
                 <select id="comboBox" name="comboBox">
                     <option value="simpatizzante">simpatizzante</option>
                     <option value="aderente">aderente</option>
@@ -43,19 +43,19 @@
             <br><br>
             <div class="inputAndLabel">
                 <label for="username">Username: </label>
-                <input type="text" id="username" name="username" maxlength="50" size="50" placeholder="_RMario_">
+                <input type="text" id="username" name="username" placeholder="inserisci uno username..." maxlength="50" size="50">
                 <span class="alert" id="userAlert" hidden="true">(* username gia preso) </span>
             </div>
             <br><br>
             <div class="inputAndLabel">
                 <label for="passwordVal">Password: </label>
-                <input type="password" id="passwordVal" name="passwordVal" maxlength="50" size="50">
-                <span class="requirements" id="passAlert">(* la password deve contenere almeno 8 caratteri di cui anmeno uno maiuscolo, un numero, le lettere [E,F,G] e uno tra[$,!,?])</span>
+                <input type="password" id="passwordVal" name="passwordVal" placeholder="inserisci una password..." maxlength="50" size="50">
+                <span class="requirements" id="passAlert">(* la password deve contenere almeno 8 caratteri di cui almeno uno maiuscolo, un numero, le lettere [E,F,G] e uno tra[$,!,?])</span>
             </div>
             <br>
             <div class="inputAndLabel">
                 <label for="confpassword">Conferma Password: </label>
-                <input type="password" id="confpassword" name="confpassword" maxlength="50" size="50">
+                <input type="password" id="confpassword" name="confpassword" placeholder="conferma la password..." maxlength="50" size="50">
                 <span class="alert" id="confPassAlert" hidden="true">(* le password non coincidono)</span>
             </div>
             <br>
