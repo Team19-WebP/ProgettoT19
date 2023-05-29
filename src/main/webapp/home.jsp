@@ -1,3 +1,9 @@
+<%@ page import="java.io.ObjectInputStream" %>
+<%@ page import="java.nio.file.Files" %>
+<%@ page import="java.nio.file.Paths" %>
+<%@ page import="unitn.disi.web.progettoteam19.Counter" %>
+<%@ page import="java.io.IOException" %>
+<%@ page import="java.io.ObjectOutputStream" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
 
 <jsp:include page="intestazione.jsp"></jsp:include>
