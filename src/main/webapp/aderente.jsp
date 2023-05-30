@@ -18,9 +18,6 @@
       <button onclick="visualizzaDonation();" id="buttonDonation">dona alla associazione</button>
       <button onclick="visualizzaAttivita();" id="buttonAttivita">partecipa alle attività</button>
       <button onclick="visualizzaDanger();" id="buttonDanger">danger zone</button>
-      <form action="ServletGetData">
-        <input type="submit" value="PRESS ME">
-      </form>
     </nav>
   </div>
 

@@ -1,5 +1,7 @@
 package unitn.disi.web.progettoteam19;
 
+import unitn.disi.web.progettoteam19.db.AccessoDB;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -10,11 +12,13 @@ public class ServletSignin extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-        //TODO fare i controlli da backend tipo che username non sia gia preso
-
-        //TODO mandare cose al DB
-        response.sendRedirect("./confermaSignin.jsp");
+        AccessoDB accessoDB = new AccessoDB();
+        if(accessoDB.getUserName(request.getParameter("username")) != null){
+            System.out.println("Problemi");
+            response.sendRedirect("./temp.jsp");
+        } else {
+            request.getRequestDispatcher(response.encodeURL("/ServletPushUserData")).include(request, response);
+            response.sendRedirect("./confermaSignin.jsp");
+        }
     }
 }

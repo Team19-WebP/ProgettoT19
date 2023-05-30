@@ -32,7 +32,7 @@
             <br>
             <div class="inputAndLabel">
                 <label for="telefono">numero di telefono: </label>
-                <input type="text" id="telefono" name="telefono" placeholder="inserisci il tuo numero di telefono..." maxlength="15" size="15">
+                <input type="number" id="telefono" name="telefono" placeholder="inserisci il tuo numero di telefono..." maxlength="15" size="15">
             </div>
             <br><br>
             <div class="inputAndLabel">

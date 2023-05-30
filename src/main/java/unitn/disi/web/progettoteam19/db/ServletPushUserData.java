@@ -1,18 +1,15 @@
-package unitn.disi.web.progettoteam19;
+package unitn.disi.web.progettoteam19.db;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
-import java.text.NumberFormat;
-import java.text.ParseException;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "ServletGetData", value = "/ServletGetData")
-public class ServletGetData extends HttpServlet {
+@WebServlet(name = "ServletPushUserData", value = "/ServletPushUserData")
+public class ServletPushUserData extends HttpServlet {
 
-    String dbURL = "jdbc:derby://localhost:1527/PrimoDB";
+    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
     String user = "APP";
     String password = "admin";
     Connection connection = null;
@@ -37,15 +34,21 @@ public class ServletGetData extends HttpServlet {
     }
 
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String stringaInsert = "INSERT INTO USERS VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+
         try{
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM Utenti");
-            String nome = rs.getString(1);
-            String cognome = rs.getString(1);
-            HttpSession session = request.getSession();
-            session.setAttribute("nome", nome);
-            session.setAttribute("cognome", cognome);
-            response.sendRedirect("paginaDiProva.jsp");
+            PreparedStatement inserimento = connection.prepareStatement(stringaInsert);
+            inserimento.setString(1, request.getParameter("nome"));
+            inserimento.setString(2, request.getParameter("cognome"));
+            inserimento.setString(3, request.getParameter("datadinascita"));
+            inserimento.setString(4, request.getParameter("email"));
+            inserimento.setString(5, request.getParameter("telefono"));
+            inserimento.setString(6, request.getParameter("comboBox"));
+            inserimento.setString(7, request.getParameter("username"));
+            inserimento.setString(8, request.getParameter("passwordVal"));
+
+            inserimento.executeUpdate();
+
         } catch (SQLException ex){
             ex.printStackTrace();
         }

@@ -1,5 +1,8 @@
 package unitn.disi.web.progettoteam19;
 
+import unitn.disi.web.progettoteam19.db.AccessoDB;
+import unitn.disi.web.progettoteam19.model.User;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
@@ -12,6 +15,11 @@ import javax.servlet.annotation.*;
 @WebServlet(name = "ServletEliminaProfilo", value = "/ServletEliminaProfilo")
 public class ServletEliminaProfilo extends HttpServlet {
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+        User utenteLoggato = (User) session.getAttribute("infoUtente");
+        AccessoDB accessoDB = new AccessoDB();
+        accessoDB.dropUser(utenteLoggato.getUsername());
         //TODO eliminare utente da db
 
         HttpSession session = request.getSession();

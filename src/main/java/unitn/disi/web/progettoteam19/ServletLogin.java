@@ -1,5 +1,9 @@
 package unitn.disi.web.progettoteam19;
 
+import unitn.disi.web.progettoteam19.db.AccessoDB;
+import unitn.disi.web.progettoteam19.model.User;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,8 +26,18 @@ public class ServletLogin extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-
-        //TODO prendere dati utente dal DB
+        AccessoDB accessoDB = new AccessoDB();
+        if(accessoDB.getUserName(username) == null){
+            System.out.println("scemo username non esiste");
+        }
+        String pwFromDB = accessoDB.getPassword(username);
+        if(pwFromDB != null && !pwFromDB.equals(password)){
+            System.out.println("scemo pw sbagliata");
+        }
+        String tipologia = accessoDB.getTipologia(username);
+        if(tipologia == null){
+            System.out.println("problema inaspettato");
+        }
 
         //TODO fare i controlli da backend tipo che esista account e che password sia quella giusta
 
@@ -40,6 +54,7 @@ public class ServletLogin extends HttpServlet {
 
         HttpSession session = request.getSession(true);
         session.setAttribute("auth", "true");
+        //session.setAttribute("infoUtente", new User());
         if(aderente){
             session.setAttribute("type", "aderente");
             response.sendRedirect(response.encodeURL("./aderente.jsp"));
