@@ -26,9 +26,6 @@
   </div>
 
     <div id="dati" hidden="true">
-      <style>
-
-      </style>
       <table>
 
         <tr>
@@ -95,8 +92,6 @@
         </tr>
 
       </table>
-
-
     </div>
 
     <div id="attivitaAderente" hidden="true">
@@ -175,19 +170,19 @@
 
     <div id="danger" hidden="true">
       <div>
-        <b><h6> attenzione, tutte le azioni in questa pagina sono IRREVERSIBILI!!</h6></b>
+        <b><h6 style="color: red"> attenzione, tutte le azioni in questa pagina sono IRREVERSIBILI!!</h6></b>
       </div>
-      <form action="ServletEliminaProfilo" onsubmit="return confermaCancellaIscrizione();">  <%--TODO servlet che elimina l'utente dal DB--%>
+      <form action="ServletEliminaProfilo" onsubmit="return confermaCancellaIscrizione()" method="get">
         <input class="cancellaIscrizione" type="submit" value="cancella iscrizione">
       </form>
+      <p id="popUp" style="color: red; alignment: center"></p>
     </div>
 
     <div id="default">
       <p> Pagina privata! </p>
     </div>
 
-    <script rel="script" src="scripts/aderente.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
-
   </div>
+  <script rel="script" src="scripts/aderente.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>

@@ -7,7 +7,7 @@
  + di default l'immagine non visibile
  + l'animazione customizzata dal nome fade
  + la durata dell'animazione
- + la transizione TODO @Gabriele cosa è ??*/
+ + la transizione*/
 .singleImage {
     display: none;
     animation-name: fade;
@@ -15,7 +15,6 @@
     transition: 0.6s ease;
 }
 
-/*TODO @Gabriele spiegare questo*/
 
 @keyframes fade {
     from {opacity: .4}
