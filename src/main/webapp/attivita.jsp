@@ -11,7 +11,6 @@
 <jsp:setProperty name="counterAttivita" property="hits" value="0"/>
 
 <main>
-    <h3>Hits della pagina: <jsp:getProperty name="counterAttivita" property="hits"/></h3>
     <div class="containerAttivita containerDescrizione">
         <section class="sectionTitolo">
             <h2>Le nostre attività</h2>

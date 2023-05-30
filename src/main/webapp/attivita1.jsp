@@ -4,7 +4,7 @@
 <jsp:useBean id="counterAttivita1" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:setProperty name="counterAttivita1" property="hits" value="0"/>
 <main>
-    <h3>Hits della pagina: <jsp:getProperty name="counterAttivita1" property="hits"/></h3>    <div class="containerAttivita">
+    <div class="containerAttivita">
         <img src="immagini/attivita/img1.jpg" alt="Immagine di Aisha"> <%--style="width: 100%; max-width: 800px"--%>
         <div class="testoImmagine">
             <h1>Aisha</h1>

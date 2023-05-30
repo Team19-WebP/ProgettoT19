@@ -3,6 +3,7 @@ let simpatizzanti = document.querySelector("#simpatizzanti");   //
 let aderenti = document.querySelector("#aderenti");             // DIV delle varie sezioni da mostrare/nascondere
 let visite = document.querySelector("#visite");                 //
 let donations = document.querySelector("#donations");           //
+let defDiv = document.querySelector("#default");                //
 
 let buttonUtenti = document.querySelector("#buttonUtenti");                 //
 let buttonSimpatizzanti = document.querySelector("#buttonSimpatizzanti");   //
@@ -18,6 +19,7 @@ function visualizzaUtenti(){
         aderenti.hidden = true;
         visite.hidden = true;
         donations.hidden = true;
+        defDiv.hidden = true;
 
 
         buttonUtenti.style.backgroundColor = "#A6B1E1";
@@ -28,6 +30,7 @@ function visualizzaUtenti(){
     } else {
         utenti.hidden = true;
         buttonUtenti.style.backgroundColor = "#F4EEFF";
+        defDiv.hidden = false;
     }
 }
 
@@ -38,6 +41,7 @@ function visualizzaSimpatizzanti(){
         aderenti.hidden = true;
         visite.hidden = true;
         donations.hidden = true;
+        defDiv.hidden = true;
 
 
         buttonUtenti.style.backgroundColor = "#F4EEFF";
@@ -48,6 +52,7 @@ function visualizzaSimpatizzanti(){
     } else {
         simpatizzanti.hidden = true;
         buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
+        defDiv.hidden = false;
     }
 
 }
@@ -59,6 +64,7 @@ function visualizzaAderenti(){
         aderenti.hidden = false;
         visite.hidden = true;
         donations.hidden = true;
+        defDiv.hidden = true;
 
 
         buttonUtenti.style.backgroundColor = "#F4EEFF";
@@ -69,6 +75,7 @@ function visualizzaAderenti(){
     } else {
         aderenti.hidden = true;
         buttonAderenti.style.backgroundColor = "#F4EEFF";
+        defDiv.hidden = false;
     }
 
 }
@@ -80,6 +87,7 @@ function visualizzaVisite(){
         aderenti.hidden = true;
         visite.hidden = false;
         donations.hidden = true;
+        defDiv.hidden = true;
 
 
         buttonUtenti.style.backgroundColor = "#F4EEFF";
@@ -90,16 +98,19 @@ function visualizzaVisite(){
     } else {
         visite.hidden = true;
         buttonVisite.style.backgroundColor = "#F4EEFF";
+        defDiv.hidden = false;
     }
 
 }
-function visualizzaDonations(hits,hitsHome,hitsLogin,hits){
+
+function visualizzaDonations(){
     if(donations.hidden == true){
         utenti.hidden = true;
         simpatizzanti.hidden = true;
         aderenti.hidden = true;
         visite.hidden = true;
         donations.hidden = false;
+        defDiv.hidden = true;
 
         buttonUtenti.style.backgroundColor = "#F4EEFF";
         buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
@@ -109,6 +120,7 @@ function visualizzaDonations(hits,hitsHome,hitsLogin,hits){
     } else {
         donations.hidden = true;
         buttonDonations.style.backgroundColor = "#F4EEFF";
+        defDiv.hidden = false;
     }
 
 }
@@ -137,6 +149,24 @@ function stampaUtenti(){  //TODO faccio la stessa cosa per aderenti e simpatizza
 
 
 ////////////////////////////////////////////////////GRAFICI/////////////////////////////////////////////////////////////
+
+let hitsTot = document.querySelector("#hitsTot");
+let hitsHome = document.querySelector("#hitsHome");
+let hitsAttivita = document.querySelector("#hitsAttivita");
+let hitsAttivita1 = document.querySelector("#hitsAttivita1");
+let hitsAttivita2 = document.querySelector("#hitsAttivita2");
+let hitsAttivita3 = document.querySelector("#hitsAttivita3");
+let hitsSignIn = document.querySelector("#hitsSignIn");
+let hitsChiSiamo = document.querySelector("#hitsChiSiamo");
+let hitsConfermaSignIn = document.querySelector("#hitsConfermaSignIn");
+let hitsAderente = document.querySelector("#hitsAderente");
+let hitsSimpatizzante = document.querySelector("#hitsSimpatizzante");
+let hitsAmministratore = document.querySelector("#hitsAmministratore");
+let hitsContatti = document.querySelector("#hitsContatti");
+let hitsConfermaContatti = document.querySelector("#hitsConfermaContatti");
+let hitsLogin = document.querySelector("#hitsLogin");
+let hitsLogout = document.querySelector("#hitsLogout");
+
 Highcharts.chart('GraficoVisite', {
     chart: {
         type: 'column'
@@ -172,29 +202,30 @@ Highcharts.chart('GraficoVisite', {
     series: [{
         name: 'Visite',
         colors: [
-            '#00ffff', '#ff00ff', '#008000', '#dc143c', '#0000ff', '#808080',
-            '#ffff00', '#d2691e', '#533be1', '#4c46db', '#00ff00', '#800000',
-            '#808000', '#db7093', '#ff69b4', '#daa520'
+            '#00ffff', '#ff00ff', '#008000', '#dc143c',
+            '#0000ff', '#808080', '#ffff00', '#d2691e',
+            '#533be1', '#db7093', '#00ff00', '#800000',
+            '#808000', '#2c46db', '#ff69b4', '#daa520'
         ],
         colorByPoint: true,
         groupPadding: 0,
         data: [
-            ['Visite totali', 37.33],
-            ['home', 31.18],
-            ['attivita', 27.79],
-            ['attivita1', 22.23],
-            ['attivita2', 21.91],
-            ['attivita3', 21.74],
-            ['chiSiamo', 21.32],
-            ['contatti', 20.89],
-            ['conferma contatti', 20.67],
-            ['sign-in', 19.11],
-            ['conferma sign-in', 16.45],
-            ['login', 16.38],
-            ['logout', 15.41],
-            ['aderente', 15.25],
-            ['simpatizzante', 14.974],
-            ['amministratore', 14.970],
+            ['Visite totali', Number(hitsTot.innerText)],
+            ['home', Number(hitsHome.innerText)],
+            ['attivita', Number(hitsAttivita.innerText)],
+            ['attivita1', Number(hitsAttivita1.innerText)],
+            ['attivita2', Number(hitsAttivita2.innerText)],
+            ['attivita3', Number(hitsAttivita3.innerText)],
+            ['chiSiamo', Number(hitsChiSiamo.innerText)],
+            ['contatti', Number(hitsContatti.innerText)],
+            ['conferma contatti', Number(hitsConfermaContatti.innerText)],
+            ['sign-in', Number(hitsSignIn.innerText)],
+            ['conferma sign-in', Number(hitsConfermaSignIn.innerText)],
+            ['login', Number(hitsLogin.innerText)],
+            ['logout', Number(hitsLogout.innerText)],
+            ['aderente', Number(hitsAderente.innerText)],
+            ['simpatizzante', Number(hitsSimpatizzante.innerText)],
+            ['amministratore', Number(hitsAmministratore.innerText)],
         ],
         dataLabels: {
             enabled: true,

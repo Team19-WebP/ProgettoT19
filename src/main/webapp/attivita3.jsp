@@ -5,7 +5,6 @@
 <jsp:useBean id="counterAttivita3" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:setProperty name="counterAttivita3" property="hits" value="0"/>
 <main>
-    <h3>Hits della pagina: <jsp:getProperty name="counterAttivita3" property="hits"/></h3>    <div class="containerAttivita">
     <div class="containerAttivita">
         <img src="immagini/attivita/img3.jpg" alt="Immagine di Abc4Future" style="width: 100%; max-width: 800px">
         <div class="testoImmagine">
