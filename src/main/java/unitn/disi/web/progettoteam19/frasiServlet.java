@@ -14,6 +14,7 @@ public class frasiServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         frasiIspiranti = new ArrayList<>();
+        //todo se lo riempissimo facendo una get dal db?
         frasiIspiranti.add("Se cerchi una mano che ti aiuti nel momento del bisogno, la trovi alla fine del tuo braccio.");
         frasiIspiranti.add("C\u0027è un solo tipo di successo: quello di fare della propria vita ciò che si desidera!");
         frasiIspiranti.add("Lascia che la curiosità ti travolga.");
