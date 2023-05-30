@@ -9,6 +9,7 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <link rel="stylesheet" href="css/aderente.css">
 <main id="mainAderente">
+  <script rel="script" src="scripts/aderente.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
   <div class="containerAderente">
   <div class="menu2">
     <nav>
@@ -23,9 +24,6 @@
   </div>
 
     <div id="dati" hidden="true">
-      <style>
-
-      </style>
       <table>
 
         <tr>
@@ -92,8 +90,6 @@
         </tr>
 
       </table>
-
-
     </div>
 
     <div id="attivitaAderente" hidden="true">
@@ -174,16 +170,15 @@
       <div>
         <b><h6> attenzione, tutte le azioni in questa pagina sono IRREVERSIBILI!!</h6></b>
       </div>
-      <form action="ServletEliminaProfilo" onsubmit="return confermaCancellaIscrizione();">  <%--TODO servlet che elimina l'utente dal DB--%>
+      <form action="ServletEliminaProfilo" method="get">
         <input class="cancellaIscrizione" type="submit" value="cancella iscrizione">
       </form>
+      <p id="popUp" style="color: red"></p>
     </div>
 
     <div id="default">
       <p> Pagina privata! </p>
     </div>
-
-    <script rel="script" src="scripts/aderente.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
 
   </div>
 </main>

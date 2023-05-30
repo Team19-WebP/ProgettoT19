@@ -97,7 +97,17 @@ function clickImage(attivita){
 }
 
 function confermaCancellaIscrizione(){
-    //--TODO qualcosa tipo pop up che chieda la conferma e se dici si return true altrimenti false
+    var txt;
+    var retVal;
+    if (confirm("Sei sicuro di voler cancellare la tua iscrizione a Tum4World?")) {
+        txt = "Cancellazione effettuata.";
+        retVal = true;
+    } else {
+        txt = "Cancellazione annullata.";
+        retVal = false;
+    }
+    document.getElementById("popUp").innerHTML = txt;
+    return retVal;
 }
 
 function dona(){
