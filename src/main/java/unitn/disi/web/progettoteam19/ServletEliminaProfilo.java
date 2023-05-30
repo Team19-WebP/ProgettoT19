@@ -22,7 +22,6 @@ public class ServletEliminaProfilo extends HttpServlet {
         accessoDB.dropUser(utenteLoggato.getUsername());
         //TODO eliminare utente da db
 
-        HttpSession session = request.getSession();
         session.setAttribute("auth", null);
         session.setAttribute("type", null);
         session.invalidate();

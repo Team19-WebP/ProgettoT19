@@ -49,9 +49,6 @@
             <img class="logo" id="logoLeft" src="immagini/logoTransparent.png" alt="logo">
         </div>
         <h1>Tum<strong>4</strong>World</h1>
-        <h3>HITS totali in tutto il sito:
-            <jsp:getProperty name="counterGenerale" property="hits"/>
-        </h3>
         <div>
             <img class="logo" src="immagini/logoTransparent.png" alt="logo">
         </div>
