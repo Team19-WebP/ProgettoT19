@@ -111,7 +111,7 @@ function confermaCancellaIscrizione(){
 }
 
 function dona(){
-    let donazione = document.querySelector("#donazione"); // TODO forse è inutile, ma forse no e forse vogliamo fare i fighi con qualeche animazione BLL
+    let donazione = document.querySelector("#donazione"); // TODO fare animazione donazione if(now.date > 06/05/2023) rimuovere TODO
     donazione.value
 }
 
