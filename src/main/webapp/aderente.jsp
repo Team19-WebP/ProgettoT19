@@ -9,7 +9,6 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <link rel="stylesheet" href="css/aderente.css">
 <main id="mainAderente">
-  <script rel="script" src="scripts/aderente.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
   <div class="containerAderente">
   <div class="menu2">
     <nav>
@@ -168,12 +167,12 @@
 
     <div id="danger" hidden="true">
       <div>
-        <b><h6> attenzione, tutte le azioni in questa pagina sono IRREVERSIBILI!!</h6></b>
+        <b><h6 style="color: red"> attenzione, tutte le azioni in questa pagina sono IRREVERSIBILI!!</h6></b>
       </div>
-      <form action="ServletEliminaProfilo" method="get">
+      <form action="ServletEliminaProfilo" onsubmit="return confermaCancellaIscrizione()" method="get">
         <input class="cancellaIscrizione" type="submit" value="cancella iscrizione">
       </form>
-      <p id="popUp" style="color: red"></p>
+      <p id="popUp" style="color: red; alignment: center"></p>
     </div>
 
     <div id="default">
@@ -181,5 +180,6 @@
     </div>
 
   </div>
+  <script rel="script" src="scripts/aderente.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>

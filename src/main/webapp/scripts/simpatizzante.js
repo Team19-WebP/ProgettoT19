@@ -64,7 +64,6 @@ function clickImage(attivita){
 }
 
 function confermaCancellaIscrizione(){
-    return  confirm("Sei sicuro di voler cancellare la tua iscrizione a Tum4World?");
     var txt;
     var retVal;
     if (confirm("Sei sicuro di voler cancellare la tua iscrizione a Tum4World?")) {

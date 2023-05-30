@@ -9,7 +9,6 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <link rel="stylesheet" href="css/simpatizzante.css">
 <main>
-  <script rel="script" src="scripts/simpatizzante.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e modulare--%>
   <div class="menu2">
     <nav>
       <button onclick="visualizzaDati();" id="buttonDati" style="background-color: #A6B1E1">dati personali</button>
@@ -130,10 +129,10 @@
       <div>
         <b><h6 style="color: red"> attenzione, tutte le azioni in questa pagina sono IRREVERSIBILI!!</h6></b>
       </div>
-      <form action="ServletEliminaProfilo" onsubmit="return confermaCancellaIscrizione()">  <%--TODO servlet che elimina l'utente dal DB--%>
+      <form action="ServletEliminaProfilo" onsubmit="return confermaCancellaIscrizione()" method="get">
         <input class="cancellaIscrizione" type="submit" value="cancella iscrizione">
       </form>
-      <p id="popUp" style="color: red"></p>
+      <p id="popUp" style="color: red; alignment: center"></p>
     </div>
 
     <div id="default" hidden="true">
@@ -141,5 +140,6 @@
     </div>
 
   </div>
+  <script rel="script" src="scripts/simpatizzante.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e modulare--%>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>
