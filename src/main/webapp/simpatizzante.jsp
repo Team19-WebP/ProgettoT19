@@ -31,7 +31,7 @@
         }
         tr{
           border: #424874 solid 2px;
-          border-collapse: collapse;   <%-- TODO @FEDERICO lascio fare a te questi stili e metterli nel css perche non so cosa sto facendo--%>
+          border-collapse: collapse;
           margin: 15%;
           padding: 15%;
         }
@@ -113,16 +113,16 @@
     <div id="attivita" hidden="true">
       <br>
       <br>
-      <form action="ServletPartecipaAttivita">                <%--TODO aggiungere immagini e rendere decente e capire se si fa da servlet o con una funz o entrambe--%>
+      <form action="ServletPartecipaAttivita">
         <label for="attivita1"> attività 1</label>
         <input id="attivita1" name="attivita1" type="checkbox" value="attività 1">
-        <img src="immagini/attivita1.png" alt="immagine attività 1" onclick="clickImage(attivita1);" class="attivita">
+        <img src="immagini/attivita/img1.jpg" alt="immagine attività 1" onclick="clickImage(attivita1);" class="attivita">
         <label for="attivita2"> attività 2</label>
         <input id="attivita2" name="attivita2" type="checkbox" value="attività 2">
-        <img src="immagini/attivita1.png" alt="immagine attività 2" onclick="clickImage(attivita2);" class="attivita">
+        <img src="immagini/attivita/img2.jpg" alt="immagine attività 2" onclick="clickImage(attivita2);" class="attivita">
         <label for="attivita3"> attività 3</label>
         <input id="attivita3" name="attivita3" type="checkbox" value="attività 3">
-        <img src="immagini/attivita1.png" alt="immagine attività 3" onclick="clickImage(attivita3);" class="attivita">
+        <img src="immagini/attivita/img3.jpg" alt="immagine attività 3" onclick="clickImage(attivita3);" class="attivita">
         <input class="aderente" type="submit" value="conferma">
       </form>
     </div>
@@ -137,8 +137,8 @@
       <p id="popUp" style="color: red; alignment: center"></p>
     </div>
 
-    <div id="default" hidden="true">
-      <p> Pagina privata! </p>
+    <div id="default" hidden="false">
+      <p>Benvenuto nella tua pagina privata!</p>
     </div>
 
   </div>

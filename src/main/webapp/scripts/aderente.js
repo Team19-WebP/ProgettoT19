@@ -2,6 +2,7 @@ let dati = document.querySelector("#dati");         //
 let danger = document.querySelector("#danger");     // DIV delle varie sezioni da mostrare/nascondere
 let attivita = document.querySelector("#attivitaAderente"); //
 let donation = document.querySelector("#donation"); //
+let defDiv = document.querySelector("#default");    //
 
 let buttonDati = document.querySelector("#buttonDati");         //
 let buttonDanger = document.querySelector("#buttonDanger");     // Button delle varie sezioni da mostrare/nascondere
@@ -15,6 +16,7 @@ function visualizzaDati(){
         danger.hidden = true;
         attivita.hidden = true;
         donation.hidden = true;
+        defDiv.hidden = true;
 
         buttonDati.style.backgroundColor = "#A6B1E1";
         buttonDanger.style.backgroundColor = "#F4EEFF";
@@ -23,6 +25,7 @@ function visualizzaDati(){
     } else {
         dati.hidden = true;
         buttonDati.style.backgroundColor = "#F4EEFF";
+        defDiv.hidden = false;
     }
 }
 function visualizzaAttivita(){
@@ -31,6 +34,7 @@ function visualizzaAttivita(){
         danger.hidden = true;
         attivita.hidden = false;
         donation.hidden = true;
+        defDiv.hidden = true;
 
         buttonDati.style.backgroundColor = "#F4EEFF";
         buttonDanger.style.backgroundColor = "#F4EEFF";
@@ -39,6 +43,7 @@ function visualizzaAttivita(){
     } else {
         attivita.hidden = true;
         buttonAttivita.style.backgroundColor = "#F4EEFF";
+        defDiv.hidden = false;
     }
 }
 function visualizzaDanger(){
@@ -47,6 +52,7 @@ function visualizzaDanger(){
         danger.hidden = false;
         attivita.hidden = true;
         donation.hidden = true;
+        defDiv.hidden = true;
 
         buttonDati.style.backgroundColor = "#F4EEFF";
         buttonDanger.style.backgroundColor = "#A6B1E1";
@@ -55,6 +61,7 @@ function visualizzaDanger(){
     } else {
         danger.hidden = true;
         buttonDanger.style.backgroundColor = "#F4EEFF";
+        defDiv.hidden = false;
     }
 }
 function visualizzaDonation(){
@@ -63,6 +70,7 @@ function visualizzaDonation(){
         danger.hidden = true;
         attivita.hidden = true;
         donation.hidden = false;
+        defDiv.hidden = true;
 
         buttonDati.style.backgroundColor = "#F4EEFF";
         buttonDanger.style.backgroundColor = "#F4EEFF";
@@ -71,6 +79,7 @@ function visualizzaDonation(){
     } else {
         donation.hidden = true;
         buttonDonation.style.backgroundColor = "#F4EEFF";
+        defDiv.hidden = false;
     }
 }
 

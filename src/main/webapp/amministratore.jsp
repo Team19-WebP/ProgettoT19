@@ -208,15 +208,11 @@
       <p id="hitsLogin" hidden="true"><jsp:getProperty name="counterLogin" property="hits"/></p>
       <p id="hitsLogout" hidden="true"><jsp:getProperty name="counterLogout" property="hits"/></p>
       <p id="hitsChiSiamo" hidden="true"><jsp:getProperty name="counterChisiamo" property="hits"/></p>
-
-      <form action="ServletReset" method="get">
-        <input type="submit" value="RESET">
-      </form>
       <%--TODO siamo sicuri che l'amministratore non debba poter fare anche lui le cose che fa un adrerente (disiscriversi o donare) --%>
     </div>
 
     <div id="default" hidden="false">
-      <p> Pagina privata! </p>
+      <p>Benvenuto nella tua pagina privata!</p>
     </div>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -228,6 +224,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> <%--questo nello specifico è essenziale--%>
 
     <div id="visite" hidden="true">
+      <br>
+      <form action="ServletReset" method="get">
+        <input type="submit" value="RESET">
+      </form>
       <br>
       <div> il sito è stato visitato XXXX volte in totale.</div> <%--TODO prendere il numero di visite da un BEAN e aggiungerlo dinamicamente--%>
       <div id="grafico visite">

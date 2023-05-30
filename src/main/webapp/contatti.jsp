@@ -19,7 +19,7 @@
         </p>
     </div>
     <br>
-    <div> <%-- TODO metterlo in un css  style="height: 60%"--%>
+    <div>
     <form action="ServletFormContatti" method="post" onsubmit="return validaEmail()">
         <div class="inputAndLabel">
             <label for="nome">Nome: </label>
