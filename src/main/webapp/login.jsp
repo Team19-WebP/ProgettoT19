@@ -15,7 +15,10 @@
 
 <% } %>
 
+<jsp:useBean id="counterLogin" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:setProperty name="counterLogin" property="hits" value="0"/>
 <main>
+    <h3>Hits della pagina: <jsp:getProperty name="counterLogin" property="hits"/></h3>
     <div class="formContSignLog" id="divLogin">
         <p>Non hai un account? Registrati <a href="signin.jsp">qui</a>!</p>
         <form action="ServletLogin" method="post" onsubmit="return validaFormLogin()">

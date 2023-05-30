@@ -8,8 +8,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 <link rel="stylesheet" href="css/amministratore.css">
+
+<jsp:useBean id="counterGenerale" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterHome" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterAmministratore" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterAttivita" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterAttivita1" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterAttivita2" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterAttivita3" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterConfermasignin" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterContatti" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterInvioConfermato" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterLogin" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterLogout" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterSignin" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterAderente" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterSimpatizzante" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+
+<jsp:setProperty name="counterAmministratore" property="hits" value="0"/>
+
 <main>
-  <div class="menu2">
+  <h3>Hits della pagina: <jsp:getProperty name="counterAmministratore" property="hits"/></h3>
+  <jsp:include page="frasiIspiranti.jsp"></jsp:include>  <div class="menu2">
     <nav>
       <button onclick="visualizzaUtenti();" id="buttonUtenti">elenco di tutti gli utenti</button>
       <button onclick="visualizzaSimpatizzanti();" id="buttonSimpatizzanti">elenco di tutti i simpatizzanti</button>
@@ -169,6 +189,30 @@
       <div id="infoAderenteM" hidden="true">
         <p> DATI E ALTRI DATI di Carmen Delugan</p>
       </div>
+    </div>
+
+    <div>
+      <p> HITS:
+        TOTALI: <jsp:getProperty name="counterGenerale" property="hits"/> <br/>
+        HOMEPAGE: <jsp:getProperty name="counterHome" property="hits"/> <br/>
+        ATTIVITA: <jsp:getProperty name="counterAttivita" property="hits"/> <br/>
+        ATTIVITA1: <jsp:getProperty name="counterAttivita1" property="hits"/> <br/>
+        ATTIVITA2: <jsp:getProperty name="counterAttivita2" property="hits"/> <br/>
+        ATTIVITA3: <jsp:getProperty name="counterAttivita3" property="hits"/> <br/>
+        CONFERMA SIGNIN: <jsp:getProperty name="counterConfermasignin" property="hits"/> <br/>
+        INVIO CONFERMATO: <jsp:getProperty name="counterInvioConfermato" property="hits"/> <br/>
+        LOGIN: <jsp:getProperty name="counterLogin" property="hits"/> <br/>
+        LOGOUT: <jsp:getProperty name="counterLogout" property="hits"/> <br/>
+        SIGNIN: <jsp:getProperty name="counterSignin" property="hits"/> <br/>
+        ADERENTE: <jsp:getProperty name="counterAderente" property="hits"/> <br/>
+        SIMPATIZZANTE: <jsp:getProperty name="counterSimpatizzante" property="hits"/> <br/>
+        ADMIN: <jsp:getProperty name="counterAmministratore" property="hits"/> <br/>
+
+      </p>
+      <form action="ServletReset" method="get">
+        <input type="submit" value="RESET">
+      </form>
+      <%--TODO siamo sicuri che l'amministratore non debba poter fare anche lui le cose che fa un adrerente (disiscriversi o donare) --%>
     </div>
 
     <div id="default" hidden="false">

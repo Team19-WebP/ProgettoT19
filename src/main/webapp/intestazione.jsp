@@ -1,3 +1,9 @@
+<%@ page import="java.io.IOException" %>
+<%@ page import="java.io.ObjectInputStream" %>
+<%@ page import="java.nio.file.Files" %>
+<%@ page import="java.nio.file.Paths" %>
+<%@ page import="unitn.disi.web.progettoteam19.Counter" %>
+<%@ page import="java.io.ObjectOutputStream" %>
 <!-- <!DOCTYPE html> -->
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
 
@@ -15,6 +21,27 @@
 
 </head>
 
+<jsp:useBean id="counterGenerale" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:setProperty name="counterGenerale" property="hits" value="0"/>
+
+<%
+/*
+        ObjectInputStream io;
+        try {
+            io = new ObjectInputStream(Files.newInputStream(Paths.get("counter.ser")));
+            Counter salvato = (Counter) io.readObject();
+            Counter c = (Counter) application.getAttribute("counterGenerale");
+            if(c != null){
+                c.manuallySet(salvato.getHits());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+*/
+%>
+
 <body>
 
     <header class="intestazione">
@@ -22,6 +49,9 @@
             <img class="logo" id="logoLeft" src="immagini/logoTransparent.png" alt="logo">
         </div>
         <h1>Tum<strong>4</strong>World</h1>
+        <h3>HITS totali in tutto il sito:
+            <jsp:getProperty name="counterGenerale" property="hits"/>
+        </h3>
         <div>
             <img class="logo" src="immagini/logoTransparent.png" alt="logo">
         </div>
@@ -67,3 +97,13 @@
     </nav>
     <jsp:include page="informativaCookies.jsp"></jsp:include>
 
+<%
+        /*Counter contatore = (Counter) application.getAttribute("counterGenerale");
+        ObjectOutputStream oi = null;
+        try{
+            oi = new ObjectOutputStream(Files.newOutputStream(Paths.get("counter.ser")));
+            oi.writeObject(contatore);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }*/
+%>

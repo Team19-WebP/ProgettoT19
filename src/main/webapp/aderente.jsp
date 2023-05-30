@@ -8,7 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 <link rel="stylesheet" href="css/aderente.css">
+<jsp:useBean id="counterAderente" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:setProperty name="counterAderente" property="hits" value="0"/>
 <main id="mainAderente">
+  <h3>Hits della pagina: <jsp:getProperty name="counterAderente" property="hits"/></h3>
   <div class="containerAderente">
   <div class="menu2">
     <nav>

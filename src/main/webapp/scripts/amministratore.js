@@ -10,7 +10,6 @@ let buttonAderenti = document.querySelector("#buttonAderenti");             // B
 let buttonVisite = document.querySelector("#buttonVisite");                 // servono qui per cambiare il colore del bottone della sezione in cui siamo
 let buttonDonations = document.querySelector("#buttonDonations");           //
 
-
 function visualizzaUtenti(){
     if(utenti.hidden == true){
         utenti.hidden = false;

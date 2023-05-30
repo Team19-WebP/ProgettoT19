@@ -1,7 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 <jsp:include page="frasiIspiranti.jsp"></jsp:include>
+<jsp:useBean id="counterAttivita2" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:setProperty name="counterAttivita2" property="hits" value="0"/>
 <main>
+    <h3>Hits della pagina: <jsp:getProperty name="counterAttivita2" property="hits"/></h3>    <div class="containerAttivita">
     <div class="containerAttivita">
         <img src="immagini/attivita/img2.jpg" alt="Immagine di Team4World" style="width: 100%;">
         <div class="testoImmagine">

@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 <jsp:include page="frasiIspiranti.jsp"></jsp:include>
-<style>
-
-</style>
+<jsp:useBean id="counterContatti" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:setProperty name="counterContatti" property="hits" value="0"/>
 <main>
+    <h3>Hits della pagina: <jsp:getProperty name="counterContatti" property="hits"/></h3>
     <div class="formContSignLog containerDescrizione" >
         <p>
             Per qualsiasi domanda o informazione non esitare a contattarci scrivendoci a tum4world@nessunluogonoesiste.com,

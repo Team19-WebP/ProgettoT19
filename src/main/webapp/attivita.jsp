@@ -7,7 +7,11 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <jsp:include page="frasiIspiranti.jsp"></jsp:include>
 
+<jsp:useBean id="counterAttivita" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:setProperty name="counterAttivita" property="hits" value="0"/>
+
 <main>
+    <h3>Hits della pagina: <jsp:getProperty name="counterAttivita" property="hits"/></h3>
     <div class="containerAttivita containerDescrizione">
         <section class="sectionTitolo">
             <h2>Le nostre attività</h2>
