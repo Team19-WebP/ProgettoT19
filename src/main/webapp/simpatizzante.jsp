@@ -11,7 +11,6 @@
 <jsp:useBean id="counterSimpatizzante" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:setProperty name="counterSimpatizzante" property="hits" value="0"/>
 <main>
-  <h3>Hits della pagina: <jsp:getProperty name="counterSimpatizzante" property="hits"/></h3>
   <div class="menu2">
     <nav>
       <button onclick="visualizzaDati();" id="buttonDati" style="background-color: #A6B1E1">dati personali</button>

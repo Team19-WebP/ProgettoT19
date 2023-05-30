@@ -20,6 +20,7 @@
 <jsp:useBean id="counterContatti" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:useBean id="counterInvioConfermato" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:useBean id="counterLogin" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="counterChisiamo" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:useBean id="counterLogout" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:useBean id="counterSignin" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:useBean id="counterAderente" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
@@ -28,7 +29,6 @@
 <jsp:setProperty name="counterAmministratore" property="hits" value="0"/>
 
 <main>
-  <h3>Hits della pagina: <jsp:getProperty name="counterAmministratore" property="hits"/></h3>
   <jsp:include page="frasiIspiranti.jsp"></jsp:include>  <div class="menu2">
     <nav>
       <button onclick="visualizzaUtenti();" id="buttonUtenti">elenco di tutti gli utenti</button>
@@ -192,23 +192,23 @@
     </div>
 
     <div>
-      <p> HITS:
-        TOTALI: <jsp:getProperty name="counterGenerale" property="hits"/> <br/>
-        HOMEPAGE: <jsp:getProperty name="counterHome" property="hits"/> <br/>
-        ATTIVITA: <jsp:getProperty name="counterAttivita" property="hits"/> <br/>
-        ATTIVITA1: <jsp:getProperty name="counterAttivita1" property="hits"/> <br/>
-        ATTIVITA2: <jsp:getProperty name="counterAttivita2" property="hits"/> <br/>
-        ATTIVITA3: <jsp:getProperty name="counterAttivita3" property="hits"/> <br/>
-        CONFERMA SIGNIN: <jsp:getProperty name="counterConfermasignin" property="hits"/> <br/>
-        INVIO CONFERMATO: <jsp:getProperty name="counterInvioConfermato" property="hits"/> <br/>
-        LOGIN: <jsp:getProperty name="counterLogin" property="hits"/> <br/>
-        LOGOUT: <jsp:getProperty name="counterLogout" property="hits"/> <br/>
-        SIGNIN: <jsp:getProperty name="counterSignin" property="hits"/> <br/>
-        ADERENTE: <jsp:getProperty name="counterAderente" property="hits"/> <br/>
-        SIMPATIZZANTE: <jsp:getProperty name="counterSimpatizzante" property="hits"/> <br/>
-        ADMIN: <jsp:getProperty name="counterAmministratore" property="hits"/> <br/>
+      <p id="hitsTot" hidden="true"><jsp:getProperty name="counterGenerale" property="hits"/></p>
+      <p id="hitsHome" hidden="true"><jsp:getProperty name="counterHome" property="hits"/></p>
+      <p id="hitsAttivita" hidden="true"><jsp:getProperty name="counterAttivita" property="hits"/></p>
+      <p id="hitsAttivita1" hidden="true"><jsp:getProperty name="counterAttivita1" property="hits"/></p>
+      <p id="hitsAttivita2" hidden="true"><jsp:getProperty name="counterAttivita2" property="hits"/></p>
+      <p id="hitsAttivita3" hidden="true"><jsp:getProperty name="counterAttivita3" property="hits"/></p>
+      <p id="hitsSignIn" hidden="true"><jsp:getProperty name="counterSignin" property="hits"/></p>
+      <p id="hitsConfermaSignIn" hidden="true"><jsp:getProperty name="counterConfermasignin" property="hits"/></p>
+      <p id="hitsAderente" hidden="true"><jsp:getProperty name="counterAderente" property="hits"/></p>
+      <p id="hitsSimpatizzante" hidden="true"><jsp:getProperty name="counterSimpatizzante" property="hits"/></p>
+      <p id="hitsAmministratore" hidden="true"><jsp:getProperty name="counterAmministratore" property="hits"/></p>
+      <p id="hitsContatti" hidden="true"><jsp:getProperty name="counterContatti" property="hits"/></p>
+      <p id="hitsConfermaContatti" hidden="true"><jsp:getProperty name="counterInvioConfermato" property="hits"/></p>
+      <p id="hitsLogin" hidden="true"><jsp:getProperty name="counterLogin" property="hits"/></p>
+      <p id="hitsLogout" hidden="true"><jsp:getProperty name="counterLogout" property="hits"/></p>
+      <p id="hitsChiSiamo" hidden="true"><jsp:getProperty name="counterChisiamo" property="hits"/></p>
 
-      </p>
       <form action="ServletReset" method="get">
         <input type="submit" value="RESET">
       </form>
@@ -254,9 +254,7 @@
       </figure>
 
     </div>
-
-    <script rel="script" src="scripts/amministratore.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
-
   </div>
+  <script rel="script" src="scripts/amministratore.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>

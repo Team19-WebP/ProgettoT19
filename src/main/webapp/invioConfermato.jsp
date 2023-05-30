@@ -10,7 +10,6 @@
 <jsp:useBean id="counterInvioConfermato" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:setProperty name="counterInvioConfermato" property="hits" value="0"/>
 <main>
-    <h3>Hits della pagina: <jsp:getProperty name="counterInvioConfermato" property="hits"/></h3>
     <jsp:include page="frasiIspiranti.jsp"></jsp:include><br><br>
     <div class="containerInvioConfermato">
         <div class="containerDescrizione">

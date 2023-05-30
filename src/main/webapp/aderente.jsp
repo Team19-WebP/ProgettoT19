@@ -11,7 +11,6 @@
 <jsp:useBean id="counterAderente" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:setProperty name="counterAderente" property="hits" value="0"/>
 <main id="mainAderente">
-  <h3>Hits della pagina: <jsp:getProperty name="counterAderente" property="hits"/></h3>
   <div class="containerAderente">
   <div class="menu2">
     <nav>

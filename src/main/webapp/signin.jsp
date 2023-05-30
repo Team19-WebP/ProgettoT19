@@ -4,7 +4,6 @@
 <jsp:useBean id="counterSignin" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:setProperty name="counterSignin" property="hits" value="0"/>
 <main>
-    <h3>Hits della pagina: <jsp:getProperty name="counterSignin" property="hits"/></h3>
     <div class="formContSignLog">
         <p>Hai già un account? Esegui il <a href="login.jsp">login</a>!</p>
         <form action="ServletSignin"  method="post"
