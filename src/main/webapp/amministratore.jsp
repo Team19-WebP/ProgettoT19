@@ -192,7 +192,6 @@
     </div>
 
     <div>
-      <p id="hitsTot" hidden="true"><jsp:getProperty name="counterGenerale" property="hits"/></p>
       <p id="hitsHome" hidden="true"><jsp:getProperty name="counterHome" property="hits"/></p>
       <p id="hitsAttivita" hidden="true"><jsp:getProperty name="counterAttivita" property="hits"/></p>
       <p id="hitsAttivita1" hidden="true"><jsp:getProperty name="counterAttivita1" property="hits"/></p>
@@ -229,16 +228,12 @@
         <input type="submit" value="RESET">
       </form>
       <br>
-      <div> il sito è stato visitato XXXX volte in totale.</div> <%--TODO prendere il numero di visite da un BEAN e aggiungerlo dinamicamente--%>
+      <div> il sito è stato visitato <b><jsp:getProperty name="counterGenerale" property="hits"/></b> volte in totale.</div>
       <div id="grafico visite">
 
         <figure class="highcharts-figure">
           <div id="GraficoVisite"></div>  <%--div che viene utilizzato dalle librerie per riempirlo con il grafico interattivo--%>
-          <p class="highcharts-description">    <%--TODO capire come si fanno i grafici [bene] con sta figata di lib--%>
-            Grafico delle visite del sito.
-          </p>
         </figure>
-
       </div>
     </div>
 

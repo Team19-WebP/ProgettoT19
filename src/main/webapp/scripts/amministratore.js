@@ -150,7 +150,6 @@ function stampaUtenti(){  //TODO faccio la stessa cosa per aderenti e simpatizza
 
 ////////////////////////////////////////////////////GRAFICI/////////////////////////////////////////////////////////////
 
-let hitsTot = document.querySelector("#hitsTot");
 let hitsHome = document.querySelector("#hitsHome");
 let hitsAttivita = document.querySelector("#hitsAttivita");
 let hitsAttivita1 = document.querySelector("#hitsAttivita1");
@@ -204,13 +203,12 @@ Highcharts.chart('GraficoVisite', {
         colors: [
             '#00ffff', '#ff00ff', '#008000', '#dc143c',
             '#0000ff', '#808080', '#ffff00', '#d2691e',
-            '#533be1', '#db7093', '#00ff00', '#800000',
-            '#808000', '#2c46db', '#ff69b4', '#daa520'
+            '#533be1', '#daa520', '#00ff00', '#800000',
+            '#808000', '#2c46db', '#ff69b4'
         ],
         colorByPoint: true,
         groupPadding: 0,
         data: [
-            ['Visite totali', Number(hitsTot.innerText)],
             ['home', Number(hitsHome.innerText)],
             ['attivita', Number(hitsAttivita.innerText)],
             ['attivita1', Number(hitsAttivita1.innerText)],
