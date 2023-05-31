@@ -241,10 +241,13 @@
 
       <div> il sito ha ricevuto XXXX€ in totale.</div> <%--TODO prendere il numero di visite da un BEAN e aggiungerlo dinamicamente--%>
 
+      <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+
       <figure class="highcharts-figure">
-        <div id="GraficoDonazioni"></div>  <%--div che viene utilizzato dalle librerie per riempirlo con il grafico interattivo--%>
-        <p class="highcharts-description">    <%--TODO capire come si fanno i grafici [bene] con sta figata di lib--%>
-          Grafico delle donazioni al sito.
+        <div id="GraficoDonazioni"></div>
+        <p class="highcharts-description">
+          Grafico che mostra le donazioni al sito durante il 2023 suddivise per mese.
+          Cliccando una singola colonna si possono avere ulteriori informazioni sulle donazioni di tale mese.
         </p>
       </figure>
 
