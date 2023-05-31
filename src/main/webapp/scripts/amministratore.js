@@ -168,7 +168,8 @@ let hitsLogout = document.querySelector("#hitsLogout");
 
 Highcharts.chart('GraficoVisite', {
     chart: {
-        type: 'column'
+        type: 'column',
+        width: 800
     },
     title: {
         text: 'Visite per pagina al sito'

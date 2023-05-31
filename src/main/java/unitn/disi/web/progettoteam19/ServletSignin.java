@@ -14,7 +14,6 @@ public class ServletSignin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AccessoDB accessoDB = new AccessoDB();
         if(accessoDB.getUserName(request.getParameter("username")) != null){
-            System.out.println("Problemi");
             response.sendRedirect("./temp.jsp");
         } else {
             request.getRequestDispatcher(response.encodeURL("/ServletPushUserData")).include(request, response);
