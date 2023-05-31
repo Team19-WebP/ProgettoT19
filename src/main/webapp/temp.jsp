@@ -7,7 +7,7 @@
     <jsp:include page="frasiIspiranti.jsp"></jsp:include><br><br>
     <div class="containerInvioConfermato">
         <div class="containerDescrizione">
-            <h2>Username già preso</h2>
+            <h2>Username già preso</h2> <%--TODO c'è scritto di rimandare alla pagina sign-in con un messaggio di errore che dice: "19: Username già preso, provare con un altro."--%>
         </div>
     </div>
 </main>

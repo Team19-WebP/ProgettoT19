@@ -290,83 +290,26 @@ Highcharts.chart('GraficoDonazioni', {
         pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}€</b><br/>'
     },
 
-    series: [
-        {
-            name: 'Donations',
-            colorByPoint: true,
+    series: [{name: 'Donations', colorByPoint: true,
             data: [
-                {
-                    name: 'Gennaio',
-                    y: 63.06,
-                    drilldown: 'gennaio'
-                },
-                {
-                    name: 'Febbraio',
-                    y: 19.84,
-                    drilldown: 'febbraio'
-                },
-                {
-                    name: 'Marzo',
-                    y: 4.18,
-                    drilldown: 'marzo'
-                },
-                {
-                    name: 'Aprile',
-                    y: 4.12,
-                    drilldown: 'aprile'
-                },
-                {
-                    name: 'Maggio',
-                    y: 2.33,
-                    drilldown: 'maggio'
-                },
-                {
-                    name: 'Giugno',
-                    y: 0.45,
-                    drilldown: 'giugno'
-                },
-                {
-                    name: 'Luglio',
-                    y: 1.582,
-                    drilldown: 'luglio'
-                },
-                {
-                    name: 'Agosto',
-                    y: 1.582,
-                    drilldown: 'agosto'
-                },
-                {
-                    name: 'Settembre',
-                    y: 1.582,
-                    drilldown: 'settembre'
-                },
-                {
-                    name: 'Ottobre',
-                    y: 1.582,
-                    drilldown: 'ottobre'
-                },
-                {
-                    name: 'Novembre',
-                    y: 1.582,
-                    drilldown: 'novembre'
-                },
-                {
-                    name: 'Dicembre',
-                    y: 1.582,
-                    drilldown: 'dicembre'
-                }
-
-            ]
-        }
-    ],
+                {name: 'Gennaio', y: 63.06, drilldown: 'gennaio'},
+                {name: 'Febbraio', y: 19.84, drilldown: 'febbraio'},
+                {name: 'Marzo', y: 4.18, drilldown: 'marzo'},
+                {name: 'Aprile', y: 4.12, drilldown: 'aprile'},
+                {name: 'Maggio', y: 2.33, drilldown: 'maggio'},
+                {name: 'Giugno', y: 0.45, drilldown: 'giugno'},
+                {name: 'Luglio', y: 1.582, drilldown: 'luglio'},
+                {name: 'Agosto', y: 1.582, drilldown: 'agosto'},
+                {name: 'Settembre', y: 1.582, drilldown: 'settembre'},
+                {name: 'Ottobre', y: 1.582, drilldown: 'ottobre'},
+                {name: 'Novembre', y: 1.582, drilldown: 'novembre'},
+                {name: 'Dicembre', y: 1.582, drilldown: 'dicembre'}
+            ]}],
     drilldown: {
         breadcrumbs: {
-            position: {
-                align: 'right'
-            }
+            position: {align: 'right'}
         },
-        series: [
-            {
+        series: [{
                 name: 'gennaio',
                 id: 'gennaio',
                 data: [
@@ -401,8 +344,7 @@ Highcharts.chart('GraficoDonazioni', {
                     ['29/01', 0.1],
                     ['30/01', 0.1],
                     ['31/01', 0.1]
-                ]},
-            {
+                ]}, {
                 name: 'febbraio',
                 id: 'febbraio',
                 data: [
@@ -434,8 +376,7 @@ Highcharts.chart('GraficoDonazioni', {
                     ['26/02', 0.1],
                     ['27/02', 0.1],
                     ['28/02', 0.1],
-                ]},
-            {
+                ]}, {
                 name: 'marzo',
                 id: 'marzo',
                 data: [
@@ -470,8 +411,7 @@ Highcharts.chart('GraficoDonazioni', {
                     ['29/03', 0.1],
                     ['30/03', 0.1],
                     ['31/03', 0.1]
-                ]},
-            {
+                ]}, {
                 name: 'aprile',
                 id: 'aprile',
                 data: [
@@ -505,8 +445,7 @@ Highcharts.chart('GraficoDonazioni', {
                     ['28/04', 0.1],
                     ['29/04', 0.1],
                     ['30/04', 0.1]
-                ]},
-            {
+                ]}, {
                 name: 'maggio',
                 id: 'maggio',
                 data: [
@@ -541,8 +480,7 @@ Highcharts.chart('GraficoDonazioni', {
                     ['29/05', 0.1],
                     ['30/05', 0.1],
                     ['31/05', 0.1]
-                ]},
-            {
+                ]}, {
                 name: 'giugno',
                 id: 'giugno',
                 data: [
@@ -576,8 +514,7 @@ Highcharts.chart('GraficoDonazioni', {
                     ['28/06', 0.1],
                     ['29/06', 0.1],
                     ['30/06', 0.1],
-                ]},
-            {
+                ]}, {
                 name: 'luglio',
                 id: 'luglio',
                 data: [
@@ -612,8 +549,7 @@ Highcharts.chart('GraficoDonazioni', {
                     ['29/07', 0.1],
                     ['30/07', 0.1],
                     ['31/07', 0.1]
-                ]},
-            {
+                ]}, {
                 name: 'agosto',
                 id: 'agosto',
                 data: [
@@ -648,8 +584,7 @@ Highcharts.chart('GraficoDonazioni', {
                     ['29/08', 0.1],
                     ['30/08', 0.1],
                     ['31/08', 0.1]
-                ]},
-            {
+                ]}, {
                 name: 'settembre',
                 id: 'settembre',
                 data: [
@@ -683,8 +618,7 @@ Highcharts.chart('GraficoDonazioni', {
                     ['28/09', 0.1],
                     ['29/09', 0.1],
                     ['30/09', 0.1]
-                ]},
-            {
+                ]}, {
                 name: 'ottobre',
                 id: 'ottobre',
                 data: [
@@ -719,8 +653,7 @@ Highcharts.chart('GraficoDonazioni', {
                     ['29/10', 0.1],
                     ['30/10', 0.1],
                     ['31/10', 0.1],
-                ]},
-            {
+                ]}, {
                 name: 'novembre',
                 id: 'novembre',
                 data: [
@@ -754,8 +687,7 @@ Highcharts.chart('GraficoDonazioni', {
                     ['28/11', 0.1],
                     ['29/11', 0.1],
                     ['30/11', 0.1]
-                ]},
-            {
+                ]}, {
                 name: 'dicembre',
                 id: 'dicembre',
                 data: [
@@ -791,9 +723,6 @@ Highcharts.chart('GraficoDonazioni', {
                     ['30/12', 0.1],
                     ['31/12', 0.1]
                 ]},
-
-        ]
-    }
+        ]}
 });
-
 ////////////////////////////////////////////////////GRAFICI/////////////////////////////////////////////////////////////

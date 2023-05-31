@@ -54,12 +54,12 @@ public class ServletDonazione extends HttpServlet {
         System.out.println(returnHome.format(data));
 
 
-        String stringaInsert = "INSERT INTO USERS VALUES(?, ?)";
+        String stringaInsert = "INSERT INTO DONAZIONI VALUES(?, ?)";
 
         try{
             PreparedStatement inserimento = connection.prepareStatement(stringaInsert);
             inserimento.setString(1, request.getParameter("Importo"));
-            inserimento.setString(2, simpleDateFormat.format(data)); //
+            inserimento.setString(2, simpleDateFormat.format(data)); //TODO @Gabriele dimmi se sto facendo casini
 
             inserimento.executeUpdate();
 
@@ -73,10 +73,12 @@ public class ServletDonazione extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         process_request(request, response);
+        response.sendRedirect(response.encodeURL("./aderente.jsp"));
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         process_request(request, response);
+        response.sendRedirect(response.encodeURL("./aderente.jsp"));
     }
 }

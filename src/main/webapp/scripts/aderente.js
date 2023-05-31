@@ -119,11 +119,6 @@ function confermaCancellaIscrizione(){
     return retVal;
 }
 
-function dona(){
-    let donazione = document.querySelector("#donazione"); // TODO fare animazione donazione if(now.date > 06/05/2023) rimuovere TODO
-    donazione.value
-}
-
 function seleziona(selezione) {
     let checkBox = document.querySelector("#" + selezione);
     let img = document.querySelector("#img"+selezione);
