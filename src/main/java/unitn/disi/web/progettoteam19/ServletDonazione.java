@@ -9,12 +9,23 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.annotation.*;
 
 @WebServlet(name = "ServletDonazione", value = "/ServletDonazione")
 public class ServletDonazione extends HttpServlet {
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //salva nel DB
+        Date data = new Date();
+        System.out.println(data);
+        String pattern = "YYYY-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        System.out.println(simpleDateFormat.format(data));
+        String likeWeLike = "dd-MM-YYYY";
+        SimpleDateFormat returnHome = new SimpleDateFormat(likeWeLike);
+        System.out.println(returnHome.format(data));
+
 
     }
 

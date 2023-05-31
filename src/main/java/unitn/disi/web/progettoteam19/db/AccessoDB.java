@@ -36,17 +36,13 @@ public class AccessoDB {
             ResultSet rs = inserimento.executeQuery();
 
             if(rs.next()){
-                String u = rs.getString(1);
-                destroyConn();
-                return u;
+                return rs.getString(1);
             } else {
-                destroyConn();
                 return null;
             }
 
         } catch (SQLException ex){
             ex.printStackTrace();
-            destroyConn();
             return null;
         }
     }
@@ -54,17 +50,23 @@ public class AccessoDB {
     public String getUserName(String usernameToCheck){
         String stringaGet = "SELECT USERNAME FROM USERS WHERE USERNAME = ?";
 
-        return getString(usernameToCheck, stringaGet);
+        String retval = getString(usernameToCheck, stringaGet);
+        destroyConn();
+        return retval;
     }
     public String getPassword(String usernameToCheck){
         String stringaGet = "SELECT PASSWORD FROM USERS WHERE USERNAME = ?";
 
-        return getString(usernameToCheck, stringaGet);
+        String retval = getString(usernameToCheck, stringaGet);
+        destroyConn();
+        return retval;
     }
     public String getTipologia(String usernameToCheck){
         String stringaGet = "SELECT TIPOLOGIA FROM USERS WHERE USERNAME = ?";
 
-        return getString(usernameToCheck, stringaGet);
+        String retval = getString(usernameToCheck, stringaGet);
+        destroyConn();
+        return retval;
     }
     public void dropUser(String usernameToEliminate) {
         String stringaGet = "DELETE FROM USERS WHERE USERNAME = ?";
