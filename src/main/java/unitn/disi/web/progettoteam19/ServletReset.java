@@ -54,6 +54,8 @@ public class ServletReset extends HttpServlet {
         reset(c);
         c = (Counter) servletContext.getAttribute("counterSimpatizzante");
         reset(c);
+        c = (Counter) servletContext.getAttribute("counterChisiamo");
+        reset(c);
 
         response.sendRedirect(response.encodeURL("amministratore.jsp"));
     }
