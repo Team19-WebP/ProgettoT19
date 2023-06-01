@@ -134,7 +134,7 @@
       <p id="popUp" style="color: red; alignment: center"></p>
     </div>
 
-    <div id="default" hidden="false">
+    <div id="default">
       <p>Benvenuto nella tua pagina privata!</p>
     </div>
 

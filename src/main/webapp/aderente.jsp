@@ -142,7 +142,7 @@
         </div>
         <br>
         <div>
-          <input class="aderente" type="submit" value="partecipa" style="width:90px; height:35px">
+          <input class="aderente" type="submit" value="partecipa" style="width:90px; height:35px">  <%--TODO non so se va bene lasciare uno style qui--%>
         </div>
       </form>
     </div>
@@ -172,7 +172,7 @@
     </div>
 
     <div id="default">
-      <p> Pagina privata! </p>
+      <p>Benvenuto nella tua pagina privata!</p>
     </div>
 
   </div>

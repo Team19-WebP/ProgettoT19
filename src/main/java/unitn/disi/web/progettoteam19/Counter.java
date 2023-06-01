@@ -2,7 +2,7 @@ package unitn.disi.web.progettoteam19;
 
 import java.io.*;
 
-//ce ne dovrà essere 1 per pagina
+///ce né 1 per pagina
 
 public class Counter implements Serializable {
 
