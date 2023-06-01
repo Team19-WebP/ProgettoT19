@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: giuli
-  Date: 12/05/2023
-  Time: 12:23
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 <link rel="stylesheet" href="css/aderente.css">
@@ -157,9 +150,12 @@
     <div id="donation" hidden="true">
       <br>
       <br>
-      <form action="ServletDonazione">
-        <label for="donazione">Importo: </label>
-        <input type="text" placeholder="420.69"  id="donazione" name="donazione" required> <br>
+      <!-- todo implementare meglio validadonazione--->
+      <!-- todo implementare conferma donazione (con ajax) -->
+
+      <form action="ServletDonazione" onsubmit="return validaDonazione();">
+        <label for="donazione">Importo (in €): </label>
+        <input type="number" step=".01" min="0" placeholder="Inserisci importo..."  id="donazione" name="donazione" required> <br>
         <br><br>
         <input class="aderente" type="submit" value="dona">
       </form>

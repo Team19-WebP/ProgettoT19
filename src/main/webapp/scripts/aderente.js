@@ -9,6 +9,16 @@ let buttonDanger = document.querySelector("#buttonDanger");     // Button delle 
 let buttonAttivita = document.querySelector("#buttonAttivita"); // servono qui per cambiare il colore del bottone della sezione in cui siamo
 let buttonDonation = document.querySelector("#buttonDonation"); //
 
+function validaDonazione(){
+    let valore = document.querySelector("#donazione").value;
+    if(valore <= 0){
+        alert("Inserire un importo >0!");
+        return false;
+    } else {
+        return true;
+    }
+}
+
 function visualizzaDati(){
     if(dati.hidden == true){
         dati.hidden = false;

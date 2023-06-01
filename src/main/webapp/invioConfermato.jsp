@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Enrico
-  Date: 09/05/2023
-  Time: 23:37
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 <jsp:useBean id="counterInvioConfermato" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>

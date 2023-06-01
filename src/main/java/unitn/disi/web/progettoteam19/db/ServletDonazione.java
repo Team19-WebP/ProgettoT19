@@ -48,11 +48,19 @@ public class ServletDonazione extends HttpServlet {
         System.out.println(data);
         String pattern = "YYYY-MM-dd"; //questo è il format della data nel DB
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        System.out.println(simpleDateFormat.format(data));
-        String likeWeLike = "dd-MM-YYYY";
-        SimpleDateFormat returnHome = new SimpleDateFormat(likeWeLike);
-        System.out.println(returnHome.format(data));
 
+        String stringaInsert = "INSERT INTO Donazioni (Importo, DataDonazione) VALUES (?, ?)";
+
+        try {
+            PreparedStatement inserimento = connection.prepareStatement(stringaInsert);
+            double importo = Double.parseDouble(request.getParameter("donazione"));
+            inserimento.setDouble(1,importo);
+            inserimento.setString(2,simpleDateFormat.format(data));
+            inserimento.executeUpdate();
+            System.out.println("donati euro " + importo);
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
 
     }
 
