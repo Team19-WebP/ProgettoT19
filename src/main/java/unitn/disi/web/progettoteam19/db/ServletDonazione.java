@@ -54,20 +54,6 @@ public class ServletDonazione extends HttpServlet {
         System.out.println(returnHome.format(data));
 
 
-        String stringaInsert = "INSERT INTO DONAZIONI VALUES(?, ?)";
-
-        try{
-            PreparedStatement inserimento = connection.prepareStatement(stringaInsert);
-            inserimento.setString(1, request.getParameter("Importo"));
-            inserimento.setString(2, simpleDateFormat.format(data)); //TODO @Gabriele dimmi se sto facendo casini
-
-            inserimento.executeUpdate();
-
-        } catch (SQLException ex){
-            ex.printStackTrace();
-        }
-
-
     }
 
     @Override

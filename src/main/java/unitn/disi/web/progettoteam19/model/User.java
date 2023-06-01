@@ -1,6 +1,7 @@
 package unitn.disi.web.progettoteam19.model;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class User implements Serializable {
@@ -8,8 +9,8 @@ public class User implements Serializable {
     private String cognome;
     private Date datadinascita;
     private String email;
-    private int cellulare;
-    private Tipo tipologia;
+    private String cellulare;
+    private String tipologia;
     private String username;
 
     public User() {
@@ -48,19 +49,19 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public int getCellulare() {
+    public String getCellulare() {
         return cellulare;
     }
 
-    public void setCellulare(int cellulare) {
+    public void setCellulare(String cellulare) {
         this.cellulare = cellulare;
     }
 
-    public Tipo getTipologia() {
+    public String getTipologia() {
         return tipologia;
     }
 
-    public void setTipologia(Tipo tipologia) {
+    public void setTipologia(String tipologia) {
         this.tipologia = tipologia;
     }
 
@@ -70,5 +71,24 @@ public class User implements Serializable {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getDateFormatITA(){
+        String formatITA = "dd-MM-YYYY";
+        SimpleDateFormat formatted = new SimpleDateFormat(formatITA);
+        return formatted.format(datadinascita);
+    }
+
+    @Override
+    public String toString() {
+        String sb = "";
+        sb = "Nome: " + nome + "\n";
+        sb += "Cognome: " + cognome + "\n";
+        sb += "Data di nascita: " + getDateFormatITA() + "\n";
+        sb += "Email: " + email + "\n";
+        sb += "Cellulare: " + cellulare + "\n";
+        sb += "Tipologia: " + tipologia + "\n";
+        sb += "Username: " + username + "\n";
+        return sb;
     }
 }

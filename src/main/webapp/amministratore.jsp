@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: giuli
-  Date: 17/05/2023
-  Time: 13:52
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 <link rel="stylesheet" href="css/amministratore.css">

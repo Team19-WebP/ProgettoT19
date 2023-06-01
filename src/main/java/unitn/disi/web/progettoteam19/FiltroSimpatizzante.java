@@ -22,6 +22,13 @@ public class FiltroSimpatizzante implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
 
+        if(session != null){
+            System.out.println("In UF con: sessione ->" + session.getAttribute("type"));
+        } else {
+            System.out.println("In UF con: session -> null");
+        }
+
+
         if(session != null && session.getAttribute("type") != null && session.getAttribute("type").equals("simpatizzante")){
             chain.doFilter(request, response);
         } else {

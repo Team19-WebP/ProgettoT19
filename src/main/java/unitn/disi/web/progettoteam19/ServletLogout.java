@@ -13,8 +13,8 @@ import javax.servlet.annotation.*;
 public class ServletLogout extends HttpServlet {
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        session.setAttribute("auth", null);
         session.setAttribute("type", null);
+        session.setAttribute("utenteLoggato", null);
         session.invalidate();
         ServletContext servletContext = request.getServletContext();
         if(servletContext.getAttribute("cookies").equals("false")){

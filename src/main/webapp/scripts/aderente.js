@@ -12,8 +12,7 @@ let buttonDonation = document.querySelector("#buttonDonation"); //
 function visualizzaDati(){
     if(dati.hidden == true){
         dati.hidden = false;
-        //TODO stampaDati();
-        danger.hidden = true;
+       danger.hidden = true;
         attivita.hidden = true;
         donation.hidden = true;
         defDiv.hidden = true;
@@ -81,24 +80,6 @@ function visualizzaDonation(){
         buttonDonation.style.backgroundColor = "#F4EEFF";
         defDiv.hidden = false;
     }
-}
-
-function stampaDati(){
-    let nome = dati.querySelector("#nome");
-    let cognome = dati.querySelector("#cognome");
-    let ddn = dati.querySelector("#ddn");
-    let email = dati.querySelector("#email");
-    let tel = dati.querySelector("#tel");
-    let potere = dati.querySelector("#potere");
-    let username = dati.querySelector("#username");
-
-    nome.innerText = utente.nome;
-    cognome.innerText = utente.cognome;
-    ddn.innerText = utente.ddn;
-    email.innerText = utente.email    //TODO vedere come accedere a questi dati
-    tel.innerText = utente.tel;
-    potere.innerText = utente.potere;
-    username.innerText = utente.username;
 }
 
 function clickImage(attivita){

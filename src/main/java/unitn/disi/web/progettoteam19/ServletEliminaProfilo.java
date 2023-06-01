@@ -17,13 +17,12 @@ public class ServletEliminaProfilo extends HttpServlet {
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        User utenteLoggato = (User) session.getAttribute("infoUtente");
+        User utenteLoggato = (User) session.getAttribute("utenteLoggato");
         AccessoDB accessoDB = new AccessoDB();
         accessoDB.dropUser(utenteLoggato.getUsername());
-        //TODO eliminare utente da db
 
-        session.setAttribute("auth", null);
         session.setAttribute("type", null);
+        session.setAttribute("utenteLoggato", null);
         session.invalidate();
         ServletContext servletContext = request.getServletContext();
         if(servletContext.getAttribute("cookies").equals("false")){

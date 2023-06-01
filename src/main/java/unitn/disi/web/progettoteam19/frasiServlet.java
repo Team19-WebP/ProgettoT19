@@ -13,6 +13,7 @@ public class frasiServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
+        System.out.println("quante volte");
         frasiIspiranti = new ArrayList<>();
         //todo se lo riempissimo facendo una get dal db?
         frasiIspiranti.add("Se cerchi una mano che ti aiuti nel momento del bisogno, la trovi alla fine del tuo braccio.");

@@ -29,32 +29,37 @@ public class ServletLogin extends HttpServlet {
         AccessoDB accessoDB = new AccessoDB();
         if(accessoDB.getUserName(username) == null){
             System.out.println("scemo username non esiste");
+            response.sendRedirect("error.jsp");
+            return;
         }
         String pwFromDB = accessoDB.getPassword(username);
         if(pwFromDB != null && !pwFromDB.equals(password)){
             System.out.println("scemo pw sbagliata");
+            response.sendRedirect("error.jsp");
+            return;
         }
         String tipologia = accessoDB.getTipologia(username);
         if(tipologia == null){
             System.out.println("problema inaspettato");
+            response.sendRedirect("error.jsp");
+            return;
         }
 
-        //TODO fare i controlli da backend tipo che esista account e che password sia quella giusta
-
-        //TODO aggiungere ad un BEAN o alla sessione TUTTI i dati dell'utente tranne la password
         boolean aderente = false, simpatizzante = false, amministratore = false;
 
-        if(username.equals("aderente")){
+        if(tipologia.equals("aderente")){
             aderente = true;
-        } else if(username.equals("simpatizzante")) {
+        } else if(tipologia.equals("simpatizzante")) {
             simpatizzante = true;
-        } else if(username.equals("admin") && password.equals("19Adm1n!")){
+        } else if(tipologia.equals("amministratore")){
             amministratore = true;
         }
 
         HttpSession session = request.getSession(true);
-        session.setAttribute("auth", "true");
-        //session.setAttribute("infoUtente", new User());
+
+        accessoDB.destroyConn();
+        request.getRequestDispatcher("ServletGetUser").include(request, response);
+        System.out.println( (User) session.getAttribute("utenteLoggato"));
         if(aderente){
             session.setAttribute("type", "aderente");
             response.sendRedirect(response.encodeURL("./aderente.jsp"));

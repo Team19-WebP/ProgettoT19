@@ -1,10 +1,3 @@
-<%@ page import="java.io.IOException" %>
-<%@ page import="java.io.ObjectInputStream" %>
-<%@ page import="java.nio.file.Files" %>
-<%@ page import="java.nio.file.Paths" %>
-<%@ page import="unitn.disi.web.progettoteam19.Counter" %>
-<%@ page import="java.io.ObjectOutputStream" %>
-<!-- <!DOCTYPE html> -->
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
 
 <html lang="ita">
@@ -23,24 +16,6 @@
 
 <jsp:useBean id="counterGenerale" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:setProperty name="counterGenerale" property="hits" value="0"/>
-
-<%
-/*
-        ObjectInputStream io;
-        try {
-            io = new ObjectInputStream(Files.newInputStream(Paths.get("counter.ser")));
-            Counter salvato = (Counter) io.readObject();
-            Counter c = (Counter) application.getAttribute("counterGenerale");
-            if(c != null){
-                c.manuallySet(salvato.getHits());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-*/
-%>
 
 <body>
 
@@ -68,7 +43,7 @@
         </div>
         <a href="contatti.jsp">Contatti</a>
         <%
-            if(session == null || session.getAttribute("auth") == null || session.getAttribute("auth").equals("false") || session.getAttribute("type") == null) {
+            if(session == null || session.getAttribute("type") == null) {
                 //se l'utente non è loggato allora farò vedere i bottoni login e signin
         %>
         <a href="signin.jsp">Sign-in</a>
@@ -93,14 +68,3 @@
         <%}%>
     </nav>
     <jsp:include page="informativaCookies.jsp"></jsp:include>
-
-<%
-        /*Counter contatore = (Counter) application.getAttribute("counterGenerale");
-        ObjectOutputStream oi = null;
-        try{
-            oi = new ObjectOutputStream(Files.newOutputStream(Paths.get("counter.ser")));
-            oi.writeObject(contatore);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }*/
-%>

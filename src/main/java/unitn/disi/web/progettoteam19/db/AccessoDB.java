@@ -51,21 +51,18 @@ public class AccessoDB {
         String stringaGet = "SELECT USERNAME FROM USERS WHERE USERNAME = ?";
 
         String retval = getString(usernameToCheck, stringaGet);
-        destroyConn();
         return retval;
     }
     public String getPassword(String usernameToCheck){
         String stringaGet = "SELECT PASSWORD FROM USERS WHERE USERNAME = ?";
 
         String retval = getString(usernameToCheck, stringaGet);
-        destroyConn();
         return retval;
     }
     public String getTipologia(String usernameToCheck){
         String stringaGet = "SELECT TIPOLOGIA FROM USERS WHERE USERNAME = ?";
 
         String retval = getString(usernameToCheck, stringaGet);
-        destroyConn();
         return retval;
     }
     public void dropUser(String usernameToEliminate) {
@@ -75,10 +72,8 @@ public class AccessoDB {
             PreparedStatement inserimento = connection.prepareStatement(stringaGet);
             inserimento.setString(1, usernameToEliminate);
             inserimento.executeUpdate();
-            destroyConn();
         } catch (SQLException ex){
             ex.printStackTrace();
-            destroyConn();
         }
     }
 }

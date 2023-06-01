@@ -6,9 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:useBean id="counterSimpatizzante" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:useBean id="utenteLoggato" class="unitn.disi.web.progettoteam19.model.User" scope="session"/>
+
 <jsp:include page="intestazione.jsp"></jsp:include>
 <link rel="stylesheet" href="css/simpatizzante.css">
-<jsp:useBean id="counterSimpatizzante" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:setProperty name="counterSimpatizzante" property="hits" value="0"/>
 <main>
   <div class="menu2">
@@ -44,12 +46,13 @@
       </style>
 
       <table>
+
         <tr>
           <th>
             <label for="nome">Nome:</label>
           </th>
           <th>
-            <span id="nome"> Mario </span>
+            <span id="nome"> <jsp:getProperty name="utenteLoggato" property="nome"/> </span>
           </th>
         </tr>
 
@@ -58,7 +61,7 @@
             <label for="cognome"> Cognome:</label>
           </th>
           <th>
-            <span id="cognome"> Rossi </span>
+            <span id="cognome"> <jsp:getProperty name="utenteLoggato" property="cognome"/> </span>
           </th>
         </tr>
 
@@ -67,7 +70,7 @@
             <label for="ddn">Data Di nascita:</label>
           </th>
           <th>
-            <span id="ddn"> 08/11/2002 </span>
+            <span id="ddn"> <jsp:getProperty name="utenteLoggato" property="dateFormatITA"/> </span>
           </th>
         </tr>
 
@@ -76,7 +79,7 @@
             <label for="email"> E-mail:</label>
           </th>
           <th>
-            <span id="email"> mario.rossi@gmail.com </span> <br>
+            <span id="email"> <jsp:getProperty name="utenteLoggato" property="email"/> </span> <br>
           </th>
         </tr>
 
@@ -85,7 +88,7 @@
             <label for="tel"> Telefono:</label>
           </th>
           <th>
-            <span id="tel"> +39 377 373 7733</span>
+            <span id="tel"> <jsp:getProperty name="utenteLoggato" property="cellulare"/> </span>
           </th>
         </tr>
 
@@ -94,16 +97,16 @@
             <label for="potere"> Tipo di iscrizione:</label>
           </th>
           <th>
-            <span id="potere"> Simpatizzante</span>
+            <span id="potere"> <jsp:getProperty name="utenteLoggato" property="tipologia"/> </span>
           </th>
         </tr>
-        <%--TODO aggiungere i dati in maniera dinamica ( già mezzo fatto nel js)--%>
+
         <tr>
           <th>
             <label for="username"> Username:</label>
           </th>
           <th>
-            <span id="username"> _RMario_ </span>
+            <span id="username">  </span><jsp:getProperty name="utenteLoggato" property="username"/>
           </th>
         </tr>
 
