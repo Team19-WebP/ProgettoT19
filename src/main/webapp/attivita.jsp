@@ -61,7 +61,7 @@
                 <figure>
                     <h3>Abc4Future</h3>
                     <a class="linkImg" href="attivita3.jsp">
-                        <img src="immagini/attivita/img3.jpg" alt="Immagine di Abc4Future">
+                        <img src="immagini/galleria/img3.jpg" alt="Immagine di Abc4Future">
                         <div class="text">Scopri di più...</div>
                     </a>
                     <%--<br><figcaption> <b><i>Abc4Future</i></b> </figcaption>--%>

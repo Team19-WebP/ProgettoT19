@@ -24,7 +24,7 @@
 
    <div class="singleImage">
     <div class="numbertext">2 / 5</div>
-    <img src="immagini/galleria/img2.jpg">
+    <img src="immagini/attivita/img2.jpg">
     <div class="text">Caption Two</div>
    </div>
 

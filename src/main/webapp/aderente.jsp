@@ -132,7 +132,7 @@
             <div class="im1">
               <figure style="margin: 0px">
                 <a class="linkImg" onclick="seleziona('attivita3')" id="imgattivita3">
-                  <img src="immagini/attivita/img3.jpg" alt="Immagine di Abc4Future">
+                  <img src="immagini/galleria/img3.jpg" alt="Immagine di Abc4Future">
                   <div class="text">Partecipa a Abc4Future!</div>
                 </a>
                 <%--<br><figcaption> <b><i>Abc4Future</i></b> </figcaption>--%>

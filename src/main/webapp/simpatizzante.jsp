@@ -119,7 +119,7 @@
         <img src="immagini/attivita/img2.jpg" alt="immagine attività 2" onclick="clickImage(attivita2);" class="attivita">
         <label for="attivita3"> attività 3</label>
         <input id="attivita3" name="attivita3" type="checkbox" value="attività 3">
-        <img src="immagini/attivita/img3.jpg" alt="immagine attività 3" onclick="clickImage(attivita3);" class="attivita">
+        <img src="immagini/galleria/img3.jpg" alt="immagine attività 3" onclick="clickImage(attivita3);" class="attivita">
         <input class="aderente" type="submit" value="conferma">
       </form>
     </div>

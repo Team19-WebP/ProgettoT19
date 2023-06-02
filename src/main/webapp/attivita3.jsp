@@ -6,7 +6,7 @@
 <jsp:setProperty name="counterAttivita3" property="hits" value="0"/>
 <main>
     <div class="containerAttivita">
-        <img src="immagini/attivita/img3.jpg" alt="Immagine di Abc4Future" style="width: 100%; max-width: 800px">
+        <img src="immagini/galleria/img3.jpg" alt="Immagine di Abc4Future" style="width: 100%; max-width: 800px">
         <div class="testoImmagine">
             <div style="padding: 20px">
                 <h1>Abc4Future</h1>
