@@ -89,12 +89,12 @@
     <div id="attivitaAderente" hidden="true">
       <br>
       <br>
-      <form action="ServletPartecipaAttivita">                <%--TODO aggiungere immagini e rendere decente e capire se si fa da servlet o con una funz o entrambe--%>
+      <form action="ServletPartecipaAttivita">                <%--TODO aggiungere immagini e rendere decente--%>
         <div class="aderenteImmaginiAttivita">
           <div class="aderenteImgCheckAtt">
             <div>
               <label for="attivita1">Aisha</label>
-              <input id="attivita1" name="attivita1" type="checkbox" value="attività 1">
+              <input id="attivita1" name="attivita1" type="checkbox" value="1">
               <%--          <img src="immagini/attivita/img1.jpg" alt="immagine attività 1" onclick="clickImage(attivita1);" class="immagineAttAderente">--%>
             </div>
             <div class="im1">
@@ -110,7 +110,7 @@
           <div class="aderenteImgCheckAtt">
             <div>
               <label for="attivita2">Team4World</label>
-              <input id="attivita2" name="attivita2" type="checkbox" value="attività 2">
+              <input id="attivita2" name="attivita2" type="checkbox" value="2">
               <%--          <img src="immagini/attivita/img2.jpg" alt="immagine attività 2" onclick="clickImage(attivita2);" class="immagineAttAderente">--%>
             </div>
             <div class="im1">
@@ -126,7 +126,7 @@
           <div class="aderenteImgCheckAtt">
             <div>
               <label for="attivita3">AbcFuture</label>
-              <input id="attivita3" name="attivita3" type="checkbox" value="attività 3">
+              <input id="attivita3" name="attivita3" type="checkbox" value="3">
               <%--          <img src="immagini/attivita/img3.jpg" alt="immagine attività 3" onclick="clickImage(attivita3);" class="immagineAttAderente">--%>
             </div>
             <div class="im1">

@@ -30,19 +30,20 @@ public class frasiServlet extends HttpServlet {
         System.out.println("Chiamata una sola volta");
 
         frasiIspiranti = new ArrayList<>();
-        /* COMMENTATO PERCHè NON SO SE FUNZIONA
         try{
             Statement getting = connection.createStatement();
-            ResultSet resultSet = getting.executeQuery("SELECT * FROM FRASI");
+            ResultSet resultSet = getting.executeQuery("SELECT * FROM FRASIISPIRANTI");
 
 
             while (resultSet.next()){
-                frasiIspiranti.add(resultSet.getString(1));
+                frasiIspiranti.add(resultSet.getString(2));
             }
 
         } catch (SQLException ex){
             ex.printStackTrace();
-        }*/
+        }
+
+        //Alcune frasi di default in caso di problemi col DB
         frasiIspiranti.add("Se cerchi una mano che ti aiuti nel momento del bisogno, la trovi alla fine del tuo braccio.");
         frasiIspiranti.add("C\u0027è un solo tipo di successo: quello di fare della propria vita ciò che si desidera!");
         frasiIspiranti.add("Lascia che la curiosità ti travolga.");
@@ -62,5 +63,6 @@ public class frasiServlet extends HttpServlet {
         Random rnd = new Random();
         int index = rnd.nextInt(frasiIspiranti.size());
         response.getWriter().println(frasiIspiranti.get(index));
+        System.out.println(frasiIspiranti.get(index));
     }
 }
