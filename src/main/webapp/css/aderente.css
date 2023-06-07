@@ -24,7 +24,7 @@ footer {
 .menu .dropdown-content {
     background-color: black;
 }
-input [type = submit] {
+input [type = submit] { /*TODO sistemare il bottone cancella iscrizione*/
 }
 table{
     border: #424874 solid 1px;

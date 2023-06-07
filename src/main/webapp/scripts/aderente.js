@@ -92,10 +92,6 @@ function visualizzaDonation(){
     }
 }
 
-function clickImage(attivita){
-    attivita.checked = !attivita.checked; // fa si che quando viene cliccata l'immagine di un attività essa venga selezionata
-}
-
 function confermaCancellaIscrizione(){
     var txt;
     var retVal;

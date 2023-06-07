@@ -19,7 +19,6 @@
 
     <div id="dati" hidden="true">
       <table>
-
         <tr>
           <th>
             <label for="nome">Nome:</label>
@@ -89,7 +88,7 @@
     <div id="attivitaAderente" hidden="true">
       <br>
       <br>
-      <form action="ServletPartecipaAttivita">                <%--TODO aggiungere immagini e rendere decente--%>
+      <form action="ServletPartecipaAttivita">
         <div class="aderenteImmaginiAttivita">
           <div class="aderenteImgCheckAtt">
             <div>

@@ -60,10 +60,19 @@ function visualizzaDanger(){
     }
 }
 
-function clickImage(attivita){
-    attivita.checked = !attivita.checked; // fa si che quando viene cliccata l'immagine di un attività essa venga selezionata
+function seleziona(selezione){
+    let checkBox = document.querySelector("#" + selezione);
+    let img = document.querySelector("#img"+selezione);
+    let txt = document.querySelector("#img" + selezione + "> .text");
+    checkBox.checked = !checkBox.checked;
+    if(checkBox.checked) {
+        img.style.opacity = "0.6";
+        txt.style.opacity = "1";
+    } else {
+        img.style.opacity = "1";
+        txt.style.opacity = "0";
+    }
 }
-
 function confermaCancellaIscrizione(){
     var txt;
     var retVal;

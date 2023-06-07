@@ -23,7 +23,9 @@
 <jsp:setProperty name="counterAmministratore" property="hits" value="0"/>
 
 <main>
-  <jsp:include page="frasiIspiranti.jsp"></jsp:include>  <div class="menu2">
+  <jsp:include page="frasiIspiranti.jsp"></jsp:include>
+  <div class="containerAmministratore">
+  <div class="menu2">
     <nav>
       <button onclick="visualizzaUtenti();" id="buttonUtenti">elenco di tutti gli utenti</button>
       <button onclick="visualizzaSimpatizzanti();" id="buttonSimpatizzanti">elenco di tutti i simpatizzanti</button>
@@ -32,7 +34,6 @@
       <button onclick="visualizzaDonations();" id="buttonDonations">statistiche donazioni</button>  <%--TODO siamo sicuri che l'amministratore non debba poter fare anche lui le cose che fa un adrerente (disiscriversi o donare) --%>
     </nav>
   </div>
-  <div class="containerInvioConfermato">
 
     <div id="utenti" hidden="true">
       <br>

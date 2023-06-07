@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/simpatizzante.css">
 <jsp:setProperty name="counterSimpatizzante" property="hits" value="0"/>
 <main>
+  <div class="containerSimpatizzante">
   <div class="menu2">
     <nav>
       <button onclick="visualizzaDati();" id="buttonDati" style="background-color: #A6B1E1">dati personali</button>
@@ -14,30 +15,8 @@
       <button onclick="visualizzaDanger();" id="buttonDanger">danger zone</button>
     </nav>
   </div>
-  <div class="containerInvioConfermato">
 
     <div id="dati">
-
-      <style>
-        table{
-          border: #424874 solid 2px;
-          margin: 15%;
-          width: max-content;
-          border-collapse: collapse;
-        }
-        tr{
-          border: #424874 solid 2px;
-          border-collapse: collapse;
-          margin: 15%;
-          padding: 15%;
-        }
-        th{
-          border: #424874 solid 2px;
-          border-collapse: collapse;
-          padding: 5%;
-          margin: 10%;
-        }
-      </style>
 
       <table>
 
@@ -111,16 +90,54 @@
       <br>
       <br>
       <form action="ServletPartecipaAttivita">
-        <label for="attivita1"> attività 1</label>
-        <input id="attivita1" name="attivita1" type="checkbox" value="attività 1">
-        <img src="immagini/attivita/img1.jpg" alt="immagine attività 1" onclick="clickImage(attivita1);" class="attivita">
-        <label for="attivita2"> attività 2</label>
-        <input id="attivita2" name="attivita2" type="checkbox" value="attività 2">
-        <img src="immagini/attivita/img2.jpg" alt="immagine attività 2" onclick="clickImage(attivita2);" class="attivita">
-        <label for="attivita3"> attività 3</label>
-        <input id="attivita3" name="attivita3" type="checkbox" value="attività 3">
-        <img src="immagini/galleria/img3.jpg" alt="immagine attività 3" onclick="clickImage(attivita3);" class="attivita">
-        <input class="aderente" type="submit" value="conferma">
+        <div class="simpatizzanteImmaginiAttivita">
+          <div class="simpatizzanteImgCheckAtt">
+            <div>
+              <label for="attivita1">Aisha</label>
+              <input id="attivita1" name="attivita1" type="checkbox" value="1">
+            </div>
+            <div class="im1">
+              <figure style="margin: 0px">
+                <a class="linkImg" onclick="seleziona('attivita1')" id="imgattivita1">
+                  <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività">
+                  <div class="text">Partecipa ad Aisha!</div>
+                </a>
+              </figure>
+            </div>
+          </div>
+          <div class="simpatizzanteImgCheckAtt">
+            <div>
+              <label for="attivita2">Team4World</label>
+              <input id="attivita2" name="attivita2" type="checkbox" value="2">
+            </div>
+            <div class="im1">
+              <figure style="margin: 0px">
+                <a class="linkImg" onclick="seleziona('attivita2')" id="imgattivita2">
+                  <img src="immagini/attivita/img2.jpg" alt="Immagine di Team4World">
+                  <div class="text">Partecipa a Team4World!</div>
+                </a>
+              </figure>
+            </div>
+          </div>
+          <div class="simpatizzanteImgCheckAtt">
+            <div>
+              <label for="attivita3">AbcFuture</label>
+              <input id="attivita3" name="attivita3" type="checkbox" value="3">
+            </div>
+            <div class="im1">
+              <figure style="margin: 0px">
+                <a class="linkImg" onclick="seleziona('attivita3')" id="imgattivita3">
+                  <img src="immagini/galleria/img3.jpg" alt="Immagine di Abc4Future">
+                  <div class="text">Partecipa a Abc4Future!</div>
+                </a>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div>
+          <input class="simpatizzante" type="submit" value="partecipa" style="width:90px; height:35px">
+        </div>
       </form>
     </div>
 
