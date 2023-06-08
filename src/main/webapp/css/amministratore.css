@@ -48,10 +48,10 @@ th {
 .containerAmministratore {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-bottom: 20px;
-    /*min-height: 75%; TODO*/
+    min-height: 75vw;
 }
 form {
     margin-left: 10vw;
