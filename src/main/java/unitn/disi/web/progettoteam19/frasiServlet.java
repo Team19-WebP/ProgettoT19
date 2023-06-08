@@ -50,6 +50,7 @@ public class frasiServlet extends HttpServlet {
         frasiIspiranti.add("Dimenticare aiuta, rimediare di più.");
         frasiIspiranti.add("Il tempo non è bravo a nascondersi, se lo cerchi lo trovi sempre.");
         frasiIspiranti.add("Va bene tutto, ma c'è un limite a tutto.");
+        frasiIspiranti.add("La vita è come il font nel css, non sai mai quel che ti capita.");
 
         try {
             connection.close();
