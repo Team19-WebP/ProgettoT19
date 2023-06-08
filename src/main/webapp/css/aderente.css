@@ -7,7 +7,6 @@
     --COLORE4: #F9F7F7;
 }
 body {
-    padding-top: 200px;
     background: var(--COLORE4);
     /*font-family: 'Comic Sans MS', sans-serif;*/
 }
@@ -36,7 +35,7 @@ footer {
     width: 100%;
 }
 .menu2 button:hover {
-    background-color: darkgreen;
+    background-color: var(--COLORE1);
 }
 .menu {
     background-color: var(--COLORE1);
@@ -52,9 +51,10 @@ footer {
     background-color: var(--COLORE1);
 }
 #cancellaIscrizione{
+    font-size: xx-large;
+    font-weight: bolder;
     width: 100%;
-    padding: 15%;
-    box-sizing: content-box;
+    padding: 5%;
     color: red;
 }
 #cancellaIscrizione:hover {
@@ -115,7 +115,8 @@ th {
 .aderenteImgCheckAtt input {
     width: auto;
 }
-form {
+#cancellaIscrizioneform {
+    display: contents;
     margin-left: 10vw;
     margin-right: 10vw;
 }

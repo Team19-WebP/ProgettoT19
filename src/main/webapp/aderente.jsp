@@ -10,10 +10,10 @@
   <div class="containerAderente">
   <div class="menu2">
     <nav>
-      <button onclick="visualizzaDati();" id="buttonDati">dati personali</button>
-      <button onclick="visualizzaDonation();" id="buttonDonation">dona alla associazione</button>
-      <button onclick="visualizzaAttivita();" id="buttonAttivita">partecipa alle attività</button>
-      <button onclick="visualizzaDanger();" id="buttonDanger">danger zone</button>
+      <button onclick="visualizzaDati();" id="buttonDati"><b>dati personali</b></button>
+      <button onclick="visualizzaDonation();" id="buttonDonation"><b>dona alla associazione</b></button>
+      <button onclick="visualizzaAttivita();" id="buttonAttivita"><b>partecipa alle attività</b></button>
+      <button onclick="visualizzaDanger();" id="buttonDanger"><b>cancella iscrizione</b></button>
     </nav>
   </div>
 
@@ -162,9 +162,9 @@
 
     <div id="danger" hidden="true">
       <div>
-        <b><h6 style="color: red"> attenzione, tutte le azioni in questa pagina sono IRREVERSIBILI!!</h6></b>
+        <b><h2> Attenzione: cancellare il profilo è irreversibile!!</h2></b>
       </div>
-      <form action="ServletEliminaProfilo" onsubmit="return confermaCancellaIscrizione()" method="get">
+      <form id="cancellaIscrizioneform" action="ServletEliminaProfilo" onsubmit="return confermaCancellaIscrizione()" method="get">
         <input id="cancellaIscrizione" type="submit" value="cancella iscrizione">
       </form>
       <p id="popUp" style="color: red; alignment: center"></p>

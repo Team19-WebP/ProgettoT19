@@ -7,7 +7,6 @@
     --COLORE4: #F9F7F7;
 }
 body {
-    padding-top: 200px;
     background: var(--COLORE4);
     /*font-family: 'Comic Sans MS', sans-serif;*/
 }
@@ -36,7 +35,7 @@ footer {
     width: 100%;
 }
 .menu2 button:hover {
-    background-color: darkgreen;
+    background-color: var(--COLORE1);
 }
 .menu {
     background-color: var(--COLORE1);
