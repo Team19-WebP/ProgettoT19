@@ -217,18 +217,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> <%--questo nello specifico è essenziale--%>
 
     <div id="visite" hidden="true">
-      <br>
-      <form action="ServletReset" method="get">
-        <input type="submit" value="RESET">
-      </form>
+
       <br>
       <div> il sito è stato visitato <b><jsp:getProperty name="counterGenerale" property="hits"/></b> volte in totale.</div>
       <div id="grafico visite">
 
         <figure class="highcharts-figure">
           <div id="GraficoVisite"></div>  <%--div che viene utilizzato dalle librerie per riempirlo con il grafico interattivo--%>
+          <p class="highcharts-description">
+            Grafico che mostra in numero di visite a ogni pagina del sito dall'ultima volta che sono stati resettati i contatori.
+            Per resettarli nuovamente premere il bottone sottostante.
+          </p>
         </figure>
       </div>
+      <br>
+      <form action="ServletReset" method="get">
+        <input id="resetCount" type="submit" value="RESET">
+      </form>
     </div>
 
     <div id="donations" hidden="true">

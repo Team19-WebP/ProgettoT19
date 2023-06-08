@@ -1,17 +1,17 @@
 
 /* Cambia i colori come vuoi per la parte di aderente*/
 :root {
-    --COLORE1: #112D4E;
-    --COLORE2: #3F72AF;
-    --COLORE3: #DBE2EF;
-    --COLORE4: #F9F7F7;
+    --COLORE1: #000000;
+    --COLORE2: #393E46;
+    --COLORE3: #00ADB5;
+    --COLORE4: #EEEEEE;
 }
 body {
     background: var(--COLORE4);
     /*font-family: 'Comic Sans MS', sans-serif;*/
 }
 .intestazione {
-    background-color: var(--COLORE4);
+    background-color: var(--COLORE3);
 }
 footer {
     background-color: var(--COLORE3);
@@ -24,7 +24,6 @@ footer {
 .menu2 nav {
     display: flex;
 }
-
 .menu2 button {
     border-radius: 5px;
     border: 2px solid var(--COLORE1);
@@ -49,6 +48,17 @@ footer {
 }
 .menu .dropdown-content {
     background-color: var(--COLORE1);
+}
+#resetCount{
+    font-size: xx-large;
+    font-weight: bolder;
+    width: 100%;
+    padding: 5%;
+    color: red;
+}
+#resetCount:hover {
+    background-color: red;
+    color: black;
 }
 table{
     border: var(--COLORE2) solid 1px;
