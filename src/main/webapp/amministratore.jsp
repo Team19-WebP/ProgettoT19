@@ -219,7 +219,7 @@
     <div id="visite" hidden="true">
 
       <br>
-      <div> il sito è stato visitato <b><jsp:getProperty name="counterGenerale" property="hits"/></b> volte in totale.</div>
+      <div id="contatoreVisite"> Visite sito: <b><jsp:getProperty name="counterGenerale" property="hits"/></b> </div>
       <div id="grafico visite">
 
         <figure class="highcharts-figure">
