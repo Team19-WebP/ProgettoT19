@@ -6,6 +6,7 @@
 <jsp:useBean id="counterAderente" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:setProperty name="counterAderente" property="hits" value="0"/>
 <main id="mainAderente">
+  <jsp:include page="frasiIspiranti.jsp"></jsp:include>
   <div class="containerAderente">
   <div class="menu2">
     <nav>

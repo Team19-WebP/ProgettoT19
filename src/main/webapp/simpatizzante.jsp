@@ -6,6 +6,7 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <jsp:setProperty name="counterSimpatizzante" property="hits" value="0"/>
 <main>
+  <jsp:include page="frasiIspiranti.jsp"></jsp:include>
   <div class="containerSimpatizzante">
   <div class="menu2">
     <nav>

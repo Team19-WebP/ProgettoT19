@@ -52,7 +52,14 @@ footer {
 .menu .dropdown-content {
     background-color: var(--COLORE1);
 }
-input [type = submit] {/*TODO sistemare il bottone cancella iscrizione*/
+.cancellaIscrizione input [type = submit] {
+    width: 100%;
+    padding: 15%;
+    box-sizing: content-box;
+    color: red;
+}
+.cancellaIscrizione input [type = submit]:hover {
+    background-color: red;
 }
 table{
     border: var(--COLORE2) solid 1px;
@@ -78,8 +85,8 @@ th {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 20px;
     min-height: 30vw;
+    padding-bottom: 5%;
 }
 .simpatizzanteImmaginiAttivita {
     display: flex;
