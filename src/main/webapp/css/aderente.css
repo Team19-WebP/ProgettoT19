@@ -1,10 +1,10 @@
 
 /* Cambia i colori come vuoi per la parte di aderente*/
 :root {
-    --COLORE1: #112D4E;
-    --COLORE2: #3F72AF;
-    --COLORE3: #DBE2EF;
-    --COLORE4: #F9F7F7;
+    --COLORE1: #FF6000;
+    --COLORE2: #454545;
+    --COLORE3: #FFA559;
+    --COLORE4: #FFE6C7;
 }
 body {
     background: var(--COLORE4);
@@ -15,6 +15,10 @@ body {
 }
 footer {
     background-color: var(--COLORE3);
+}
+.frasiInspiranti {
+    background-color: var(--COLORE2);
+    color: var(--COLORE3);
 }
 .menu2 {
     padding-bottom: 1%;
@@ -35,8 +39,10 @@ footer {
     width: 100%;
 }
 .menu2 button:hover {
-    background-color: var(--COLORE1);
+    background-color: var(--COLORE2);
+    color: var(--COLORE4);
 }
+
 .menu {
     background-color: var(--COLORE1);
 }

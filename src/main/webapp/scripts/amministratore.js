@@ -5,12 +5,6 @@ let visite = document.querySelector("#visite");                 //
 let donations = document.querySelector("#donations");           //
 let defDiv = document.querySelector("#default");                //
 
-let buttonUtenti = document.querySelector("#buttonUtenti");                 //
-let buttonSimpatizzanti = document.querySelector("#buttonSimpatizzanti");   //
-let buttonAderenti = document.querySelector("#buttonAderenti");             // Button delle varie sezioni da mostrare/nascondere
-let buttonVisite = document.querySelector("#buttonVisite");                 // servono qui per cambiare il colore del bottone della sezione in cui siamo
-let buttonDonations = document.querySelector("#buttonDonations");           //
-
 function visualizzaUtenti(){
     if(utenti.hidden == true){
         utenti.hidden = false;
@@ -21,15 +15,8 @@ function visualizzaUtenti(){
         donations.hidden = true;
         defDiv.hidden = true;
 
-
-        buttonUtenti.style.backgroundColor = "#A6B1E1";
-        buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
-        buttonAderenti.style.backgroundColor = "#F4EEFF";
-        buttonVisite.style.backgroundColor = "#F4EEFF";
-        buttonDonations.style.backgroundColor = "#F4EEFF";
     } else {
         utenti.hidden = true;
-        buttonUtenti.style.backgroundColor = "#F4EEFF";
         defDiv.hidden = false;
     }
 }
@@ -43,15 +30,8 @@ function visualizzaSimpatizzanti(){
         donations.hidden = true;
         defDiv.hidden = true;
 
-
-        buttonUtenti.style.backgroundColor = "#F4EEFF";
-        buttonSimpatizzanti.style.backgroundColor = "#A6B1E1";
-        buttonAderenti.style.backgroundColor = "#F4EEFF";
-        buttonVisite.style.backgroundColor = "#F4EEFF";
-        buttonDonations.style.backgroundColor = "#F4EEFF";
     } else {
         simpatizzanti.hidden = true;
-        buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
         defDiv.hidden = false;
     }
 
@@ -66,15 +46,8 @@ function visualizzaAderenti(){
         donations.hidden = true;
         defDiv.hidden = true;
 
-
-        buttonUtenti.style.backgroundColor = "#F4EEFF";
-        buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
-        buttonAderenti.style.backgroundColor = "#A6B1E1";
-        buttonVisite.style.backgroundColor = "#F4EEFF";
-        buttonDonations.style.backgroundColor = "#F4EEFF";
     } else {
         aderenti.hidden = true;
-        buttonAderenti.style.backgroundColor = "#F4EEFF";
         defDiv.hidden = false;
     }
 
@@ -89,15 +62,8 @@ function visualizzaVisite(){
         donations.hidden = true;
         defDiv.hidden = true;
 
-
-        buttonUtenti.style.backgroundColor = "#F4EEFF";
-        buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
-        buttonAderenti.style.backgroundColor = "#F4EEFF";
-        buttonVisite.style.backgroundColor = "#A6B1E1";
-        buttonDonations.style.backgroundColor = "#F4EEFF";
     } else {
         visite.hidden = true;
-        buttonVisite.style.backgroundColor = "#F4EEFF";
         defDiv.hidden = false;
     }
 
@@ -112,14 +78,8 @@ function visualizzaDonations(){
         donations.hidden = false;
         defDiv.hidden = true;
 
-        buttonUtenti.style.backgroundColor = "#F4EEFF";
-        buttonSimpatizzanti.style.backgroundColor = "#F4EEFF";
-        buttonAderenti.style.backgroundColor = "#F4EEFF";
-        buttonVisite.style.backgroundColor = "#F4EEFF";
-        buttonDonations.style.backgroundColor = "#A6B1E1";
     } else {
         donations.hidden = true;
-        buttonDonations.style.backgroundColor = "#F4EEFF";
         defDiv.hidden = false;
     }
 

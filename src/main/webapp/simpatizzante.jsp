@@ -10,7 +10,7 @@
   <div class="containerSimpatizzante">
   <div class="menu2">
     <nav>
-      <button onclick="visualizzaDati();" id="buttonDati" style="background-color: #A6B1E1"><b>dati personali</b></button>
+      <button onclick="visualizzaDati();" id="buttonDati"><b>dati personali</b></button>
       <button onclick="visualizzaAttivita();" id="buttonAttivita"><b>partecipa alle attività</b></button>
       <button onclick="visualizzaDanger();" id="buttonDanger"><b>cancella iscrizione</b></button>
     </nav>

@@ -3,9 +3,6 @@ let danger = document.querySelector("#danger");     // DIV delle varie sezioni d
 let attivita = document.querySelector("#attivita"); //
 let defDiv = document.querySelector("#default");    //
 
-let buttonDati = document.querySelector("#buttonDati");         //
-let buttonDanger = document.querySelector("#buttonDanger");     // Button delle varie sezioni da mostrare/nascondere
-let buttonAttivita = document.querySelector("#buttonAttivita"); // servono qui per cambiare il colore del bottone della sezione in cui siamo
 
 function visualizzaDati(){
     if(dati.hidden == true){
@@ -13,15 +10,9 @@ function visualizzaDati(){
         danger.hidden = true;
         attivita.hidden = true;
         defDiv.hidden = true;
-
-        buttonDati.style.backgroundColor = "#A6B1E1";
-        buttonDanger.style.backgroundColor = "#F4EEFF";
-        buttonAttivita.style.backgroundColor = "#F4EEFF";
     } else {
         dati.hidden = true;
-        buttonDati.style.backgroundColor = "#F4EEFF";
         defDiv.hidden = false;
-
     }
 }
 
@@ -31,13 +22,8 @@ function visualizzaAttivita(){
         danger.hidden = true;
         attivita.hidden = false;
         defDiv.hidden = true;
-
-        buttonDati.style.backgroundColor = "#F4EEFF";
-        buttonDanger.style.backgroundColor = "#F4EEFF";
-        buttonAttivita.style.backgroundColor = "#A6B1E1";
     } else {
         attivita.hidden = true;
-        buttonAttivita.style.backgroundColor = "#F4EEFF";
         defDiv.hidden = false;
     }
 }
@@ -48,13 +34,8 @@ function visualizzaDanger(){
         danger.hidden = false;
         attivita.hidden = true;
         defDiv.hidden = true;
-
-        buttonDati.style.backgroundColor = "#F4EEFF";
-        buttonDanger.style.backgroundColor = "#A6B1E1";
-        buttonAttivita.style.backgroundColor = "#F4EEFF";
     } else {
         danger.hidden = true;
-        buttonDanger.style.backgroundColor = "#F4EEFF";
         defDiv.hidden = false;
     }
 }

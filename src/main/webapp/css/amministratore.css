@@ -16,6 +16,10 @@ body {
 footer {
     background-color: var(--COLORE3);
 }
+.frasiInspiranti {
+    background-color: var(--COLORE2);
+    color: var(--COLORE3);
+}
 .menu2 {
     padding-bottom: 1%;
     width: 100%;
@@ -24,6 +28,7 @@ footer {
 .menu2 nav {
     display: flex;
 }
+
 .menu2 button {
     border-radius: 5px;
     border: 2px solid var(--COLORE1);
@@ -34,8 +39,10 @@ footer {
     width: 100%;
 }
 .menu2 button:hover {
-    background-color: var(--COLORE1);
+    background-color: var(--COLORE2);
+    color: var(--COLORE4);
 }
+
 .menu {
     background-color: var(--COLORE1);
 }
