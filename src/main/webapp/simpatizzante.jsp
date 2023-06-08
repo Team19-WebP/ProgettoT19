@@ -4,7 +4,6 @@
 <jsp:useBean id="utenteLoggato" class="unitn.disi.web.progettoteam19.model.User" scope="session"/>
 
 <jsp:include page="intestazione.jsp"></jsp:include>
-<link rel="stylesheet" href="css/simpatizzante.css">
 <jsp:setProperty name="counterSimpatizzante" property="hits" value="0"/>
 <main>
   <div class="containerSimpatizzante">
@@ -100,7 +99,7 @@
               <figure style="margin: 0px">
                 <a class="linkImg" onclick="seleziona('attivita1')" id="imgattivita1">
                   <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività">
-                  <div class="text">Partecipa ad Aisha!</div>
+                  <div class="textAttivita">Partecipa ad Aisha!</div>
                 </a>
               </figure>
             </div>
@@ -114,7 +113,7 @@
               <figure style="margin: 0px">
                 <a class="linkImg" onclick="seleziona('attivita2')" id="imgattivita2">
                   <img src="immagini/attivita/img2.jpg" alt="Immagine di Team4World">
-                  <div class="text">Partecipa a Team4World!</div>
+                  <div class="textAttivita">Partecipa a Team4World!</div>
                 </a>
               </figure>
             </div>
@@ -128,7 +127,7 @@
               <figure style="margin: 0px">
                 <a class="linkImg" onclick="seleziona('attivita3')" id="imgattivita3">
                   <img src="immagini/galleria/img3.jpg" alt="Immagine di Abc4Future">
-                  <div class="text">Partecipa a Abc4Future!</div>
+                  <div class="textAttivita">Partecipa a Abc4Future!</div>
                 </a>
               </figure>
             </div>

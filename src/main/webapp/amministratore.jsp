@@ -1,7 +1,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
-<link rel="stylesheet" href="css/amministratore.css">
 
 <jsp:useBean id="counterGenerale" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:useBean id="counterHome" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>

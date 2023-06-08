@@ -1,6 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
 
 <html lang="ita">
+<jsp:useBean id="counterGenerale" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:setProperty name="counterGenerale" property="hits" value="0"/>
+<jsp:useBean id="utenteLoggato" class="unitn.disi.web.progettoteam19.model.User" scope="session"/>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +11,27 @@
     <title>Tum4World</title>
     <link rel="icon" href="immagini/logoTransparentTab.png">
     <link rel="stylesheet" href="css/standard.css">
-    <link rel="stylesheet" href="css/intestazione.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/infoCookies.css">
+    <%
+    if(session != null){
+        if(session.getAttribute("type") != null && session.getAttribute("type").equals("aderente")){
+
+    %>
+    <link rel="stylesheet" href="css/aderente.css">
+    <%
+        } else if(session.getAttribute("type") != null && session.getAttribute("type").equals("simpatizzante")){
+    %>
+    <link rel="stylesheet" href="css/simpatizzante.css">
+    <%
+        } else if(session.getAttribute("type") != null && session.getAttribute("type").equals("amministratore")){
+    %>
+    <link rel="stylesheet" href="css/amministratore.css">
+    <%
+        }
+    }
+    %>
 
 </head>
 
-<jsp:useBean id="counterGenerale" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
-<jsp:setProperty name="counterGenerale" property="hits" value="0"/>
 
 <body>
 

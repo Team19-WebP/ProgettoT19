@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 
-<link rel="stylesheet" href="css/galleria.css">
 <script src="scripts/chiSiamo.js" rel="script"></script> <%-- includo lo script che fa funzionare la galleria delle immagini da un file esterno per modularità --%>
 
 <jsp:useBean id="counterChisiamo" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
@@ -19,31 +18,31 @@
    <div class="singleImage" style="display: block;">
     <div class="numbertext">1 / 5</div>
     <img src="immagini/galleria/img1.jpg">
-    <div class="text">Caption One</div>
+    <div class="textChiSiamo">Caption One</div>
    </div>
 
    <div class="singleImage">
     <div class="numbertext">2 / 5</div>
     <img src="immagini/attivita/img2.jpg">
-    <div class="text">Caption Two</div>
+    <div class="textChiSiamo">Caption Two</div>
    </div>
 
    <div class="singleImage">
     <div class="numbertext">3 / 5</div>
     <img src="immagini/galleria/img3.jpg">
-    <div class="text">Caption Three</div>
+    <div class="textChiSiamo">Caption Three</div>
    </div>
 
    <div class="singleImage">
     <div class="numbertext">4 / 5</div>
     <img src="immagini/galleria/img4.jpg">
-    <div class="text">Caption Four</div>
+    <div class="textChiSiamo">Caption Four</div>
    </div>
 
    <div class="singleImage">
     <div class="numbertext">5 / 5</div>
     <img src="immagini/galleria/img5.jpg">
-    <div class="text">Caption Five</div>
+    <div class="textChiSiamo">Caption Five</div>
    </div>
 
    <a class="prev" onclick="plusSlides(-1)">❮</a>
