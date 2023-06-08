@@ -10,7 +10,6 @@ let buttonAttivita = document.querySelector("#buttonAttivita"); // servono qui p
 function visualizzaDati(){
     if(dati.hidden == true){
         dati.hidden = false;
-        //TODO stampaDati();
         danger.hidden = true;
         attivita.hidden = true;
         defDiv.hidden = true;

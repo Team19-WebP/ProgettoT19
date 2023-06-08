@@ -58,7 +58,7 @@
    <span class="dot" onclick="currentSlide(5)"></span>
   </div>
 
-   <section class="sectionTesto">
+   <section class="sectionTestoChiSiamo">
     <h3>
      La nostra associazione
     </h3>
@@ -68,7 +68,7 @@
     </p>
    </section>
 
-  <section class="sectionTesto">
+  <section class="sectionTestoChiSiamo">
    <h3>
     La nostra storia
    </h3>
@@ -82,7 +82,7 @@
     L'espansione è stata capillare sul territorio fino ad arrivare al giorno d'oggi ad avere più di 1000 aderenti e 5000 simpatizzanti.   </p>
   </section>
 
-  <section class="sectionTesto">
+  <section class="sectionTestoChiSiamo">
    <h3>
     Le nostre sedi
    </h3>
