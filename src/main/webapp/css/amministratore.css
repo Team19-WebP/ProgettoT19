@@ -91,7 +91,19 @@ form {
     margin-left: 10vw;
     margin-right: 10vw;
 }
-
+#contatoreVisite {
+    border: solid black;
+    border-radius: 10px;
+    border-width: medium;
+    width: 10%;
+    background: var(--COLORE3);
+    opacity: 0.9;
+    text-align: center;
+    position:absolute;
+    left:85%;
+    padding: 1%;
+    font-size: large;
+}
 /*///////////////////////////////////////////////////GRAFICI//////////////////////////////////////////////////////////*/
 .highcharts-figure,
 .highcharts-data-table table {
