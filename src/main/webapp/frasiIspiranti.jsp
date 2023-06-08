@@ -7,60 +7,6 @@
     <i id="fraseInMostra"></i>
 </div>
 
-<style>
-    #fraseInMostra {
-        box-sizing: border-box;
-    }
-    .fade-in {
-        opacity: 1;
-        transition: opacity 1s ease-in-out;
-    }
-
-    .fade-out {
-        opacity: 0;
-        transition: opacity 1s ease-in-out
-    }
-    .frasiInspiranti {
-
-        /* Misure calcolate con il browser nellla sezione computed! */
-        position: fixed;
-
-        /* Scommentare qua sotto per metterlo a sinistra */
-        /*max-width: 250px;*/
-        /* Scommentare qua sopra per metterlo a sinistra */
-
-        /* Commentare la riga sotto per metterlo a sinistra*/
-        width: 100%;
-        /* Commentare la riga sopra per metterlo a sinistra*/
-        top: 132px;
-        left: 0;
-        padding: 1%;
-        /* Scommentare se vogliamo le frasi ispiranti in centro */
-        /*left: 50%;*/
-        /*transform: translate(-50%);*/
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Darumadrop One', cursive;
-        /*background: linear-gradient(to bottom, #31372b, transparent);*/
-        background-color: #31372BFF;
-        text-align: center;
-        color: #FFB3BF;
-        height: 50px;
-        z-index: 9998;
-    }
-    @media screen and (max-width: 538px) {
-        .frasiInspiranti {
-            top: 175px;
-            height: 60px;
-        }
-        .frasiInspiranti i {
-            vertical-align: central;
-        }
-    }
-
-</style>
 <script>
     function cambiaFrase() {
         let fraseInMostra = document.getElementById("fraseInMostra");

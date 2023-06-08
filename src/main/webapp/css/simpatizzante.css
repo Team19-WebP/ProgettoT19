@@ -48,10 +48,10 @@ th {
 .containerSimpatizzante {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-bottom: 20px;
-    min-height: 75vw;
+    min-height: 30vw;
 }
 .simpatizzanteImmaginiAttivita {
     display: flex;

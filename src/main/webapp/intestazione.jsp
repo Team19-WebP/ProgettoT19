@@ -11,6 +11,7 @@
     <title>Tum4World</title>
     <link rel="icon" href="immagini/logoTransparentTab.png">
     <link rel="stylesheet" href="css/standard.css">
+    <%-- Controllo se l'utente è loggato e a seconda della tipologia carico il rispettivo css --%>
     <%
     if(session != null){
         if(session.getAttribute("type") != null && session.getAttribute("type").equals("aderente")){
