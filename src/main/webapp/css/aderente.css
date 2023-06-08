@@ -51,14 +51,15 @@ footer {
 .menu .dropdown-content {
     background-color: var(--COLORE1);
 }
-.cancellaIscrizione input [type = submit] {
+#cancellaIscrizione{
     width: 100%;
     padding: 15%;
     box-sizing: content-box;
     color: red;
 }
-.cancellaIscrizione input [type = submit]:hover {
+#cancellaIscrizione:hover {
     background-color: red;
+    color: black;
 }
 table{
     border: var(--COLORE2) solid 1px;

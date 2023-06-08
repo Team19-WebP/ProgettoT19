@@ -146,7 +146,7 @@
         <b><h6 style="color: red"> attenzione, tutte le azioni in questa pagina sono IRREVERSIBILI!!</h6></b>
       </div>
       <form action="ServletEliminaProfilo" onsubmit="return confermaCancellaIscrizione()" method="get">
-        <input class="cancellaIscrizione" type="submit" value="cancella iscrizione">
+        <input id="cancellaIscrizione" type="submit" value="cancella iscrizione">
       </form>
       <p id="popUp" style="color: red; alignment: center"></p>
     </div>
