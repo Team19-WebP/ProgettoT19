@@ -33,7 +33,7 @@
         <span id="emailAlert" class="alert" hidden="true">(* mail non valida)</span><br>
         <br><br>
         <div class="inputAndLabel">
-            <label for="comboBox" id="comboBoxLabel">Motivo del contatto:</label><br>
+            <label for="comboBox" id="comboBoxLabel">Motivo:</label><br>
 
             <select id="comboBox" name="comboBox">
                 <option value="iscrizione">Mi piacerebbe unirmi alla vostra associazione</option>
