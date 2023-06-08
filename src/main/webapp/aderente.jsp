@@ -153,7 +153,7 @@
 
       <form action="ServletDonazione" onsubmit="return validaDonazione();">
         <label for="donazione">Importo (in €): </label>
-        <input type="number" step=".01" min="0" placeholder="Inserisci importo..."  id="donazione" name="donazione" required> <br>
+        <input type="number" step=".01" min="0" placeholder="Inserisci importo..."  id="donazione" name="donazione" required> <br> <!-- todo togliere required [anche da simpatizzante e amministratore] -->
         <br><br>
         <input class="aderente" type="submit" value="dona">
       </form>

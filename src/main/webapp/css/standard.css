@@ -208,6 +208,12 @@ a.linkImg:hover > .textAttivita {
     align-items: center;
     width: 60vw;
 }
+.sectionTestoChiSiamo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+}
 .sectionTitolo {
     flex-direction: column;
 }
