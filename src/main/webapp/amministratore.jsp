@@ -204,9 +204,6 @@
       <%--TODO siamo sicuri che l'amministratore non debba poter fare anche lui le cose che fa un adrerente (disiscriversi o donare) --%>
     </div>
 
-    <div id="default">
-      <p>Benvenuto nella tua pagina privata!</p>
-    </div>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>

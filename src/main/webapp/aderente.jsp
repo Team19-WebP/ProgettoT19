@@ -170,10 +170,6 @@
       <p id="popUp" style="color: red; alignment: center"></p>
     </div>
 
-    <div id="default">
-      <p>Benvenuto nella tua pagina privata!</p>
-    </div>
-
   </div>
   <script rel="script" src="scripts/aderente.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
 </main>

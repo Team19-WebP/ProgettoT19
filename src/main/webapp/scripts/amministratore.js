@@ -3,7 +3,6 @@ let simpatizzanti = document.querySelector("#simpatizzanti");   //
 let aderenti = document.querySelector("#aderenti");             // DIV delle varie sezioni da mostrare/nascondere
 let visite = document.querySelector("#visite");                 //
 let donations = document.querySelector("#donations");           //
-let defDiv = document.querySelector("#default");                //
 
 function visualizzaUtenti(){
     if(utenti.hidden == true){
@@ -13,11 +12,9 @@ function visualizzaUtenti(){
         aderenti.hidden = true;
         visite.hidden = true;
         donations.hidden = true;
-        defDiv.hidden = true;
 
     } else {
         utenti.hidden = true;
-        defDiv.hidden = false;
     }
 }
 
@@ -28,11 +25,9 @@ function visualizzaSimpatizzanti(){
         aderenti.hidden = true;
         visite.hidden = true;
         donations.hidden = true;
-        defDiv.hidden = true;
 
     } else {
         simpatizzanti.hidden = true;
-        defDiv.hidden = false;
     }
 
 }
@@ -44,11 +39,9 @@ function visualizzaAderenti(){
         aderenti.hidden = false;
         visite.hidden = true;
         donations.hidden = true;
-        defDiv.hidden = true;
 
     } else {
         aderenti.hidden = true;
-        defDiv.hidden = false;
     }
 
 }
@@ -60,11 +53,9 @@ function visualizzaVisite(){
         aderenti.hidden = true;
         visite.hidden = false;
         donations.hidden = true;
-        defDiv.hidden = true;
 
     } else {
         visite.hidden = true;
-        defDiv.hidden = false;
     }
 
 }
@@ -76,11 +67,9 @@ function visualizzaDonations(){
         aderenti.hidden = true;
         visite.hidden = true;
         donations.hidden = false;
-        defDiv.hidden = true;
 
     } else {
         donations.hidden = true;
-        defDiv.hidden = false;
     }
 
 }

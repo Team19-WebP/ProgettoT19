@@ -1,7 +1,6 @@
 let dati = document.querySelector("#dati");         //
 let danger = document.querySelector("#danger");     // DIV delle varie sezioni da mostrare/nascondere
 let attivita = document.querySelector("#attivita"); //
-let defDiv = document.querySelector("#default");    //
 
 
 function visualizzaDati(){
@@ -9,10 +8,8 @@ function visualizzaDati(){
         dati.hidden = false;
         danger.hidden = true;
         attivita.hidden = true;
-        defDiv.hidden = true;
     } else {
         dati.hidden = true;
-        defDiv.hidden = false;
     }
 }
 
@@ -21,10 +18,8 @@ function visualizzaAttivita(){
         dati.hidden = true;
         danger.hidden = true;
         attivita.hidden = false;
-        defDiv.hidden = true;
     } else {
         attivita.hidden = true;
-        defDiv.hidden = false;
     }
 }
 
@@ -33,10 +28,8 @@ function visualizzaDanger(){
         dati.hidden = true;
         danger.hidden = false;
         attivita.hidden = true;
-        defDiv.hidden = true;
     } else {
         danger.hidden = true;
-        defDiv.hidden = false;
     }
 }
 
