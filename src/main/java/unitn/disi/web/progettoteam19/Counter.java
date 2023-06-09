@@ -2,14 +2,21 @@ package unitn.disi.web.progettoteam19;
 
 import java.io.*;
 
-///ce né 1 per pagina
-
+/**
+ * Classe che implementa un contatore degli accessi.
+ * <br>Un oggetto della classe Counter sarà istanziato per ogni pagina del sito web
+ * <br>di cui è interessante tracciare il numero di accessi che vengono fatti.
+ */
 public class Counter implements Serializable {
 
     private int hits = 0;
 
     public Counter() {
 
+    }
+
+    public Counter(int defaultValue){
+        hits = defaultValue;
     }
 
     public synchronized void manuallySet(int newvalue){
@@ -29,6 +36,6 @@ public class Counter implements Serializable {
 
     @Override
     public String toString() {
-        return "" + hits;
+        return String.valueOf(hits);
     }
 }
