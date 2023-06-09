@@ -2,6 +2,7 @@ package unitn.disi.web.progettoteam19;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -28,15 +29,22 @@ public class UserFilter implements Filter {
             System.out.println("In UF con: session -> null");
         }
 
+        ServletContext servletContext = request.getServletContext();
+        String cookies = (String) servletContext.getAttribute("cookies");
+
         if(session == null || session.getAttribute("type") == null) {
-            ServletContext servletContext = request.getServletContext();
-            String cookies = (String) servletContext.getAttribute("cookies");
             if(cookies == null || cookies.equals("false")){
                 servletContext.setAttribute("cookies", null);
             }
             req.setAttribute("expired", "true");
             req.getRequestDispatcher(res.encodeURL("./login.jsp")).forward(req, res);
         } else {
+            /*if(cookies == null || cookies.equals("false")){
+                for(Cookie c : req.getCookies()){
+                    c.setMaxAge(0);
+                    res.addCookie(c);
+                }
+            }*/
             chain.doFilter(request, response);
         }
     }

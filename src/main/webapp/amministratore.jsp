@@ -229,6 +229,7 @@
       </div>
       <br>
       <form action="ServletReset" method="get">
+        //TODO lo farei con AJAX
         <input id="resetCount" type="submit" value="RESET">
       </form>
     </div>
