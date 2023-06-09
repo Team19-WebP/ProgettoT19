@@ -5,20 +5,7 @@
     --COLORE2: #454545;
     --COLORE3: #FFA559;
     --COLORE4: #FFE6C7;
-}
-body {
-    background: var(--COLORE4);
-    /*font-family: 'Comic Sans MS', sans-serif;*/
-}
-.intestazione {
-    background-color: var(--COLORE3);
-}
-footer {
-    background-color: var(--COLORE3);
-}
-.frasiInspiranti {
-    background-color: var(--COLORE2);
-    color: var(--COLORE3);
+    --COLORE4TRANSP: #FFE6C7e6;
 }
 .menu2 {
     padding-bottom: 1%;
@@ -41,20 +28,6 @@ footer {
 .menu2 button:hover {
     background-color: var(--COLORE2);
     color: var(--COLORE4);
-}
-
-.menu {
-    background-color: var(--COLORE1);
-}
-.menu a{
-    color: var(--COLORE4);
-}
-.menu a:hover{
-    background-color: var(--COLORE4);
-    color: var(--COLORE1);
-}
-.menu .dropdown-content {
-    background-color: var(--COLORE1);
 }
 #cancellaIscrizione{
     font-size: xx-large;
