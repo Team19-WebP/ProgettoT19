@@ -81,19 +81,41 @@ function showOrHide(id){
     dati.hidden = !dati.hidden;
 
 }
-function stampaUtenti(){  //TODO faccio la stessa cosa per aderenti e simpatizzanti
-    //TODO passo alla servlet che accede al DB e mi mette in un BEAN tutti i dati(pubblici) di tutti gli utenti e poi devo in qualche modo aggiungerli tipo:
-    //
-    // let utenti = document.querySelector("#utenti");
-    // for(utente in BEAN){
-    //    counterUtenti++
-    //    let idUtente = "Utente"+counterUtenti;
-    //    let idInfoUtente = "info"+idUtente;
-    //    utenti.content += "<div onclick=\"showOrHide(this.id);\" id=\""+idUtente+"\">"+utente.name+"</div>
-    //                         <div id=\""+idInfoUtente+"\" hidden=\"true\">
-    //                          <p> DATI UTENTE PRESI DAL BEAN </p>
-    //                          </div>"
-    // }
+function stampaUtenti(){
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/ServletGetAllUsers", true);
+    xhttp.responseType = "json";
+
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+
+            console.log("ciao!")
+
+            let my_JSON_array = this.response;
+
+            let table = document.getElementById("output");
+
+            var header = document.createElement("th");
+            var testo = document.createTextNode("Username");
+            header.appendChild(testo);
+            table.appendChild(header);
+
+            table.style.border = "1px solid";
+
+            for (let i = 0; i < my_JSON_array.length; i++) {
+                let current_JSON_object  = JSON.parse(my_JSON_array[i]);
+                var tr = document.createElement("tr");
+                var th = document.createElement("th");
+                var text = document.createTextNode(current_JSON_object[i].username);
+                th.appendChild(text);
+                tr.appendChild(th);
+            }
+        }
+    }
+
+    // Sending request
+    xhttp.send();
+
 }
 
 

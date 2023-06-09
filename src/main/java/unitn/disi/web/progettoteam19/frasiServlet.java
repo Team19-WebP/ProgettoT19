@@ -12,7 +12,7 @@ import java.util.Random;
 
 @WebServlet(name = "frasiServlet", value = "/frasiServlet")
 public class frasiServlet extends HttpServlet {
-    ArrayList<String> frasiIspiranti;
+    private ArrayList<String> frasiIspiranti;
 
     @Override
     public void init() throws ServletException {

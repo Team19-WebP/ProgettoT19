@@ -37,7 +37,12 @@
     <div id="utenti" hidden="true">
       <br>
       <br>
+      <table id="output">
+
+      </table>
+      <!--
       <hr>
+       TODO mettere proprieta onMuseOver perche cambiare la forma del mouse quando siamo sopra
       <div onclick="showOrHide(this.id);" id="UtenteN">Mario Rossi</div> <%--TODO aggiungere la lista di utenti in una forma simile a questa dove cliccando il nome ti vengono fuori le altre info--%>
       <hr>
       <div id="infoUtenteN" hidden="true">
@@ -154,8 +159,9 @@
 
         </table>
         <hr>
-      </div>
+      </div> -->
     </div>
+
 
     <div id="simpatizzanti" hidden="true">
       <br>
@@ -229,7 +235,7 @@
       </div>
       <br>
       <form action="ServletReset" method="get">
-        //TODO lo farei con AJAX
+        <!-- TODO lo farei con AJAX -->
         <input id="resetCount" type="submit" value="RESET">
       </form>
     </div>

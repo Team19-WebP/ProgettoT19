@@ -7,10 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.*;
 import java.util.ArrayList;
 import javax.servlet.annotation.*;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 
 @WebServlet(name = "ServletGetAllUsers", value = "/ServletGetAllUsers")
 public class ServletGetAllUsers extends HttpServlet {
@@ -59,26 +62,24 @@ public class ServletGetAllUsers extends HttpServlet {
                 allUsers.add(utente);
             }
 
-            /*
+
             // Preparing and sending json response
             response.setContentType("application/json");
-            response.setCharacterEncoding("utf-8");
+            response.setCharacterEncoding("UTF-8");
             try (PrintWriter out = response.getWriter()) {
                 JsonArray array = new JsonArray();
                 for(User c : allUsers) {
                     Gson gson = new Gson();
                     array.add(gson.toJson(c));
+                    System.out.println(c);
                 }
                 out.println(array);
                 out.flush();
             }
             catch (IOException ex) {
                 ex.printStackTrace();
-                response.sendRedirect("error.html");
+                response.sendRedirect(response.encodeURL("error.html"));
             }
-
-            */
-
 
         } catch (SQLException ex){
             ex.printStackTrace();
