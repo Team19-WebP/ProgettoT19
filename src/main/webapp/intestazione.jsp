@@ -30,12 +30,9 @@
         }
     }
     %>
-
 </head>
 
-
 <body>
-
     <header class="intestazione">
         <div>
             <img class="logo" id="logoLeft" src="immagini/logoTransparent.png" alt="logo">
@@ -45,7 +42,6 @@
             <img class="logo" src="immagini/logoTransparent.png" alt="logo">
         </div>
     </header>
-
     <nav class="menu">
         <a href="home.jsp">Home</a>
         <a href="chisiamo.jsp">Chi Siamo</a>

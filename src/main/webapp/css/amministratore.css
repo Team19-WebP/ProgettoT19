@@ -1,11 +1,11 @@
 
 /* Cambia i colori come vuoi per la parte di aderente*/
 :root {
-    --COLORE1: #000000;
-    --COLORE2: #393E46;
-    --COLORE3: #00ADB5;
-    --COLORE4: #EEEEEE;
-    --COLORE4TRANSP: #EEEEEEe6;
+    --COLORE1: #000000;         /**/
+    --COLORE2: #393E46;         /**/
+    --COLORE3: #00ADB5;         /* questi colori sono i colori che vengono visualizzati dall'amministratore*/
+    --COLORE4: #EEEEEE;         /**/
+    --COLORE4TRANSP: #EEEEEEe6; /**/
 }
 .menu2 {
     padding-bottom: 1%;

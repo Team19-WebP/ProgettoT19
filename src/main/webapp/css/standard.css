@@ -1,21 +1,20 @@
-
-/* Cambia i colori come vuoi per la parte di standard TODO*/
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Raleway:wght@300&display=swap'); /* Grazie a queste variabili è possibile modificare i colori in maniera semplice*/
 :root {
-    --NERO: #000000;
+    --COLORE1: #000000;         /*TODO a Gab non piace nero*/
+    --COLORE2: #31372B;         /**/
+    --COLORE3: #FFB3BF;         /* questi colori sono i colori che vengono visualizzati da chi non è loggato*/
+    --COLORE4: #fee9ff;         /**/
+    --COLORE4TRANSP: #fee9ffe6; /**/
+
     --ROSABG-GRADIENTE: #FFE6F2;
     --BORDERROSA: #A998A5;
-    --COLORE1: #1a1919;
-    --COLORE2: #31372B;
-    --COLORE3: #FFB3BF;
-    --COLORE4: #fee9ff;
-    --COLORE4TRANSP: #fee9ffe6;
 }
 
 /*#########################################################################################*/
 /*###################################---BODY---############################################*/
 /*#########################################################################################*/
 
-@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Raleway:wght@300&display=swap'); /* Importa raleway da google font */
+/* Importa raleway da google font */
 body {
     /* Spazio da lasciare per l'intestazione */
     padding-top: 200px;
