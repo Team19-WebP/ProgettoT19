@@ -65,6 +65,6 @@ public class frasiServlet extends HttpServlet {
         Random rnd = new Random();
         int index = rnd.nextInt(frasiIspiranti.size());
         response.getWriter().println(frasiIspiranti.get(index));
-        System.out.println(frasiIspiranti.get(index));
+        //System.out.println(frasiIspiranti.get(index));
     }
 }

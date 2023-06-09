@@ -1,9 +1,7 @@
 package unitn.disi.web.progettoteam19;
 
-import unitn.disi.web.progettoteam19.db.AccessoDB;
 import unitn.disi.web.progettoteam19.model.User;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,13 +9,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.*;
 
 @WebServlet(name = "ServletLogin", value = "/ServletLogin")
 public class ServletLogin extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    String user = "APP";
+    String password = "admin";
+    Connection connection = null;
 
+    @Override
+    public void init() throws ServletException {
+        try{
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            connection = DriverManager.getConnection(dbURL, user, password);
+        } catch (ClassNotFoundException | SQLException ex){
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    public void destroy() {
+        try {
+            connection.close();
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
     }
 
     @Override
@@ -26,19 +44,19 @@ public class ServletLogin extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        AccessoDB accessoDB = new AccessoDB();
-        if(accessoDB.getUserName(username) == null){
+        if(getUserName(username) == null){
             System.out.println("scemo username non esiste");
+            //TODO IN QUESTI CASI REINDIRIZZARE SU STESSA PAGINA DI LOGIN
             response.sendRedirect("error.jsp");
             return;
         }
-        String pwFromDB = accessoDB.getPassword(username);
+        String pwFromDB = getPassword(username);
         if(pwFromDB != null && !pwFromDB.equals(password)){
             System.out.println("scemo pw sbagliata");
             response.sendRedirect("error.jsp");
             return;
         }
-        String tipologia = accessoDB.getTipologia(username);
+        String tipologia = getTipologia(username);
         if(tipologia == null){
             System.out.println("problema inaspettato");
             response.sendRedirect("error.jsp");
@@ -57,7 +75,7 @@ public class ServletLogin extends HttpServlet {
 
         HttpSession session = request.getSession(true);
 
-        accessoDB.destroyConn();
+
         request.getRequestDispatcher("ServletGetUser").include(request, response);
         System.out.println( (User) session.getAttribute("utenteLoggato"));
         if(aderente){
@@ -72,6 +90,42 @@ public class ServletLogin extends HttpServlet {
         }else {
             response.sendRedirect(response.encodeURL("./error.jsp"));
         }
+    }
 
+    //metodo per evitare dupllicazioni di codice nei tre metodi che seguono
+    private String getString(String usernameToCheck, String stringaGet) {
+        try{
+            PreparedStatement inserimento = connection.prepareStatement(stringaGet);
+            inserimento.setString(1, usernameToCheck);
+            ResultSet rs = inserimento.executeQuery();
+
+            if(rs.next()){
+                return rs.getString(1);
+            } else {
+                return null;
+            }
+
+        } catch (SQLException ex){
+            ex.printStackTrace();
+            return null;
+        }
+    }
+    public String getUserName(String usernameToCheck){
+        String stringaGet = "SELECT USERNAME FROM USERS WHERE USERNAME = ?";
+
+        String retval = getString(usernameToCheck, stringaGet);
+        return retval;
+    }
+    public String getPassword(String usernameToCheck){
+        String stringaGet = "SELECT PASSWORD FROM USERS WHERE USERNAME = ?";
+
+        String retval = getString(usernameToCheck, stringaGet);
+        return retval;
+    }
+    public String getTipologia(String usernameToCheck){
+        String stringaGet = "SELECT TIPOLOGIA FROM USERS WHERE USERNAME = ?";
+
+        String retval = getString(usernameToCheck, stringaGet);
+        return retval;
     }
 }

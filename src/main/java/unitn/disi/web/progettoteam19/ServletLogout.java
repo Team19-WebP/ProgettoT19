@@ -20,7 +20,7 @@ public class ServletLogout extends HttpServlet {
         if(servletContext.getAttribute("cookies").equals("false")){
             servletContext.setAttribute("cookies", null);
         }
-        response.sendRedirect("./logout.jsp");
+        response.sendRedirect(response.encodeURL("./logout.jsp"));
     }
 
     @Override

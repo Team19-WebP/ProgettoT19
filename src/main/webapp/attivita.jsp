@@ -29,7 +29,6 @@
                         <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività">
                         <div class="textAttivita">Scopri di più...</div>
                     </a>
-                    <%--<br><figcaption><b><i>Attività 1</i></b></figcaption>--%>
                 </figure>
             </div>
             <p>
@@ -47,7 +46,6 @@
                         <img src="immagini/attivita/img2.jpg" alt="Immagine di Team4World">
                         <div class="textAttivita">Scopri di più...</div>
                     </a>
-                    <%--<br><figcaption> <b><i>Team4World</i></b> </figcaption>--%>
                 </figure>
             </div>
             <p>
@@ -64,7 +62,6 @@
                         <img src="immagini/galleria/img3.jpg" alt="Immagine di Abc4Future">
                         <div class="textAttivita">Scopri di più...</div>
                     </a>
-                    <%--<br><figcaption> <b><i>Abc4Future</i></b> </figcaption>--%>
                 </figure>
             </div>
             <p>

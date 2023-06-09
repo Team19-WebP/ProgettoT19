@@ -80,7 +80,7 @@ public class ServletFormContatti extends HttpServlet {
             mex.printStackTrace();
         }
 
-        response.sendRedirect("./invioConfermato.jsp");
+        response.sendRedirect(response.encodeURL("./invioConfermato.jsp"));
     }
 }
 

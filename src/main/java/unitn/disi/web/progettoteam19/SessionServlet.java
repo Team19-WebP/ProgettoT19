@@ -25,16 +25,17 @@ public class SessionServlet extends HttpServlet {
         String cookiesPref = request.getParameter("cookies");
         if (cookiesPref != null) {
 
-            /* A cosa serve?
-            HttpSession session = request.getSession();
-            session.setAttribute("auth", "false");
-             */
-
             ServletContext servletContext = request.getServletContext();
 
             if (servletContext.getAttribute("cookies") == null ) {
                 servletContext.setAttribute("cookies", cookiesPref);
                 System.out.println("Cookies preferences are set on " + cookiesPref + " and they saved for this session.");
+                if(!cookiesPref.equals("true")){
+                    for(Cookie c : request.getCookies()){
+                        c.setMaxAge(0);
+                        response.addCookie(c);
+                    }
+                }
                 response.getWriter().write("Cookies preferences are set on " + cookiesPref + " and they saved for this session.");
             } else {
                 System.out.println("Cookies preferences were already set as " + servletContext.getAttribute("cookies"));

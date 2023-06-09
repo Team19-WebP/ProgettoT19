@@ -1,6 +1,5 @@
 package unitn.disi.web.progettoteam19.db;
 
-import unitn.disi.web.progettoteam19.db.AccessoDB;
 import unitn.disi.web.progettoteam19.model.User;
 
 import javax.servlet.ServletContext;
@@ -63,7 +62,7 @@ public class ServletEliminaProfilo extends HttpServlet {
         if(servletContext.getAttribute("cookies").equals("false")){
             servletContext.setAttribute("cookies", null);
         }
-        response.sendRedirect("./eliminato.jsp");
+        response.sendRedirect(response.encodeURL("./eliminato.jsp"));
     }
 
     @Override
