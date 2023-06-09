@@ -10,7 +10,7 @@
     <!-- Filtro per verifica sessione -->
     <filter>
         <filter-name>UserFilter</filter-name>
-        <filter-class>unitn.disi.web.progettoteam19.UserFilter</filter-class>
+        <filter-class>unitn.disi.web.progettoteam19.filters.UserFilter</filter-class>
     </filter>
 
     <filter-mapping>
@@ -26,7 +26,7 @@
     <!-- Filtri per le varie pagine private -->
     <filter>
         <filter-name>FiltroAderente</filter-name>
-        <filter-class>unitn.disi.web.progettoteam19.FiltroAderente</filter-class>
+        <filter-class>unitn.disi.web.progettoteam19.filters.FiltroAderente</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>FiltroAderente</filter-name>
@@ -35,7 +35,7 @@
 
     <filter>
         <filter-name>FiltroSimpatizzante</filter-name>
-        <filter-class>unitn.disi.web.progettoteam19.FiltroSimpatizzante</filter-class>
+        <filter-class>unitn.disi.web.progettoteam19.filters.FiltroSimpatizzante</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>FiltroSimpatizzante</filter-name>
@@ -44,7 +44,7 @@
 
     <filter>
         <filter-name>FiltroAmministratore</filter-name>
-        <filter-class>unitn.disi.web.progettoteam19.FiltroAmministratore</filter-class>
+        <filter-class>unitn.disi.web.progettoteam19.filters.FiltroAmministratore</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>FiltroAmministratore</filter-name>

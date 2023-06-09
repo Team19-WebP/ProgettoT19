@@ -14,10 +14,10 @@ import javax.servlet.annotation.*;
 
 @WebServlet(name = "ServletGetAllOneType", value = "/ServletGetAllOneType")
 public class ServletGetAllOneType extends HttpServlet {
-    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-    String user = "APP";
-    String password = "admin";
-    Connection connection = null;
+    private String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private String user = "APP";
+    private String password = "admin";
+    private Connection connection = null;
 
     @Override
     public void init() throws ServletException {
@@ -46,7 +46,6 @@ public class ServletGetAllOneType extends HttpServlet {
         try{
             Statement getting = connection.createStatement();
             ResultSet resultSet = getting.executeQuery(stringaGet);
-
 
             while (resultSet.next()){
                 User utente = new User();
@@ -80,6 +79,8 @@ public class ServletGetAllOneType extends HttpServlet {
 
             */
 
+            resultSet.close();
+            getting.close();
 
         } catch (SQLException ex){
             ex.printStackTrace();

@@ -1,4 +1,4 @@
-package unitn.disi.web.progettoteam19;
+package unitn.disi.web.progettoteam19.db;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -9,10 +9,10 @@ import java.sql.*;
 @WebServlet(name = "ServletSignin", value = "/ServletSignin")
 public class ServletSignin extends HttpServlet {
 
-    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-    String user = "APP";
-    String password = "admin";
-    Connection connection = null;
+    private String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private String user = "APP";
+    private String password = "admin";
+    private Connection connection = null;
 
     @Override
     public void init() throws ServletException {
@@ -42,8 +42,13 @@ public class ServletSignin extends HttpServlet {
             ResultSet rs = inserimento.executeQuery();
 
             if(rs.next()){
-                return rs.getString(1);
+                inserimento.close();
+                String val = rs.getString(1);
+                rs.close();
+                return val;
             } else {
+                inserimento.close();
+                rs.close();
                 return null;
             }
 

@@ -1,4 +1,4 @@
-package unitn.disi.web.progettoteam19;
+package unitn.disi.web.progettoteam19.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -7,8 +7,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "FiltroAmministratore")
-public class FiltroAmministratore implements Filter {
+/**
+ * Questo filtro è usato per evitare che un utente loggato, ma non come simpatizzante,
+ * <br> acceda alla pagina simpatizzante.jsp
+ */
+
+@WebFilter(filterName = "FiltroSimpatizzante")
+public class FiltroSimpatizzante implements Filter {
 
     public void init(FilterConfig config) throws ServletException {
     }
@@ -29,7 +34,7 @@ public class FiltroAmministratore implements Filter {
         }
 
 
-        if(session != null && session.getAttribute("type") != null && session.getAttribute("type").equals("amministratore")){
+        if(session != null && session.getAttribute("type") != null && session.getAttribute("type").equals("simpatizzante")){
             chain.doFilter(request, response);
         } else {
             req.getRequestDispatcher(res.encodeURL("./home.jsp")).forward(req, res);

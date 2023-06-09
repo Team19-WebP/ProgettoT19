@@ -1,4 +1,4 @@
-package unitn.disi.web.progettoteam19;
+package unitn.disi.web.progettoteam19.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;
@@ -7,6 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+
+/**
+ * Questo filtro è usato per evitare che un utente NON loggato,
+ * acceda a pagine a cui non potrebbe accedere.
+ */
 
 @WebFilter(filterName = "UserFilter")
 public class UserFilter implements Filter {

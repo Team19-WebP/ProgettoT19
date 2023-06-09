@@ -19,10 +19,10 @@ import java.util.Date;
 @WebServlet(name = "ServletGetDonazioni", value = "/ServletGetDonazioni")
 public class ServletGetDonazioni extends HttpServlet {
 
-    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-    String user = "APP";
-    String password = "admin";
-    Connection connection = null;
+    private String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private String user = "APP";
+    private String password = "admin";
+    private Connection connection = null;
 
     @Override
     public void init() throws ServletException {
@@ -85,6 +85,9 @@ public class ServletGetDonazioni extends HttpServlet {
                 out.println(array);
                 out.flush();
             }*/
+
+            resultSet.close();
+            preparedStatement.close();
         } catch (SQLException ex) {
                 ex.printStackTrace();
                 response.sendRedirect("error.html");

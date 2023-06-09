@@ -17,10 +17,10 @@ import com.google.gson.JsonArray;
 
 @WebServlet(name = "ServletGetAllUsers", value = "/ServletGetAllUsers")
 public class ServletGetAllUsers extends HttpServlet {
-    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-    String user = "APP";
-    String password = "admin";
-    Connection connection = null;
+    private String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private String user = "APP";
+    private String password = "admin";
+    private Connection connection = null;
 
     @Override
     public void init() throws ServletException {
@@ -80,6 +80,9 @@ public class ServletGetAllUsers extends HttpServlet {
                 ex.printStackTrace();
                 response.sendRedirect(response.encodeURL("error.html"));
             }
+
+            resultSet.close();
+            getting.close();
 
         } catch (SQLException ex){
             ex.printStackTrace();

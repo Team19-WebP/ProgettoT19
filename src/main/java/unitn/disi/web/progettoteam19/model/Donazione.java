@@ -2,16 +2,24 @@ package unitn.disi.web.progettoteam19.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
+
+/**
+ * Model per rappresentare le donazioni.
+ */
 
 public class Donazione implements Serializable {
 
+    /**
+     * Importo della donazione
+     */
     private Double importo;
+
+    /**
+     * Data della donazione
+     */
     private LocalDate dataDonazione;
 
     public Donazione() {
-
     }
 
     public Double getImporto() {

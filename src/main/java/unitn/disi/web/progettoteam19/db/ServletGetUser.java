@@ -11,10 +11,10 @@ import javax.servlet.annotation.*;
 @WebServlet(name = "ServletGetUser", value = "/ServletGetUser")
 public class ServletGetUser extends HttpServlet {
 
-    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-    String user = "APP";
-    String password = "admin";
-    Connection connection = null;
+    private String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private String user = "APP";
+    private String password = "admin";
+    private Connection connection = null;
 
     @Override
     public void init() throws ServletException {
@@ -59,6 +59,8 @@ public class ServletGetUser extends HttpServlet {
 
             request.getSession().setAttribute("utenteLoggato", utenteLoggato);
 
+            getting.close();
+            resultSet.close();
         } catch (SQLException ex){
             ex.printStackTrace();
         }

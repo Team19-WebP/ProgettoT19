@@ -6,21 +6,18 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.text.NumberFormat;
-import java.text.ParseException;
 import javax.servlet.annotation.*;
 
 @WebServlet(name = "ServletEliminaProfilo", value = "/ServletEliminaProfilo")
 public class ServletEliminaProfilo extends HttpServlet {
-    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-    String user = "APP";
-    String password = "admin";
-    Connection connection = null;
+    private String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private String user = "APP";
+    private String password = "admin";
+    private Connection connection = null;
 
     @Override
     public void init() throws ServletException {
@@ -51,6 +48,7 @@ public class ServletEliminaProfilo extends HttpServlet {
             PreparedStatement inserimento = connection.prepareStatement(stringaGet);
             inserimento.setString(1, utenteLoggato.getUsername());
             inserimento.executeUpdate();
+            inserimento.close();
         } catch (SQLException ex){
             ex.printStackTrace();
         }

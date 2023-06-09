@@ -17,10 +17,10 @@ import java.util.Date;
 @WebServlet(name = "ServletDonazione", value = "/ServletDonazione")
 public class ServletDonazione extends HttpServlet {
 
-    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-    String user = "APP";
-    String password = "admin";
-    Connection connection = null;
+    private String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private String user = "APP";
+    private String password = "admin";
+    private Connection connection = null;
 
     @Override
     public void init() throws ServletException {
@@ -58,6 +58,7 @@ public class ServletDonazione extends HttpServlet {
             inserimento.setString(2,simpleDateFormat.format(data));
             inserimento.executeUpdate();
             System.out.println("donati euro " + importo);
+            inserimento.close();
         } catch (SQLException ex){
             ex.printStackTrace();
         }

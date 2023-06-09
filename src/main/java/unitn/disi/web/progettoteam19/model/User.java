@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Model per rappresentare gli utenti registrati al sito web.
+ */
+
 public class User implements Serializable {
     private String nome;
     private String cognome;

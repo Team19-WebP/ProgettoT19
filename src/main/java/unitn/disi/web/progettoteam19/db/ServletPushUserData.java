@@ -9,10 +9,10 @@ import javax.servlet.annotation.*;
 @WebServlet(name = "ServletPushUserData", value = "/ServletPushUserData")
 public class ServletPushUserData extends HttpServlet {
 
-    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-    String user = "APP";
-    String password = "admin";
-    Connection connection = null;
+    private String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private String user = "APP";
+    private String password = "admin";
+    private Connection connection = null;
 
     @Override
     public void init() throws ServletException {
@@ -48,6 +48,8 @@ public class ServletPushUserData extends HttpServlet {
             inserimento.setString(8, request.getParameter("passwordVal"));
 
             inserimento.executeUpdate();
+
+            inserimento.close();
 
         } catch (SQLException ex){
             ex.printStackTrace();

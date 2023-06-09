@@ -134,9 +134,6 @@ public class Index extends HttpServlet {
             }
             rs.close();
             preparedStatement.close();
-            //debug
-            System.out.println(retval);
-            //debug
             return retval;
         } catch (SQLException ex){
             ex.printStackTrace();

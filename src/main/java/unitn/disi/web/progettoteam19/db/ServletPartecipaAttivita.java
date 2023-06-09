@@ -15,10 +15,10 @@ import javax.servlet.annotation.*;
 @WebServlet(name = "ServletPartecipaAttivita", value = "/ServletPartecipaAttivita")
 public class ServletPartecipaAttivita extends HttpServlet {
 
-    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-    String user = "APP";
-    String password = "admin";
-    Connection connection = null;
+    private String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private String user = "APP";
+    private String password = "admin";
+    private Connection connection = null;
 
     @Override
     public void init() throws ServletException {
@@ -78,6 +78,10 @@ public class ServletPartecipaAttivita extends HttpServlet {
                 inserting.setInt(2, 3);
                 inserting.executeUpdate();
             }
+
+            getting.close();
+            resultSet.close();
+            inserting.close();
 
         } catch (SQLException ex){
             ex.printStackTrace();

@@ -1,4 +1,4 @@
-package unitn.disi.web.progettoteam19;
+package unitn.disi.web.progettoteam19.db;
 
 import unitn.disi.web.progettoteam19.model.User;
 
@@ -14,10 +14,10 @@ import java.sql.*;
 @WebServlet(name = "ServletLogin", value = "/ServletLogin")
 public class ServletLogin extends HttpServlet {
 
-    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-    String user = "APP";
-    String password = "admin";
-    Connection connection = null;
+    private String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private String user = "APP";
+    private String password = "admin";
+    private Connection connection = null;
 
     @Override
     public void init() throws ServletException {
@@ -76,7 +76,7 @@ public class ServletLogin extends HttpServlet {
         HttpSession session = request.getSession(true);
 
 
-        request.getRequestDispatcher("ServletGetUser").include(request, response);
+        request.getRequestDispatcher(response.encodeURL("ServletGetUser")).include(request, response);
         System.out.println( (User) session.getAttribute("utenteLoggato"));
         if(aderente){
             session.setAttribute("type", "aderente");
@@ -92,7 +92,8 @@ public class ServletLogin extends HttpServlet {
         }
     }
 
-    //metodo per evitare dupllicazioni di codice nei tre metodi che seguono
+
+    //usato per evitare duplicazioni nei metodi seguenti
     private String getString(String usernameToCheck, String stringaGet) {
         try{
             PreparedStatement inserimento = connection.prepareStatement(stringaGet);
@@ -100,8 +101,13 @@ public class ServletLogin extends HttpServlet {
             ResultSet rs = inserimento.executeQuery();
 
             if(rs.next()){
-                return rs.getString(1);
+                String val = rs.getString(1);
+                rs.close();
+                inserimento.close();
+                return val;
             } else {
+                inserimento.close();
+                rs.close();
                 return null;
             }
 

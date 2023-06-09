@@ -1,4 +1,4 @@
-package unitn.disi.web.progettoteam19;
+package unitn.disi.web.progettoteam19.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -6,6 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+
+/**
+ * Questo filtro è usato per evitare che un utente loggato, ma non come aderente,
+ * <br> acceda alla pagina aderente.jsp
+ */
 
 @WebFilter(filterName = "FiltroAderente")
 public class FiltroAderente implements Filter {

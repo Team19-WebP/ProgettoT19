@@ -1,7 +1,5 @@
 package unitn.disi.web.progettoteam19;
 
-import unitn.disi.web.progettoteam19.model.User;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -9,6 +7,12 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Random;
+
+/**
+ * Servlet utilizzata per connettersi al database e recuperare le frasi ispiranti.
+ * <br> Viene fatto una singola volta solamente quando viene avviato il sito web.
+ * <br><br> Viene anche invocata questa servlet quando è necessario cambiare l'immagine da mostrare nel sito web.
+ */
 
 @WebServlet(name = "frasiServlet", value = "/frasiServlet")
 public class frasiServlet extends HttpServlet {
@@ -39,6 +43,9 @@ public class frasiServlet extends HttpServlet {
                 frasiIspiranti.add(resultSet.getString(2));
             }
 
+            getting.close();
+            resultSet.close();
+
         } catch (SQLException ex){
             ex.printStackTrace();
         }
@@ -65,6 +72,5 @@ public class frasiServlet extends HttpServlet {
         Random rnd = new Random();
         int index = rnd.nextInt(frasiIspiranti.size());
         response.getWriter().println(frasiIspiranti.get(index));
-        //System.out.println(frasiIspiranti.get(index));
     }
 }
