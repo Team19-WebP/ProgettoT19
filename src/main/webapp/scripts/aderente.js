@@ -1,7 +1,7 @@
-let dati = document.querySelector("#dati");         //
-let danger = document.querySelector("#danger");     // DIV delle varie sezioni da mostrare/nascondere
+let dati = document.querySelector("#dati");                 //
+let danger = document.querySelector("#danger");             // DIV delle varie sezioni da mostrare/nascondere
 let attivita = document.querySelector("#attivitaAderente"); //
-let donation = document.querySelector("#donation"); //
+let donation = document.querySelector("#donation");         //
 
 /*TODO fissare il bottone cliccato con gli id [anche in simp e amm]*/
 

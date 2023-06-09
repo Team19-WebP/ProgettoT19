@@ -5,20 +5,7 @@
     --COLORE2: #393E46;
     --COLORE3: #00ADB5;
     --COLORE4: #EEEEEE;
-}
-body {
-    background: var(--COLORE4);
-    /*font-family: 'Comic Sans MS', sans-serif;*/
-}
-.intestazione {
-    background-color: var(--COLORE3);
-}
-footer {
-    background-color: var(--COLORE3);
-}
-.frasiInspiranti {
-    background-color: var(--COLORE2);
-    color: var(--COLORE3);
+    --COLORE4TRANSP: #EEEEEEe6;
 }
 .menu2 {
     padding-bottom: 1%;
@@ -41,20 +28,6 @@ footer {
 .menu2 button:hover {
     background-color: var(--COLORE2);
     color: var(--COLORE4);
-}
-
-.menu {
-    background-color: var(--COLORE1);
-}
-.menu a{
-    color: var(--COLORE4);
-}
-.menu a:hover{
-    background-color: var(--COLORE4);
-    color: var(--COLORE1);
-}
-.menu .dropdown-content {
-    background-color: var(--COLORE1);
 }
 #resetCount{
     font-size: xx-large;

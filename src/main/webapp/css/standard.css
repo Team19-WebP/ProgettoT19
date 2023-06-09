@@ -2,11 +2,13 @@
 /* Cambia i colori come vuoi per la parte di standard TODO*/
 :root {
     --NERO: #000000;
-    --BIANCO: #ffffff;
-    --ROSABG: #FEE9FF;
     --ROSABG-GRADIENTE: #FFE6F2;
     --BORDERROSA: #A998A5;
-    --ROSA-PRINCIPALE: #FFB3BF;
+    --COLORE1: #1a1919;
+    --COLORE2: #31372B;
+    --COLORE3: #FFB3BF;
+    --COLORE4: #fee9ff;
+    --COLORE4TRANSP: #fee9ffe6;
 }
 
 /*#########################################################################################*/
@@ -17,23 +19,23 @@
 body {
     /* Spazio da lasciare per l'intestazione */
     padding-top: 200px;
-    background: #FEE9FF;
+    background: var(--COLORE4);
     /*background: -moz-linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #FFFFFF 100%);*/
     /*background: -webkit-linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #FFFFFF 100%);*/
-    background: linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #ffffff 100%);
+    background: linear-gradient(45deg, var(--COLORE4) 0%, #FFE6F2 0%, white 100%);
     font-family: 'Raleway', sans-serif;
 }
 
 select{
-    background-color: #ffffff; /* rgba(254, 233, 255, 0);*/
+    background-color: white; /* rgba(254, 233, 255, 0);*/
     resize: none;
-    border: 3px solid #A998A5;
+    border: 3px solid var(--BORDERROSA);
 }
 
 textarea {
-    background-color: #ffffff; /* rgba(254, 233, 255, 0);*/
+    background-color: white; /* rgba(254, 233, 255, 0);*/
     resize: none;
-    border: 3px solid #A998A5;
+    border: 3px solid var(--BORDERROSA);
 }
 span.alert{
     color: red;
@@ -45,7 +47,7 @@ span.requirements{
 input, #comboBox{
     background-color: transparent; /*rgba(254, 233, 255, 0);*/
     border: none;
-    border-bottom: 3px solid #31372BFF;
+    border-bottom: 3px solid var(--COLORE2);
     width: 50vw;
     /*border-radius: 6px;*/
 }
@@ -59,7 +61,7 @@ form{
 
 input[type = submit], input[type = reset ] {
     border-radius: 12px;
-    border: 2px solid #000000;
+    border: 2px solid black;
     background-color: transparent;
     opacity: 0.7;
     width: 80px;
@@ -163,7 +165,7 @@ input[type = reset]:hover, input[type = reset]:focus {
     right: 0;
     background-color: #9b9b9b;
     opacity: 0.7;
-    color: #ffffff;
+    color: white;
     /*width: 100%;*/
     /*max-width: 600px;*/
     box-sizing: border-box;
@@ -203,11 +205,11 @@ a.linkImg:hover {
 }
 
 a.linkImg:hover > img {
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid black;
 }
 
 a.linkImg:hover > .textAttivita {
-    background-color: rgba(254, 233, 255, 0.9);
+    background-color: var(--COLORE4TRANSP);
     border-radius: 12px;
     opacity: 1;
     color: black;
@@ -229,7 +231,7 @@ a.linkImg:hover > .textAttivita {
 }
 
 .textAttivita {
-    color: #000000;
+    color: black;
     font-size: 20px;
     position: absolute;
     bottom: 10%;
@@ -354,9 +356,9 @@ html {
     align-items: center;
     font-family: 'Darumadrop One', cursive;
     /*background: linear-gradient(to bottom, #31372b, transparent);*/
-    background-color: #31372BFF;
+    background-color: var(--COLORE2);
     text-align: center;
-    color: #FFB3BF;
+    color: var(--COLORE3);
     height: 50px;
     z-index: 9998;
 }
@@ -385,7 +387,7 @@ html {
     /* Verde ebete forse?!*/
     /*background: linear-gradient(to top, #31372b, #ffffff);*/
 
-    background: #ffffff;
+    background: var(--COLORE3);
 
     /* Fissiamo l'intestazione on top*/
     position: fixed;
@@ -429,7 +431,7 @@ html {
     display: flex;
     /* posizionamento rispetto al main axis */
     justify-content: center;
-    background-color: #FFB3BF;
+    background-color: var(--COLORE1);
     /* Nel caso il display sia piccolo con flex-wrap mando a capo gli elementi */
     flex-wrap: wrap;
     /* allinea il wrap rispetto al cross axis  */
@@ -439,13 +441,13 @@ html {
     font-size: 13px;
     letter-spacing: 2px;
     word-spacing: 2px;
-    color: #000000;
+    color: var(--COLORE4);
     font-weight: 700;
 }
 /* Selezione dei link del menu*/
 .menu a {
     /*display: flex;*/
-    color: #000;
+    color: var(--COLORE4);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -453,8 +455,8 @@ html {
 
 /* per cambiare il colore quando passo sopra con il mouse*/
 .menu a:hover {
-    background-color: #FFE6F2;
-    color: #000;
+    background-color: var(--COLORE4);
+    color: var(--COLORE1);
 }
 
 .menu .dropdown {
@@ -476,10 +478,10 @@ html {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #FFB3BF;
+    background-color: var(--COLORE1);
     /* larghezza minima da regolare quando metteremo il nome delle attività vere*/
     min-width: 160px;
-    box-shadow: 0 8px 16px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 10px #00000033;
     /* se per qualche ragione il menu a tendina non si vede basta fixare lo z-index */
     /*z-index: 1;*/
 }
@@ -514,7 +516,7 @@ html {
 }
 
 footer {
-    background-color: #FFB3BF;
+    background-color: var(--COLORE3);
     border-top: solid 2px black;
     width: 100%;
     text-align: center;
@@ -568,14 +570,14 @@ Impostiamo anche cosa succede se ci siamo sopra col mouse*/
 }
 
 .prev, .next {
-    background-color: #31372BFF;
+    background-color: var(--COLORE2);
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: #FFB3BF;
+    color: var(--COLORE3);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -583,7 +585,7 @@ Impostiamo anche cosa succede se ci siamo sopra col mouse*/
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: #000000CC;
 }
 
 /*Per un eventuale didascalia dell'immagine*/
@@ -602,12 +604,12 @@ Impostiamo anche cosa succede se ci siamo sopra col mouse*/
 /*Per avere inforamzioni su che immagine stiamo guaurdando*/
 
 .numbertext {
-    color: #FFB3BF;
+    color: var(--COLORE3);
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
     top: 0;
-    background-color: #31372BFF;
+    background-color: var(--COLORE2);
 }
 
 /*Per i puntini che dicono su che immagine siamo*/
@@ -617,14 +619,14 @@ Impostiamo anche cosa succede se ci siamo sopra col mouse*/
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #31372BFF;
+    background-color: var(--COLORE2);
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-    background-color: #FFB3BF;
+    background-color: var(--COLORE3);
 }
 
 
@@ -653,23 +655,23 @@ Impostiamo anche cosa succede se ci siamo sopra col mouse*/
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    background-color: black; /* Fallback color */
+    background-color: #00000066; /* Black w/ opacity TODO */
 }
 
 /* posizionamento finestra cookies */
 .infoCookies {
-    background-color: #FEE9FF;
+    background-color: var(--COLORE4);
     position: fixed;
     bottom: 0;
     right: 0;
     padding: 5%;
-    border: 2px solid #000;
+    border: 2px solid black;
     width: 50%; /* Could be more or less, depending on screen size */
 }
 .buttonCookies {
     border-radius: 12px;
-    border: 2px solid #31372b;
+    border: 2px solid var(--COLORE2);
     background-color: transparent;
     opacity: 0.7;
 }
