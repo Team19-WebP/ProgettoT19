@@ -28,7 +28,7 @@ public class Index extends HttpServlet {
     Connection connection = null;
 
     /**
-     * Impostiamo come variabili di istanza i vari contatori che salveremo nel ServletContext.
+     * Impostiamo come variabili d'istanza i vari contatori che salveremo nel ServletContext.
      */
 
     private Counter counterGenerale;
