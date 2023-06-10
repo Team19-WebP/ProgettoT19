@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -15,6 +16,10 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import javax.servlet.annotation.*;
 import java.util.Date;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+
 
 @WebServlet(name = "ServletGetDonazioni", value = "/ServletGetDonazioni")
 public class ServletGetDonazioni extends HttpServlet {
@@ -72,19 +77,19 @@ public class ServletGetDonazioni extends HttpServlet {
                 lastYearDonations.add(donation);
             }
 
-            /*
+
             // Preparing and sending json resp
             response.setContentType("application/json");
             response.setCharacterEncoding("utf-8");
             try (PrintWriter out = response.getWriter()) {
                 JsonArray array = new JsonArray();
-                for(User c : allUsers) {
+                for(Donazione d : lastYearDonations) {
                     Gson gson = new Gson();
-                    array.add(gson.toJson(c));
+                    array.add(gson.toJson(d));
                 }
                 out.println(array);
                 out.flush();
-            }*/
+            }
 
             resultSet.close();
             preparedStatement.close();

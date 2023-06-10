@@ -117,6 +117,9 @@ function stampaUtenti(url, type) {
                 // Displaying success
                 // document.getElementById("result").innerHTML = "Data successfully retrieved";
 
+                let p = document.getElementById("no"+type);
+                p.hidden = true;
+
                 // Showing table
                 table.style.border = "1px solid";
 
@@ -145,6 +148,10 @@ function stampaUtenti(url, type) {
                     }
                 }
 
+            }
+            else {
+                let p = document.getElementById("no"+type);
+                p.hidden = false;
             }
         }
     }

@@ -41,6 +41,9 @@
       <table id="all">
 
       </table>
+      <p id="noall" hidden = "true">
+        Nessun utente presente
+      </p>
     </div>
 
 
@@ -51,6 +54,9 @@
       <table id="simpatizzante">
 
       </table>
+      <p id="nosimpatizzante" hidden = "true">
+        Nessun utente 'simpatizzante' presente
+      </p>
     </div>
 
     <div id="aderenti" hidden="true">
@@ -60,6 +66,9 @@
       <table id="aderente">
 
       </table>
+      <p id="noaderente" hidden = "true">
+        Nessun utente 'aderente' presente
+      </p>
     </div>
 
     <div>
@@ -81,7 +90,6 @@
       <%--TODO siamo sicuri che l'amministratore non debba poter fare anche lui le cose che fa un adrerente (disiscriversi o donare) --%>
     </div>
 
-
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
@@ -90,14 +98,13 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> <%--questo nello specifico è essenziale--%>
 
-    <div id="visite" hidden="true">
-
+    <div id="visite">
       <br>
       <div id="contatoreVisite"> Visite sito: <b><jsp:getProperty name="counterGenerale" property="hits"/></b> </div>
       <div id="grafico visite">
 
         <figure class="highcharts-figure">
-          <div id="GraficoVisite"></div>  <%--div che viene utilizzato dalle librerie per riempirlo con il grafico interattivo--%>
+          <div id="GraficoVisite"></div>
           <p class="highcharts-description">
             Grafico che mostra in numero di visite a ogni pagina del sito dall'ultima volta che sono stati resettati i contatori.
             Per resettarli nuovamente premere il bottone sottostante.
@@ -106,7 +113,6 @@
       </div>
       <br>
       <form action="ServletReset" method="get">
-        <!-- TODO lo farei con AJAX -->
         <input id="resetCount" type="submit" value="RESET">
       </form>
     </div>
@@ -127,6 +133,7 @@
 
     </div>
   </div>
+
   <script rel="script" src="scripts/amministratore.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>
