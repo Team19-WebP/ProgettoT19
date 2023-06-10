@@ -261,10 +261,10 @@ Highcharts.chart('GraficoVisite', {
 });
 
 //--------------------------------------------------------------------------------------------------------------------//
+
 let anno = [];
 let sommaMensile = [];
 let sommatotale = 0;
-
 
 function setDonaz() {
     // Preparing request
@@ -289,6 +289,8 @@ function setDonaz() {
                     anno[i][j] = 0;
                 }
             }
+
+            sommatotale = 0;
 
             let my_JSON_array = this.response;
 
@@ -321,6 +323,7 @@ function setDonaz() {
 
 // Create the chart
 function crea(){
+
     Highcharts.chart('GraficoDonazioni', {
         chart: {
             type: 'column'
