@@ -81,44 +81,71 @@ function showOrHide(id){
     dati.hidden = !dati.hidden;
 
 }
-function stampaUtenti(){
+function stampaUtenti() {
+    // Preparing request
+    let url = "/ServletGetAllUsers";
+
+    // Making request
     let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "/ServletGetAllUsers", true);
+    xhttp.open("GET", url, true);
     xhttp.responseType = "json";
 
+    // Callback
     xhttp.onreadystatechange = function () {
-        if (xhttp.readyState === 4 && xhttp.status === 200) {
+        let done = 4, ok = 200;
+        if (xhttp.readyState === done && xhttp.status === ok) {
 
-            console.log("ciao!")
-
+            // Getting returned array of cities
             let my_JSON_array = this.response;
 
+            // Finding table to fill in
             let table = document.getElementById("output");
 
-            var header = document.createElement("th");
-            var testo = document.createTextNode("Username");
-            header.appendChild(testo);
-            table.appendChild(header);
+            // Removing old table if existing and hiding it
+            while (table.childNodes.length) {
+                table.removeChild(table.childNodes[0]);
+            }
+            table.style.border = "0px solid";
 
-            table.style.border = "1px solid";
+            if (my_JSON_array.length > 0) {
 
-            for (let i = 0; i < my_JSON_array.length; i++) {
-                let current_JSON_object  = JSON.parse(my_JSON_array[i]);
-                var tr = document.createElement("tr");
-                var th = document.createElement("th");
-                var text = document.createTextNode(current_JSON_object[i].username);
-                th.appendChild(text);
-                tr.appendChild(th);
+                // Displaying success
+                document.getElementById("result").innerHTML = "Data successfully retrieved";
+
+                // Showing table
+                table.style.border = "1px solid";
+
+                // Creating table header
+                let thead = table.createTHead();
+                let row = thead.insertRow();
+                let header = ["username", "nome", "cognome"];
+                for (let key of header) {
+                    let th = document.createElement("th");
+                    th.style.border = "1px solid";
+                    let text = document.createTextNode(key);
+                    th.appendChild(text);
+                    row.appendChild(th);
+                }
+
+                // Creating table rows
+                for (let i = 0; i < my_JSON_array.length; i++) {
+                    row = table.insertRow();
+                    let current_JSON_object = JSON.parse(my_JSON_array[i]);
+                    for (let key in header) {
+                        let cell = row.insertCell();
+                        cell.style.border = "1px solid";
+                        let text = document.createTextNode(current_JSON_object[key]);
+                        cell.appendChild(text);
+                    }
+                }
+
             }
         }
     }
 
     // Sending request
     xhttp.send();
-
 }
-
-
 ////////////////////////////////////////////////////GRAFICI/////////////////////////////////////////////////////////////
 
 let hitsHome = document.querySelector("#hitsHome");
