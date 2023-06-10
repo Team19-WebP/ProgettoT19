@@ -5,6 +5,7 @@
 <jsp:useBean id="counterContatti" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:setProperty name="counterContatti" property="hits" value="0"/>
 <main>
+    <div class="containerContatti">
     <div class="formContSignLog containerDescrizione" >
         <p>
             Per qualsiasi domanda o informazione non esitare a contattarci scrivendoci a tum4world@nessunluogonoesiste.com,
@@ -52,6 +53,7 @@
             <input type="submit" value="Invia">
         </div>
     </form>
+    </div>
     </div>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>
