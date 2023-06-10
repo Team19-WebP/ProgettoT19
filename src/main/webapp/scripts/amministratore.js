@@ -64,6 +64,7 @@ function visualizzaVisite(){
 
 function visualizzaDonations(){
     if(donations.hidden == true){
+        setDonaz();
         utenti.hidden = true;
         simpatizzanti.hidden = true;
         aderenti.hidden = true;
@@ -253,6 +254,44 @@ Highcharts.chart('GraficoVisite', {
 });
 
 //--------------------------------------------------------------------------------------------------------------------//
+let anno = [[]];
+
+
+function setDonaz() {
+    // Preparing request
+    let url = "/progettoteam19/ServletGetDonazioni";
+
+    // Making request
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", url, true);
+    xhttp.responseType = "json";
+
+    xhttp.onreadystatechange = function () {
+        let done = 4, ok = 200;
+        if (xhttp.readyState === done && xhttp.status === ok) {
+            console.log("afssafas");
+
+            let my_JSON_array = this.response;
+
+            if (my_JSON_array != null && my_JSON_array.length > 0) {
+
+                for(let i=0; i< my_JSON_array.length; i++){
+                    var objDonaz = JSON.parse(my_JSON_array[i]);
+                    console.log(objDonaz);
+                }
+
+            }
+            else {
+                //no donaz
+                console.log("no donaz");
+            }
+        }
+    }
+
+    // Sending request
+    xhttp.send();
+}
+
 
 // Data retrieved from https://gs.statcounter.com/browser-market-share#monthly-202201-202201-bar
 
@@ -324,7 +363,7 @@ Highcharts.chart('GraficoDonazioni', {
                 name: 'gennaio',
                 id: 'gennaio',
                 data: [
-                    ['01/01', 12],
+                    ['01/01', 0],
                     ['02/01', 0],
                     ['03/01', 4],
                     ['04/01', 3],
