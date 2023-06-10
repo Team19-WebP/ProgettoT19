@@ -46,6 +46,18 @@ function seleziona(selezione){
         txt.style.opacity = "0";
     }
 }
+function selezionaC(selezione){
+    let checkBox = document.querySelector("#" + selezione);
+    let img = document.querySelector("#img"+selezione);
+    let txt = document.querySelector("#img" + selezione + "> .text");
+    if(checkBox.checked) {
+        img.style.opacity = "0.6";
+        txt.style.opacity = "1";
+    } else {
+        img.style.opacity = "1";
+        txt.style.opacity = "0";
+    }
+}
 function confermaCancellaIscrizione(){
     var txt;
     var retVal;

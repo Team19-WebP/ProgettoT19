@@ -94,7 +94,7 @@
           <div class="simpatizzanteImgCheckAtt">
             <div>
               <label for="attivita1">Aisha</label>
-              <input id="attivita1" name="attivita1" type="checkbox" value="1">
+              <input id="attivita1" name="attivita1" type="checkbox" value="1" onclick=selezionaC('attivita1')>
             </div>
             <div class="im1">
               <figure style="margin: 0px">
@@ -108,7 +108,7 @@
           <div class="simpatizzanteImgCheckAtt">
             <div>
               <label for="attivita2">Team4World</label>
-              <input id="attivita2" name="attivita2" type="checkbox" value="2">
+              <input id="attivita2" name="attivita2" type="checkbox" value="2" onclick=selezionaC('attivita2')>
             </div>
             <div class="im1">
               <figure style="margin: 0px">
@@ -122,7 +122,7 @@
           <div class="simpatizzanteImgCheckAtt">
             <div>
               <label for="attivita3">AbcFuture</label>
-              <input id="attivita3" name="attivita3" type="checkbox" value="3">
+              <input id="attivita3" name="attivita3" type="checkbox" value="3" onclick=selezionaC('attivita3')>
             </div>
             <div class="im1">
               <figure style="margin: 0px">

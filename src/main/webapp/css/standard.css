@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Raleway:wght@300&display=swap'); /* Grazie a queste variabili è possibile modificare i colori in maniera semplice*/
 :root {
-    --COLORE1: #000000;         /*TODO a Gab non piace nero*/
+    --COLORE1: #000000;         /**/
     --COLORE2: #31372B;         /**/
     --COLORE3: #FFB3BF;         /* questi colori sono i colori che vengono visualizzati da chi non è loggato*/
     --COLORE4: #fee9ff;         /**/
@@ -180,7 +180,7 @@ input[type = reset]:hover, input[type = reset]:focus {
     text-align: center;
 }
 
-/* style per attività e forse anche aderente per le immagini todo*/
+/* style per attività e forse anche aderente per le immagini*/
     .im1 {
         position: relative;
         display: flex;
@@ -536,11 +536,6 @@ footer {
 /*#############################---GALLERIA-CHI-SIAMO---####################################*/
 /*#########################################################################################*/
 
-
-/* TODO
-    Commenti
-*/
-
 /*Impostiamo:
  + di default l'immagine non visibile
  + l'animazione customizzata dal nome fade
@@ -663,8 +658,7 @@ Impostiamo anche cosa succede se ci siamo sopra col mouse*/
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: black; /* Fallback color */
-    background-color: #00000066; /* Black w/ opacity TODO */
+    background-color: #00000066; /* Black w/ opacity */
 }
 
 /* posizionamento finestra cookies */

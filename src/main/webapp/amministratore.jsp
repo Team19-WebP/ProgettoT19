@@ -117,7 +117,7 @@
 
     <div id="donations" hidden="true">
 
-      <div id = "totaleDonazioni"> il sito ha ricevuto XXXX€ in totale.</div> <%--TODO prendere il numero di visite da un BEAN e aggiungerlo dinamicamente--%>
+      <div id = "totaleDonazioni"></div>
 
       <script src="https://code.highcharts.com/modules/drilldown.js"></script>
 
