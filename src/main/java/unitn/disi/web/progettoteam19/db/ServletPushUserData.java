@@ -9,9 +9,9 @@ import javax.servlet.annotation.*;
 @WebServlet(name = "ServletPushUserData", value = "/ServletPushUserData")
 public class ServletPushUserData extends HttpServlet {
 
-    private String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-    private String user = "APP";
-    private String password = "admin";
+    private final String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private final String user = "APP";
+    private final String password = "admin";
     private Connection connection = null;
 
     @Override

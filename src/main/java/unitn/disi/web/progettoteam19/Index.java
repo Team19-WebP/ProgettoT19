@@ -22,9 +22,9 @@ public class Index extends HttpServlet {
      * Questa connessione è necessaria per recuperare i valori dei contatori dal database.
      */
 
-    String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-    String user = "APP";
-    String password = "admin";
+    final String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    final String user = "APP";
+    final String password = "admin";
     Connection connection = null;
 
     /**
