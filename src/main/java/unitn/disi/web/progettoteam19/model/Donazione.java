@@ -15,15 +15,11 @@ public class Donazione implements Serializable {
     private Double importo;
 
     /**
-     * Data della donazione
-     */
-    private LocalDate dataDonazione;
-
-    /**
-     * Il mese e il giorno della donazione
+     * La data, il mese e il giorno della donazione
      */
     private int month;
     private int day;
+    private int year;
 
     public Donazione() {
     }
@@ -36,23 +32,20 @@ public class Donazione implements Serializable {
         this.importo = importo;
     }
 
-    public LocalDate getDataDonazione() {
-        return dataDonazione;
-    }
 
     public void setDataDonazione(LocalDate dataDonazione) {
-        this.dataDonazione = dataDonazione;
         this.month = dataDonazione.getMonthValue();
         this.day = dataDonazione.getDayOfMonth();
+        this.year = dataDonazione.getYear();
     }
     public void setDataDonazione(int year, int month, int day) {
-        this.dataDonazione = LocalDate.of(year, month, day);
         this.month = month;
         this.day = day;
+        this.year = year;
     }
 
     public int getAnnoDonazione(){
-        return dataDonazione.getYear();
+        return year;
     }
 
     public int getMeseDonazione(){

@@ -255,6 +255,8 @@ Highcharts.chart('GraficoVisite', {
 
 //--------------------------------------------------------------------------------------------------------------------//
 let anno = [[]];
+let sommaMensile = [];
+let sommatotale = 0;
 
 
 function setDonaz() {
@@ -271,12 +273,21 @@ function setDonaz() {
         if (xhttp.readyState === done && xhttp.status === ok) {
             console.log("afssafas");
 
+            for(let i=0; i<12; i++){
+                sommaMensile[i] = 0;
+                for(let j=0; j<31; j++){
+                    anno[i][j] = 0;
+                }
+            }
+
             let my_JSON_array = this.response;
 
             if (my_JSON_array != null && my_JSON_array.length > 0) {
 
                 for(let i=0; i< my_JSON_array.length; i++){
                     var objDonaz = JSON.parse(my_JSON_array[i]);
+                    anno[objDonaz.month-1][objDonaz.day-1] += objDonaz.importo;
+                    sommaMensile[objDonaz.month-1] += objDonaz.importo;
                     console.log(objDonaz);
                 }
 
@@ -361,7 +372,7 @@ Highcharts.chart('GraficoDonazioni', {
                 name: 'gennaio',
                 id: 'gennaio',
                 data: [
-                    ['01/01', 0],
+                    ['01/01', anno[0][0]],
                     ['02/01', 0],
                     ['03/01', 4],
                     ['04/01', 3],

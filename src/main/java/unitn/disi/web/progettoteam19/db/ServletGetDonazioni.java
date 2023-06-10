@@ -76,19 +76,23 @@ public class ServletGetDonazioni extends HttpServlet {
                 lastYearDonations.add(donation);
             }
 
-            JsonArray array = new JsonArray();
-            PrintWriter out = response.getWriter();
-            for(Donazione d : lastYearDonations){
-                System.out.println("in array:" + d);
-                Gson gson = new Gson();
-                array.add(gson.toJson(d));
-                System.out.println("?? " + array);
-            }
+            // Preparing and sending json response
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
-            System.out.println("fuori dal ciclo: " + array);
-            out.println(array);
-            out.flush();
+            try (PrintWriter out = response.getWriter()) {
+                JsonArray array = new JsonArray();
+                for(Donazione d : lastYearDonations) {
+                    Gson gson = new Gson();
+                    array.add(gson.toJson(d));
+                    System.out.println(d);
+                }
+                out.println(array);
+                out.flush();
+            }
+            catch (IOException ex) {
+                ex.printStackTrace();
+                response.sendRedirect(response.encodeURL("error.html"));
+            }
 
             resultSet.close();
             preparedStatement.close();
