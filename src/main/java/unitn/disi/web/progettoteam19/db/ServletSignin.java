@@ -61,10 +61,11 @@ public class ServletSignin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(getUserName(request.getParameter("username")) != null){
-            response.sendRedirect(response.encodeURL("./temp.jsp"));
+            response.sendRedirect(response.encodeURL("signin.jsp?errore=true"));
         } else {
             request.getRequestDispatcher(response.encodeURL("/ServletPushUserData")).include(request, response);
-            response.sendRedirect(response.encodeURL("./confermaSignin.jsp"));
+//            response.sendRedirect(response.encodeURL("confermaSignin.jsp"));
+            response.sendRedirect(response.encodeURL("signin.jsp?errore=true"));
         }
     }
 }
