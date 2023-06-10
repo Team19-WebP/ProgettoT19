@@ -183,9 +183,9 @@ Highcharts.chart('GraficoVisite', {
         data: [
             ['home', Number(hitsHome.innerText)],
             ['attivita', Number(hitsAttivita.innerText)],
-            ['attivita1', Number(hitsAttivita1.innerText)],
-            ['attivita2', Number(hitsAttivita2.innerText)],
-            ['attivita3', Number(hitsAttivita3.innerText)],
+            ['Aisha', Number(hitsAttivita1.innerText)],
+            ['Team4World', Number(hitsAttivita2.innerText)],
+            ['Abc4Future', Number(hitsAttivita3.innerText)],
             ['chiSiamo', Number(hitsChiSiamo.innerText)],
             ['contatti', Number(hitsContatti.innerText)],
             ['conferma contatti', Number(hitsConfermaContatti.innerText)],
