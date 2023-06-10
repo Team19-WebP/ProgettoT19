@@ -2,6 +2,7 @@ let dati = document.querySelector("#dati");                 //
 let danger = document.querySelector("#danger");             // DIV delle varie sezioni da mostrare/nascondere
 let attivita = document.querySelector("#attivitaAderente"); //
 let donation = document.querySelector("#donation");         //
+let confDonation = document.querySelector("#confDonaz");
 
 /*TODO fissare il bottone cliccato con gli id [anche in simp e amm]*/
 
@@ -20,6 +21,8 @@ function visualizzaDati(){
        danger.hidden = true;
         attivita.hidden = true;
         donation.hidden = true;
+        if(confDonation !== undefined)
+            confDonation.hidden = true;
 
     } else {
         dati.hidden = true;
@@ -31,9 +34,14 @@ function visualizzaAttivita(){
         danger.hidden = true;
         attivita.hidden = false;
         donation.hidden = true;
+        if(confDonation !== undefined)
+            confDonation.hidden = true;
 
     } else {
         attivita.hidden = true;
+        if(confDonation !== undefined)
+            confDonation.hidden = true;
+
     }
 }
 function visualizzaDanger(){
@@ -42,6 +50,8 @@ function visualizzaDanger(){
         danger.hidden = false;
         attivita.hidden = true;
         donation.hidden = true;
+        if(confDonation !== undefined)
+            confDonation.hidden = true;
 
     } else {
         danger.hidden = true;
@@ -53,6 +63,8 @@ function visualizzaDonation(){
         danger.hidden = true;
         attivita.hidden = true;
         donation.hidden = false;
+        if(confDonation !== undefined)
+            confDonation.hidden = true;
 
     } else {
         donation.hidden = true;

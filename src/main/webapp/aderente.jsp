@@ -94,7 +94,6 @@
             <div>
               <label for="attivita1">Aisha</label>
               <input id="attivita1" name="attivita1" type="checkbox" value="1">
-              <%--          <img src="immagini/attivita/img1.jpg" alt="immagine attività 1" onclick="clickImage(attivita1);" class="immagineAttAderente">--%>
             </div>
             <div class="im1">
               <figure style="margin: 0px">
@@ -102,7 +101,6 @@
                   <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività">
                   <div class="textAttivita">Partecipa ad Aisha!</div>
                 </a>
-                <%--<br><figcaption><b><i>Attività 1</i></b></figcaption>--%>
               </figure>
             </div>
           </div>
@@ -110,7 +108,6 @@
             <div>
               <label for="attivita2">Team4World</label>
               <input id="attivita2" name="attivita2" type="checkbox" value="2">
-              <%--          <img src="immagini/attivita/img2.jpg" alt="immagine attività 2" onclick="clickImage(attivita2);" class="immagineAttAderente">--%>
             </div>
             <div class="im1">
               <figure style="margin: 0px">
@@ -118,7 +115,6 @@
                   <img src="immagini/attivita/img2.jpg" alt="Immagine di Team4World">
                   <div class="textAttivita">Partecipa a Team4World!</div>
                 </a>
-                <%--<br><figcaption> <b><i>Team4World</i></b> </figcaption>--%>
               </figure>
             </div>
           </div>
@@ -126,7 +122,6 @@
             <div>
               <label for="attivita3">AbcFuture</label>
               <input id="attivita3" name="attivita3" type="checkbox" value="3">
-              <%--          <img src="immagini/attivita/img3.jpg" alt="immagine attività 3" onclick="clickImage(attivita3);" class="immagineAttAderente">--%>
             </div>
             <div class="im1">
               <figure style="margin: 0px">
@@ -134,7 +129,6 @@
                   <img src="immagini/galleria/img3.jpg" alt="Immagine di Abc4Future">
                   <div class="textAttivita">Partecipa a Abc4Future!</div>
                 </a>
-                <%--<br><figcaption> <b><i>Abc4Future</i></b> </figcaption>--%>
               </figure>
             </div>
           </div>
@@ -149,8 +143,6 @@
     <div id="donation" hidden="true">
       <br>
       <br>
-      <!-- todo implementare meglio validadonazione--->
-      <!-- todo implementare conferma donazione (con ajax) -->
 
       <form action= '<%= response.encodeURL("ServletDonazione")%>'  onsubmit="return validaDonazione();">
         <label for="donazione">Importo (in €): </label>
@@ -159,6 +151,13 @@
         <input class="aderente" type="submit" value="dona">
       </form>
     </div>
+
+    <% if(request.getParameter("donato") != null && request.getParameter("donato").equals("true")) {
+
+    %>
+    <p id="confDonaz">Donazione effettuata con successo!</p>
+
+    <% } %>
 
     <div id="danger" hidden="true">
       <div>

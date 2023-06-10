@@ -68,7 +68,7 @@ public class ServletDonazione extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         process_request(request, response);
-        response.sendRedirect(response.encodeURL("./aderente.jsp"));
+        response.sendRedirect(response.encodeURL("./aderente.jsp?donato=true"));
     }
 
     @Override

@@ -83,6 +83,7 @@ public class ServletPartecipaAttivita extends HttpServlet {
             resultSet.close();
             inserting.close();
 
+            response.sendRedirect(response.encodeURL("./confermaPartecipazione.jsp"));
         } catch (SQLException ex){
             ex.printStackTrace();
         }
