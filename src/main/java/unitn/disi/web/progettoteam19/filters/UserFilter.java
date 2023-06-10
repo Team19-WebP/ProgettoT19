@@ -44,12 +44,9 @@ public class UserFilter implements Filter {
             req.setAttribute("expired", "true");
             req.getRequestDispatcher(res.encodeURL("./login.jsp")).forward(req, res);
         } else {
-            /*if(cookies == null || cookies.equals("false")){
-                for(Cookie c : req.getCookies()){
-                    c.setMaxAge(0);
-                    res.addCookie(c);
-                }
-            }*/
+            for(Cookie c : req.getCookies()){
+                System.out.println(c.getName() + ": " + c.getValue());
+            }
             chain.doFilter(request, response);
         }
     }
