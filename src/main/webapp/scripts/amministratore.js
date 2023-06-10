@@ -6,8 +6,8 @@ let donations = document.querySelector("#donations");           //
 
 function visualizzaUtenti(){
     if(utenti.hidden == true){
+        stampaUtenti("/progettoteam19/ServletGetAllUsers", "all");
         utenti.hidden = false;
-        stampaUtenti();
         simpatizzanti.hidden = true;
         aderenti.hidden = true;
         visite.hidden = true;
@@ -20,6 +20,7 @@ function visualizzaUtenti(){
 
 function visualizzaSimpatizzanti(){
     if(simpatizzanti.hidden == true){
+        stampaUtenti("/progettoteam19/ServletGetAllOneType", "simpatizzante")
         utenti.hidden = true;
         simpatizzanti.hidden = false;
         aderenti.hidden = true;
@@ -34,6 +35,7 @@ function visualizzaSimpatizzanti(){
 
 function visualizzaAderenti(){
     if(aderenti.hidden == true){
+        stampaUtenti("/progettoteam19/ServletGetAllOneType", "aderente")
         utenti.hidden = true;
         simpatizzanti.hidden = true;
         aderenti.hidden = false;
@@ -81,10 +83,13 @@ function showOrHide(id){
     dati.hidden = !dati.hidden;
 
 }
-function stampaUtenti() {
+function stampaUtenti(url, type) {
     // Preparing request
-    let url = "/ServletGetAllUsers";
+    // let url = "/progettoteam19/ServletGetAllUsers";
 
+    if (type != "all") {
+        url += "?tipologia=" + type;
+    }
     // Making request
     let xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, true);
@@ -99,7 +104,7 @@ function stampaUtenti() {
             let my_JSON_array = this.response;
 
             // Finding table to fill in
-            let table = document.getElementById("output");
+            let table = document.getElementById(type);
 
             // Removing old table if existing and hiding it
             while (table.childNodes.length) {
@@ -107,10 +112,10 @@ function stampaUtenti() {
             }
             table.style.border = "0px solid";
 
-            if (my_JSON_array.length > 0) {
+            if (my_JSON_array != null && my_JSON_array.length > 0) {
 
                 // Displaying success
-                document.getElementById("result").innerHTML = "Data successfully retrieved";
+                // document.getElementById("result").innerHTML = "Data successfully retrieved";
 
                 // Showing table
                 table.style.border = "1px solid";
@@ -131,10 +136,11 @@ function stampaUtenti() {
                 for (let i = 0; i < my_JSON_array.length; i++) {
                     row = table.insertRow();
                     let current_JSON_object = JSON.parse(my_JSON_array[i]);
+                    console.log(current_JSON_object);
                     for (let key in header) {
                         let cell = row.insertCell();
                         cell.style.border = "1px solid";
-                        let text = document.createTextNode(current_JSON_object[key]);
+                        let text = document.createTextNode(current_JSON_object[header[key]]);
                         cell.appendChild(text);
                     }
                 }
