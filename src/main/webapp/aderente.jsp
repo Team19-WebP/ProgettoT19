@@ -152,9 +152,9 @@
       <!-- todo implementare meglio validadonazione--->
       <!-- todo implementare conferma donazione (con ajax) -->
 
-      <form action= <%= response.encodeURL("ServletDonazione")%>  onsubmit="return validaDonazione();">
+      <form action= '<%= response.encodeURL("ServletDonazione")%>'  onsubmit="return validaDonazione();">
         <label for="donazione">Importo (in €): </label>
-        <input type="number" step=".01" min="0" placeholder="Inserisci importo..."  id="donazione" name="donazione" required> <br> <!-- todo togliere required [anche da simpatizzante e amministratore] -->
+        <input type="number" step=".01" min="0" placeholder="Inserisci importo..."  id="donazione" name="donazione"> <br>
         <br><br>
         <input class="aderente" type="submit" value="dona">
       </form>
@@ -164,7 +164,7 @@
       <div>
         <b><h2> Attenzione: cancellare il profilo è irreversibile!!</h2></b>
       </div>
-      <form id="cancellaIscrizioneform" action= <%= response.encodeURL("ServletEliminaProfilo")%> onsubmit="return confermaCancellaIscrizione()" method="get">
+      <form id="cancellaIscrizioneform" action= '<%= response.encodeURL("ServletEliminaProfilo")%>' onsubmit="return confermaCancellaIscrizione()" method="get">
         <input id="cancellaIscrizione" type="submit" value="cancella iscrizione">
       </form>
       <p id="popUp" style="color: red; alignment: center"></p>

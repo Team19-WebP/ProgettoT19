@@ -145,7 +145,7 @@
       <div>
         <b><h2> Attenzione: cancellare il profilo è irreversibile!!</h2></b>
       </div>
-      <form id="cancellaIscrizioneform" action= <%= response.encodeURL("ServletEliminaProfilo")%> onsubmit="return confermaCancellaIscrizione()" method="get">
+      <form id="cancellaIscrizioneform" action= '<%= response.encodeURL("ServletEliminaProfilo")%>' onsubmit="return confermaCancellaIscrizione()" method="get">
         <b><input id="cancellaIscrizione" type="submit" value="cancella iscrizione"></b>
       </form>
       <p id="popUp" style="color: red; alignment: center"></p>

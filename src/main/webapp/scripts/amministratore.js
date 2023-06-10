@@ -127,8 +127,12 @@ function stampaUtenti(url, type) {
                 // Creating table header
                 let thead = table.createTHead();
                 let row = thead.insertRow();
-                let header = ["username", "nome", "cognome"];
-                for (let key of header) {
+                let header = ["username", "nome", "cognome", "datadinascita", "email", "cellulare", "tipologia"];
+                let headerColumn = ["Username", "Nome", "Cognome", "Data di nascita", "Email", "Cellulare", "Tipologia"];
+                for (let key of headerColumn) {
+                    if(type != "all" && key=="Tipologia"){
+                        break;
+                    }
                     let th = document.createElement("th");
                     th.style.border = "1px solid";
                     let text = document.createTextNode(key);
@@ -141,10 +145,13 @@ function stampaUtenti(url, type) {
                     row = table.insertRow();
                     let current_JSON_object = JSON.parse(my_JSON_array[i]);
                     console.log(current_JSON_object);
-                    for (let key in header) {
+                    for (let key of header) {
+                        if(type != "all" && key=="tipologia"){
+                            continue;
+                        }
                         let cell = row.insertCell();
                         cell.style.border = "1px solid";
-                        let text = document.createTextNode(current_JSON_object[header[key]]);
+                        let text = document.createTextNode(current_JSON_object[key]);
                         cell.appendChild(text);
                     }
                 }
