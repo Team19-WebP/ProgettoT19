@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -75,16 +76,23 @@ public class ServletGetDonazioni extends HttpServlet {
                 lastYearDonations.add(donation);
             }
 
-            JsonArray array = new JsonArray();
-            for(Donazione d : lastYearDonations){
-                System.out.println("in array:" + d);
-                Gson gson = new Gson();
-                array.add(gson.toJson(d));
-                System.out.println("?? " + array);
+            // Preparing and sending json response
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            try (PrintWriter out = response.getWriter()) {
+                JsonArray array = new JsonArray();
+                for(Donazione d : lastYearDonations) {
+                    Gson gson = new Gson();
+                    array.add(gson.toJson(d));
+                    System.out.println(d);
+                }
+                out.println(array);
+                out.flush();
             }
-
-            System.out.println("fuori dal ciclo: " + array);
-
+            catch (IOException ex) {
+                ex.printStackTrace();
+                response.sendRedirect(response.encodeURL("error.html"));
+            }
 
             resultSet.close();
             preparedStatement.close();
