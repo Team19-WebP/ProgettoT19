@@ -30,7 +30,7 @@
       <button onclick="visualizzaSimpatizzanti();" id="buttonSimpatizzanti">elenco di tutti i simpatizzanti</button>
       <button onclick="visualizzaAderenti();" id="buttonAderenti">elenco di tutti gli aderenti</button>
       <button onclick="visualizzaVisite();" id="buttonVisite">statistiche visite al sito</button>
-      <button onclick="visualizzaDonations();" id="buttonDonations">statistiche donazioni</button>  <%--TODO siamo sicuri che l'amministratore non debba poter fare anche lui le cose che fa un adrerente (disiscriversi o donare) --%>
+      <button onclick="visualizzaDonations();" id="buttonDonations">statistiche donazioni</button>
     </nav>
   </div>
 
@@ -87,7 +87,6 @@
       <p id="hitsLogin" hidden="true"><jsp:getProperty name="counterLogin" property="hits"/></p>
       <p id="hitsLogout" hidden="true"><jsp:getProperty name="counterLogout" property="hits"/></p>
       <p id="hitsChiSiamo" hidden="true"><jsp:getProperty name="counterChisiamo" property="hits"/></p>
-      <%--TODO siamo sicuri che l'amministratore non debba poter fare anche lui le cose che fa un adrerente (disiscriversi o donare) --%>
     </div>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -111,7 +110,6 @@
           </p>
         </figure>
       </div>
-      <br>
       <form action="ServletReset" method="get">
         <input id="resetCount" type="submit" value="RESET">
       </form>
@@ -119,7 +117,7 @@
 
     <div id="donations" hidden="true">
 
-      <div> il sito ha ricevuto XXXX€ in totale.</div> <%--TODO prendere il numero di visite da un BEAN e aggiungerlo dinamicamente--%>
+      <div id = "totaleDonazioni"> il sito ha ricevuto XXXX€ in totale.</div> <%--TODO prendere il numero di visite da un BEAN e aggiungerlo dinamicamente--%>
 
       <script src="https://code.highcharts.com/modules/drilldown.js"></script>
 
