@@ -48,7 +48,6 @@ public class UserFilter implements Filter {
             if (coo != null) {
 
                 for(Cookie c : coo){
-                    c.setMaxAge(-1);
                         System.out.println(c.getName() + ": " + c.getValue());
                     }
             }

@@ -2,8 +2,8 @@
   <footer>
     <div class="pieDiPagina">
       <div class="infoContatti">
-        <h3>Contact Information</h3>
-        <p>Via Sommarive, 14, 19000 Povo(TN), Italy</p>
+        <h3>Tum4World</h3>
+        <p>Via Rosmini, 10, 19000 Trento(TN), Italy</p>
         <p>Email: tum4world@nessunonoluogonoesiste.com</p>
         <p>Telefono: +39 0461 123456</p>
         <p>Cellulare: +39 351 1234567</p>

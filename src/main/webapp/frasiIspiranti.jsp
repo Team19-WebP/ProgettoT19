@@ -28,6 +28,6 @@
         }, 1000);
     }
     cambiaFrase();
-    setInterval(cambiaFrase, 5000);
+    setInterval(cambiaFrase, 20000);
 </script>
 
