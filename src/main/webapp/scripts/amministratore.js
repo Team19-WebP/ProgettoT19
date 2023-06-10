@@ -280,15 +280,13 @@ function setDonaz() {
                     console.log(objDonaz);
                 }
 
-            }
-            else {
-                //no donaz
+            } else {
                 console.log("no donaz");
+                console.log(my_JSON_array)
             }
         }
     }
 
-    // Sending request
     xhttp.send();
 }
 

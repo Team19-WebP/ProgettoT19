@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -19,7 +18,6 @@ import java.util.Date;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-
 
 @WebServlet(name = "ServletGetDonazioni", value = "/ServletGetDonazioni")
 public class ServletGetDonazioni extends HttpServlet {
@@ -73,31 +71,27 @@ public class ServletGetDonazioni extends HttpServlet {
                 java.sql.Date data = resultSet.getDate(2);
                 LocalDate ld = data.toLocalDate();
                 donation.setDataDonazione(ld);
-                System.out.println(donation);
+                System.out.println("<->" + donation);
                 lastYearDonations.add(donation);
             }
 
-
-            // Preparing and sending json resp
-            response.setContentType("application/json");
-            response.setCharacterEncoding("utf-8");
-            try (PrintWriter out = response.getWriter()) {
-                JsonArray array = new JsonArray();
-                for(Donazione d : lastYearDonations) {
-                    Gson gson = new Gson();
-                    array.add(gson.toJson(d));
-                }
-                out.println(array);
-                out.flush();
+            JsonArray array = new JsonArray();
+            for(Donazione d : lastYearDonations){
+                System.out.println("in array:" + d);
+                Gson gson = new Gson();
+                array.add(gson.toJson(d));
+                System.out.println("?? " + array);
             }
+
+            System.out.println("fuori dal ciclo: " + array);
+
 
             resultSet.close();
             preparedStatement.close();
         } catch (SQLException ex) {
                 ex.printStackTrace();
                 response.sendRedirect("error.html");
-            }
-
+        }
     }
 
     @Override
