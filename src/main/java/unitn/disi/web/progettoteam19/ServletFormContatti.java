@@ -45,7 +45,7 @@ public class ServletFormContatti extends HttpServlet {
         properties.put("mail.smtp.port", "465");
         properties.put("mail.smtp.ssl.enable", "true");
         properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.timeout", 1000);
+        properties.put("mail.smtp.timeout", 1);
 
 
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {

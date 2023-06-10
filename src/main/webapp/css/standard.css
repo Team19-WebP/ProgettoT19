@@ -125,13 +125,14 @@ input[type = reset]:hover, input[type = reset]:focus {
 #divLogin {
     justify-content: space-evenly;
     padding-bottom: 15vw;
+    min-height: 48%;
 }
 .containerLogoDescrizione {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    min-height: 40%;
+    min-height: 30%;
 }
 
 .containerInvioConfermato {
