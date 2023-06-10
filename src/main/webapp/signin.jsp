@@ -12,8 +12,8 @@
     <%
         if(request.getParameter("errore") != null && request.getParameter("errore").equals("true")) {
     %>
-    <div>
-        <p id="credenzialiSbagliate" style="color: red" >19: Username non disponibile!</p>
+    <div id="mexerr">
+        <p style="color: red" >19: Username non disponibile!</p>
     </div>
 
     <%
@@ -216,6 +216,10 @@
                     username.style.borderBottomColor =  "black";
                     confpassword.style.borderBottomColor =  "black";
                     nome.focus();
+
+                    if(document.getElementById("mexerr") !== null){
+                        document.getElementById("mexerr").remove();
+                    }
 
                 }
             </script>

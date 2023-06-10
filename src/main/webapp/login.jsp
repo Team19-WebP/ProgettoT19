@@ -25,7 +25,7 @@
     <%
         if(request.getParameter("errore") != null && request.getParameter("errore").equals("true")) {
     %>
-    <div>
+    <div id="mexerr">
         <p style="color: red" >19: credenziali inserite errate.</p>
     </div>
 
@@ -93,6 +93,10 @@
             });
         }
         username.focus();
+
+        if(document.getElementById("mexerr") !== null){
+            document.getElementById("mexerr").innerHTML = "";
+        }
     }
 
 </script>
