@@ -122,7 +122,6 @@ function stampaUtenti(url, type) {
                 p.hidden = true;
 
                 // Showing table
-                table.style.border = "1px solid";
 
                 // Creating table header
                 let thead = table.createTHead();
@@ -134,7 +133,6 @@ function stampaUtenti(url, type) {
                         break;
                     }
                     let th = document.createElement("th");
-                    th.style.border = "1px solid";
                     let text = document.createTextNode(key);
                     th.appendChild(text);
                     row.appendChild(th);
@@ -150,7 +148,9 @@ function stampaUtenti(url, type) {
                             continue;
                         }
                         let cell = row.insertCell();
-                        cell.style.border = "1px solid";
+                        cell.style.border = "2px solid";
+                        cell.style.alignContent = "center";
+                        cell.style.padding = "0.5vw";
                         let text = document.createTextNode(current_JSON_object[key]);
                         cell.appendChild(text);
                     }
