@@ -41,22 +41,21 @@
     color: black;
 }
 table{
-    border: var(--COLORE2) solid 1px;
+    border: black solid 2px;
     width: fit-content;
     border-collapse: collapse;
 }
 tr{
-    border: var(--COLORE2) solid 2px;
+    border: black solid 2px;
     border-collapse: collapse;
-    margin: 15%;
-    padding: 15%;
+    padding: 0.5vw;
 }
 th {
-    border: var(--COLORE2)  solid 2px;
+    border: black  solid 2px;
     border-collapse: collapse;
-    padding: 5%;
-    width: 200px;
-    word-wrap: break-word;
+    padding: 1.5vw;
+    width: 8vw;
+    word-wrap: normal;
 }
 
 .containerAmministratore {
