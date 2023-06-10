@@ -131,16 +131,25 @@ input[type = reset]:hover, input[type = reset]:focus {
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    /*gap: 4em;*/
+    min-height: 40%;
 }
 
 .containerInvioConfermato {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 85%;
-    /*gap: 4em;*/
+    min-height: 85%;
 }
+
+.containerContatti {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 85%;
+}
+
 
 .containerAttivita {
     position: relative;
