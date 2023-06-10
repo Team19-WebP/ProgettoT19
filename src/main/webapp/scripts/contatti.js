@@ -2,6 +2,7 @@ let comboBox = document.querySelector("#comboBox");
 let altroTextarea = document.querySelector("#altroTextarea");
 let email = document.getElementById("email");
 let emailAlert = document.getElementById("emailAlert");
+let nome = document.getElementById("nome")
 
 altroTextarea.disabled = true;
 comboBox.addEventListener("change", stateHandleTextarea);
@@ -40,6 +41,8 @@ function resetContatti() {
     nascondiTextarea();
     email.style.borderColor = "#000000";
     emailAlert.hidden = true;
+    nome.focus();
+
 }
 function nascondiTextarea() {   // script che nasconde la textarea
     altroTextarea.hidden = true;

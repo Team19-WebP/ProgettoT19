@@ -92,6 +92,7 @@
                 element.remove();
             });
         }
+        username.focus();
     }
 
 </script>

@@ -215,6 +215,7 @@
                     passwordVal.style.borderBottomColor =  "black";
                     username.style.borderBottomColor =  "black";
                     confpassword.style.borderBottomColor =  "black";
+                    nome.focus();
 
                 }
             </script>
