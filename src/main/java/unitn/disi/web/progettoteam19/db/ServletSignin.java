@@ -42,13 +42,12 @@ public class ServletSignin extends HttpServlet {
             ResultSet rs = inserimento.executeQuery();
 
             if(rs.next()){
-                inserimento.close();
                 String val = rs.getString(1);
+                inserimento.close();
                 rs.close();
                 return val;
             } else {
                 inserimento.close();
-                rs.close();
                 return null;
             }
 
@@ -64,8 +63,7 @@ public class ServletSignin extends HttpServlet {
             response.sendRedirect(response.encodeURL("signin.jsp?errore=true"));
         } else {
             request.getRequestDispatcher(response.encodeURL("/ServletPushUserData")).include(request, response);
-//            response.sendRedirect(response.encodeURL("confermaSignin.jsp"));
-            response.sendRedirect(response.encodeURL("signin.jsp?errore=true"));
+            response.sendRedirect(response.encodeURL("confermaSignin.jsp"));
         }
     }
 }
