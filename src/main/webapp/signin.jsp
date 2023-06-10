@@ -9,8 +9,8 @@
 
 <main>
     <div class="formContSignLog">
-        <p>Hai già un account? Esegui il <a href="login.jsp">login</a>!</p>
-        <form action="ServletSignin"  method="post"
+        <p>Hai già un account? Esegui il <a href=  <%= response.encodeURL("login.jsp")%> >login</a>!</p>
+        <form action=  <%= response.encodeURL("ServletSignin")%> method="post"
                onsubmit="return validaForm()">
             <div class="inputAndLabel">
                 <label for="nome">Nome: </label>

@@ -25,7 +25,7 @@
             <div class="im1">
                 <figure>
                     <h3>Aisha</h3>
-                    <a class="linkImg" href="attivita1.jsp">
+                    <a class="linkImg" href= <%= response.encodeURL("attivita1.jsp")%> >
                         <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività">
                         <div class="textAttivita">Scopri di più...</div>
                     </a>
@@ -42,7 +42,7 @@
             <div class="im1">
                 <figure>
                     <h3>Team4World</h3>
-                    <a class="linkImg" href="attivita2.jsp">
+                    <a class="linkImg" href= <%= response.encodeURL("attivita2.jsp")%> >
                         <img src="immagini/attivita/img2.jpg" alt="Immagine di Team4World">
                         <div class="textAttivita">Scopri di più...</div>
                     </a>
@@ -58,7 +58,7 @@
             <div class="im1">
                 <figure>
                     <h3>Abc4Future</h3>
-                    <a class="linkImg" href="attivita3.jsp">
+                    <a class="linkImg" href= <%= response.encodeURL("attivita3.jsp")%> >
                         <img src="immagini/galleria/img3.jpg" alt="Immagine di Abc4Future">
                         <div class="textAttivita">Scopri di più...</div>
                     </a>

@@ -88,7 +88,7 @@
     <div id="attivitaAderente" hidden="true">
       <br>
       <br>
-      <form action="ServletPartecipaAttivita">
+      <form action= <%= response.encodeURL("ServletPartecipaAttivita")%> >
         <div class="aderenteImmaginiAttivita">
           <div class="aderenteImgCheckAtt">
             <div>
@@ -152,7 +152,7 @@
       <!-- todo implementare meglio validadonazione--->
       <!-- todo implementare conferma donazione (con ajax) -->
 
-      <form action="ServletDonazione" onsubmit="return validaDonazione();">
+      <form action= <%= response.encodeURL("ServletDonazione")%>  onsubmit="return validaDonazione();">
         <label for="donazione">Importo (in €): </label>
         <input type="number" step=".01" min="0" placeholder="Inserisci importo..."  id="donazione" name="donazione" required> <br> <!-- todo togliere required [anche da simpatizzante e amministratore] -->
         <br><br>
@@ -164,7 +164,7 @@
       <div>
         <b><h2> Attenzione: cancellare il profilo è irreversibile!!</h2></b>
       </div>
-      <form id="cancellaIscrizioneform" action="ServletEliminaProfilo" onsubmit="return confermaCancellaIscrizione()" method="get">
+      <form id="cancellaIscrizioneform" action= <%= response.encodeURL("ServletEliminaProfilo")%> onsubmit="return confermaCancellaIscrizione()" method="get">
         <input id="cancellaIscrizione" type="submit" value="cancella iscrizione">
       </form>
       <p id="popUp" style="color: red; alignment: center"></p>

@@ -18,7 +18,7 @@
 <jsp:setProperty name="counterLogin" property="hits" value="0"/>
 <main>
     <div class="formContSignLog" id="divLogin">
-        <p>Non hai un account? Registrati <a href="signin.jsp">qui</a>!</p>
+        <p>Non hai un account? Registrati <a href=  <%= response.encodeURL("signin.jsp")%> >qui</a>!</p>
         <form action="ServletLogin" method="post" onsubmit="return validaFormLogin()">
             <div class="inputAndLabel">
                 <label for="username">Username: </label>

@@ -43,41 +43,41 @@
         </div>
     </header>
     <nav class="menu">
-        <a href="home.jsp">Home</a>
-        <a href="chisiamo.jsp">Chi Siamo</a>
+        <a href= <%= response.encodeURL("home.jsp")%> >Home</a>
+        <a href=  <%= response.encodeURL("chisiamo.jsp")%> >Chi Siamo</a>
         <div class="dropdown">
-            <a class="dropbtn" href="attivita.jsp">Attività
+            <a class="dropbtn" href=  <%= response.encodeURL("attivita.jsp")%> >Attività
             </a>
             <div class="dropdown-content">
-                <a href="attivita1.jsp">Aisha</a>
-                <a href="attivita2.jsp">Team4World</a>
-                <a href="attivita3.jsp">Abc4Future</a>
+                <a href=  <%= response.encodeURL("attivita1.jsp")%> >Aisha</a>
+                <a href=  <%= response.encodeURL("attivita2.jsp")%> >Team4World</a>
+                <a href=  <%= response.encodeURL("attivita3.jsp")%> >Abc4Future</a>
             </div>
         </div>
-        <a href="contatti.jsp">Contatti</a>
+        <a href=  <%= response.encodeURL("contatti.jsp")%> >Contatti</a>
         <%
             if(session == null || session.getAttribute("type") == null) {
                 //se l'utente non è loggato allora farò vedere i bottoni login e signin
         %>
-        <a href="signin.jsp">Sign-in</a>
-        <a href="login.jsp">Login</a>
+        <a href= <%= response.encodeURL("signin.jsp")%>>Sign-in</a>
+        <a href= <%= response.encodeURL("login.jsp")%> >Login</a>
         <% } else {
                 //altrimenti al loro posto vi saranno logout e la pagina privata
             if(session.getAttribute("type").equals("amministratore")){
                 //che però deve mandare alla pagina giusta in base ai privilegi dell'utente
         %>
-        <a href="amministratore.jsp">Pagina personale</a>
+        <a href= <%= response.encodeURL("amministratore.jsp")%> >Pagina personale</a>
         <%
             } else if(session.getAttribute("type").equals("aderente")) {
         %>
-        <a href="aderente.jsp">Pagina personale</a>
+        <a href= <%= response.encodeURL("aderente.jsp")%> >Pagina personale</a>
         <%
             } else if(session.getAttribute("type").equals("simpatizzante")) {
         %>
-        <a href="simpatizzante.jsp">Pagina personale</a>
+        <a href= <%= response.encodeURL("simpatizzante.jsp")%> >Pagina personale</a>
         <% }
         %>
-        <a href="ServletLogout">Logout</a>
+        <a href=  <%= response.encodeURL("ServletLogout")%> >Logout</a>
         <%}%>
     </nav>
     <jsp:include page="informativaCookies.jsp"></jsp:include>
