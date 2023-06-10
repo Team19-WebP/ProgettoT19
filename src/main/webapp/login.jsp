@@ -14,12 +14,23 @@
 
 <% } %>
 
+
+
 <jsp:useBean id="counterLogin" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:setProperty name="counterLogin" property="hits" value="0"/>
 <main>
     <div class="formContSignLog" id="divLogin">
         <p>Non hai un account? Registrati <a href=  <%= response.encodeURL("signin.jsp")%> >qui</a>!</p>
         <form action="ServletLogin" method="post" onsubmit="return validaFormLogin()">
+    <%
+        if(request.getParameter("errore") != null && request.getParameter("errore").equals("true")) {
+    %>
+    <div>
+        <p style="color: red" >19: credenziali inserite errate.</p>
+    </div>
+
+    <%
+        }%>
             <div class="inputAndLabel">
                 <label for="username">Username: </label>
                 <input type="text" id="username" name="username" maxlength="50" size="50" placeholder="inserisci il tuo username..."><br><br> <!-- TODO controllare che non ci sia un utente con questo username-->
@@ -32,8 +43,6 @@
                 <input type="reset" value="Reset" onclick="resetForm()">
                 <input type="submit" value="Invia">
             </div>
-
-
         </form>
     </div>
 </main>

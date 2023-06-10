@@ -45,15 +45,12 @@ public class ServletLogin extends HttpServlet {
         String password = request.getParameter("password");
 
         if(getUserName(username) == null){
-            System.out.println("scemo username non esiste");
-            //TODO IN QUESTI CASI REINDIRIZZARE SU STESSA PAGINA DI LOGIN
-            response.sendRedirect("error.jsp");
+            response.sendRedirect("login.jsp?errore=true");
             return;
         }
         String pwFromDB = getPassword(username);
         if(pwFromDB != null && !pwFromDB.equals(password)){
-            System.out.println("scemo pw sbagliata");
-            response.sendRedirect("error.jsp");
+            response.sendRedirect("login.jsp?errore=true");
             return;
         }
         String tipologia = getTipologia(username);

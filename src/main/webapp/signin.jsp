@@ -9,6 +9,15 @@
 
 <main>
     <div class="formContSignLog">
+    <%
+        if(request.getParameter("errore") != null && request.getParameter("errore").equals("true")) {
+    %>
+    <div>
+        <p id="credenzialiSbagliate" style="color: red" >19: Username non disponibile!</p>
+    </div>
+
+    <%
+        }%>
         <p>Hai già un account? Esegui il <a href=  <%= response.encodeURL("login.jsp")%> >login</a>!</p>
         <form action=  <%= response.encodeURL("ServletSignin")%> method="post"
                onsubmit="return validaForm()">
