@@ -93,11 +93,11 @@
           <div class="aderenteImgCheckAtt">
             <div>
               <label for="attivita1">Aisha</label>
-              <input id="attivita1" name="attivita1" type="checkbox" value="1">
+              <input id="attivita1" name="attivita1" type="checkbox" value="1" onclick="seleziona('attivita1', false)">
             </div>
             <div class="im1">
               <figure style="margin: 0px">
-                <a class="linkImg" onclick="seleziona('attivita1')" id="imgattivita1">
+                <a class="linkImg" onclick="seleziona('attivita1', true)" id="imgattivita1">
                   <img src="immagini/galleria/img1.jpg" alt="Immagine prima attività">
                   <div class="textAttivita">Partecipa ad Aisha!</div>
                 </a>
@@ -107,11 +107,11 @@
           <div class="aderenteImgCheckAtt">
             <div>
               <label for="attivita2">Team4World</label>
-              <input id="attivita2" name="attivita2" type="checkbox" value="2">
+              <input id="attivita2" name="attivita2" type="checkbox" value="2" onclick="seleziona('attivita2', false)">
             </div>
             <div class="im1">
               <figure style="margin: 0px">
-                <a class="linkImg" onclick="seleziona('attivita2')" id="imgattivita2">
+                <a class="linkImg" onclick="seleziona('attivita2', true)" id="imgattivita2">
                   <img src="immagini/attivita/img2.jpg" alt="Immagine di Team4World">
                   <div class="textAttivita">Partecipa a Team4World!</div>
                 </a>
@@ -121,11 +121,11 @@
           <div class="aderenteImgCheckAtt">
             <div>
               <label for="attivita3">AbcFuture</label>
-              <input id="attivita3" name="attivita3" type="checkbox" value="3">
+              <input id="attivita3" name="attivita3" type="checkbox" value="3" onclick="seleziona('attivita3', false)">
             </div>
             <div class="im1">
               <figure style="margin: 0px">
-                <a class="linkImg" onclick="seleziona('attivita3')" id="imgattivita3">
+                <a class="linkImg" onclick="seleziona('attivita3', true)" id="imgattivita3">
                   <img src="immagini/galleria/img3.jpg" alt="Immagine di Abc4Future">
                   <div class="textAttivita">Partecipa a Abc4Future!</div>
                 </a>
@@ -171,5 +171,6 @@
 
   </div>
   <script rel="script" src="scripts/aderente.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
+  <script rel="script" src="scripts/aderenteSimpatizzante.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>

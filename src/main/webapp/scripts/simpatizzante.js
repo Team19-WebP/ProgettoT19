@@ -2,7 +2,6 @@ let dati = document.querySelector("#dati");         //
 let danger = document.querySelector("#danger");     // DIV delle varie sezioni da mostrare/nascondere
 let attivita = document.querySelector("#attivita"); //
 
-
 function visualizzaDati(){
     if(dati.hidden === true){
         dati.hidden = false;
@@ -33,41 +32,3 @@ function visualizzaDanger(){
     }
 }
 
-function seleziona(selezione){ //permette di selezionare un attività anche premendo l'immagine
-    let checkBox = document.querySelector("#" + selezione);
-    let img = document.querySelector("#img"+selezione);
-    let txt = document.querySelector("#img" + selezione + "> .text");
-    checkBox.checked = !checkBox.checked;
-    if(checkBox.checked) {
-        img.style.opacity = "0.6";
-        txt.style.opacity = "1";
-    } else {
-        img.style.opacity = "1";
-        txt.style.opacity = "0";
-    }
-}
-function selezionaC(selezione){ //TODO cos'è?
-    let checkBox = document.querySelector("#" + selezione);
-    let img = document.querySelector("#img"+selezione);
-    let txt = document.querySelector("#img" + selezione + "> .text");
-    if(checkBox.checked) {
-        img.style.opacity = "0.6";
-        txt.style.opacity = "1";
-    } else {
-        img.style.opacity = "1";
-        txt.style.opacity = "0";
-    }
-}
-function confermaCancellaIscrizione(){// crea un popUp che chiede se si è sicuri di voler eliminare l'account
-    let txt;
-    let retVal;
-    if (confirm("Sei sicuro di voler cancellare la tua iscrizione a Tum4World?")) {
-        txt = "Cancellazione effettuata.";
-        retVal = true;
-    } else {
-        txt = "Cancellazione annullata.";
-        retVal = false;
-    }
-    document.getElementById("popUp").innerHTML = txt;
-    return retVal;
-}
