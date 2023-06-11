@@ -338,7 +338,7 @@ html {
     /* Commentare la riga sotto per metterlo a sinistra*/
     width: 100%;
     /* Commentare la riga sopra per metterlo a sinistra*/
-    top: 132px;
+    top: 131px;
     left: 0;
     padding: 1%;
     /* Scommentare se vogliamo le frasi ispiranti in centro */
@@ -411,7 +411,7 @@ html {
 /* Menu presente in tutte le pagine. */
 .menu {
     /* box-sizing per includere padding e border nelle dimensioni dell'elemento
-        in questo modo ho misurato la dimensione dell'intestazione con chrome dev tools
+        in questo modo ho misurato la dimensione dell'intestazione con dev tools
         e ho bloccato esattamante sotto il menu il resto è come per intestazione
     */
     box-sizing: border-box;

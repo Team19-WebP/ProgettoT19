@@ -21,7 +21,7 @@ function visualizzaDati(){
        danger.hidden = true;
         attivita.hidden = true;
         donation.hidden = true;
-        if(confDonation !== undefined)
+        if(confDonation !== null)
             confDonation.hidden = true;
 
     } else {
@@ -34,12 +34,12 @@ function visualizzaAttivita(){
         danger.hidden = true;
         attivita.hidden = false;
         donation.hidden = true;
-        if(confDonation !== undefined)
+        if(confDonation !== null)
             confDonation.hidden = true;
 
     } else {
         attivita.hidden = true;
-        if(confDonation !== undefined)
+        if(confDonation !== null)
             confDonation.hidden = true;
 
     }
@@ -50,7 +50,7 @@ function visualizzaDanger(){
         danger.hidden = false;
         attivita.hidden = true;
         donation.hidden = true;
-        if(confDonation !== undefined)
+        if(confDonation !== null)
             confDonation.hidden = true;
 
     } else {
@@ -63,7 +63,7 @@ function visualizzaDonation(){
         danger.hidden = true;
         attivita.hidden = true;
         donation.hidden = false;
-        if(confDonation !== undefined)
+        if(confDonation !== null)
             confDonation.hidden = true;
 
     } else {
