@@ -37,6 +37,7 @@
         <url-pattern>/ServletDonazione</url-pattern>
         <url-pattern>/ServletEliminaProfilo</url-pattern>
         <url-pattern>/ServletGetAllUsers</url-pattern>
+        <url-pattern>/ServletGetAllOneType</url-pattern>
         <url-pattern>/ServletGetDonazioni</url-pattern>
         <url-pattern>/ServletGetUser</url-pattern>
         <url-pattern>/ServletLogin</url-pattern>

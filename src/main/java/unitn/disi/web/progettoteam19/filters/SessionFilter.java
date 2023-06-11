@@ -9,8 +9,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * Questo filtro è usato per evitare che un utente NON loggato,
- * acceda a pagine a cui non potrebbe accedere.
+ * Questo filtro è usato per gestire la sessione e il suo timeout: <br>
+ * a causa delle continue chiamate a <i>frasiServlet</i> per le frasi ispiranti
+ * la sessione non scade mai, in questo modo invece riusciamo a farla scadere.
  */
 
 @WebFilter(filterName = "SessionFilter")
@@ -30,7 +31,10 @@ public class SessionFilter implements Filter {
         long currentTime = System.currentTimeMillis();
         if(session != null) {
 
-            long lastAccessedTime = (long) session.getAttribute("lastAccessedTime");
+            long lastAccessedTime = currentTime;
+            if(session.getAttribute("lastAccessedTime") != null){
+                lastAccessedTime = (long) session.getAttribute("lastAccessedTime");
+            }
             long maxIdle = session.getMaxInactiveInterval();
             long remainingTime = maxIdle - (currentTime - lastAccessedTime)/1000;
 

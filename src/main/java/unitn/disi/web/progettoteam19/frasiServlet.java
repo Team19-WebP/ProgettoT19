@@ -91,7 +91,9 @@ public class frasiServlet extends HttpServlet {
             SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
             String creationTimeString = dateFormat.format(new Date(creationTime));
             response.getWriter().println("Remaining time: " + remainingTime);
+            System.out.println("Remaining time: " + remainingTime);
             response.getWriter().println("Session Creation Time: " + creationTimeString);
+            System.out.println("Session Creation Time: " + creationTimeString);
         } else {
             response.getWriter().println("Session is null.");
         }
