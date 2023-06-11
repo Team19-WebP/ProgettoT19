@@ -1,12 +1,13 @@
 let dati = document.querySelector("#dati");                 //
-let danger = document.querySelector("#danger");             // DIV delle varie sezioni da mostrare/nascondere
-let attivita = document.querySelector("#attivitaAderente"); //
+let danger = document.querySelector("#danger");             //
+let attivita = document.querySelector("#attivitaAderente"); // DIV delle varie sezioni da mostrare/nascondere
 let donation = document.querySelector("#donation");         //
-let confDonation = document.querySelector("#confDonaz");
+let confDonation = document.querySelector("#confDonaz");    //
 
 /*TODO fissare il bottone cliccato con gli id [anche in simp e amm]*/
 
-function validaDonazione(){ //script che impedisce di fare donazioni negative
+/** script che impedisce di fare donazioni negative */
+function validaDonazione(){
     let valore = document.querySelector("#donazione").value;
     if(valore <= 0){
         alert("Inserire un importo >0!");
@@ -15,6 +16,8 @@ function validaDonazione(){ //script che impedisce di fare donazioni negative
         return true;
     }
 }
+
+/** queste funzioni nascondono tutti i contenuti della pagina privata tranne quello della sezione selezionata tramite button*/
 function visualizzaDati(){
     if(dati.hidden === true){
         dati.hidden = false;
