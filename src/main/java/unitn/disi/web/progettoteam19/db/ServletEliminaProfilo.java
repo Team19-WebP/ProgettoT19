@@ -19,6 +19,9 @@ public class ServletEliminaProfilo extends HttpServlet {
     private final String password = "admin";
     private Connection connection = null;
 
+    /**
+     * Quando la servlet viene creata creo una connessione con il DB
+     */
     @Override
     public void init() throws ServletException {
         try{
@@ -29,6 +32,10 @@ public class ServletEliminaProfilo extends HttpServlet {
         }
     }
 
+
+    /**
+     * Chiudo la connessione prima di distruggere la servlet
+     */
     @Override
     public void destroy() {
         try {
@@ -37,6 +44,13 @@ public class ServletEliminaProfilo extends HttpServlet {
             ex.printStackTrace();
         }
     }
+
+    /**
+     * Creo una query SQL e la invio al DB <br>
+     * nella query inserisco <b>l'username</b> dell'utente da eliminare dal DB. <br><br>
+     * Inoltre controlla che l'utente sia ancora loggato per poter effettuare tale azione. <br><br>
+     * Dopodiché rimuove la sessione e reindirizza alla pagina <b>./eliminato.jsp</b> <br> la quale avvisa l'utente che l'account è stato eliminato con successo.
+     */
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();

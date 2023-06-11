@@ -22,6 +22,9 @@ public class ServletDonazione extends HttpServlet {
     private final String password = "admin";
     private Connection connection = null;
 
+    /**
+     * Quando la servlet viene creata creo una connessione con il DB
+     */
     @Override
     public void init() throws ServletException {
         try{
@@ -32,6 +35,9 @@ public class ServletDonazione extends HttpServlet {
         }
     }
 
+    /**
+     * Chiudo la connessione prima di distruggere la servlet
+     */
     @Override
     public void destroy() {
         try {
@@ -41,7 +47,10 @@ public class ServletDonazione extends HttpServlet {
         }
     }
 
-
+    /**
+     * Creo una query SQL e la invio al DB <br>
+     * nella query inserisco <b>l'importo e la data</b> della donazione
+     */
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //salva nel DB
         Date data = new Date();
@@ -65,6 +74,9 @@ public class ServletDonazione extends HttpServlet {
 
     }
 
+    /**
+     * <b>./aderente.jsp?donato=true</b> da le informazioni necessarie <br> alla pagina per mostrare l'avviso di successo per la donazione
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         process_request(request, response);

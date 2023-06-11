@@ -15,6 +15,11 @@ import javax.servlet.annotation.*;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 
+
+/**
+ * Questa servlet viene usata per popolare le tabelle di aderenti e simpatizzanti nella pagina dell'amministratore <br>
+ * essa prende le informazioni dal database e le inserisce in file JSON i quali vengono inseriti nella response.
+ */
 @WebServlet(name = "ServletGetAllOneType", value = "/ServletGetAllOneType")
 public class ServletGetAllOneType extends HttpServlet {
     private final String dbURL = "jdbc:derby://localhost:1527/Team19DB";
@@ -22,6 +27,9 @@ public class ServletGetAllOneType extends HttpServlet {
     private final String password = "admin";
     private Connection connection = null;
 
+    /**
+     * Quando la servlet viene creata creo una connessione con il DB
+     */
     @Override
     public void init() throws ServletException {
         try{
@@ -31,7 +39,9 @@ public class ServletGetAllOneType extends HttpServlet {
             ex.printStackTrace();
         }
     }
-
+    /**
+     * Chiudo la connessione prima di distruggere la servlet
+     */
     @Override
     public void destroy() {
         try {
@@ -40,7 +50,11 @@ public class ServletGetAllOneType extends HttpServlet {
             ex.printStackTrace();
         }
     }
-    //Mandatemi un parametro con ajax
+    /**
+     * Creo una query SQL e la invio al DB <br>
+     * nella query inserisco <b>la tipologia</b> degli utenti che voglio visualizzare. <br><br>
+     * Dopodiché inserisco ogni riga del result set in un file JSON e li aggiungo alla response.
+     */
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String stringaGet = "SELECT * FROM Users WHERE TIPOLOGIA = '" + request.getParameter("tipologia").toLowerCase() + "'";
         System.out.println(stringaGet);

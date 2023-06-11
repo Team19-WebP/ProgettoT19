@@ -20,6 +20,10 @@ import java.util.Date;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 
+/**
+ * Questa servlet viene usata per fornire i dati al grafico delle donazioni visualizzabile dall'amministratore <br>
+ * essa prende le informazioni dal database e le inserisce in file JSON i quali vengono inseriti nella response.
+ */
 @WebServlet(name = "ServletGetDonazioni", value = "/ServletGetDonazioni")
 public class ServletGetDonazioni extends HttpServlet {
 
@@ -28,6 +32,9 @@ public class ServletGetDonazioni extends HttpServlet {
     private final String password = "admin";
     private Connection connection = null;
 
+    /**
+     * Quando la servlet viene creata creo una connessione con il DB
+     */
     @Override
     public void init() throws ServletException {
         try{
@@ -37,7 +44,9 @@ public class ServletGetDonazioni extends HttpServlet {
             ex.printStackTrace();
         }
     }
-
+    /**
+     * Chiudo la connessione prima di distruggere la servlet
+     */
     @Override
     public void destroy() {
         try {
@@ -47,13 +56,15 @@ public class ServletGetDonazioni extends HttpServlet {
         }
     }
 
-    //recupero le donazioni dell'ultimo anno
+    /**
+     * Visto che il grafico mostra solo le donazioni dell'anno corrente qui viene fatta una query SQL che richieda solo queste al DB.<br>
+     * Poi inserisce ogni riga del result set in un file JSON e li inserisce tutti nella response.
+     */
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String query = "SELECT IMPORTO, DATADONAZIONE FROM DONAZIONI WHERE DATADONAZIONE >= ? AND DATADONAZIONE <= ?";
         ArrayList<Donazione> lastYearDonations = new ArrayList<>();
 
         Date dataAttuale = new Date();
-        System.out.println(dataAttuale);
         String pattern = "YYYY-MM-dd"; //questo è il format della data nel DB
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
@@ -72,7 +83,6 @@ public class ServletGetDonazioni extends HttpServlet {
                 java.sql.Date data = resultSet.getDate(2);
                 LocalDate ld = data.toLocalDate();
                 donation.setDataDonazione(ld);
-                System.out.println("<->" + donation);
                 lastYearDonations.add(donation);
             }
 
@@ -84,7 +94,6 @@ public class ServletGetDonazioni extends HttpServlet {
                 for(Donazione d : lastYearDonations) {
                     Gson gson = new Gson();
                     array.add(gson.toJson(d));
-                    System.out.println(d);
                 }
                 out.println(array);
                 out.flush();

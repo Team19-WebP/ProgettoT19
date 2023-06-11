@@ -6,6 +6,11 @@ import java.io.IOException;
 import java.sql.*;
 import javax.servlet.annotation.*;
 
+
+/**
+ * Questa servlet viene usata per aggiungere al DB un nuovo utente durante il sign-in<br>
+ * essa prende le informazioni dalla request e le inserisce nella tabella users nel DB.
+ */
 @WebServlet(name = "ServletPushUserData", value = "/ServletPushUserData")
 public class ServletPushUserData extends HttpServlet {
 
@@ -14,6 +19,9 @@ public class ServletPushUserData extends HttpServlet {
     private final String password = "admin";
     private Connection connection = null;
 
+    /**
+     * Quando la servlet viene creata creo una connessione con il DB
+     */
     @Override
     public void init() throws ServletException {
         try{
@@ -23,7 +31,9 @@ public class ServletPushUserData extends HttpServlet {
             ex.printStackTrace();
         }
     }
-
+    /**
+     * Chiudo la connessione prima di distruggere la servlet
+     */
     @Override
     public void destroy() {
         try {
