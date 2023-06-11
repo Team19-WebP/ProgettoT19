@@ -26,15 +26,14 @@ public class SessionFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest req = (HttpServletRequest) request;
-        HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
         long currentTime = System.currentTimeMillis();
-        if(session != null) {
 
-            long lastAccessedTime = currentTime;
-            if(session.getAttribute("lastAccessedTime") != null){
-                lastAccessedTime = (long) session.getAttribute("lastAccessedTime");
+        if(session != null) {
+            if(session.getAttribute("lastAccessedTime") == null){
+                session.setAttribute("lastAccessedTime", currentTime);
             }
+            long lastAccessedTime = (long) session.getAttribute("lastAccessedTime");
             long maxIdle = session.getMaxInactiveInterval();
             long remainingTime = maxIdle - (currentTime - lastAccessedTime)/1000;
 
