@@ -3,8 +3,10 @@ package unitn.disi.web.progettoteam19;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import javax.validation.constraints.Null;
 import java.io.IOException;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -72,5 +74,26 @@ public class frasiServlet extends HttpServlet {
         Random rnd = new Random();
         int index = rnd.nextInt(frasiIspiranti.size());
         response.getWriter().println(frasiIspiranti.get(index));
+        HttpSession session = request.getSession(false);
+        // Per DEBUG relativo alla sessione, vedo quanto tempo mi rimane
+        if (session != null) {
+            long maxIdle = session.getMaxInactiveInterval();
+            long creationTime = session.getCreationTime();
+            long lastAccessedTime;
+            long currentTime = System.currentTimeMillis();
+            try {
+                lastAccessedTime = (long)session.getAttribute("lastAccessedTime");
+            } catch (NullPointerException e) {
+                lastAccessedTime = currentTime;
+                e.printStackTrace();
+            }
+            long remainingTime = maxIdle - (currentTime - lastAccessedTime)/1000;
+            SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+            String creationTimeString = dateFormat.format(new Date(creationTime));
+            response.getWriter().println("Remaining time: " + remainingTime);
+            response.getWriter().println("Session Creation Time: " + creationTimeString);
+        } else {
+            response.getWriter().println("Session is null.");
+        }
     }
 }
