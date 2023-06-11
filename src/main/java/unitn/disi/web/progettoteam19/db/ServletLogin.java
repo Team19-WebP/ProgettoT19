@@ -85,19 +85,18 @@ public class ServletLogin extends HttpServlet {
 
         HttpSession session = request.getSession(true);
 
-
         request.getRequestDispatcher(response.encodeURL("ServletGetUser")).include(request, response);
         if(aderente){
             session.setAttribute("type", "aderente");
-            response.sendRedirect(response.encodeURL("./aderente.jsp"));
+            response.sendRedirect(response.encodeRedirectURL("aderente.jsp"));
         } else if (simpatizzante) {
             session.setAttribute("type", "simpatizzante");
-            response.sendRedirect(response.encodeURL("./simpatizzante.jsp"));
+            response.sendRedirect(response.encodeRedirectURL("simpatizzante.jsp"));
         }else if (amministratore) {
             session.setAttribute("type", "amministratore");
-            response.sendRedirect(response.encodeURL("./amministratore.jsp"));
+            response.sendRedirect(response.encodeRedirectURL("amministratore.jsp"));
         }else {
-            response.sendRedirect(response.encodeURL("./error.jsp"));
+            response.sendRedirect(response.encodeRedirectURL("error.jsp"));
         }
     }
 

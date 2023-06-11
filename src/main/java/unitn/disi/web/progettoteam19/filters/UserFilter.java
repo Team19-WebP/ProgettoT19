@@ -42,9 +42,11 @@ public class UserFilter implements Filter {
         }
 
         if(cookies != null && !cookies.equals("true")){
-            for(Cookie c : req.getCookies()){
-                c.setMaxAge(0);
-                res.addCookie(c);
+            Cookie[] coo = req.getCookies();
+            if (coo != null) {
+                for(Cookie c : coo){
+                    System.out.println(c.getName() + ": " + c.getValue());
+                }
             }
         }
 
