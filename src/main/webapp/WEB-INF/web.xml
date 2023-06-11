@@ -12,7 +12,42 @@
         <filter-name>UserFilter</filter-name>
         <filter-class>unitn.disi.web.progettoteam19.filters.UserFilter</filter-class>
     </filter>
-
+    <filter>
+        <filter-name>SessionFilter</filter-name>
+        <filter-class>unitn.disi.web.progettoteam19.filters.SessionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SessionFilter</filter-name>
+        <url-pattern>/home.jsp</url-pattern>
+        <url-pattern>/aderente.jsp</url-pattern>
+        <url-pattern>/attivita.jsp</url-pattern>
+        <url-pattern>/attivita1.jsp</url-pattern>
+        <url-pattern>/attivita2.jsp</url-pattern>
+        <url-pattern>/attivita3.jsp</url-pattern>
+        <url-pattern>/chisiamo.jsp</url-pattern>
+        <url-pattern>/login.jsp</url-pattern>
+        <url-pattern>/signin.jsp</url-pattern>
+        <url-pattern>/contatti.jsp</url-pattern>
+        <url-pattern>/confermaPartecipazione.jsp</url-pattern>
+        <url-pattern>/confermaSignin.jsp</url-pattern>
+        <url-pattern>/eliminato.jsp</url-pattern>
+        <url-pattern>/error.jsp</url-pattern>
+        <url-pattern>/invioConfermato</url-pattern>
+        <url-pattern>/simpatizzante</url-pattern>
+        <url-pattern>/ServletDonazione</url-pattern>
+        <url-pattern>/ServletEliminaProfilo</url-pattern>
+        <url-pattern>/ServletGetAllUsers</url-pattern>
+        <url-pattern>/ServletGetDonazioni</url-pattern>
+        <url-pattern>/ServletGetUser</url-pattern>
+        <url-pattern>/ServletLogin</url-pattern>
+        <url-pattern>/ServletPartecipaAttivita</url-pattern>
+        <url-pattern>/ServletPushUserData</url-pattern>
+        <url-pattern>/ServletSignin</url-pattern>
+        <url-pattern>/amministratore.jsp</url-pattern>
+        <!--
+        Controllare se serve aggiungere altro!
+        -->
+    </filter-mapping>
     <filter-mapping>
         <filter-name>UserFilter</filter-name>
         <url-pattern>/aderente.jsp</url-pattern>
