@@ -42,14 +42,16 @@ public class UserFilter implements Filter {
                 servletContext.setAttribute("cookies", null);
             }
             req.setAttribute("expired", "true");
+            if(session != null){
+                session.invalidate();
+            }
             req.getRequestDispatcher(res.encodeURL("./login.jsp")).forward(req, res);
         } else {
             Cookie[] coo = req.getCookies();
             if (coo != null) {
-
                 for(Cookie c : coo){
-                        System.out.println(c.getName() + ": " + c.getValue());
-                    }
+                    System.out.println(c.getName() + ": " + c.getValue());
+                }
             }
             chain.doFilter(request, response);
         }

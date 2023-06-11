@@ -7,7 +7,7 @@
         <welcome-file>Index</welcome-file>
     </welcome-file-list>
 
-    <!-- Filtro per verifica sessione -->
+    <!-- Filtro per verificare la sessione -->
     <filter>
         <filter-name>UserFilter</filter-name>
         <filter-class>unitn.disi.web.progettoteam19.filters.UserFilter</filter-class>
@@ -21,6 +21,7 @@
         <url-pattern>/ServletDonazione</url-pattern>
         <url-pattern>/ServletEliminaProfilo</url-pattern>
         <url-pattern>/ServletPartecipaAttivita</url-pattern>
+        <url-pattern>/ServletReset</url-pattern>
     </filter-mapping>
 
     <!-- Filtri per le varie pagine private -->
@@ -50,6 +51,7 @@
         <filter-name>FiltroAmministratore</filter-name>
         <url-pattern>/amministratore.jsp</url-pattern>
     </filter-mapping>
+
 
     <session-config>
         <session-timeout>1</session-timeout>
