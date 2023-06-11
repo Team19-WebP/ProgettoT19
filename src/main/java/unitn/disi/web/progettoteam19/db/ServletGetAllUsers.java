@@ -15,6 +15,10 @@ import javax.servlet.annotation.*;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 
+/**
+ * Questa servlet viene usata per popolare la tabella di tutti gli iscritti nella pagina dell'amministratore <br>
+ * essa prende le informazioni dal database e le inserisce in file JSON i quali vengono inseriti nella response.
+ */
 @WebServlet(name = "ServletGetAllUsers", value = "/ServletGetAllUsers")
 public class ServletGetAllUsers extends HttpServlet {
     private final String dbURL = "jdbc:derby://localhost:1527/Team19DB";
@@ -22,6 +26,9 @@ public class ServletGetAllUsers extends HttpServlet {
     private final String password = "admin";
     private Connection connection = null;
 
+    /**
+     * Quando la servlet viene creata creo una connessione con il DB
+     */
     @Override
     public void init() throws ServletException {
         try{
@@ -32,6 +39,9 @@ public class ServletGetAllUsers extends HttpServlet {
         }
     }
 
+    /**
+     * Chiudo la connessione prima di distruggere la servlet
+     */
     @Override
     public void destroy() {
         try {
@@ -40,6 +50,11 @@ public class ServletGetAllUsers extends HttpServlet {
             ex.printStackTrace();
         }
     }
+
+    /**
+     * Creo una query SQL che seleziona tutti gli utenti e la invio al DB <br>
+     * Dopodiché inserisco ogni riga del result set in un file JSON e li aggiungo alla response.
+     */
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String stringaGet = "SELECT * FROM Users";
 

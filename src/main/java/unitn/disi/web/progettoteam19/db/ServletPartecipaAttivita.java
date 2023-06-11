@@ -20,6 +20,9 @@ public class ServletPartecipaAttivita extends HttpServlet {
     private final String password = "admin";
     private Connection connection = null;
 
+    /**
+     * Quando la servlet viene creata creo una connessione con il DB.
+     */
     @Override
     public void init() throws ServletException {
         try{
@@ -29,7 +32,9 @@ public class ServletPartecipaAttivita extends HttpServlet {
             ex.printStackTrace();
         }
     }
-
+    /**
+     * Chiudo la connessione prima di distruggere la servlet.
+     */
     @Override
     public void destroy() {
         try {
@@ -38,7 +43,9 @@ public class ServletPartecipaAttivita extends HttpServlet {
             ex.printStackTrace();
         }
     }
-
+    /**
+     * Aggiunge alla tabella iscrizione nel database l'utente che si è iscritto alle attivita corrette.
+     */
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         boolean partecipazione1 = request.getParameter("attivita1") != null && request.getParameter("attivita1").equals("1");
         boolean partecipazione2 = request.getParameter("attivita2") != null && request.getParameter("attivita2").equals("2");
@@ -83,7 +90,7 @@ public class ServletPartecipaAttivita extends HttpServlet {
             resultSet.close();
             inserting.close();
 
-            response.sendRedirect(response.encodeURL("./confermaPartecipazione.jsp"));
+            response.sendRedirect(response.encodeURL("./confermaPartecipazione.jsp"));//reindirizza a una pagina che notifica l'utente dell'avvenuta iscrizione
         } catch (SQLException ex){
             ex.printStackTrace();
         }

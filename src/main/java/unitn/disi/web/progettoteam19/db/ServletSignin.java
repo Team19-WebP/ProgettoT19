@@ -6,6 +6,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.*;
 
+/**
+ * Questa servlet controlla che non sia gia presente un utente con lo <b>username</b> specificato in fase di sign-in.
+ */
 @WebServlet(name = "ServletSignin", value = "/ServletSignin")
 public class ServletSignin extends HttpServlet {
 
@@ -14,6 +17,9 @@ public class ServletSignin extends HttpServlet {
     private final String password = "admin";
     private Connection connection = null;
 
+    /**
+     * Quando la servlet viene creata creo una connessione con il DB
+     */
     @Override
     public void init() throws ServletException {
         try{
@@ -23,7 +29,9 @@ public class ServletSignin extends HttpServlet {
             ex.printStackTrace();
         }
     }
-
+    /**
+     * Chiudo la connessione prima di distruggere la servlet
+     */
     @Override
     public void destroy() {
         try {
@@ -60,9 +68,9 @@ public class ServletSignin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(getUserName(request.getParameter("username")) != null){
-            response.sendRedirect(response.encodeURL("signin.jsp?errore=true"));
+            response.sendRedirect(response.encodeURL("signin.jsp?errore=true")); //reindirizzo alla pagina sign-in notificando l'errore all'utente
         } else {
-            request.getRequestDispatcher(response.encodeURL("/ServletPushUserData")).include(request, response);
+            request.getRequestDispatcher(response.encodeURL("/ServletPushUserData")).include(request, response); //salvo i dati nel DB prima di confermare l'iscrizione
             response.sendRedirect(response.encodeURL("confermaSignin.jsp"));
         }
     }

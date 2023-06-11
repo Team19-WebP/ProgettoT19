@@ -8,6 +8,10 @@ import java.io.IOException;
 import java.sql.*;
 import javax.servlet.annotation.*;
 
+/**
+ * Questa servlet viene usata per popolare la tabella nelle pagine privata di Aderenti e Simpatizzanti <br>
+ * essa prende le informazioni dal database e le inserisce in un BEAN contenente tutti i dati dell'utente loggato.
+ */
 @WebServlet(name = "ServletGetUser", value = "/ServletGetUser")
 public class ServletGetUser extends HttpServlet {
 
@@ -16,6 +20,9 @@ public class ServletGetUser extends HttpServlet {
     private final String password = "admin";
     private Connection connection = null;
 
+    /**
+     * Quando la servlet viene creata creo una connessione con il DB
+     */
     @Override
     public void init() throws ServletException {
         try{
@@ -25,7 +32,9 @@ public class ServletGetUser extends HttpServlet {
             ex.printStackTrace();
         }
     }
-
+    /**
+     * Chiudo la connessione prima di distruggere la servlet
+     */
     @Override
     public void destroy() {
         try {
@@ -34,7 +43,10 @@ public class ServletGetUser extends HttpServlet {
             ex.printStackTrace();
         }
     }
-
+    /**
+     * Prende dal DB tutte le informazioni dell'utente con username specificato nella request.
+     * Poi inserisce tutte queste informazioni in un BEAN di tipo User chiamato utenteLoggato.
+     */
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String stringaGet = "SELECT * FROM Users WHERE USERNAME = ?";
 

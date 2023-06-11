@@ -11,6 +11,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.*;
 
+
+/**
+ * Servlet che gestisce il login, controlla che le credenziali siano corrette tramite il DB<br>
+ * e in caso di successo reindirizza alla pagina privata corrispondente alla tipologia di utente.
+ */
 @WebServlet(name = "ServletLogin", value = "/ServletLogin")
 public class ServletLogin extends HttpServlet {
 
@@ -19,6 +24,9 @@ public class ServletLogin extends HttpServlet {
     private final String password = "admin";
     private Connection connection = null;
 
+    /**
+     * Quando la servlet viene creata creo una connessione con il DB
+     */
     @Override
     public void init() throws ServletException {
         try{
@@ -28,7 +36,9 @@ public class ServletLogin extends HttpServlet {
             ex.printStackTrace();
         }
     }
-
+    /**
+     * Chiudo la connessione prima di distruggere la servlet
+     */
     @Override
     public void destroy() {
         try {
@@ -45,36 +55,38 @@ public class ServletLogin extends HttpServlet {
         String password = request.getParameter("password");
 
         if(getUserName(username) == null){
-            response.sendRedirect("login.jsp?errore=true");
+            response.sendRedirect("login.jsp?errore=true"); //reindirizza al login notificando l'utente dell'errore
             return;
         }
         String pwFromDB = getPassword(username);
         if(pwFromDB != null && !pwFromDB.equals(password)){
-            response.sendRedirect("login.jsp?errore=true");
+            response.sendRedirect("login.jsp?errore=true"); //reindirizza al login notificando l'utente dell'errore
             return;
         }
         String tipologia = getTipologia(username);
         if(tipologia == null){
-            System.out.println("problema inaspettato");
-            response.sendRedirect("error.jsp");
+            response.sendRedirect("error.jsp"); //reindirizza a una pagina di errore (non dovrebbe mai accadere)
             return;
         }
 
         boolean aderente = false, simpatizzante = false, amministratore = false;
 
-        if(tipologia.equals("aderente")){
-            aderente = true;
-        } else if(tipologia.equals("simpatizzante")) {
-            simpatizzante = true;
-        } else if(tipologia.equals("amministratore")){
-            amministratore = true;
+        switch (tipologia) {
+            case "aderente":
+                aderente = true;
+                break;
+            case "simpatizzante":
+                simpatizzante = true;
+                break;
+            case "amministratore":
+                amministratore = true;
+                break;
         }
 
         HttpSession session = request.getSession(true);
 
 
         request.getRequestDispatcher(response.encodeURL("ServletGetUser")).include(request, response);
-        System.out.println( (User) session.getAttribute("utenteLoggato"));
         if(aderente){
             session.setAttribute("type", "aderente");
             response.sendRedirect(response.encodeURL("./aderente.jsp"));
