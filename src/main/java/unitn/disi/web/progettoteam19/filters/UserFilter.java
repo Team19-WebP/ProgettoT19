@@ -34,8 +34,19 @@ public class UserFilter implements Filter {
             System.out.println("In UF con: session -> null");
         }
 
+        //Gestisco casistica dei cookie rifiutati
         ServletContext servletContext = request.getServletContext();
-        String cookies = (String) servletContext.getAttribute("cookies");
+        String cookies = null;
+        if (servletContext.getAttribute("cookies") != null){
+            cookies = (String) servletContext.getAttribute("cookies");
+        }
+
+        if(cookies != null && !cookies.equals("true")){
+            for(Cookie c : req.getCookies()){
+                c.setMaxAge(0);
+                res.addCookie(c);
+            }
+        }
 
         if(session == null || session.getAttribute("type") == null) {
             if(cookies == null || cookies.equals("false")){

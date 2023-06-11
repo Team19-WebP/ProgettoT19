@@ -110,7 +110,7 @@
           </p>
         </figure>
       </div>
-      <form action="ServletReset" method="get">
+      <form action= <%= response.encodeURL("ServletReset")%> method="get">
         <input id="resetCount" type="submit" value="RESET">
       </form>
     </div>

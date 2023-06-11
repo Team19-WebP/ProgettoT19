@@ -43,7 +43,7 @@
         </div>
     </header>
     <nav class="menu">
-        <a href= <%= response.encodeURL("home.jsp")%> >Home</a>
+        <a href= "<%= response.encodeURL("home.jsp") %>" >Home</a>
         <a href=  <%= response.encodeURL("chisiamo.jsp")%> >Chi Siamo</a>
         <div class="dropdown">
             <a class="dropbtn" href=  <%= response.encodeURL("attivita.jsp")%> >Attività

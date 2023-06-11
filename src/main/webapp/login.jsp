@@ -21,7 +21,7 @@
 <main>
     <div class="formContSignLog" id="divLogin">
         <p>Non hai un account? Registrati <a href=  <%= response.encodeURL("signin.jsp")%> >qui</a>!</p>
-        <form action="ServletLogin" method="post" onsubmit="return validaFormLogin()">
+        <form action= <%= response.encodeURL("ServletLogin")%> method="post" onsubmit="return validaFormLogin()">
     <%
         if(request.getParameter("errore") != null && request.getParameter("errore").equals("true")) {
     %>

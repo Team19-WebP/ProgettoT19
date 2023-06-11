@@ -107,7 +107,7 @@ public class ServletGetDonazioni extends HttpServlet {
             preparedStatement.close();
         } catch (SQLException ex) {
                 ex.printStackTrace();
-                response.sendRedirect("error.html");
+                response.sendRedirect(response.encodeURL("error.html"));
         }
     }
 

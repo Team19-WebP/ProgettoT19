@@ -55,17 +55,17 @@ public class ServletLogin extends HttpServlet {
         String password = request.getParameter("password");
 
         if(getUserName(username) == null){
-            response.sendRedirect("login.jsp?errore=true"); //reindirizza al login notificando l'utente dell'errore
+            response.sendRedirect(response.encodeURL("login.jsp?errore=true")); //reindirizza al login notificando l'utente dell'errore
             return;
         }
         String pwFromDB = getPassword(username);
         if(pwFromDB != null && !pwFromDB.equals(password)){
-            response.sendRedirect("login.jsp?errore=true"); //reindirizza al login notificando l'utente dell'errore
+            response.sendRedirect(response.encodeURL("login.jsp?errore=true")); //reindirizza al login notificando l'utente dell'errore
             return;
         }
         String tipologia = getTipologia(username);
         if(tipologia == null){
-            response.sendRedirect("error.jsp"); //reindirizza a una pagina di errore (non dovrebbe mai accadere)
+            response.sendRedirect(response.encodeURL("error.jsp")); //reindirizza a una pagina di errore (non dovrebbe mai accadere)
             return;
         }
 

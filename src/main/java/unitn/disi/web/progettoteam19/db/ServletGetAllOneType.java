@@ -91,7 +91,7 @@ public class ServletGetAllOneType extends HttpServlet {
             }
             catch (IOException ex) {
                 ex.printStackTrace();
-                response.sendRedirect("error.html");
+                response.sendRedirect(response.encodeURL("error.html"));
             }
 
 
