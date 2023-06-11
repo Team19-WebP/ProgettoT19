@@ -24,7 +24,7 @@ function stateHandleTextarea() { // script che abilita la textarea solo se viene
     }
 }
 function validaEmail() {
-    const regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+\.{1}[a-zA-Z0-9]+$/;
+    const regexEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     let valido = true;
 
     if (!regexEmail.test(email.value)) {

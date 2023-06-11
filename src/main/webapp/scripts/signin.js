@@ -3,8 +3,8 @@ let emailAlert = document.querySelector("#emailAlert");
 let passAlert = document.querySelector("#passAlert");
 let confPassAlert = document.querySelector("#confPassAlert");
 
-const regexEmail = /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+\.{1}[a-zA-Z0-9]+$/;
-const regexPass = /^(?=.*[Ee])(?=.*[Gg])(?=.*[Ff])(?=.*[A-Za-z])(?=.*\d)(?=.*[$!?\S]).{7,}$/;
+const regexEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+const regexPass = /^(?=.*[Ee])(?=.*[Gg])(?=.*[Ff])(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$!?\S]).{8,}$/;
 const regexNumero = /^([+]?)([0-9]{9,12})$/;
 
 let nome = document.querySelector("#nome");
