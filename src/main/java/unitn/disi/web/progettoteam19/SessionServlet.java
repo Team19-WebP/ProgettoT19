@@ -32,7 +32,7 @@ public class SessionServlet extends HttpServlet {
                 System.out.println("Cookies preferences are set on " + cookiesPref + " and they saved for this session.");
                 if(!cookiesPref.equals("true")){
                     for(Cookie c : request.getCookies()){
-                        c.setMaxAge(-1);
+                        c.setMaxAge(0);
                         response.addCookie(c);
                     }
                 }
