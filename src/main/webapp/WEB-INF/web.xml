@@ -43,6 +43,7 @@
         <url-pattern>/ServletPartecipaAttivita</url-pattern>
         <url-pattern>/ServletPushUserData</url-pattern>
         <url-pattern>/ServletSignin</url-pattern>
+        <url-pattern>/amministratore.jsp</url-pattern>
         <!--
         Controllare se serve aggiungere altro!
         -->
