@@ -6,7 +6,7 @@ let confDonation = document.querySelector("#confDonaz");
 
 /*TODO fissare il bottone cliccato con gli id [anche in simp e amm]*/
 
-function validaDonazione(){
+function validaDonazione(){ //script che impedisce di fare donazioni negative
     let valore = document.querySelector("#donazione").value;
     if(valore <= 0){
         alert("Inserire un importo >0!");
@@ -16,7 +16,7 @@ function validaDonazione(){
     }
 }
 function visualizzaDati(){
-    if(dati.hidden == true){
+    if(dati.hidden === true){
         dati.hidden = false;
        danger.hidden = true;
         attivita.hidden = true;
@@ -29,7 +29,7 @@ function visualizzaDati(){
     }
 }
 function visualizzaAttivita(){
-    if(attivita.hidden==true){
+    if(attivita.hidden===true){
         dati.hidden = true;
         danger.hidden = true;
         attivita.hidden = false;
@@ -45,7 +45,7 @@ function visualizzaAttivita(){
     }
 }
 function visualizzaDanger(){
-    if(danger.hidden == true){
+    if(danger.hidden === true){
         dati.hidden = true;
         danger.hidden = false;
         attivita.hidden = true;
@@ -58,7 +58,7 @@ function visualizzaDanger(){
     }
 }
 function visualizzaDonation(){
-    if(donation.hidden == true){
+    if(donation.hidden === true){
         dati.hidden = true;
         danger.hidden = true;
         attivita.hidden = true;
@@ -71,9 +71,9 @@ function visualizzaDonation(){
     }
 }
 
-function confermaCancellaIscrizione(){
-    var txt;
-    var retVal;
+function confermaCancellaIscrizione(){// crea un popUp che chiede se si è sicuri di voler eliminare l'account
+    let txt;
+    let retVal;
     if (confirm("Sei sicuro di voler cancellare la tua iscrizione a Tum4World?")) {
         txt = "Cancellazione effettuata.";
         retVal = true;
@@ -85,7 +85,7 @@ function confermaCancellaIscrizione(){
     return retVal;
 }
 
-function seleziona(selezione) {
+function seleziona(selezione) { //permette di selezionare un attività anche premendo l'immagine
     let checkBox = document.querySelector("#" + selezione);
     let img = document.querySelector("#img"+selezione);
     let txt = document.querySelector("#img" + selezione + "> .text");

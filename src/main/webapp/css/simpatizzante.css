@@ -1,21 +1,19 @@
-
 /* Cambia i colori come vuoi per la parte di aderente*/
 :root {
     --COLORE1: #393E46;         /**/
     --COLORE2: #6D9886;         /**/
-    --COLORE3: #F2E7D5;         /* questi colori sono i colori che vengono visualizzati dai simpatizzanti*/
-    --COLORE4: #F7F7F7;         /**/
+    --COLORE3: #F2E7D5;         /*questi colori sono i colori che vengono*/
+    --COLORE4: #F7F7F7;         /*visualizzati dai simpatizzanti*/
+    --COLORE5: #fdfbfb;         /**/
     --COLORE4TRANSP: #F7F7F7e6; /**/
 }
 .menu2 {
     padding-bottom: 1%;
     width: 100%;
 }
-
 .menu2 nav {
     display: flex;
 }
-
 .menu2 button {
     border-radius: 5px;
     border: 2px solid var(--COLORE1);

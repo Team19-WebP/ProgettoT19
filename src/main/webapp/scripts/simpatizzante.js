@@ -4,7 +4,7 @@ let attivita = document.querySelector("#attivita"); //
 
 
 function visualizzaDati(){
-    if(dati.hidden == true){
+    if(dati.hidden === true){
         dati.hidden = false;
         danger.hidden = true;
         attivita.hidden = true;
@@ -14,7 +14,7 @@ function visualizzaDati(){
 }
 
 function visualizzaAttivita(){
-    if(attivita.hidden == true){
+    if(attivita.hidden === true){
         dati.hidden = true;
         danger.hidden = true;
         attivita.hidden = false;
@@ -24,7 +24,7 @@ function visualizzaAttivita(){
 }
 
 function visualizzaDanger(){
-    if(danger.hidden == true){
+    if(danger.hidden === true){
         dati.hidden = true;
         danger.hidden = false;
         attivita.hidden = true;
@@ -33,7 +33,7 @@ function visualizzaDanger(){
     }
 }
 
-function seleziona(selezione){
+function seleziona(selezione){ //permette di selezionare un attività anche premendo l'immagine
     let checkBox = document.querySelector("#" + selezione);
     let img = document.querySelector("#img"+selezione);
     let txt = document.querySelector("#img" + selezione + "> .text");
@@ -46,7 +46,7 @@ function seleziona(selezione){
         txt.style.opacity = "0";
     }
 }
-function selezionaC(selezione){
+function selezionaC(selezione){ //TODO cos'è?
     let checkBox = document.querySelector("#" + selezione);
     let img = document.querySelector("#img"+selezione);
     let txt = document.querySelector("#img" + selezione + "> .text");
@@ -58,9 +58,9 @@ function selezionaC(selezione){
         txt.style.opacity = "0";
     }
 }
-function confermaCancellaIscrizione(){
-    var txt;
-    var retVal;
+function confermaCancellaIscrizione(){// crea un popUp che chiede se si è sicuri di voler eliminare l'account
+    let txt;
+    let retVal;
     if (confirm("Sei sicuro di voler cancellare la tua iscrizione a Tum4World?")) {
         txt = "Cancellazione effettuata.";
         retVal = true;

@@ -5,7 +5,7 @@ let visite = document.querySelector("#visite");                 //
 let donations = document.querySelector("#donations");           //
 
 function visualizzaUtenti(){
-    if(utenti.hidden == true){
+    if(utenti.hidden === true){
         stampaUtenti("/progettoteam19/ServletGetAllUsers", "all");
         utenti.hidden = false;
         simpatizzanti.hidden = true;
@@ -19,7 +19,7 @@ function visualizzaUtenti(){
 }
 
 function visualizzaSimpatizzanti(){
-    if(simpatizzanti.hidden == true){
+    if(simpatizzanti.hidden === true){
         stampaUtenti("/progettoteam19/ServletGetAllOneType", "simpatizzante")
         utenti.hidden = true;
         simpatizzanti.hidden = false;
@@ -34,7 +34,7 @@ function visualizzaSimpatizzanti(){
 }
 
 function visualizzaAderenti(){
-    if(aderenti.hidden == true){
+    if(aderenti.hidden === true){
         stampaUtenti("/progettoteam19/ServletGetAllOneType", "aderente")
         utenti.hidden = true;
         simpatizzanti.hidden = true;
@@ -49,7 +49,7 @@ function visualizzaAderenti(){
 }
 
 function visualizzaVisite(){
-    if(visite.hidden == true){
+    if(visite.hidden === true){
         utenti.hidden = true;
         simpatizzanti.hidden = true;
         aderenti.hidden = true;
@@ -63,7 +63,7 @@ function visualizzaVisite(){
 }
 
 function visualizzaDonations(){
-    if(donations.hidden == true){
+    if(donations.hidden === true){
         setDonaz();
         utenti.hidden = true;
         simpatizzanti.hidden = true;
@@ -77,18 +77,11 @@ function visualizzaDonations(){
 
 }
 
-function showOrHide(id){
-    let idDati = "#info"+id;
-    let dati = document.querySelector(idDati);
-
-    dati.hidden = !dati.hidden;
-
-}
 function stampaUtenti(url, type) {
     // Preparing request
     // let url = "/progettoteam19/ServletGetAllUsers";
 
-    if (type != "all") {
+    if (type !== "all") {
         url += "?tipologia=" + type;
     }
     // Making request
@@ -115,9 +108,6 @@ function stampaUtenti(url, type) {
 
             if (my_JSON_array != null && my_JSON_array.length > 0) {
 
-                // Displaying success
-                // document.getElementById("result").innerHTML = "Data successfully retrieved";
-
                 let p = document.getElementById("no"+type);
                 p.hidden = true;
 
@@ -129,7 +119,7 @@ function stampaUtenti(url, type) {
                 let header = ["username", "nome", "cognome", "datadinascita", "email", "cellulare", "tipologia"];
                 let headerColumn = ["Username", "Nome", "Cognome", "Data di nascita", "Email", "Cellulare", "Tipologia"];
                 for (let key of headerColumn) {
-                    if(type != "all" && key=="Tipologia"){
+                    if(type !== "all" && key==="Tipologia"){
                         break;
                     }
                     let th = document.createElement("th");
@@ -144,7 +134,7 @@ function stampaUtenti(url, type) {
                     let current_JSON_object = JSON.parse(my_JSON_array[i]);
                     console.log(current_JSON_object);
                     for (let key of header) {
-                        if(type != "all" && key=="tipologia"){
+                        if(type !== "all" && key==="tipologia"){
                             continue;
                         }
                         let cell = row.insertCell();
@@ -297,7 +287,7 @@ function setDonaz() {
             if (my_JSON_array != null && my_JSON_array.length > 0) {
 
                 for(let i=0; i< my_JSON_array.length; i++){
-                    var objDonaz = JSON.parse(my_JSON_array[i]);
+                    let objDonaz = JSON.parse(my_JSON_array[i]);
                     anno[objDonaz.month-1][objDonaz.day-1] += objDonaz.importo;
                     sommaMensile[objDonaz.month-1] += objDonaz.importo;
                     sommatotale += objDonaz.importo;
@@ -309,9 +299,9 @@ function setDonaz() {
             }
             let donTot = document.querySelector("#totaleDonazioni");
 
-            donTot.innerHTML = "il sito ha ricevuto <b>"+ sommatotale +"€</b> in totale.";
+            donTot.innerHTML = "Il sito ha ricevuto <b>"+ sommatotale +"€</b> in totale.";
 
-            crea();
+            creaGraficoDonazioni();
             
         }
     }
@@ -322,7 +312,7 @@ function setDonaz() {
 // Data retrieved from https://gs.statcounter.com/browser-market-share#monthly-202201-202201-bar
 
 // Create the chart
-function crea(){
+function creaGraficoDonazioni(){
 
     Highcharts.chart('GraficoDonazioni', {
         chart: {

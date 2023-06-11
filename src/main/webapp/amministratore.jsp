@@ -117,7 +117,7 @@
 
     <div id="donations" hidden="true">
 
-      <div id = "totaleDonazioni"></div>
+      <div id="totaleDonazioni"></div>
 
       <script src="https://code.highcharts.com/modules/drilldown.js"></script>
 

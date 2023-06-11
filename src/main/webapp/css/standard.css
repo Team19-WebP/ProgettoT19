@@ -2,11 +2,11 @@
 :root {
     --COLORE1: #000000;         /**/
     --COLORE2: #31372B;         /**/
-    --COLORE3: #FFB3BF;         /* questi colori sono i colori che vengono visualizzati da chi non è loggato*/
-    --COLORE4: #fee9ff;         /**/
+    --COLORE3: #FFB3BF;         /*questi colori sono i colori che vengono*/
+    --COLORE4: #fee9ff;         /*visualizzati da chi non è loggato*/
+    --COLORE5: #FFE6F2;         /**/
     --COLORE4TRANSP: #fee9ffe6; /**/
 
-    --ROSABG-GRADIENTE: #FFE6F2;
     --BORDERROSA: #A998A5;
 }
 
@@ -21,7 +21,7 @@ body {
     background: var(--COLORE4);
     /*background: -moz-linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #FFFFFF 100%);*/
     /*background: -webkit-linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #FFFFFF 100%);*/
-    background: linear-gradient(45deg, var(--COLORE4) 0%, #FFE6F2 0%, white 100%);
+    background: linear-gradient(45deg, var(--COLORE4) 0%, var(--COLORE5) 0%, white 100%);
     font-family: 'Raleway', sans-serif;
 }
 
@@ -111,17 +111,6 @@ input[type = reset]:hover, input[type = reset]:focus {
 #comboBoxLabel {
     margin-bottom: 5px;
 }
-/*input[type = reset] {*/
-/*    background-color: #ec7777;*/
-/*    border-radius: 20px;*/
-/*    color: black;*/
-/*    resize: none;*/
-/*    min-width: 60px;*/
-/*    min-height: 25px;*/
-/*    width: 5%;*/
-/*    height: 4%;*/
-/*    margin-right: 4%;*/
-/*}*/
 #divLogin {
     justify-content: space-evenly;
     padding-bottom: 15vw;
@@ -181,20 +170,20 @@ input[type = reset]:hover, input[type = reset]:focus {
     text-align: center;
 }
 
-/* style per attività e forse anche aderente per le immagini*/
-    .im1 {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+/* style per attività e aderente per le immagini*/
+.im1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
-    div.im1 figure img {
-        width: 300px;
-        height: auto;
-        max-height: 300px;
-        /*z-index:1;*/
+div.im1 figure img {
+    width: 300px;
+    height: auto;
+    max-height: 300px;
+    /*z-index:1;*/
 }
 
 div.gallery figcaption {
@@ -346,10 +335,6 @@ html {
     /* Misure calcolate con il browser nellla sezione computed! */
     position: fixed;
 
-    /* Scommentare qua sotto per metterlo a sinistra */
-    /*max-width: 250px;*/
-    /* Scommentare qua sopra per metterlo a sinistra */
-
     /* Commentare la riga sotto per metterlo a sinistra*/
     width: 100%;
     /* Commentare la riga sopra per metterlo a sinistra*/
@@ -387,7 +372,7 @@ html {
 /*#########################################################################################*/
 
 /* File di stile per l'intestazione e la toolbar. */
-@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap'); /*TODO qui non credo faccia nulla, bisogna o toglierlo o metterlo in cima*/
 /* Logo e scritta presente in tutte le pagine. */
 .intestazione {
     /* Rosa non ci piaceva! */
@@ -431,7 +416,7 @@ html {
     */
     box-sizing: border-box;
     position: fixed;
-    top: 88.875px;
+    top: 88px;
     left: 0;
     width: 100%;
     z-index: 9999;
