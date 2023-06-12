@@ -319,7 +319,7 @@ function setDonaz() {
             }
             let donTot = document.querySelector("#totaleDonazioni");
 
-            donTot.innerHTML = "Il sito ha ricevuto <b>"+ donazioniAnnuali +"€</b> in totale.";
+            donTot.innerHTML = "Il sito ha ricevuto <b>"+ donazioniAnnuali.toFixed(2) +"€</b> in totale.";
 
             creaGraficoDonazioni();
             
