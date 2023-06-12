@@ -39,6 +39,7 @@
             <select id="comboBox" name="comboBox">
                 <option value="iscrizione">Mi piacerebbe unirmi alla vostra associazione</option>
                 <option value="info">Vorrei saperne di più su quello che fate</option>
+                <option value="donazione">Vorrei sostenere le vostre attività con una donazione</option>
                 <option value="altro">Altro...</option>
             </select>
         </div>

@@ -14,7 +14,7 @@ function stateHandleTextarea() { // script che abilita la textarea solo se viene
         // per selezionare la textarea
         altroTextarea.focus();
         altroTextarea.scrollIntoView();
-        altroTextarea.placeholder = "inserisci il motivo del contatto...";
+        altroTextarea.placeholder = "puoi inserire qui il motivo del contatto...";
     } else {
         altroTextarea.disabled = true;
         altroTextarea.hidden = true;
