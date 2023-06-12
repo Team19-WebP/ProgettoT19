@@ -3,13 +3,14 @@ let simpatizzanti = document.getElementById("simpatizzanti"); //
 let aderenti = document.getElementById("aderenti");           // DIV delle varie sezioni da mostrare/nascondere
 let visite = document.getElementById("visite");               //
 let donations = document.getElementById("donations");         //
+let totaleDonazioni = document.getElementById("totaleDonazioni");
+let contatoreVisite = document.getElementById("contatoreVisite");
 
 let buttonUtenti = document.getElementById("buttonUtenti");               //
 let buttonSimpatizzanti = document.getElementById("buttonSimpatizzanti"); //
 let buttonAderenti = document.getElementById("buttonAderenti");           // bottoni per mostrare le varie sezioni
 let buttonVisite = document.getElementById("buttonVisite");               //
 let buttonDonations = document.getElementById("buttonDonations");         //
-
 /** queste funzioni chiamate <b>visualizzaXXX</b> nascondono tutti i contenuti della pagina privata tranne quello della sezione selezionata tramite button*/
 function visualizzaUtenti(){
     if(utenti.hidden === true){
@@ -24,6 +25,8 @@ function visualizzaUtenti(){
         aderenti.hidden = true;
         visite.hidden = true;
         donations.hidden = true;
+        contatoreVisite.hidden = true;
+        totaleDonazioni.hidden = true;
     } else {
         buttonUtenti.className="";
         utenti.hidden = true;
@@ -41,6 +44,8 @@ function visualizzaSimpatizzanti(){
         simpatizzanti.hidden = false;
         aderenti.hidden = true;
         visite.hidden = true;
+        contatoreVisite.hidden = true;
+        totaleDonazioni.hidden = true;
         donations.hidden = true;
     } else {
         buttonSimpatizzanti.className="";
@@ -59,6 +64,8 @@ function visualizzaAderenti(){
         simpatizzanti.hidden = true;
         aderenti.hidden = false;
         visite.hidden = true;
+        contatoreVisite.hidden = true;
+        totaleDonazioni.hidden = true;
         donations.hidden = true;
     } else {
         buttonAderenti.className="";
@@ -77,8 +84,11 @@ function visualizzaVisite(){
         aderenti.hidden = true;
         visite.hidden = false;
         donations.hidden = true;
+        contatoreVisite.hidden = false;
+        totaleDonazioni.hidden = true;
     } else {
         buttonVisite.className="";
+        contatoreVisite.hidden = true;
         visite.hidden = true;
     }
 }
@@ -95,8 +105,11 @@ function visualizzaDonations(){
         aderenti.hidden = true;
         visite.hidden = true;
         donations.hidden = false;
+        contatoreVisite.hidden = true;
+        totaleDonazioni.hidden = false;
     } else {
         buttonDonations.className="";
+        totaleDonazioni.hidden = true;
         donations.hidden = true;
     }
 }

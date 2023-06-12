@@ -96,9 +96,9 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> <%--questo nello specifico è essenziale--%>
 
+    <div id="contatoreVisite"> Visite sito: <b><jsp:getProperty name="counterGenerale" property="hits"/></b> </div>
     <div id="visite">
       <br>
-      <div id="contatoreVisite"> Visite sito: <b><jsp:getProperty name="counterGenerale" property="hits"/></b> </div>
       <div id="grafico visite">
 
         <figure class="highcharts-figure">
@@ -114,9 +114,9 @@
       </form>
     </div>
 
+    <div id="totaleDonazioni" hidden="true"></div>
     <div id="donations" hidden="true">
 
-      <div id="totaleDonazioni"></div>
 
       <script src="https://code.highcharts.com/modules/drilldown.js"></script>
 
