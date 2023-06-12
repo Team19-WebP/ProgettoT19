@@ -28,11 +28,13 @@ public class UserFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
 
+        System.out.println("DENTRO USER FILTER");
+
         if(session == null || session.getAttribute("type") == null) {
             req.setAttribute("expired", "true");
-            if(session != null){
+            /*if(session != null){
                 session.invalidate();
-            }
+            }*/
             req.getRequestDispatcher(res.encodeURL("./login.jsp")).forward(req, res);
         } else {
             chain.doFilter(request, response);

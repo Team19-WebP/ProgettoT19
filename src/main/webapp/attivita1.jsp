@@ -20,7 +20,7 @@
             I viveri vengono acquistati da agricoltori e produttori locali, in modo da incentivare l’economia autoctona e contribuire allo sviluppo della comunità. I volontari visitano regolarmente i villaggi settimanalmente o in caso di emergenze o carestie, fornendo ai capi villaggio le provviste necessarie.
         </p>
         <p>
-            Questo progetto si chiama Aisha in ricordo della bambina liberiana che nel 2008 è morta a causa di una grave malnutrizione. Con il tuo prezioso aiuto, puoi contribuire a fornire cibo e acqua alle famiglie dei villaggi meno conosciuti e a volte dimenticati anche da altre organizzazioni di volontariato ed evitare così che altri bambini perdino la vita. <a href=<%=response.encodeURL("signin.jsp")%>>Registrati ora come aderente o simpatizzante</a> e unisciti a noi per rendere felici migliaia di bambini e famiglie che soffrono di malnutrizione.
+            Questo progetto si chiama Aisha in ricordo della bambina liberiana che nel 2008 è morta a causa di una grave malnutrizione. Con il tuo prezioso aiuto, puoi contribuire a fornire cibo e acqua alle famiglie dei villaggi meno conosciuti e a volte dimenticati anche da altre organizzazioni di volontariato ed evitare così che altri bambini perdino la vita. Registrati ora come aderente o simpatizzante e unisciti a noi per rendere felici migliaia di bambini e famiglie che soffrono di malnutrizione.
         </p>
     </div>
 </main>

@@ -12,8 +12,8 @@
 
         </p>
         <p id="firma"> Buona navigazione dal team di Tum4World!</p>
-        <button class="buttonCookies" id="accetta" onclick="preferenzaCookies(true)">Accetta</button>
-        <button class="buttonCookies" id="rifiuta" onclick="preferenzaCookies(false)">Rifiuta</button>
+        <button class="buttonCookies" id="accetta" onclick="preferenzaCookies('true')">Accetta</button>
+        <button class="buttonCookies" id="rifiuta" onclick="preferenzaCookies('false')">Rifiuta</button>
     </div>
 
 </div>

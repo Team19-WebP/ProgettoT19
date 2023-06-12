@@ -36,9 +36,16 @@ public class SessionFilter implements Filter {
             long maxIdle = session.getMaxInactiveInterval();
             long remainingTime = maxIdle - (currentTime - lastAccessedTime)/1000;
 
+            String value = null;
+            if(session.getAttribute("cookiesPref") != null){
+                value = (String) session.getAttribute("cookiesPref");
+                System.out.println("[e]: value: " + value);
+            }
             if(remainingTime < 0) {
+                System.out.println("sessione invalidata :(");
                 session.invalidate();
                 session = req.getSession();
+                session.setAttribute("cookiesPref", value);
             }
         } else {
             session = req.getSession();

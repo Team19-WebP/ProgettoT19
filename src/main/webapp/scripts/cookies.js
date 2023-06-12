@@ -10,16 +10,16 @@ function apriInformativa() {
 
 // funzione per controllare se i cookies siano già stati impostati
 function controllaPreferenza() {
-
-    let xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
                 let prefCookies = this.responseText;
                 /* Se non sono settati allora apro l'informativa. */
-                if(prefCookies === "NULL") {
+                if(prefCookies == "no"){
                     apriInformativa();
                 }
+
             }
         }
     }
@@ -29,14 +29,15 @@ function controllaPreferenza() {
 
 // richiesta alla servlet ServletSession per settare la scelta dell'utente
 function preferenzaCookies(pref) {
-    let xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             chiudiInformativa();
         }
     }
     xhttp.open("POST", "/progettoteam19/ServletSession", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("cookies=" + encodeURIComponent(pref));
+    console.log(encodeURIComponent(pref));
 }
 controllaPreferenza();

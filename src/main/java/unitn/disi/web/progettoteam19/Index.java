@@ -189,7 +189,7 @@ public class Index extends HttpServlet {
         servletContext.setAttribute("counterSignin", counterSignin);
         servletContext.setAttribute("counterAderente", counterAderente);
         servletContext.setAttribute("counterSimpatizzante", counterSimpatizzante);
-        response.sendRedirect(response.encodeURL("home.jsp"));
+        response.sendRedirect(response.encodeRedirectURL("home.jsp"));
     }
 
     @Override

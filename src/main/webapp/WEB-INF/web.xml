@@ -12,7 +12,7 @@
         <filter-name>UserFilter</filter-name>
         <filter-class>unitn.disi.web.progettoteam19.filters.UserFilter</filter-class>
     </filter>
-    <filter>
+   <filter>
         <filter-name>SessionFilter</filter-name>
         <filter-class>unitn.disi.web.progettoteam19.filters.SessionFilter</filter-class>
     </filter>
@@ -45,9 +45,7 @@
         <url-pattern>/ServletPushUserData</url-pattern>
         <url-pattern>/ServletSignin</url-pattern>
         <url-pattern>/amministratore.jsp</url-pattern>
-        <!--
-        Controllare se serve aggiungere altro!
-        -->
+
     </filter-mapping>
     <filter-mapping>
         <filter-name>UserFilter</filter-name>
