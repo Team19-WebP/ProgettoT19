@@ -17,7 +17,7 @@ function controllaPreferenza() {
             if (this.status == 200) {
                 let prefCookies = this.responseText;
                 /* Se non sono settati allora apro l'informativa. */
-                if(prefCookies !== "true" && prefCookies !=="false") {
+                if(prefCookies === "NULL") {
                     apriInformativa();
                 }
             }

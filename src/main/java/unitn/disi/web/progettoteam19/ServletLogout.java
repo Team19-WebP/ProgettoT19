@@ -16,10 +16,10 @@ public class ServletLogout extends HttpServlet {
         session.setAttribute("type", null);
         session.setAttribute("utenteLoggato", null);
         session.invalidate();
-        ServletContext servletContext = request.getServletContext();
+        /*ServletContext servletContext = request.getServletContext();
         if(servletContext.getAttribute("cookies").equals("false")){
             servletContext.setAttribute("cookies", null);
-        }
+        }*/
         response.sendRedirect(response.encodeURL("./logout.jsp"));
     }
 
