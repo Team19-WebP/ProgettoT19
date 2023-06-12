@@ -8,7 +8,7 @@
   <div class="containerInvioConfermato">
     <div class="containerDescrizione">
       <h2>Errore inaspettato! Contatta l'amministratore del sito web o riprova più tardi</h2>
-      <h4>Ci scusiamo per il disagio :(</h4>
+      <h4>Ci scusiamo per il disagio.</h4>
     </div>
   </div>
 </main>

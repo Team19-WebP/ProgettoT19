@@ -1,10 +1,3 @@
-<%--
-   Created by IntelliJ IDEA.
-   User: missge8urt
-   Date: 17/05/2023
-   Time: 14:02
-   To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java"%>
 <div id="boxInformativaCookies" class="informativaCookies">
 

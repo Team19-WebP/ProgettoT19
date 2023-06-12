@@ -170,7 +170,6 @@
     </div>
 
   </div>
-<%--  <script rel="script" src="scripts/aderente.js" ></script>  &lt;%&ndash; includo lo script da un file esterno per rendere il tutto più leggibile e ordinato&ndash;%&gt;--%>
   <script rel="script" src="scripts/aderenteSimpatizzante.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e ordinato--%>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>

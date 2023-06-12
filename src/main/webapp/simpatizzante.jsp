@@ -152,7 +152,6 @@
     </div>
 
   </div>
-<%--  <script rel="script" src="scripts/simpatizzante.js" ></script>  &lt;%&ndash; includo lo script da un file esterno per rendere il tutto più leggibile e modulare&ndash;%&gt;--%>
   <script rel="script" src="scripts/aderenteSimpatizzante.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e modulare--%>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>
