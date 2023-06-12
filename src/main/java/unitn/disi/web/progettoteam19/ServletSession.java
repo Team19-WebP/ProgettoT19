@@ -15,7 +15,6 @@ public class ServletSession extends HttpServlet {
         if(cookies != null){
             for(Cookie c : cookies){
                 if(c.getName().equals("clientId")){
-                    System.out.println("clientId trovato");
                     response.getWriter().println(c.getValue().toString());
                     return;
                 }
@@ -24,7 +23,7 @@ public class ServletSession extends HttpServlet {
 
         HttpSession session = request.getSession(false);
         String cookiesPref = null;
-        if(session.getAttribute("cookiesPref") != null){
+        if(session != null && session.getAttribute("cookiesPref") != null){
             cookiesPref = (String) session.getAttribute("cookiesPref");
             System.out.println("[a] cookiesPref non è nullo ed è " + cookiesPref);
         }
@@ -44,7 +43,6 @@ public class ServletSession extends HttpServlet {
         if (cookiesPref != null) {
 
             if(cookiesPref.equals("true")){
-                //TODO da vedere se non è gia presente l'ID
                 String uniqueId = UUID.randomUUID().toString();
                 Cookie c = new Cookie("clientId", uniqueId);
                 c.setMaxAge(365 * 24 * 60 * 60);
@@ -55,14 +53,14 @@ public class ServletSession extends HttpServlet {
                 //l'utente rifiuta i cookie
                 System.out.println("Cookies sono rifiutati!");
                 Cookie[] cookies = request.getCookies();
+                HttpSession session = request.getSession();
+                session.setAttribute("cookiesPref", "false");
                 if(cookies != null){
                     for(Cookie c : cookies){
                         c.setMaxAge(0);
                         response.addCookie(c);
                     }
                 }
-                HttpSession session = request.getSession();
-                session.setAttribute("cookiesPref", "false");
             }
         }
         else {
