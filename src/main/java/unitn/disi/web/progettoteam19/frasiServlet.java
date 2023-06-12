@@ -96,14 +96,16 @@ public class frasiServlet extends HttpServlet {
                     }
                 }
             }
+            String cookiesPref = (String)session.getAttribute("cookies");
             SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
             String creationTimeString = dateFormat.format(new Date(creationTime));
             response.getWriter().println("Remaining time: " + remainingTime);
-            response.getWriter().println("ClientID: " + clientId);
-            System.out.println("Remaining time: " + remainingTime);
+            response.getWriter().println("ClientID: " + clientId + " Cookies: " + cookiesPref);
             response.getWriter().println("Session Creation Time: " + creationTimeString);
         } else {
-            response.getWriter().println("Session is null.");
+            String cookiesPref = (String)session.getAttribute("cookies");
+
+            response.getWriter().println("Session is null. Cookies: " + cookiesPref);
         }
     }
 }

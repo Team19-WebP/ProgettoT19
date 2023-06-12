@@ -6,20 +6,29 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.UUID;
 
-@WebServlet(name = "SessionServlet", value = "/SessionServlet")
+@WebServlet(name = "ServletSession", value = "/ServletSession")
 public class ServletSession extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Cookie[] cookies = request.getCookies();
-        if(cookies != null){
-            for(Cookie c : cookies){
-                if(c.getName().equals("clientId")){
-                    response.getWriter().println(c.getValue());
-                    return;
-                }
-            }
+        String cookiesPref = (String) request.getSession().getAttribute("cookies");
+        if(cookiesPref != null) {
+            response.getWriter().println(cookiesPref);
+            return;
+        } else {
+            response.getWriter().print("NULL");
+            return;
         }
-        response.getWriter().print("NULL");
+//
+//        Cookie[] cookies = request.getCookies();
+//        if(cookies != null){
+//            for(Cookie c : cookies){
+//                if(c.getName().equals("clientId")){
+//                        response.getWriter().println(c.getValue().toString());
+//                    return;
+//                }
+//            }
+//        }
+//        response.getWriter().print("NULL");
         /*ServletContext servletContext = request.getServletContext();
         String cookiesPref = (String) servletContext.getAttribute("cookies");
         if(cookiesPref != null) {
@@ -56,6 +65,8 @@ public class ServletSession extends HttpServlet {
                 response.addCookie(c);
             } else {
                 //l'utente rifiuta i cookie
+                HttpSession session = request.getSession();
+                session.setAttribute("cookiesPref", "false");
                 Cookie[] cookies = request.getCookies();
                 if(cookies != null){
                     for(Cookie c : cookies){

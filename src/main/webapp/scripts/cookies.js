@@ -17,13 +17,17 @@ function controllaPreferenza() {
             if (this.status == 200) {
                 let prefCookies = this.responseText;
                 /* Se non sono settati allora apro l'informativa. */
+                console.log(prefCookies);
                 if(prefCookies === "NULL") {
+                    console.log("prefCookies not set");
                     apriInformativa();
+                } else {
+                    console.log("prefCookies: ", prefCookies);
                 }
             }
         }
     }
-    xhttp.open("GET", "/progettoteam19/SessionServlet", true);
+    xhttp.open("GET", "/progettoteam19/ServletSession", true);
     xhttp.send();
 }
 
@@ -35,8 +39,9 @@ function preferenzaCookies(pref) {
             chiudiInformativa();
         }
     }
-    xhttp.open("POST", "/progettoteam19/SessionServlet", true);
+    xhttp.open("POST", "/progettoteam19/ServletSession", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    console.log("cookies=" + encodeURIComponent(pref));
     xhttp.send("cookies=" + encodeURIComponent(pref));
 }
 controllaPreferenza();
