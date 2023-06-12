@@ -23,7 +23,7 @@ public class ServletSession extends HttpServlet {
 
         HttpSession session = request.getSession(false);
         String cookiesPref = null;
-        if(session.getAttribute("cookiesPref") != null){
+        if(session != null && session.getAttribute("cookiesPref") != null){
             cookiesPref = (String) session.getAttribute("cookiesPref");
             System.out.println("[a] cookiesPref non è nullo ed è " + cookiesPref);
         }
