@@ -15,7 +15,6 @@ public class ServletSession extends HttpServlet {
         if(cookies != null){
             for(Cookie c : cookies){
                 if(c.getName().equals("clientId")){
-                    System.out.println("clientId trovato");
                     response.getWriter().println(c.getValue().toString());
                     return;
                 }
@@ -44,7 +43,6 @@ public class ServletSession extends HttpServlet {
         if (cookiesPref != null) {
 
             if(cookiesPref.equals("true")){
-                //TODO da vedere se non è gia presente l'ID
                 String uniqueId = UUID.randomUUID().toString();
                 Cookie c = new Cookie("clientId", uniqueId);
                 c.setMaxAge(365 * 24 * 60 * 60);

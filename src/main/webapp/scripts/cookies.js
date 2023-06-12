@@ -17,12 +17,8 @@ function controllaPreferenza() {
             if (this.status == 200) {
                 let prefCookies = this.responseText;
                 /* Se non sono settati allora apro l'informativa. */
-                console.log(prefCookies);
                 if(prefCookies === "NULL") {
-                    console.log("prefCookies not set");
                     apriInformativa();
-                } else {
-                    console.log("prefCookies: ", prefCookies);
                 }
             }
         }
@@ -41,7 +37,6 @@ function preferenzaCookies(pref) {
     }
     xhttp.open("POST", "/progettoteam19/ServletSession", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    console.log("cookies=" + encodeURIComponent(pref));
     xhttp.send("cookies=" + encodeURIComponent(pref));
 }
 controllaPreferenza();
