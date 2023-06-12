@@ -67,7 +67,6 @@ public class frasiServlet extends HttpServlet {
         }
     }
 
-    /** TODO @Gab:-"te lo spiego dopo"; */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/x-www-form-urlencoded");
@@ -88,9 +87,12 @@ public class frasiServlet extends HttpServlet {
                 e.printStackTrace();
             }
             long remainingTime = maxIdle - (currentTime - lastAccessedTime)/1000;
+            String cookies = (String)request.getServletContext().getAttribute("cookies");
             SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
             String creationTimeString = dateFormat.format(new Date(creationTime));
             response.getWriter().println("Remaining time: " + remainingTime);
+            response.getWriter().println("Cookies: " + cookies);
+            System.out.println("Remaining time: " + remainingTime);
             response.getWriter().println("Session Creation Time: " + creationTimeString);
         } else {
             response.getWriter().println("Session is null.");
