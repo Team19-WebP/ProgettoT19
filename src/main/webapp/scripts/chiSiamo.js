@@ -1,6 +1,4 @@
 let slideIndex = 1;
-showSlides(slideIndex);
-
 // Permette di andare alla foto successiva e precedente
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -10,7 +8,7 @@ function plusSlides(n) {
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
-
+/** Questa funzione fa scorrere tra le immagini della galleria */
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("singleImage");
@@ -23,6 +21,7 @@ function showSlides(n) {
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+    if(slides[slideIndex-1]!==undefined){slides[slideIndex-1].style.display = "block";}
+    if(dots[slideIndex-1]!==undefined){dots[slideIndex-1].className += " active";}
 }
+showSlides(slideIndex);

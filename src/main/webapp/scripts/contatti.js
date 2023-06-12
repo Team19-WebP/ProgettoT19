@@ -8,7 +8,7 @@ altroTextarea.disabled = true;
 comboBox.addEventListener("change", stateHandleTextarea);
 
 function stateHandleTextarea() { // script che abilita la textarea solo se viene selezionata l'opzione "altro" dalla comboBox
-    if (comboBox.value == "altro") {
+    if (comboBox.value === "altro") {
         altroTextarea.disabled = false;
         altroTextarea.hidden = false;
         // per selezionare la textarea

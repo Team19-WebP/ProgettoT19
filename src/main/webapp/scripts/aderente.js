@@ -26,7 +26,6 @@ function visualizzaDati(){
         donation.hidden = true;
         if(confDonation !== null)
             confDonation.hidden = true;
-
     } else {
         dati.hidden = true;
     }
@@ -39,12 +38,10 @@ function visualizzaAttivita(){
         donation.hidden = true;
         if(confDonation !== null)
             confDonation.hidden = true;
-
     } else {
         attivita.hidden = true;
         if(confDonation !== null)
             confDonation.hidden = true;
-
     }
 }
 function visualizzaDanger(){
@@ -55,7 +52,6 @@ function visualizzaDanger(){
         donation.hidden = true;
         if(confDonation !== null)
             confDonation.hidden = true;
-
     } else {
         danger.hidden = true;
     }
@@ -68,7 +64,6 @@ function visualizzaDonation(){
         donation.hidden = false;
         if(confDonation !== null)
             confDonation.hidden = true;
-
     } else {
         donation.hidden = true;
     }
