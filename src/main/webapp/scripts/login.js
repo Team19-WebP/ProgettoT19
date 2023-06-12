@@ -6,9 +6,6 @@ function validaFormLogin() {
     resetForm();
     let valido = true;
     requiredElements.forEach(function (element) {
-        /*DEBUG*/
-        console.log("Controllando " + element.name);
-        /*DEBUG*/
         /*se il campo è vuoto*/
         if (element.value === "") {
             /*facilito la userEXP rimandando il focus e lo screen sul campo mancante

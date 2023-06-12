@@ -28,9 +28,6 @@ function validaForm(event) {
     let valido = true;
     /*faccio il controllo su tutti gli elementi obbligatori*/
     requiredElements.forEach(function (element) {
-        /*DEBUG*/
-        console.log("Controllando " + element.name);
-        /*DEBUG*/
         /*se il campo è vuoto*/
         if (element.value === "") {
             /*facilito la userEXP rimandando il focus e lo screen sul campo mancante

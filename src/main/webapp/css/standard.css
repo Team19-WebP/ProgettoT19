@@ -371,16 +371,8 @@ html {
 /*###################################---INTESTAZIONE---####################################*/
 /*#########################################################################################*/
 
-/* File di stile per l'intestazione e la toolbar. */
-@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap'); /*TODO qui non credo faccia nulla, bisogna o toglierlo o metterlo in cima*/
 /* Logo e scritta presente in tutte le pagine. */
 .intestazione {
-    /* Rosa non ci piaceva! */
-    /*background: linear-gradient(to top, #FFB3BF, #ffffff);*/
-
-    /* Verde ebete forse?!*/
-    /*background: linear-gradient(to top, #31372b, #ffffff);*/
-
     background: var(--COLORE3);
 
     /* Fissiamo l'intestazione on top*/
@@ -412,7 +404,7 @@ html {
 .menu {
     /* box-sizing per includere padding e border nelle dimensioni dell'elemento
         in questo modo ho misurato la dimensione dell'intestazione con dev tools
-        e ho bloccato esattamante sotto il menu il resto è come per intestazione
+        e ho bloccato esattamente sotto il menu il resto è come per intestazione
     */
     box-sizing: border-box;
     position: fixed;

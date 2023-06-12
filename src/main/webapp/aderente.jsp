@@ -135,7 +135,7 @@
         </div>
         <br>
         <div>
-          <input class="aderente" type="submit" value="partecipa" style="width:90px; height:35px">  <%--TODO non so se va bene lasciare uno style qui--%>
+          <input class="aderente" type="submit" value="partecipa" style="width:90px; height:35px">
         </div>
       </form>
     </div>

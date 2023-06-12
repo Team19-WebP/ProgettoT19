@@ -86,7 +86,6 @@ public class ServletGetAllUsers extends HttpServlet {
                 for(User c : allUsers) {
                     Gson gson = new Gson();
                     array.add(gson.toJson(c));
-                    System.out.println(c);
                 }
                 out.println(array);
                 out.flush();
