@@ -10,7 +10,7 @@
   <div class="containerSimpatizzante">
   <div class="menu2">
     <nav>
-      <button onclick="visualizzaDati();" id="buttonDati"><b>dati personali</b></button>
+      <button onclick="visualizzaDati();" class="selezionatoPaginaPers" id="buttonDati" ><b>dati personali</b></button>
       <button onclick="visualizzaAttivita();" id="buttonAttivita"><b>partecipa alle attività</b></button>
       <button onclick="visualizzaDanger();" id="buttonDanger"><b>cancella iscrizione</b></button>
     </nav>
@@ -152,7 +152,7 @@
     </div>
 
   </div>
-  <script rel="script" src="scripts/simpatizzante.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e modulare--%>
+<%--  <script rel="script" src="scripts/simpatizzante.js" ></script>  &lt;%&ndash; includo lo script da un file esterno per rendere il tutto più leggibile e modulare&ndash;%&gt;--%>
   <script rel="script" src="scripts/aderenteSimpatizzante.js" ></script>  <%-- includo lo script da un file esterno per rendere il tutto più leggibile e modulare--%>
 </main>
 <jsp:include page="footer.jsp"></jsp:include>

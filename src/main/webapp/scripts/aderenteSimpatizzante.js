@@ -32,3 +32,107 @@ function confermaCancellaIscrizione(){
     document.getElementById("popUp").innerHTML = txt;
     return retVal;
 }
+
+let dati = document.querySelector("#dati");                 //
+let danger = document.querySelector("#danger");             //
+let attivita = document.querySelector("#attivita"); // DIV delle varie sezioni da mostrare/nascondere
+let donation = document.querySelector("#donation");         //
+let confDonation = document.querySelector("#confDonaz");    //
+let buttonDati = document.querySelector("#buttonDati");
+let buttonAttivita = document.querySelector("#buttonAttivita");/*TODO fissare il bottone cliccato con gli id [anche in simp e amm]*/
+let buttonDanger = document.querySelector("#buttonDanger");
+let buttonDonation = document.querySelector("#buttonDonation");
+/** script che impedisce di fare donazioni negative */
+function validaDonazione(){
+    let valore = document.querySelector("#donazione").value;
+    if(valore <= 0){
+        alert("Inserire un importo >0!");
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/** queste funzioni nascondono tutti i contenuti della pagina privata tranne quello della sezione selezionata tramite button*/
+function visualizzaDati(){
+    if(dati.hidden === true){
+        buttonDati.className = "selezionatoPaginaPers";
+        buttonDanger.className = "";
+        buttonAttivita.className = "";
+        if(buttonDonation !== null) {
+            buttonDonation.className = "";
+        }
+        dati.hidden = false;
+        danger.hidden = true;
+        attivita.hidden = true;
+        if(donation !== null) {
+            donation.hidden = true;
+        }
+        if(confDonation !== null)
+            confDonation.hidden = true;
+    } else {
+        buttonDati.className = "";
+        dati.hidden = true;
+    }
+}
+function visualizzaAttivita(){
+    if(attivita.hidden===true){
+        buttonDati.className = "";
+        buttonDanger.className = "";
+        buttonAttivita.className = "selezionatoPaginaPers";
+        if(buttonDonation !== null) {
+            buttonDonation.className = "";
+        }
+        dati.hidden = true;
+        danger.hidden = true;
+        attivita.hidden = false;
+        if(donation !== null) {
+            donation.hidden = true;
+        }
+        if(confDonation !== null)
+            confDonation.hidden = true;
+    } else {
+        buttonAttivita.className = "";
+        attivita.hidden = true;
+        if(confDonation !== null)
+            confDonation.hidden = true;
+    }
+}
+function visualizzaDanger(){
+    if(danger.hidden === true){
+        buttonDati.className = "";
+        buttonDanger.className = "selezionatoPaginaPers";
+        buttonAttivita.className = "";
+        if(buttonDonation !== null) {
+            buttonDonation.className = "";
+        }
+        dati.hidden = true;
+        danger.hidden = false;
+        attivita.hidden = true;
+        if(donation !== null) {
+            donation.hidden = true;
+        }
+        if(confDonation !== null)
+            confDonation.hidden = true;
+    } else {
+        buttonDanger.className = "";
+        danger.hidden = true;
+    }
+}
+function visualizzaDonation(){
+    if(donation.hidden === true){
+        buttonDati.className = "";
+        buttonDanger.className = "";
+        buttonAttivita.className = "";
+        buttonDonation.className = "selezionatoPaginaPers";
+        dati.hidden = true;
+        danger.hidden = true;
+        attivita.hidden = true;
+        donation.hidden = false;
+        if(confDonation !== null)
+            confDonation.hidden = true;
+    } else {
+        buttonDonation.className = "";
+        donation.hidden = true;
+    }
+}
