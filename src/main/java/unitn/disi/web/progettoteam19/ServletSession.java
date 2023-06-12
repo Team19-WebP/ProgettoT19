@@ -12,10 +12,8 @@ public class ServletSession extends HttpServlet {
         ServletContext servletContext = request.getServletContext();
         String cookiesPref = (String) servletContext.getAttribute("cookies");
         if(cookiesPref != null) {
-            System.out.println(cookiesPref);
             response.getWriter().print(cookiesPref);
         } else {
-            System.out.println("Cookies are not set.");
             response.getWriter().print("Cookies are not set.");
         }
     }
@@ -29,7 +27,6 @@ public class ServletSession extends HttpServlet {
 
             if (servletContext.getAttribute("cookies") == null ) {
                 servletContext.setAttribute("cookies", cookiesPref);
-                System.out.println("Cookies preferences are set on " + cookiesPref + " and they saved for this session.");
                 if(!cookiesPref.equals("true")){
                     for(Cookie c : request.getCookies()){
                         c.setMaxAge(0);
@@ -38,7 +35,6 @@ public class ServletSession extends HttpServlet {
                 }
                 response.getWriter().write("Cookies preferences are set on " + cookiesPref + " and they saved for this session.");
             } else {
-                System.out.println("Cookies preferences were already set as " + servletContext.getAttribute("cookies"));
                 response.getWriter().write("Cookies preferences were already set as " + servletContext.getAttribute("cookies"));
             }
         }

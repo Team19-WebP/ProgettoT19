@@ -57,7 +57,6 @@ public class ServletGetAllOneType extends HttpServlet {
      */
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String stringaGet = "SELECT * FROM Users WHERE TIPOLOGIA = '" + request.getParameter("tipologia").toLowerCase() + "'";
-        System.out.println(stringaGet);
 
         ArrayList<User> allUserTipo = new ArrayList<>();
 

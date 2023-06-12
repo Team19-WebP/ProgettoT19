@@ -54,7 +54,6 @@ public class ServletDonazione extends HttpServlet {
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //salva nel DB
         Date data = new Date();
-        System.out.println(data);
         String pattern = "YYYY-MM-dd"; //questo è il format della data nel DB
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
@@ -66,7 +65,6 @@ public class ServletDonazione extends HttpServlet {
             inserimento.setDouble(1,importo);
             inserimento.setString(2,simpleDateFormat.format(data));
             inserimento.executeUpdate();
-            System.out.println("donati euro " + importo);
             inserimento.close();
         } catch (SQLException ex){
             ex.printStackTrace();

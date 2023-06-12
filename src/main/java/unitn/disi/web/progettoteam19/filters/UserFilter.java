@@ -28,12 +28,6 @@ public class UserFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
 
-        if(session != null){
-            System.out.println("In UF con: sessione ->" + session.getAttribute("type"));
-        } else {
-            System.out.println("In UF con: session -> null");
-        }
-
         //Gestisco casistica dei cookie rifiutati
         ServletContext servletContext = request.getServletContext();
         String cookies = null;
@@ -43,11 +37,6 @@ public class UserFilter implements Filter {
 
         if(cookies != null && !cookies.equals("true")){
             Cookie[] coo = req.getCookies();
-            if (coo != null) {
-                for(Cookie c : coo){
-                    System.out.println(c.getName() + ": " + c.getValue());
-                }
-            }
         }
 
         if(session == null || session.getAttribute("type") == null) {
@@ -61,11 +50,7 @@ public class UserFilter implements Filter {
             req.getRequestDispatcher(res.encodeURL("./login.jsp")).forward(req, res);
         } else {
             Cookie[] coo = req.getCookies();
-            if (coo != null) {
-                for(Cookie c : coo){
-                    System.out.println(c.getName() + ": " + c.getValue());
-                }
-            }
+
             chain.doFilter(request, response);
         }
     }
