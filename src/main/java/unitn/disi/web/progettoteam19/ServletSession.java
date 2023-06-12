@@ -6,7 +6,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(name = "SessionServlet", value = "/SessionServlet")
-public class SessionServlet extends HttpServlet {
+public class ServletSession extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext servletContext = request.getServletContext();

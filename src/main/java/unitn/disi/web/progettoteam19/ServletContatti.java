@@ -17,7 +17,7 @@ import javax.mail.internet.MimeMessage;
 
 
 @WebServlet(name = "ServletFormContatti", value = "/ServletFormContatti")
-public class ServletFormContatti extends HttpServlet {
+public class ServletContatti extends HttpServlet {
 
 
     @Override
