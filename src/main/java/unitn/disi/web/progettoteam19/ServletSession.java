@@ -53,14 +53,14 @@ public class ServletSession extends HttpServlet {
                 //l'utente rifiuta i cookie
                 System.out.println("Cookies sono rifiutati!");
                 Cookie[] cookies = request.getCookies();
-                HttpSession session = request.getSession();
-                session.setAttribute("cookiesPref", "false");
                 if(cookies != null){
                     for(Cookie c : cookies){
                         c.setMaxAge(0);
                         response.addCookie(c);
                     }
                 }
+                HttpSession session = request.getSession();
+                session.setAttribute("cookiesPref", "false");
             }
         }
         else {
