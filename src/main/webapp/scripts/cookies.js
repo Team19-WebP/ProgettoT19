@@ -37,8 +37,6 @@ function preferenzaCookies(pref) {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             chiudiInformativa();
-            let retval = this.responseText;
-            scelta = retval;
         }
     }
     xhttp.open("POST", "/progettoteam19/ServletSession", true);

@@ -81,7 +81,7 @@ public class frasiServlet extends HttpServlet {
             long lastAccessedTime;
             long currentTime = System.currentTimeMillis();
             try {
-                lastAccessedTime = (long)session.getAttribute("lastAccessedTime");
+                lastAccessedTime = (long) session.getAttribute("lastAccessedTime");
             } catch (NullPointerException e) {
                 lastAccessedTime = currentTime;
                 e.printStackTrace();
@@ -96,14 +96,14 @@ public class frasiServlet extends HttpServlet {
                     }
                 }
             }
-            String cookiesPref = (String)session.getAttribute("cookies");
+            String cookiesPref = (String) session.getAttribute("cookiesPref");
             SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
             String creationTimeString = dateFormat.format(new Date(creationTime));
             response.getWriter().println("Remaining time: " + remainingTime);
             response.getWriter().println("ClientID: " + clientId + " Cookies: " + cookiesPref);
             response.getWriter().println("Session Creation Time: " + creationTimeString);
         } else {
-            String cookiesPref = (String)session.getAttribute("cookies");
+            String cookiesPref = (String)session.getAttribute("cookiesPref");
 
             response.getWriter().println("Session is null. Cookies: " + cookiesPref);
         }

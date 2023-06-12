@@ -84,7 +84,6 @@ public class ServletLogin extends HttpServlet {
         }
 
         HttpSession session = request.getSession(true);
-
         request.getRequestDispatcher(response.encodeURL("ServletGetUser")).include(request, response);
         if(aderente){
             session.setAttribute("type", "aderente");

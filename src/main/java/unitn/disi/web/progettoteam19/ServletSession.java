@@ -10,32 +10,35 @@ import java.util.UUID;
 public class ServletSession extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String cookiesPref = (String) request.getSession().getAttribute("cookies");
-        if(cookiesPref != null) {
-            response.getWriter().println(cookiesPref);
-            return;
-        } else {
-            response.getWriter().print("NULL");
-            return;
+
+        Cookie[] cookies = request.getCookies();
+        if(cookies != null){
+            for(Cookie c : cookies){
+                if(c.getName().equals("clientId")){
+                    System.out.println("clientId trovato");
+                    response.getWriter().println(c.getValue().toString());
+                    return;
+                }
+            }
         }
-//
-//        Cookie[] cookies = request.getCookies();
-//        if(cookies != null){
-//            for(Cookie c : cookies){
-//                if(c.getName().equals("clientId")){
-//                        response.getWriter().println(c.getValue().toString());
-//                    return;
-//                }
-//            }
-//        }
-//        response.getWriter().print("NULL");
-        /*ServletContext servletContext = request.getServletContext();
-        String cookiesPref = (String) servletContext.getAttribute("cookies");
-        if(cookiesPref != null) {
-            response.getWriter().print(cookiesPref);
+
+        HttpSession session = request.getSession(false);
+        String cookiesPref = null;
+        if(session.getAttribute("cookiesPref") != null){
+            cookiesPref = (String) session.getAttribute("cookiesPref");
+            System.out.println("[a] cookiesPref non è nullo ed è " + cookiesPref);
+        }
+
+        //TODO controllare bene se cookie disabilitati da browser
+        //TODO e l'utente preme accetta
+
+        if(cookiesPref != null && cookiesPref.equals("false")) {
+            System.out.println("[b] cookiesPref non è nullo ed è " + cookiesPref);
+            response.getWriter().println(cookiesPref);
         } else {
-            response.getWriter().print("Cookies are not set.");
-        }*/
+            System.out.println("[c] cookiesPref è nullo ed è " + cookiesPref);
+            response.getWriter().print("NULL");
+        }
     }
 
     @Override
@@ -43,30 +46,17 @@ public class ServletSession extends HttpServlet {
         String cookiesPref = request.getParameter("cookies");
         if (cookiesPref != null) {
 
-            /*ServletContext servletContext = request.getServletContext();
-
-            if (servletContext.getAttribute("cookies") == null ) {
-                servletContext.setAttribute("cookies", cookiesPref);
-                if(!cookiesPref.equals("true")){
-                    for(Cookie c : request.getCookies()){
-                        c.setMaxAge(0);
-                        response.addCookie(c);
-                    }
-                }
-                response.getWriter().write("Cookies preferences are set on " + cookiesPref + " and they saved for this session.");
-            } else {
-                response.getWriter().write("Cookies preferences were already set as " + servletContext.getAttribute("cookies"));
-            }*/
             if(cookiesPref.equals("true")){
                 //TODO da vedere se non è gia presente l'ID
                 String uniqueId = UUID.randomUUID().toString();
                 Cookie c = new Cookie("clientId", uniqueId);
                 c.setMaxAge(365 * 24 * 60 * 60);
                 response.addCookie(c);
+                HttpSession session = request.getSession();
+                session.setAttribute("cookiesPref", "true");
             } else {
                 //l'utente rifiuta i cookie
-                HttpSession session = request.getSession();
-                session.setAttribute("cookiesPref", "false");
+                System.out.println("Cookies sono rifiutati!");
                 Cookie[] cookies = request.getCookies();
                 if(cookies != null){
                     for(Cookie c : cookies){
@@ -74,7 +64,8 @@ public class ServletSession extends HttpServlet {
                         response.addCookie(c);
                     }
                 }
-                response.getWriter().print("rifiutato");
+                HttpSession session = request.getSession();
+                session.setAttribute("cookiesPref", "false");
             }
         }
         else {
