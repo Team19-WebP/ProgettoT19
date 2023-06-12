@@ -6,7 +6,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.UUID;
 
-@WebServlet(name = "SessionServlet", value = "/SessionServlet")
+@WebServlet(name = "ServletSession", value = "/ServletSession")
 public class ServletSession extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -63,6 +63,7 @@ public class ServletSession extends HttpServlet {
                         response.addCookie(c);
                     }
                 }
+                response.getWriter().print("rifiutato");
             }
         }
         else {

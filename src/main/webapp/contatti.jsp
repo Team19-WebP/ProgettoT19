@@ -15,7 +15,7 @@
     </div>
     <br>
     <div>
-    <form action=  <%= response.encodeURL("ServletFormContatti")%> method="post" onsubmit="return validaEmail()">
+    <form action=  <%= response.encodeURL("ServletContatti")%> method="post" onsubmit="return validaEmail()">
         <div class="inputAndLabel">
             <label for="nome">Nome: </label>
             <input type="text" id="nome" name="nome" placeholder="inserisci il tuo nome..." maxlength="50" size="100">

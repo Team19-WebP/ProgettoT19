@@ -23,19 +23,21 @@ function controllaPreferenza() {
             }
         }
     }
-    xhttp.open("GET", "/progettoteam19/SessionServlet", true);
+    xhttp.open("GET", "/progettoteam19/ServletSession", true);
     xhttp.send();
 }
 
-// richiesta alla servlet SessionServlet per settare la scelta dell'utente
+// richiesta alla servlet ServletSession per settare la scelta dell'utente
 function preferenzaCookies(pref) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             chiudiInformativa();
+            let retval = this.responseText;
+            scelta = retval;
         }
     }
-    xhttp.open("POST", "/progettoteam19/SessionServlet", true);
+    xhttp.open("POST", "/progettoteam19/ServletSession", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("cookies=" + encodeURIComponent(pref));
 }
