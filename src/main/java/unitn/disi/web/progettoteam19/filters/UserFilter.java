@@ -28,21 +28,7 @@ public class UserFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession(false);
 
-        //Gestisco casistica dei cookie rifiutati
-        /*ServletContext servletContext = request.getServletContext();
-        String cookies = null;
-        if (servletContext.getAttribute("cookies") != null){
-            cookies = (String) servletContext.getAttribute("cookies");
-        }
-
-        if(cookies != null && !cookies.equals("true")){
-            Cookie[] coo = req.getCookies();
-        }*/
-
         if(session == null || session.getAttribute("type") == null) {
-            /*if(cookies == null || cookies.equals("false")){
-                servletContext.setAttribute("cookies", null);
-            }*/
             req.setAttribute("expired", "true");
             if(session != null){
                 session.invalidate();

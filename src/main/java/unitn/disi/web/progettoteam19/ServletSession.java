@@ -29,9 +29,6 @@ public class ServletSession extends HttpServlet {
             System.out.println("[a] cookiesPref non è nullo ed è " + cookiesPref);
         }
 
-        //TODO controllare bene se cookie disabilitati da browser
-        //TODO e l'utente preme accetta
-
         if(cookiesPref != null && cookiesPref.equals("false")) {
             System.out.println("[b] cookiesPref non è nullo ed è " + cookiesPref);
             response.getWriter().println(cookiesPref);
