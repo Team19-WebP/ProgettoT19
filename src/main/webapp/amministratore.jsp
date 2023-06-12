@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
 
@@ -29,7 +28,7 @@
       <button onclick="visualizzaUtenti();" id="buttonUtenti">elenco di tutti gli utenti</button>
       <button onclick="visualizzaSimpatizzanti();" id="buttonSimpatizzanti">elenco di tutti i simpatizzanti</button>
       <button onclick="visualizzaAderenti();" id="buttonAderenti">elenco di tutti gli aderenti</button>
-      <button onclick="visualizzaVisite();" id="buttonVisite">statistiche visite al sito</button>
+      <button onclick="visualizzaVisite();" id="buttonVisite" class="selezionatoPaginePers">statistiche visite al sito</button>
       <button onclick="visualizzaDonations();" id="buttonDonations">statistiche donazioni</button>
     </nav>
   </div>

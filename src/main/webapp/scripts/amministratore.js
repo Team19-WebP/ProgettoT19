@@ -1,82 +1,104 @@
-let utenti = document.querySelector("#utenti");                 //
-let simpatizzanti = document.querySelector("#simpatizzanti");   //
-let aderenti = document.querySelector("#aderenti");             // DIV delle varie sezioni da mostrare/nascondere
-let visite = document.querySelector("#visite");                 //
-let donations = document.querySelector("#donations");           //
+let utenti = document.getElementById("utenti");               //
+let simpatizzanti = document.getElementById("simpatizzanti"); //
+let aderenti = document.getElementById("aderenti");           // DIV delle varie sezioni da mostrare/nascondere
+let visite = document.getElementById("visite");               //
+let donations = document.getElementById("donations");         //
 
+let buttonUtenti = document.getElementById("buttonUtenti");               //
+let buttonSimpatizzanti = document.getElementById("buttonSimpatizzanti"); //
+let buttonAderenti = document.getElementById("buttonAderenti");           // bottoni per mostrare le varie sezioni
+let buttonVisite = document.getElementById("buttonVisite");               //
+let buttonDonations = document.getElementById("buttonDonations");         //
 
 /** queste funzioni chiamate <b>visualizzaXXX</b> nascondono tutti i contenuti della pagina privata tranne quello della sezione selezionata tramite button*/
 function visualizzaUtenti(){
     if(utenti.hidden === true){
+        buttonUtenti.className="selezionatoPaginePers";
+        buttonSimpatizzanti.className="";
+        buttonAderenti.className="";
+        buttonVisite.className="";
+        buttonDonations.className="";
         stampaUtenti("/progettoteam19/ServletGetAllUsers", "all");
         utenti.hidden = false;
         simpatizzanti.hidden = true;
         aderenti.hidden = true;
         visite.hidden = true;
         donations.hidden = true;
-
     } else {
+        buttonUtenti.className="";
         utenti.hidden = true;
     }
 }
-
 function visualizzaSimpatizzanti(){
     if(simpatizzanti.hidden === true){
+        buttonUtenti.className="";
+        buttonSimpatizzanti.className="selezionatoPaginePers";
+        buttonAderenti.className="";
+        buttonVisite.className="";
+        buttonDonations.className="";
         stampaUtenti("/progettoteam19/ServletGetAllOneType", "simpatizzante")
         utenti.hidden = true;
         simpatizzanti.hidden = false;
         aderenti.hidden = true;
         visite.hidden = true;
         donations.hidden = true;
-
     } else {
+        buttonSimpatizzanti.className="";
         simpatizzanti.hidden = true;
     }
-
 }
-
 function visualizzaAderenti(){
     if(aderenti.hidden === true){
+        buttonUtenti.className="";
+        buttonSimpatizzanti.className="";
+        buttonAderenti.className="selezionatoPaginePers";
+        buttonVisite.className="";
+        buttonDonations.className="";
         stampaUtenti("/progettoteam19/ServletGetAllOneType", "aderente")
         utenti.hidden = true;
         simpatizzanti.hidden = true;
         aderenti.hidden = false;
         visite.hidden = true;
         donations.hidden = true;
-
     } else {
+        buttonAderenti.className="";
         aderenti.hidden = true;
     }
-
 }
-
 function visualizzaVisite(){
     if(visite.hidden === true){
+        buttonUtenti.className="";
+        buttonSimpatizzanti.className="";
+        buttonAderenti.className="";
+        buttonVisite.className="selezionatoPaginePers";
+        buttonDonations.className="";
         utenti.hidden = true;
         simpatizzanti.hidden = true;
         aderenti.hidden = true;
         visite.hidden = false;
         donations.hidden = true;
-
     } else {
+        buttonVisite.className="";
         visite.hidden = true;
     }
-
 }
-
 function visualizzaDonations(){
     if(donations.hidden === true){
+        buttonUtenti.className="";
+        buttonSimpatizzanti.className="";
+        buttonAderenti.className="";
+        buttonVisite.className="";
+        buttonDonations.className="selezionatoPaginePers";
         setDonaz();
         utenti.hidden = true;
         simpatizzanti.hidden = true;
         aderenti.hidden = true;
         visite.hidden = true;
         donations.hidden = false;
-
     } else {
+        buttonDonations.className="";
         donations.hidden = true;
     }
-
 }
 /**in questa funzione vengono recuperati i dati da stampare nelle tabelle di utenti, simpatizzanti e aderenti con AJAJ  */
 function stampaUtenti(url, type) {
@@ -132,7 +154,6 @@ function stampaUtenti(url, type) {
                 for (let i = 0; i < my_JSON_array.length; i++) {
                     row = table.insertRow();
                     let current_JSON_object = JSON.parse(my_JSON_array[i]);
-                    console.log(current_JSON_object);
                     for (let key of header) {
                         if(type !== "all" && key==="tipologia"){
                             continue;
@@ -293,9 +314,6 @@ function setDonaz() {
                     donazioniGiornaliere[objDonaz.month-1][objDonaz.day-1] += objDonaz.importo;
                     donazioniMensili[objDonaz.month-1] += objDonaz.importo;
                     donazioniAnnuali += objDonaz.importo;
-                }
-                for(let i=0; i<12;i++){
-                    console.log(donazioniMensili[i]);
                 }
 
             }

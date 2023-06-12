@@ -33,15 +33,16 @@ function confermaCancellaIscrizione(){
     return retVal;
 }
 
-let dati = document.querySelector("#dati");                 //
-let danger = document.querySelector("#danger");             //
-let attivita = document.querySelector("#attivita"); // DIV delle varie sezioni da mostrare/nascondere
-let donation = document.querySelector("#donation");         //
-let confDonation = document.querySelector("#confDonaz");    //
-let buttonDati = document.querySelector("#buttonDati");
-let buttonAttivita = document.querySelector("#buttonAttivita");/*TODO fissare il bottone cliccato con gli id [anche in simp e amm]*/
-let buttonDanger = document.querySelector("#buttonDanger");
-let buttonDonation = document.querySelector("#buttonDonation");
+let dati = document.getElementById("dati");              //
+let danger = document.getElementById("danger");          //
+let attivita = document.getElementById("attivita");      // DIV delle varie sezioni da mostrare/nascondere
+let donation = document.getElementById("donation");      //
+let confDonation = document.getElementById("confDonaz"); //
+
+let buttonDati = document.getElementById("buttonDati");         //
+let buttonAttivita = document.getElementById("buttonAttivita"); //  bottoni per mostrare le varie sezioni
+let buttonDanger = document.getElementById("buttonDanger");     //
+let buttonDonation = document.getElementById("buttonDonation"); //
 /** script che impedisce di fare donazioni negative */
 function validaDonazione(){
     let valore = document.querySelector("#donazione").value;
