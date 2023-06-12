@@ -87,11 +87,19 @@ public class frasiServlet extends HttpServlet {
                 e.printStackTrace();
             }
             long remainingTime = maxIdle - (currentTime - lastAccessedTime)/1000;
-            String cookies = (String)request.getServletContext().getAttribute("cookies");
+            Cookie[] cookies = request.getCookies();
+            String clientId = null;
+            if(cookies != null){
+                for(Cookie c : cookies){
+                    if(c.getName().equals("clientId")){
+                        clientId = c.getValue();
+                    }
+                }
+            }
             SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
             String creationTimeString = dateFormat.format(new Date(creationTime));
             response.getWriter().println("Remaining time: " + remainingTime);
-            response.getWriter().println("Cookies: " + cookies);
+            response.getWriter().println("ClientID: " + clientId);
             System.out.println("Remaining time: " + remainingTime);
             response.getWriter().println("Session Creation Time: " + creationTimeString);
         } else {
