@@ -28,7 +28,7 @@
     <img id="imgAssociazione" src="https://images.pexels.com/photos/3856033/pexels-photo-3856033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Persone Diverse Positive Che Fanno Le Facce Alla Macchina Fotografica">
   </div>
   <div id="downloadLeaflet">
-    <a href="immagini/leafletLR.pdf" download> Download Leaflet
+    <a href="immagini/leafletT4WA5.pdf" download> Download Leaflet
     </a>
   </div>
 </main>

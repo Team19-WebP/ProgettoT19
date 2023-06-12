@@ -73,39 +73,5 @@ public class frasiServlet extends HttpServlet {
         Random rnd = new Random();
         int index = rnd.nextInt(frasiIspiranti.size());
         response.getWriter().println(frasiIspiranti.get(index));
-//        HttpSession session = request.getSession(false);
-        // Per DEBUG relativo alla sessione, vedo quanto tempo mi rimane
-//        if (session != null) {
-//            long maxIdle = session.getMaxInactiveInterval();
-//            long creationTime = session.getCreationTime();
-//            long lastAccessedTime;
-//            long currentTime = System.currentTimeMillis();
-//            try {
-//                lastAccessedTime = (long) session.getAttribute("lastAccessedTime");
-//            } catch (NullPointerException e) {
-//                lastAccessedTime = currentTime;
-//                e.printStackTrace();
-//            }
-//            long remainingTime = maxIdle - (currentTime - lastAccessedTime)/1000;
-//            Cookie[] cookies = request.getCookies();
-//            String clientId = null;
-//            if(cookies != null){
-//                for(Cookie c : cookies){
-//                    if(c.getName().equals("clientId")){
-//                        clientId = c.getValue();
-//                    }
-//                }
-//            }
-//            String cookiesPref = (String) session.getAttribute("cookiesPref");
-//            SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-//            String creationTimeString = dateFormat.format(new Date(creationTime));
-//            response.getWriter().println("Remaining time: " + remainingTime);
-//            response.getWriter().println("ClientID: " + clientId + " Cookies: " + cookiesPref);
-//            response.getWriter().println("Session Creation Time: " + creationTimeString);
-//        } else {
-//            String cookiesPref = (String)session.getAttribute("cookiesPref");
-//
-//            response.getWriter().println("Session is null. Cookies: " + cookiesPref);
-//        }
     }
 }
