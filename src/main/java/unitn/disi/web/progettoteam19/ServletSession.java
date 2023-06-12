@@ -22,15 +22,22 @@ public class ServletSession extends HttpServlet {
             }
         }
 
+        if(allCookies != null){
+            for(Cookie c : allCookies){
+                System.out.println(c.getName() + ": " + c.getValue());
+                c.setMaxAge(0);
+                c.setPath("/");
+            }
+        }
 
         HttpSession session = request.getSession(false);
-        System.out.println("ID che ho: " + session.getId());
         String cookiesPref = null;
         if(session != null){
+            System.out.println("ID che ho: " + session.getId());
             cookiesPref = (String) session.getAttribute("cookiesPref");
         }
 
-        System.out.println(cookiesPref);
+        //System.out.println(cookiesPref);
 
         if(cookiesPref == null){
             response.getWriter().print("no");
@@ -64,14 +71,18 @@ public class ServletSession extends HttpServlet {
                 if(allCookies != null){
                     for(Cookie c : allCookies){
                         c.setMaxAge(0);
+                        c.setPath("/");
+                        c.setValue("");
                         response.addCookie(c);
                     }
                 }
 
                 HttpSession session = request.getSession(false);
-                session.setAttribute("cookiesPref", cookiesPref);
+                if(session != null){
+                    session.setAttribute("cookiesPref", cookiesPref);
+                    System.out.println("ID con cp: " + session.getId());
+                }
 
-                System.out.println("ID con cp: " + session.getId());
 
             }
         }
