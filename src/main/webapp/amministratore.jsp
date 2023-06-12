@@ -71,21 +71,21 @@
     </div>
 
     <div>
-      <p id="hitsHome" hidden="true"><jsp:getProperty name="counterHome" property="hits"/></p>
-      <p id="hitsAttivita" hidden="true"><jsp:getProperty name="counterAttivita" property="hits"/></p>
-      <p id="hitsAttivita1" hidden="true"><jsp:getProperty name="counterAttivita1" property="hits"/></p>
-      <p id="hitsAttivita2" hidden="true"><jsp:getProperty name="counterAttivita2" property="hits"/></p>
-      <p id="hitsAttivita3" hidden="true"><jsp:getProperty name="counterAttivita3" property="hits"/></p>
-      <p id="hitsSignIn" hidden="true"><jsp:getProperty name="counterSignin" property="hits"/></p>
-      <p id="hitsConfermaSignIn" hidden="true"><jsp:getProperty name="counterConfermasignin" property="hits"/></p>
-      <p id="hitsAderente" hidden="true"><jsp:getProperty name="counterAderente" property="hits"/></p>
-      <p id="hitsSimpatizzante" hidden="true"><jsp:getProperty name="counterSimpatizzante" property="hits"/></p>
-      <p id="hitsAmministratore" hidden="true"><jsp:getProperty name="counterAmministratore" property="hits"/></p>
-      <p id="hitsContatti" hidden="true"><jsp:getProperty name="counterContatti" property="hits"/></p>
-      <p id="hitsConfermaContatti" hidden="true"><jsp:getProperty name="counterInvioConfermato" property="hits"/></p>
-      <p id="hitsLogin" hidden="true"><jsp:getProperty name="counterLogin" property="hits"/></p>
-      <p id="hitsLogout" hidden="true"><jsp:getProperty name="counterLogout" property="hits"/></p>
-      <p id="hitsChiSiamo" hidden="true"><jsp:getProperty name="counterChisiamo" property="hits"/></p>
+      <p id="hitsHome" hidden="true"><jsp:getProperty name="counterHome" property="hits"/></p>                          <%----%>
+      <p id="hitsAttivita" hidden="true"><jsp:getProperty name="counterAttivita" property="hits"/></p>                  <%----%>
+      <p id="hitsAttivita1" hidden="true"><jsp:getProperty name="counterAttivita1" property="hits"/></p>                <%----%>
+      <p id="hitsAttivita2" hidden="true"><jsp:getProperty name="counterAttivita2" property="hits"/></p>                <%----%>
+      <p id="hitsAttivita3" hidden="true"><jsp:getProperty name="counterAttivita3" property="hits"/></p>                <%----%>
+      <p id="hitsSignIn" hidden="true"><jsp:getProperty name="counterSignin" property="hits"/></p>                      <%----%>
+      <p id="hitsConfermaSignIn" hidden="true"><jsp:getProperty name="counterConfermasignin" property="hits"/></p>      <%--includo i BEAN che contengoono i dati per il grafico delle visite--%>
+      <p id="hitsAderente" hidden="true"><jsp:getProperty name="counterAderente" property="hits"/></p>                  <%--e setto tutti gli hidden a true perche non voglio visualizzarli--%>
+      <p id="hitsSimpatizzante" hidden="true"><jsp:getProperty name="counterSimpatizzante" property="hits"/></p>        <%--ma solo poterli includere nel file js--%>
+      <p id="hitsAmministratore" hidden="true"><jsp:getProperty name="counterAmministratore" property="hits"/></p>      <%----%>
+      <p id="hitsContatti" hidden="true"><jsp:getProperty name="counterContatti" property="hits"/></p>                  <%----%>
+      <p id="hitsConfermaContatti" hidden="true"><jsp:getProperty name="counterInvioConfermato" property="hits"/></p>   <%----%>
+      <p id="hitsLogin" hidden="true"><jsp:getProperty name="counterLogin" property="hits"/></p>                        <%----%>
+      <p id="hitsLogout" hidden="true"><jsp:getProperty name="counterLogout" property="hits"/></p>                      <%----%>
+      <p id="hitsChiSiamo" hidden="true"><jsp:getProperty name="counterChisiamo" property="hits"/></p>                  <%----%>
     </div>
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
