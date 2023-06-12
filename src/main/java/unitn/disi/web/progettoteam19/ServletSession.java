@@ -74,6 +74,7 @@ public class ServletSession extends HttpServlet {
                         response.addCookie(c);
                     }
                 }
+                response.getWriter().print("rifiutato");
             }
         }
         else {

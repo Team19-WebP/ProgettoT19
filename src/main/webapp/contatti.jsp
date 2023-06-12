@@ -15,7 +15,7 @@
     </div>
     <br>
     <div>
-    <form action=  <%= response.encodeURL("ServletFormContatti")%> method="post" onsubmit="return validaEmail()">
+    <form action=  <%= response.encodeURL("ServletContatti")%> method="post" onsubmit="return validaEmail()">
         <div class="inputAndLabel">
             <label for="nome">Nome: </label>
             <input type="text" id="nome" name="nome" placeholder="inserisci il tuo nome..." maxlength="50" size="100">
@@ -39,6 +39,7 @@
             <select id="comboBox" name="comboBox">
                 <option value="iscrizione">Mi piacerebbe unirmi alla vostra associazione</option>
                 <option value="info">Vorrei saperne di più su quello che fate</option>
+                <option value="donazione">Vorrei sostenere le vostre attività con una donazione</option>
                 <option value="altro">Altro...</option>
             </select>
         </div>

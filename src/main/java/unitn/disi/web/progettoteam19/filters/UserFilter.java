@@ -49,8 +49,6 @@ public class UserFilter implements Filter {
             }
             req.getRequestDispatcher(res.encodeURL("./login.jsp")).forward(req, res);
         } else {
-            Cookie[] coo = req.getCookies();
-
             chain.doFilter(request, response);
         }
     }

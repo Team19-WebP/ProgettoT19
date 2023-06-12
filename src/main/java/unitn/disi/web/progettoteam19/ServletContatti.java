@@ -16,7 +16,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 
-@WebServlet(name = "ServletFormContatti", value = "/ServletFormContatti")
+@WebServlet(name = "ServletContatti", value = "/ServletContatti")
 public class ServletContatti extends HttpServlet {
 
 
