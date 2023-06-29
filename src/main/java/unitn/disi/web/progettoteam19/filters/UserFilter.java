@@ -1,8 +1,7 @@
 package unitn.disi.web.progettoteam19.filters;
 
 import javax.servlet.*;
-import javax.servlet.annotation.*;
-import javax.servlet.http.Cookie;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -32,9 +31,6 @@ public class UserFilter implements Filter {
 
         if(session == null || session.getAttribute("type") == null) {
             req.setAttribute("expired", "true");
-            /*if(session != null){
-                session.invalidate();
-            }*/
             req.getRequestDispatcher(res.encodeURL("./login.jsp")).forward(req, res);
         } else {
             chain.doFilter(request, response);

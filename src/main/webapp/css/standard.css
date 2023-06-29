@@ -332,7 +332,7 @@ html {
 }
 .frasiInspiranti {
 
-    /* Misure calcolate con il browser nellla sezione computed! */
+    /* Misure calcolate con il browser nella sezione computed! */
     position: fixed;
 
     /* Commentare la riga sotto per metterlo a sinistra*/
@@ -582,7 +582,7 @@ Impostiamo anche cosa succede se ci siamo sopra col mouse*/
     display: none;
 }
 
-/*Per avere inforamzioni su che immagine stiamo guaurdando*/
+/*Per avere informazioni su che immagine stiamo guardando*/
 
 .numbertext {
     color: var(--COLORE3);
