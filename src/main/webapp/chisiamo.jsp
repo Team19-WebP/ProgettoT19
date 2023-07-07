@@ -102,7 +102,7 @@
     I nostri riconoscimenti
    </h3>
    <p>
-    Durante il corso degli anni la nostra associazioni ha ricevuto diversi riconoscimenti nazionali e internazionali che testimoniano il forte impegno che l'assocazione e i suoi membri mettono nel loro lavoro.
+    Durante il corso degli anni la nostra associazioni ha ricevuto diversi riconoscimenti nazionali e internazionali che testimoniano il forte impegno che l'associazione e i suoi membri mettono nel loro lavoro.
     Nel 2018 ha anche ricevuto un finanziamento di 50 mila euro dalla provincia autonoma di Trento e di Bolzano per un progetto umanitario in Liberia.
   </section>
 

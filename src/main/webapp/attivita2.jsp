@@ -16,10 +16,10 @@
     <div class="containerAttivita containerDescrizione">
         <h3>In cosa consiste?</h3>
         <p>
-            Il progetto Team4World ha l'obbiettivo di offrire oppurtunità e sostegno ai giovani. A tale scopo, uno dei programmi principali è l'organizzazione di settimane di incontri ricreativi per promuovere la collaborazione e insegnare l'importanza del lavoro di squadra.
+            Il progetto Team4World ha l'obbiettivo di offrire opportunità e sostegno ai giovani. A tale scopo, uno dei programmi principali è l'organizzazione di settimane di incontri ricreativi per promuovere la collaborazione e insegnare l'importanza del lavoro di squadra.
         </p>
         <p>
-            Durante queste settimane, i ragazzi provenienti dalle comunità locali vengono invitati a partecipare a una serie di attività di team building. I giovani vengono suddivisi in squadre e vengono proposte loro delle sfide che richiedono un forte spirito di cooperazione per essere superate. Attraverso queste attività, i giovani imparano  a mettersi in gioco, condividere idee e raggiungere insieme l'obbiettivo prefissato.
+            Durante queste settimane, i ragazzi provenienti dalle comunità locali vengono invitati a partecipare a una serie di attività di team building. I giovani vengono suddivisi in squadre e vengono proposte loro delle sfide che richiedono un forte spirito di cooperazione per essere superate. Attraverso queste attività, i giovani imparano a mettersi in gioco, condividere idee e raggiungere insieme l'obbiettivo prefissato.
         </p>
         <p>
             In aggiunta, vengono organizzati incontri con personaggi di successo che con impegno e costanza sono riusciti a realizzare i propri sogni. Questi ospiti portano le loro esperienze professionali e personali, incoraggiando i ragazzi a credere in se stessi e nelle proprie capacità.<br>Nel 2019, in Somalia, abbiamo avuto l'onore di ospitare il professor Federico Lo Voce, brillante docente di Informatica che in breve è riuscito a portare la sua piccola azienda al successo. Raccontava: "Ho iniziato nel garage di casa, insieme a un gruppo di amici, e insieme, rispettosi l'uno dell'altro, siamo giunti dove siamo ora".

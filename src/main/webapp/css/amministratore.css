@@ -71,9 +71,8 @@ form {
     margin-right: 10vw;
 }
 #contatoreVisite, #totaleDonazioni {
-    border: solid black;
     border-radius: 10px;
-    border-width: medium;
+    border: medium solid black;
     background: var(--COLORE3);
     opacity: 0.9;
     text-align: center;

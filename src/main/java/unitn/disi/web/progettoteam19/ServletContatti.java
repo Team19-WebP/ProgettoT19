@@ -36,7 +36,7 @@ public class ServletContatti extends HttpServlet {
         String oggetto = "Richiesta di contatto di " + nome + " " + cognome + "!";
         String testo = "Richiesta di contatto da parte di:\n\tNome: " + nome  +
                 "\n\tCognome: " + cognome + "\n\tIndirizzo email: " + emailUser + "\n\n";
-        testo += "Motiviazione del contatto:\n" + motivazione + "\n\n";
+        testo += "Motivazione del contatto:\n" + motivazione + "\n\n";
 
         Properties properties = System.getProperties();
 

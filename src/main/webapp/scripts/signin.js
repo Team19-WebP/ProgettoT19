@@ -20,7 +20,7 @@ let confpassword = document.querySelector("#confpassword");
 function validaForm(event) {
     /*Senza manda il submit anche se non è validato*/
     // event.preventDefault();
-    /*restto i messaggi di errore*/
+    /*resetto i messaggi di errore*/
     resetForm();
     /*metto dentro un array tutti i campi obbligatori*/
     let requiredElements = document.querySelectorAll(".inputAndLabel input[type='text'], .inputAndLabel input[type='date'], .inputAndLabel input[type='password']");
