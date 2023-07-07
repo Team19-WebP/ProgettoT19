@@ -3,10 +3,7 @@ package unitn.disi.web.progettoteam19;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-import javax.validation.constraints.Null;
 import java.io.IOException;
-import java.sql.*;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -22,49 +19,17 @@ public class frasiServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        final String dbURL = "jdbc:derby://localhost:1527/Team19DB";
-        final String user = "APP";
-        final String password = "admin";
-        Connection connection = null;
-        try{
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            connection = DriverManager.getConnection(dbURL, user, password);
-        } catch (ClassNotFoundException | SQLException ex){
-            ex.printStackTrace();
-        }
-
 
         frasiIspiranti = new ArrayList<>();
-        try{
-            Statement getting = connection.createStatement();
-            ResultSet resultSet = getting.executeQuery("SELECT * FROM FRASIISPIRANTI");
-
-
-            while (resultSet.next()){
-                frasiIspiranti.add(resultSet.getString(2));
-            }
-
-            getting.close();
-            resultSet.close();
-
-        } catch (SQLException ex){
-            ex.printStackTrace();
-        }
-
-        //Alcune frasi di default in caso di problemi col DB
-        frasiIspiranti.add("Se cerchi una mano che ti aiuti nel momento del bisogno, la trovi alla fine del tuo braccio.");
+        frasiIspiranti.add("Insieme possiamo fare la differenza, tendendo la mano a chi ha bisogno e riempiendo il mondo di amore e speranza.");
         frasiIspiranti.add("C\u0027è un solo tipo di successo: quello di fare della propria vita ciò che si desidera!");
         frasiIspiranti.add("Lascia che la curiosità ti travolga.");
-        frasiIspiranti.add("Dimenticare aiuta, rimediare di più.");
         frasiIspiranti.add("Il tempo non è bravo a nascondersi, se lo cerchi lo trovi sempre.");
-        frasiIspiranti.add("Va bene tutto, ma c'è un limite a tutto.");
-        frasiIspiranti.add("La vita è come il font nel css, non sai mai quel che ti capita.");
-
-        try {
-            connection.close();
-        } catch (SQLException ex){
-            ex.printStackTrace();
-        }
+        frasiIspiranti.add("Ogni atto di gentilezza, per piccolo che sia, può cambiare la vita di qualcuno. Sii la luce che illumina il cammino degli altri.");
+        frasiIspiranti.add("Non importa quanto poco possiamo dare, ciò che conta davvero è la volontà di condividere e supportare chi è in difficoltà.");
+        frasiIspiranti.add("Ogni persona merita una chance di rifiorire. Sii l'angelo che gli estende la mano e lo aiuta a rialzarsi.");
+        frasiIspiranti.add("L'amore e la compassione sono i pilastri su cui si basa ogni azione di aiuto. Coltivali e vedrai il mondo trasformarsi sotto i tuoi occhi.");
+        frasiIspiranti.add("Condividi la gioia e vedrai i sorrisi moltiplicarsi.");
     }
 
     @Override
