@@ -4,32 +4,26 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.UUID;
 
-@WebServlet(name = "ServletSession", value = "/ServletSession")
-public class ServletSession extends HttpServlet {
+
+/**  Servlet per la gestione dei cookies
+*
+* */
+@WebServlet(name = "ServletCookies", value = "/ServletCookies")
+public class ServletCookies extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-//        Cookie[] allCookies = request.getCookies();
-//        if(allCookies != null){
-//            for(Cookie c : allCookies){
-//                if(c.getName().equals("clientId")){
-//                    response.getWriter().print(c.getValue());
-//                    return;
-//                }
-//            }
-//        }
-//
-//        if(allCookies != null){
-//            for(Cookie c : allCookies){
-//                System.out.println(c.getName() + ": " + c.getValue());
-//                c.setMaxAge(0);
-//                c.setValue("");
-//                c.setPath("/");
-//                response.addCookie(c);
-//            }
-//        }
+
+        Cookie[] allCookies = request.getCookies();
+        if(allCookies != null){
+            for(Cookie c : allCookies){
+                if(c.getName().equals("cookiesPref")){
+                    response.getWriter().print(c.getValue());
+                    return;
+                }
+            }
+        }
 
         HttpSession session = request.getSession(false);
         String cookiesPref = null;
@@ -51,12 +45,8 @@ public class ServletSession extends HttpServlet {
         if(cookiesPref == null){
             request.getRequestDispatcher(response.encodeURL("./error.jsp")).forward(request, response);
         } else {
-            if(cookiesPref.equals("false")){
 
-//                String uniqueId = UUID.randomUUID().toString();
-//                Cookie c = new Cookie("clientId", uniqueId);
-//                c.setMaxAge(365 * 24 * 60 * 60);
-//                response.addCookie(c);
+            if(cookiesPref.equals("false")){
                 Cookie[] allCookies = request.getCookies();
                 if(allCookies != null){
                     for(Cookie c : allCookies){
@@ -66,7 +56,10 @@ public class ServletSession extends HttpServlet {
                         response.addCookie(c);
                     }
                 }
-
+            } else if (cookiesPref.equals("true")) {
+                Cookie cp = new Cookie("cookiesPref", "true");
+                cp.setMaxAge(-1);
+                response.addCookie(cp);
             }
             HttpSession session = request.getSession(false);
             if(session != null){

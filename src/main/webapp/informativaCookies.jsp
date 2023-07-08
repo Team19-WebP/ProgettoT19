@@ -12,13 +12,13 @@
 
         </p>
         <p id="firma"> Buona navigazione dal team di Tum4World!</p>
-        <button class="buttonCookies" id="accetta" onclick="preferenzaCookies('<%=response.encodeURL("/progettoteam19/ServletSession")%>', 'true')">Accetta</button>
-        <button class="buttonCookies" id="rifiuta" onclick="preferenzaCookies('<%=response.encodeURL("/progettoteam19/ServletSession")%>', 'false')">Rifiuta</button>
+        <button class="buttonCookies" id="accetta" onclick="preferenzaCookies('<%=response.encodeURL("/progettoteam19/ServletCookies")%>', 'true')">Accetta</button>
+        <button class="buttonCookies" id="rifiuta" onclick="preferenzaCookies('<%=response.encodeURL("/progettoteam19/ServletCookies")%>', 'false')">Rifiuta</button>
     </div>
 
 </div>
 <script src="scripts/cookies.js"></script>
 <%-- Anche per le richieste fatte con AJAX bisogna usare encodeUrl nel caso i cookies siano disabilitati --%>
 <script>
-    controllaPreferenza('<%=response.encodeURL("/progettoteam19/ServletSession")%>');
+    controllaPreferenza('<%=response.encodeURL("/progettoteam19/ServletCookies")%>');
 </script>

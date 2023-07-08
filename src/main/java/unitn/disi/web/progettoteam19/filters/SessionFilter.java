@@ -38,10 +38,8 @@ public class SessionFilter implements Filter {
             String value = null;
             if(session.getAttribute("cookiesPref") != null){
                 value = (String) session.getAttribute("cookiesPref");
-                System.out.println("[e]: value: " + value);
             }
             if(remainingTime < 0) {
-                System.out.println("sessione invalidata :(");
                 session.invalidate();
                 session = req.getSession();
                 session.setAttribute("cookiesPref", value);

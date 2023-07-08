@@ -29,7 +29,7 @@ function controllaPreferenza(url) {
     xhttp.send();
 }
 
-// richiesta alla servlet ServletSession per settare la scelta dell'utente
+// richiesta alla servlet ServletCookies per settare la scelta dell'utente
 function preferenzaCookies(url, pref) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
