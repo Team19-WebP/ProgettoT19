@@ -10,13 +10,15 @@ import java.io.*;
 public class Counter implements Serializable {
 
     private int hits = 0;
+    private String page = null;
 
     public Counter() {
 
     }
 
-    public Counter(int defaultValue){
+    public Counter(int defaultValue, String page){
         hits = defaultValue;
+        this.page = page;
     }
 
     public synchronized void manuallySet(int newvalue){

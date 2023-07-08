@@ -74,10 +74,10 @@ function visualizzaAderenti(){
 }
 function visualizzaVisite(){
     if(visite.hidden === true){
+        buttonVisite.className="selezionatoPaginePers";
         buttonUtenti.className="";
         buttonSimpatizzanti.className="";
         buttonAderenti.className="";
-        buttonVisite.className="selezionatoPaginePers";
         buttonDonations.className="";
         utenti.hidden = true;
         simpatizzanti.hidden = true;
@@ -86,6 +86,7 @@ function visualizzaVisite(){
         donations.hidden = true;
         contatoreVisite.hidden = false;
         totaleDonazioni.hidden = true;
+        getHits();
     } else {
         buttonVisite.className="";
         contatoreVisite.hidden = true;
@@ -209,81 +210,99 @@ let hitsLogin = document.querySelector("#hitsLogin");                       //
 let hitsLogout = document.querySelector("#hitsLogout");                     //
 
 /** definisco tutti i parametri del grafico creato con le librerie di <b>HIGHCHARTS</b> */
+let dataHits = [];
+function getHits() {    // Preparing request
+    let url = "/progettoteam19/ServletGetHits";
+    // Making request
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", url, true);
+    xhttp.responseType = "json";
 
-Highcharts.chart('GraficoVisite', {
-    chart: {
-        type: 'column',
-        width: 800
-    },
-    title: {
-        text: 'Visite per pagina al sito'
-    },
-    subtitle: {
-        text: 'Source: Tum4World analytics'
-    },
-    xAxis: {
-        type: 'category',
-        labels: {
-            rotation: -45,
-            style: {
-                fontSize: '13px',
-                fontFamily: 'Verdana, sans-serif'
-            }
+    xhttp.onreadystatechange = function () {
+        let done = 4, ok = 200;
+        if (xhttp.readyState === done && xhttp.status === ok) {
+
+            console.log(this.response);
+            let my_JSON_array =this.response;
+            let totalHits;
+            dataHits = [[]];
+            my_JSON_array.forEach(dataEntry => {
+                let entry =  JSON.parse(dataEntry);
+                if(entry.page == "generale") {
+                    totalHits = entry.hits;
+                } else {
+                    dataHits.push([entry.page, entry.hits]);
+                }
+            });
+            let conTot = document.querySelector("#contatoreVisite");
+
+            conTot.innerHTML = "Visite sito: <b>" + totalHits + "</b> ";
+            creaGraficoHits();
         }
-    },
-    yAxis: {
-        min: 0,
+    }
+    xhttp.send();
+}
+
+function creaGraficoHits () {
+    Highcharts.chart('GraficoVisite', {
+        chart: {
+            type: 'column',
+            width: 800
+        },
         title: {
-            text: 'numero di visite'
-        }
-    },
-    legend: {
-        enabled: false
-    },
-    tooltip: {
-        pointFormat: 'visite: <b>{point.y:.1f}</b>'
-    },
-    series: [{
-        name: 'Visite',
-        colors: [
-            '#00ffff', '#ff00ff', '#008000', '#dc143c',
-            '#0000ff', '#808080', '#ffff00', '#d2691e', //questi sono i colori delle varie colonne del grafico
-            '#533be1', '#daa520', '#00ff00', '#800000',
-            '#808000', '#2c46db', '#ff69b4'
-        ],
-        colorByPoint: true,
-        groupPadding: 0,
-        data: [
-            ['home', Number(hitsHome.innerText)],                           //
-            ['attivita', Number(hitsAttivita.innerText)],                   //
-            ['Aisha', Number(hitsAttivita1.innerText)],                     //
-            ['Team4World', Number(hitsAttivita2.innerText)],                //
-            ['Abc4Future', Number(hitsAttivita3.innerText)],                //
-            ['chiSiamo', Number(hitsChiSiamo.innerText)],                   //
-            ['contatti', Number(hitsContatti.innerText)],                   //
-            ['conferma contatti', Number(hitsConfermaContatti.innerText)],  // questi sono i dati veri e propri delle visite al sito
-            ['sign-in', Number(hitsSignIn.innerText)],                      //
-            ['conferma sign-in', Number(hitsConfermaSignIn.innerText)],     //
-            ['login', Number(hitsLogin.innerText)],                         //
-            ['logout', Number(hitsLogout.innerText)],                       //
-            ['aderente', Number(hitsAderente.innerText)],                   //
-            ['simpatizzante', Number(hitsSimpatizzante.innerText)],         //
-            ['amministratore', Number(hitsAmministratore.innerText)],       //
-        ],
-        dataLabels: { //qui definisco come devono essere visualizzati i dati sulle colonne
-            enabled: true,
-            rotation: -90,
-            color: '#000000',
-            align: 'right',
-            format: '{point.y:.1f}', // one decimal
-            y: 5, // 5 pixels down from the top
-            style: {
-                fontSize: '13px',
-                fontFamily: 'Verdana, sans-serif'
+            text: 'Visite per pagina al sito'
+        },
+        subtitle: {
+            text: 'Source: Tum4World analytics'
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
             }
-        }
-    }]
-});
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'numero di visite'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'visite: <b>{point.y:.1f}</b>'
+        },
+        series: [{
+            name: 'Visite',
+            colors: [
+                '#00ffff', '#ff00ff', '#008000', '#dc143c',
+                '#0000ff', '#808080', '#ffff00', '#d2691e', //questi sono i colori delle varie colonne del grafico
+                '#533be1', '#daa520', '#00ff00', '#800000',
+                '#808000', '#2c46db', '#ff69b4'
+            ],
+            colorByPoint: true,
+            groupPadding: 0,
+            data: dataHits,
+            dataLabels: { //qui definisco come devono essere visualizzati i dati sulle colonne
+                enabled: true,
+                rotation: -90,
+                color: '#000000',
+                align: 'right',
+                format: '{point.y:.1f}', // one decimal
+                y: 5, // 5 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+}
 
 //--------------------------------------------------------------------------------------------------------------------//
 
@@ -319,7 +338,6 @@ function setDonaz() {
             }
 
             let my_JSON_array = this.response;
-
             if (my_JSON_array != null && my_JSON_array.length > 0) {
 
                 for(let i=0; i< my_JSON_array.length; i++){

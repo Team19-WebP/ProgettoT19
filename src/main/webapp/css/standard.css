@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Raleway:wght@300&display=swap'); /* Grazie a queste variabili è possibile modificare i colori in maniera semplice*/
+/* Importa raleway da google font */
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Raleway:wght@300&display=swap');
+/* Grazie a queste variabili è possibile modificare i colori in maniera semplice*/
 :root {
     --COLORE1: #000000;         /**/
     --COLORE2: #31372B;         /**/
@@ -14,13 +16,10 @@
 /*###################################---BODY---############################################*/
 /*#########################################################################################*/
 
-/* Importa raleway da google font */
 body {
     /* Spazio da lasciare per l'intestazione */
     padding-top: 200px;
     background: var(--COLORE4);
-    /*background: -moz-linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #FFFFFF 100%);*/
-    /*background: -webkit-linear-gradient(45deg, #FEE9FF 0%, #FFE6F2 0%, #FFFFFF 100%);*/
     background: linear-gradient(45deg, var(--COLORE4) 0%, var(--COLORE5) 0%, white 100%);
     font-family: 'Raleway', sans-serif;
 }
@@ -50,7 +49,6 @@ input, #comboBox{
     width: 50vw;
     /*border-radius: 6px;*/
 }
-
 
 form{
     text-align: center;
@@ -257,8 +255,6 @@ a.linkImg:hover > .textAttivita {
 }
 
 #descrizioneHome {
-    /*padding-left: 20%;*/
-    /*padding-right: 20%;*/
     max-width: 400px;
     min-width: 300px;
     width: 90vw;
@@ -293,6 +289,17 @@ a.linkImg:hover > .textAttivita {
     padding: 2%;
 }
 
+#downloadLeaflet button{
+    max-width: 450px;
+    border-radius: 12px;
+    background-color: var(--COLORE3);
+    border: 10px solid var(--COLORE3);
+    width: 100%;
+}
+#downloadLeaflet button:hover {
+    border-color: var(--COLORE3);
+    box-shadow: 3px 6px 10px rgb(0, 0, 0, 0.6);
+}
 @media screen and (max-width: 538px){
 
     body {
@@ -334,7 +341,6 @@ html {
 
     /* Misure calcolate con il browser nella sezione computed! */
     position: fixed;
-
     /* Commentare la riga sotto per metterlo a sinistra*/
     width: 100%;
     /* Commentare la riga sopra per metterlo a sinistra*/
@@ -649,6 +655,8 @@ Impostiamo anche cosa succede se ci siamo sopra col mouse*/
     border: 2px solid black;
     width: 50%; /* Could be more or less, depending on screen size */
 }
+
+
 .buttonCookies {
     border-radius: 12px;
     border: 2px solid var(--COLORE2);
