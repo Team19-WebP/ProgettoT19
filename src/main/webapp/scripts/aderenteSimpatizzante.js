@@ -47,7 +47,7 @@ let buttonDonation = document.getElementById("buttonDonation"); //
 function validaDonazione(){
     const regexNumero = /^([0-9]{0,5})$/;
     let element = document.querySelector("#donazione");
-    if( element.value == "" || !regexNumero.test(element.value)) {
+    if( element.value == "" || !regexNumero.test(element.value) || element.value <= 0) {
         element.focus();
         element.style.borderColor = "#FF0000";
         const messaggioErrore = document.createElement("span");
