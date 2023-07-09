@@ -53,7 +53,6 @@ public class ServletCookies extends HttpServlet {
         } else {
             // nel caso
             if (cookiesPref.equals("false")) {
-                System.out.println("POST");
                 cancellaCookies(request, response);
             } else if (cookiesPref.equals("true")) {
                 Cookie cp = new Cookie("cookiesPref", "true");
