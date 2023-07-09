@@ -45,9 +45,17 @@ let buttonDanger = document.getElementById("buttonDanger");     //
 let buttonDonation = document.getElementById("buttonDonation"); //
 /** script che impedisce di fare donazioni negative */
 function validaDonazione(){
-    let valore = document.querySelector("#donazione").value;
-    if(valore <= 0){
-        alert("Inserire un importo >0!");
+    const regexNumero = /^([0-9]{0,5})$/;
+    let element = document.querySelector("#donazione");
+    if( element.value == "" || !regexNumero.test(element.value)) {
+        element.focus();
+        element.style.borderColor = "#FF0000";
+        const messaggioErrore = document.createElement("span");
+        messaggioErrore.className = "errore";
+        messaggioErrore.textContent = "Accettiamo quote da 1 a 99 999 euro.";
+        messaggioErrore.style.fontSize = "x-small";
+        messaggioErrore.style.color = "#FF0000";
+        element.parentNode.appendChild(messaggioErrore);
         return false;
     } else {
         return true;
@@ -67,7 +75,7 @@ function visualizzaDati(){
         danger.hidden = true;
         attivita.hidden = true;
         if(donation !== null) {
-            donation.hidden = true;
+            donation.style.display = "none";
         }
         if(confDonation !== null)
             confDonation.hidden = true;
@@ -88,7 +96,7 @@ function visualizzaAttivita(){
         danger.hidden = true;
         attivita.hidden = false;
         if(donation !== null) {
-            donation.hidden = true;
+            donation.style.display = "none";
         }
         if(confDonation !== null)
             confDonation.hidden = true;
@@ -111,7 +119,7 @@ function visualizzaDanger(){
         danger.hidden = false;
         attivita.hidden = true;
         if(donation !== null) {
-            donation.hidden = true;
+            donation.style.display = "none";
         }
         if(confDonation !== null)
             confDonation.hidden = true;
@@ -121,7 +129,8 @@ function visualizzaDanger(){
     }
 }
 function visualizzaDonation(){
-    if(donation.hidden === true){
+    console.log(donation.style.display);
+    if(donation.style.display == "none" || donation.hidden == true){
         buttonDati.className = "";
         buttonDanger.className = "";
         buttonAttivita.className = "";
@@ -129,11 +138,11 @@ function visualizzaDonation(){
         dati.hidden = true;
         danger.hidden = true;
         attivita.hidden = true;
-        donation.hidden = false;
+        donation.style.display = "flex";
         if(confDonation !== null)
             confDonation.hidden = true;
     } else {
         buttonDonation.className = "";
-        donation.hidden = true;
+        donation.style.display = "none";
     }
 }

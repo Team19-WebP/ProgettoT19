@@ -145,10 +145,14 @@
       <br>
 
       <form action= '<%= response.encodeURL("ServletDonazione")%>'  onsubmit="return validaDonazione();">
-        <label for="donazione">Importo (in €): </label>
-        <input type="number" step=".01" min="0" placeholder="Inserisci importo..."  id="donazione" name="donazione"> <br>
-        <br><br>
-        <input class="aderente" type="submit" value="dona">
+        <div class="inputAndLabel">
+          <label for="donazione">Importo (in €): </label>
+          <input type=number step="1" placeholder="Inserisci importo..."  id="donazione" name="donazione"> <br>
+        </div>
+        <br>
+        <div class="inputAndLabel" id="submitReset">
+          <input class="aderente" type="submit" value="dona">
+        </div>
       </form>
     </div>
 

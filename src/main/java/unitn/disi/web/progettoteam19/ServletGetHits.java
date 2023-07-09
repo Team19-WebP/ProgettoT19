@@ -1,9 +1,8 @@
-package unitn.disi.web.progettoteam19.db;
+package unitn.disi.web.progettoteam19;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import unitn.disi.web.progettoteam19.Counter;
-import unitn.disi.web.progettoteam19.model.Donazione;
+
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -13,13 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Month;
-import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Questa servlet viene usata per fornire i dati in formato json al grafico dei contatori da utilizzare

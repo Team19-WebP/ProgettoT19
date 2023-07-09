@@ -56,21 +56,21 @@ public class Index extends HttpServlet {
     public void init() throws ServletException {
         openConnection();
         counterGenerale = new Counter(getValue("generale"), "generale");
-        counterHome = new Counter(getValue("Home"), "Home");
-        counterAmministratore = new Counter(getValue("Amministratore"), "Amministratore");
-        counterAttivita = new Counter(getValue("Attivita"), "Attivita");
-        counterAttivita1 = new Counter(getValue("Aisha"), "Aisha");
-        counterAttivita2 = new Counter(getValue("Attivita2"), "Attivita2");
-        counterAttivita3 = new Counter(getValue("Attivita3"), "Attivita3");
-        counterConfermasignin = new Counter(getValue("Conferma Sign-in"), "Conferma Sign-in");
-        counterContatti = new Counter(getValue("Contatti"), "Contatti");
-        counterInvioConfermato = new Counter(getValue("Conferma Contatti"), "Conferma Contatti");
-        counterLogin = new Counter(getValue("Login"), "Login");
-        counterChisiamo = new Counter(getValue("Chi Siamo"), "Chi Siamo");
-        counterLogout = new Counter(getValue("Logout"), "Logout");
-        counterSignin = new Counter(getValue("Sign-in"), "Sign-in");
-        counterAderente = new Counter(getValue("Aderente"), "Aderente");
-        counterSimpatizzante = new Counter(getValue("Simpatizzante"), "Simpatizzante");
+        counterHome = new Counter(getValue("home"), "Home");
+        counterAmministratore = new Counter(getValue("admin"), "Amministratore");
+        counterAttivita = new Counter(getValue("attivita"), "Attivita");
+        counterAttivita1 = new Counter(getValue("attivita1"), "Aisha");
+        counterAttivita2 = new Counter(getValue("attivita2"), "Team4World");
+        counterAttivita3 = new Counter(getValue("attivita3"), "Abc4Future");
+        counterConfermasignin = new Counter(getValue("confsignin"), "Conferma Sign-in");
+        counterContatti = new Counter(getValue("contatti"), "Contatti");
+        counterInvioConfermato = new Counter(getValue("confinvio"), "Conferma Contatti");
+        counterLogin = new Counter(getValue("login"), "Login");
+        counterChisiamo = new Counter(getValue("chisiamo"), "Chi Siamo");
+        counterLogout = new Counter(getValue("logout"), "Logout");
+        counterSignin = new Counter(getValue("signin"), "Sign-in");
+        counterAderente = new Counter(getValue("aderente"), "Aderente");
+        counterSimpatizzante = new Counter(getValue("simpatizzante"), "Simpatizzante");
         closeConnection();
     }
 
@@ -94,6 +94,7 @@ public class Index extends HttpServlet {
         setValue("logout", counterLogout.getHits());
         setValue("signin", counterSignin.getHits());
         setValue("aderente", counterAderente.getHits());
+        setValue("confsignin", counterConfermasignin.getHits());
         setValue("simpatizzante", counterSimpatizzante.getHits());
         closeConnection();
     }

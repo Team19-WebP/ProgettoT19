@@ -102,104 +102,12 @@ form{
     display: contents;
 }
 
-/*p.linkImg > img {*/
-/*    border: 1px solid transparent;*/
-/*}*/
-/*p.linkImg {*/
-/*    position: relative;*/
-/*    !*display: inline-block;*!*/
-
-/*}*/
-/*p.linkImg:hover {*/
-/*    opacity: 0.6;*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*p.linkImg:hover > img {*/
-/*    border: 1px solid rgb(0, 0, 0);*/
-/*}*/
-
-/*p.linkImg:hover > .text {*/
-/*    opacity: 1;*/
-/*}*/
-/*#attivitaAderente div {*/
-/*    max-width: 300px;*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*    justify-content: space-evenly;*/
-/*}*/
-/*table{*/
-/*    alignment: center;*/
-/*    height: available;*/
-/*    width: auto;*/
-/*    align-content: center;*/
-/*}*/
-/*img.attivita{*/
-/*    max-width: 250px;*/
-/*    height: auto;*/
-/*}*/
-/*tr{*/
-/*    height: auto;*/
-/*    align-content: center;*/
-/*}*/
-
-/*input.aderente[type = submit]:hover{*/
-/*    opacity: 0.8;*/
-/*}*/
-
-/*input.cancellaIscrizione[type = submit]:hover{*/
-/*    opacity: 0.8;*/
-/*}*/
-
-/*form{*/
-/*    text-align: center;*/
-/*    margin: auto;*/
-/*    width: fit-content;*/
-/*}*/
-
-/*h6{*/
-/*    color: red;*/
-/*}*/
-
-/*input.aderente[type = submit] {*/
-/*    background-color: #b8fab6;*/
-/*    border-radius: 20px;*/
-/*    color: black;*/
-/*    min-width: 25ch;*/
-/*    min-height: 3ch;*/
-/*    width: 15%;*/
-/*    height: 6%;*/
-/*}*/
-/*input.aderente[type = text]{*/
-/*    background-color: #ffffff00; !*rgba(254, 233, 255, 0);*!*/
-/*    border: 3px solid #A6B1E1;*/
-/*}*/
-
-/*input.cancellaIscrizione[type = submit] {*/
-/*    margin-top: 50%;*/
-/*    alignment: bottom;*/
-/*    background-color: #ec7777;*/
-/*    border-radius: 20px;*/
-/*    color: black;*/
-/*    min-width: 25ch;*/
-/*    min-height: 3ch;*/
-/*    width: 15%;*/
-/*    height: 6%;*/
-/*}*/
-
-
-/*.menu2{*/
-/*    background-color: #F4EEFF00;*/
-/*    alignment: center;*/
-/*    width: 100%;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: flex-start;*/
-/*}*/
-
-/*button{*/
-/*    background-color: #F4EEFF;*/
-/*    border-color: #A6B1E1;*/
-/*    color: #424874;*/
-/*}*/
-
+#donation {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    font-size: 18px;
+    text-align: center;
+}

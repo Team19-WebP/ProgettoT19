@@ -193,22 +193,6 @@ function stampaUtenti(url, type) {
 }
 ////////////////////////////////////////////////////GRAFICI/////////////////////////////////////////////////////////////
 
-let hitsHome = document.querySelector("#hitsHome");                         //
-let hitsAttivita = document.querySelector("#hitsAttivita");                 //
-let hitsAttivita1 = document.querySelector("#hitsAttivita1");               //
-let hitsAttivita2 = document.querySelector("#hitsAttivita2");               //
-let hitsAttivita3 = document.querySelector("#hitsAttivita3");               //
-let hitsSignIn = document.querySelector("#hitsSignIn");                     //
-let hitsChiSiamo = document.querySelector("#hitsChiSiamo");                 //
-let hitsConfermaSignIn = document.querySelector("#hitsConfermaSignIn");     //accedo a tutti i dati necessari per il grafico delle visite al sito
-let hitsAderente = document.querySelector("#hitsAderente");                 //
-let hitsSimpatizzante = document.querySelector("#hitsSimpatizzante");       //
-let hitsAmministratore = document.querySelector("#hitsAmministratore");     //
-let hitsContatti = document.querySelector("#hitsContatti");                 //
-let hitsConfermaContatti = document.querySelector("#hitsConfermaContatti"); //
-let hitsLogin = document.querySelector("#hitsLogin");                       //
-let hitsLogout = document.querySelector("#hitsLogout");                     //
-
 /** definisco tutti i parametri del grafico creato con le librerie di <b>HIGHCHARTS</b> */
 let dataHits = [];
 function getHits() {    // Preparing request
@@ -275,7 +259,7 @@ function creaGraficoHits () {
             enabled: false
         },
         tooltip: {
-            pointFormat: 'visite: <b>{point.y:.1f}</b>'
+            pointFormat: 'visite: <b>{point.y}</b>'
         },
         series: [{
             name: 'Visite',
@@ -293,7 +277,7 @@ function creaGraficoHits () {
                 rotation: -90,
                 color: '#000000',
                 align: 'right',
-                format: '{point.y:.1f}', // one decimal
+                format: '{point.y}',
                 y: 5, // 5 pixels down from the top
                 style: {
                     fontSize: '13px',
@@ -397,14 +381,14 @@ function creaGraficoDonazioni(){
                 borderWidth: 0,
                 dataLabels: {
                     enabled: true,
-                    format: '{point.y:.1f}€'
+                    format: '{point.y} €'
                 }
             }
         },
 
         tooltip: {  //questo definisce ciò che accade quando si passa con il mouse sopra una colonna
             headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}€</b><br/>'
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}€</b><br/>',
         },
 
         series: [{name: '2023', colorByPoint: true,

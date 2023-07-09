@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * Servlet utilizzata per connettersi al database e recuperare le frasi ispiranti.
- * <br> Viene fatto una singola volta solamente quando viene avviato il sito web.
- * <br><br> Viene anche invocata questa servlet quando è necessario cambiare l'immagine da mostrare nel sito web.
+ * Servlet che risponde a richieste get restituendo una frase scelta randomicamente.
  */
 
 @WebServlet(name = "frasiServlet", value = "/frasiServlet")
