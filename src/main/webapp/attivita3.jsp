@@ -2,8 +2,8 @@
 <jsp:include page="intestazione.jsp"></jsp:include>
 <jsp:include page="frasiIspiranti.jsp"></jsp:include>
 
-<jsp:useBean id="counterAttivita3" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
-<jsp:setProperty name="counterAttivita3" property="hits" value="0"/>
+<jsp:useBean id="counterAbc4Future" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:setProperty name="counterAbc4Future" property="hits" value="0"/>
 <main>
     <div class="containerAttivita">
         <img src="immagini/galleria/img3.jpg" alt="Immagine di Abc4Future" style="width: 100%; max-width: 800px">

@@ -15,8 +15,6 @@ function controllaPreferenza(url) {
         if (this.readyState === 4) {
             if (this.status === 200) {
                 let prefCookies = this.responseText;
-                console.log("The url for GET cookies: " + url);
-                console.log("The cookiesPref is: " + prefCookies);
                 /* Se non sono settati allora apro l'informativa. */
                 if(prefCookies == "no"){
                     apriInformativa();
@@ -37,9 +35,7 @@ function preferenzaCookies(url, pref) {
             chiudiInformativa();
         }
     }
-    console.log("The url for POST cookies: " + url);
     xhttp.open("POST", url, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("cookies=" + encodeURIComponent(pref));
-    console.log(encodeURIComponent(pref));
 }

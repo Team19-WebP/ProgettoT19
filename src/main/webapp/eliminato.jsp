@@ -1,6 +1,8 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="intestazione.jsp"></jsp:include>
+<jsp:useBean id="counterProfiloEliminato" class="unitn.disi.web.progettoteam19.Counter" scope="application"></jsp:useBean>
+<jsp:setProperty name="counterProfiloEliminato" property="hits" value="0"/>
 <main>
   <jsp:include page="frasiIspiranti.jsp"></jsp:include><br><br>
   <div class="containerInvioConfermato">

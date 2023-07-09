@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
 import javax.servlet.annotation.*;
 
 /**
@@ -28,25 +29,12 @@ public class Index extends HttpServlet {
     Connection connection = null;
 
     /**
-     * Impostiamo come variabili d'istanza i vari contatori che salveremo nel ServletContext.
+     * Lista che conterrà tutti i contatori presenti nel DB se si aggiungesse <br>
+     * un nuovo contatore per una pagina nuova bisogna inserire una voce nella <br>
+     * tabella contatori INSERT INTO Contatori VALUES ('PaginaNuova', 0) e <br>
+     * settare il bean nella paginanuova.jsp come counterPaginaNuova
      */
-
-    private Counter counterGenerale;
-    private Counter counterHome;
-    private Counter counterAmministratore;
-    private Counter counterAttivita;
-    private Counter counterAttivita1;
-    private Counter counterAttivita2;
-    private Counter counterAttivita3;
-    private Counter counterConfermasignin;
-    private Counter counterContatti;
-    private Counter counterInvioConfermato;
-    private Counter counterLogin;
-    private Counter counterChisiamo;
-    private Counter counterLogout;
-    private Counter counterSignin;
-    private Counter counterAderente;
-    private Counter counterSimpatizzante;
+    private ArrayList<Counter> contatori;
 
     /**
      * Inizializza i valori dei vari contatori, con quelli salvati nel database. <br>
@@ -54,23 +42,9 @@ public class Index extends HttpServlet {
      */
     @Override
     public void init() throws ServletException {
+        contatori = new ArrayList<Counter>();
         openConnection();
-        counterGenerale = new Counter(getValue("generale"), "generale");
-        counterHome = new Counter(getValue("home"), "Home");
-        counterAmministratore = new Counter(getValue("admin"), "Amministratore");
-        counterAttivita = new Counter(getValue("attivita"), "Attivita");
-        counterAttivita1 = new Counter(getValue("attivita1"), "Aisha");
-        counterAttivita2 = new Counter(getValue("attivita2"), "Team4World");
-        counterAttivita3 = new Counter(getValue("attivita3"), "Abc4Future");
-        counterConfermasignin = new Counter(getValue("confsignin"), "Conferma Sign-in");
-        counterContatti = new Counter(getValue("contatti"), "Contatti");
-        counterInvioConfermato = new Counter(getValue("confinvio"), "Conferma Contatti");
-        counterLogin = new Counter(getValue("login"), "Login");
-        counterChisiamo = new Counter(getValue("chisiamo"), "Chi Siamo");
-        counterLogout = new Counter(getValue("logout"), "Logout");
-        counterSignin = new Counter(getValue("signin"), "Sign-in");
-        counterAderente = new Counter(getValue("aderente"), "Aderente");
-        counterSimpatizzante = new Counter(getValue("simpatizzante"), "Simpatizzante");
+        getValues();
         closeConnection();
     }
 
@@ -80,66 +54,55 @@ public class Index extends HttpServlet {
     @Override
     public void destroy() {
         openConnection();
-        setValue("generale", counterGenerale.getHits());
-        setValue("home", counterHome.getHits());
-        setValue("attivita", counterAttivita.getHits());
-        setValue("attivita1", counterAttivita1.getHits());
-        setValue("attivita2", counterAttivita2.getHits());
-        setValue("attivita3", counterAttivita3.getHits());
-        setValue("admin", counterAmministratore.getHits());
-        setValue("contatti", counterContatti.getHits());
-        setValue("confinvio", counterInvioConfermato.getHits());
-        setValue("login", counterLogin.getHits());
-        setValue("chisiamo", counterChisiamo.getHits());
-        setValue("logout", counterLogout.getHits());
-        setValue("signin", counterSignin.getHits());
-        setValue("aderente", counterAderente.getHits());
-        setValue("confsignin", counterConfermasignin.getHits());
-        setValue("simpatizzante", counterSimpatizzante.getHits());
+        setValues();
         closeConnection();
     }
 
-    private void setValue(String page, int val){
-        String update = "UPDATE Contatori SET Valore = ? WHERE Pagina = ?";
-        PreparedStatement preparedStatement;
+    /**
+     * Funzione che cicla tutti i contatori dell'Arraylist contatori e <br>
+     * li salva nel database.
+     */
+    private void setValues(){
 
-        try {
-            preparedStatement = connection.prepareStatement(update);
-            preparedStatement.setInt(1, val);
-            preparedStatement.setString(2, page);
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
-        } catch(SQLException ex){
-            ex.printStackTrace();
+        for (Counter c : contatori) {
+
+            String update = "UPDATE Contatori SET Valore = ? WHERE Pagina = ?";
+            PreparedStatement preparedStatement;
+
+            try {
+                preparedStatement = connection.prepareStatement(update);
+                preparedStatement.setInt(1, c.getHits());
+                preparedStatement.setString(2, c.getPage());
+                preparedStatement.executeUpdate();
+                preparedStatement.close();
+            } catch(SQLException ex){
+                ex.printStackTrace();
+            }
         }
 
     }
 
     /**
-     * Funzione usata per fare la query al database e ottenere il valore di un contatore.
-     * @param page pagina di cui si recupera il contatore
-     * @return valore del contatore riferito alla tale pagina. Ritorna un valore >= 0. <br>
-     * In caso di qualsiasi problema torna 0.
+     * Funzione che raccoglie dal database i valori di tutti contatori <br>
+     * e li inserisce nell'Arraylist contatori
      */
-    private int getValue(String page){
-        String query = "SELECT Valore FROM Contatori WHERE Pagina = ?";
-        ResultSet rs;
-        PreparedStatement preparedStatement;
-        try {
-            preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, page);
-            rs = preparedStatement.executeQuery();
-            int retval = 0;
-            if(rs.next()){
-                retval  = rs.getInt(1);
+    private void getValues(){
+
+        String query = "SELECT * FROM Contatori";
+
+        try{
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+
+            while(rs.next()) {
+                Counter contatore = new Counter();
+                contatore.setPage(rs.getString("PAGINA"));
+                contatore.manuallySet(rs.getInt("VALORE"));
+                contatori.add(contatore);
             }
-            rs.close();
-            preparedStatement.close();
-            return retval;
-        } catch (SQLException ex){
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return 0;
     }
 
     /**
@@ -174,22 +137,9 @@ public class Index extends HttpServlet {
      */
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext servletContext = request.getServletContext();
-        servletContext.setAttribute("counterGenerale", counterGenerale);
-        servletContext.setAttribute("counterHome", counterHome);
-        servletContext.setAttribute("counterAmministratore", counterAmministratore);
-        servletContext.setAttribute("counterAttivita", counterAttivita);
-        servletContext.setAttribute("counterAttivita1", counterAttivita1);
-        servletContext.setAttribute("counterAttivita2", counterAttivita2);
-        servletContext.setAttribute("counterAttivita3", counterAttivita3);
-        servletContext.setAttribute("counterConfermasignin", counterConfermasignin);
-        servletContext.setAttribute("counterContatti", counterContatti);
-        servletContext.setAttribute("counterInvioConfermato", counterInvioConfermato);
-        servletContext.setAttribute("counterLogin", counterLogin);
-        servletContext.setAttribute("counterChisiamo", counterChisiamo);
-        servletContext.setAttribute("counterLogout", counterLogout);
-        servletContext.setAttribute("counterSignin", counterSignin);
-        servletContext.setAttribute("counterAderente", counterAderente);
-        servletContext.setAttribute("counterSimpatizzante", counterSimpatizzante);
+        for(Counter c : contatori) {
+            servletContext.setAttribute("counter" + c.getPage(), c);
+        }
         response.sendRedirect(response.encodeRedirectURL("home.jsp"));
     }
 

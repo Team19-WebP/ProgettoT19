@@ -101,13 +101,6 @@ form{
 #cancellaIscrizioneform {
     display: contents;
 }
-
 #donation {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin-right: 20vw;
-    margin-left: 20vw;
-    font-size: 18px;
-    text-align: center;
+    display: none;
 }

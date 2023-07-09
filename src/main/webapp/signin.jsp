@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<jsp:useBean id="counterSignin" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
-<jsp:setProperty name="counterSignin" property="hits" value="0"/>
+<jsp:useBean id="counterSignIn" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:setProperty name="counterSignIn" property="hits" value="0"/>
 
 
 <jsp:include page="intestazione.jsp"></jsp:include>

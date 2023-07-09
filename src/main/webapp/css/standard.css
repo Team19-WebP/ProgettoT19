@@ -83,7 +83,7 @@ input[type = reset]:hover, input[type = reset]:focus {
 }
 
 /** FORM PER PAGINA CONTATTI, SIGN IN E LOG IN **/
-.formContSignLog {
+.formContSignLog, #donation {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -660,8 +660,6 @@ Impostiamo anche cosa succede se ci siamo sopra col mouse*/
     border: 2px solid black;
     width: 50%; /* Could be more or less, depending on screen size */
 }
-
-
 .buttonCookies {
     border-radius: 12px;
     border: 2px solid var(--COLORE2);

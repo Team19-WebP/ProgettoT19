@@ -3,8 +3,8 @@
 
 <script src="scripts/chiSiamo.js" rel="script"></script> <%-- includo lo script che fa funzionare la galleria delle immagini da un file esterno per modularità --%>
 
-<jsp:useBean id="counterChisiamo" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
-<jsp:setProperty name="counterChisiamo" property="hits" value="0"/>
+<jsp:useBean id="counterChiSiamo" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
+<jsp:setProperty name="counterChiSiamo" property="hits" value="0"/>
 <main>
  <div class="containerAttivita">
   <jsp:include page="frasiIspiranti.jsp"></jsp:include>

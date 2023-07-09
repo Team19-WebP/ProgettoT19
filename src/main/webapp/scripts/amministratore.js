@@ -74,10 +74,10 @@ function visualizzaAderenti(){
 }
 function visualizzaVisite(){
     if(visite.hidden === true){
-        buttonVisite.className="selezionatoPaginePers";
         buttonUtenti.className="";
         buttonSimpatizzanti.className="";
         buttonAderenti.className="";
+        buttonVisite.className="selezionatoPaginePers";
         buttonDonations.className="";
         utenti.hidden = true;
         simpatizzanti.hidden = true;
@@ -193,7 +193,6 @@ function stampaUtenti(url, type) {
 }
 ////////////////////////////////////////////////////GRAFICI/////////////////////////////////////////////////////////////
 
-/** definisco tutti i parametri del grafico creato con le librerie di <b>HIGHCHARTS</b> */
 let dataHits = [];
 function getHits() {    // Preparing request
     let url = "/progettoteam19/ServletGetHits";
@@ -206,15 +205,19 @@ function getHits() {    // Preparing request
         let done = 4, ok = 200;
         if (xhttp.readyState === done && xhttp.status === ok) {
 
-            console.log(this.response);
             let my_JSON_array =this.response;
             let totalHits;
+            // dato da passare al grafico
             dataHits = [[]];
+            // ciclo su tutto il JSON
             my_JSON_array.forEach(dataEntry => {
+                // converto da JSON object a js object
                 let entry =  JSON.parse(dataEntry);
-                if(entry.page == "generale") {
+                // salvo il totale dei contatori in una variabile a parte
+                if(entry.page == "Generale") {
                     totalHits = entry.hits;
                 } else {
+                    // il resto lo aggiungo i dati nel array da passare al grafico
                     dataHits.push([entry.page, entry.hits]);
                 }
             });
@@ -227,6 +230,7 @@ function getHits() {    // Preparing request
     xhttp.send();
 }
 
+/** definisco tutti i parametri del grafico creato con le librerie di <b>HIGHCHARTS</b> */
 function creaGraficoHits () {
     Highcharts.chart('GraficoVisite', {
         chart: {

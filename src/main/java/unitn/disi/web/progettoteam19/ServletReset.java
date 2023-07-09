@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Enumeration;
 
 @WebServlet(name = "ServletReset", value = "/ServletReset")
 public class ServletReset extends HttpServlet {
@@ -19,40 +20,14 @@ public class ServletReset extends HttpServlet {
 
     protected void process_request(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext servletContext = request.getServletContext();
-
-        Counter c = (Counter) servletContext.getAttribute("counterGenerale");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterHome");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterAmministratore");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterAttivita");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterAttivita1");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterAttivita2");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterAttivita3");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterConfermasignin");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterContatti");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterInvioConfermato");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterLogin");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterLogout");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterSignin");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterAderente");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterSimpatizzante");
-        reset(c);
-        c = (Counter) servletContext.getAttribute("counterChisiamo");
-        reset(c);
-
+        Enumeration<String> countersNames = servletContext.getAttributeNames();
+        while (countersNames.hasMoreElements()) {
+            String name = countersNames.nextElement();
+            if (name.startsWith("counter")) {
+                Counter c = (Counter) servletContext.getAttribute(name);
+                reset(c);
+            }
+        }
         response.sendRedirect(response.encodeURL("amministratore.jsp"));
     }
 

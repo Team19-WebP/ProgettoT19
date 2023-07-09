@@ -11,7 +11,6 @@ public class Counter implements Serializable {
 
     private int hits = 0;
     private String page = null;
-
     public Counter() {
 
     }
@@ -32,6 +31,12 @@ public class Counter implements Serializable {
         this.hits++;
     }
 
+    public String getPage() {
+        return page;
+    }
+    public void setPage(String page) throws RuntimeException {
+        this.page = page;
+    }
     public synchronized void reset() {
         this.hits = 0;
     }

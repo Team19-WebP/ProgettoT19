@@ -43,9 +43,9 @@ let buttonDati = document.getElementById("buttonDati");         //
 let buttonAttivita = document.getElementById("buttonAttivita"); //  bottoni per mostrare le varie sezioni
 let buttonDanger = document.getElementById("buttonDanger");     //
 let buttonDonation = document.getElementById("buttonDonation"); //
-/** script che impedisce di fare donazioni negative */
+/** validatore per il form della pagina aderente sulle donazioni */
 function validaDonazione(){
-    const regexNumero = /^([0-9]{0,5})$/;
+    const regexNumero = /([0-9]{0,7})(.[0]{0,2})?$/;
     let element = document.querySelector("#donazione");
     if( element.value == "" || !regexNumero.test(element.value) || element.value <= 0) {
         element.focus();
@@ -129,7 +129,6 @@ function visualizzaDanger(){
     }
 }
 function visualizzaDonation(){
-    console.log(donation.style.display);
     if(donation.style.display == "none" || donation.hidden == true){
         buttonDati.className = "";
         buttonDanger.className = "";
