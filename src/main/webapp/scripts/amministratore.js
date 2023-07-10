@@ -300,9 +300,10 @@ let donazioniAnnuali = 0;
 // variabili da inserire nel grafico
 let datiMensili = [{}];
 let seriesGiornalieri = [{}];
-// giorni a febbraio rispetto all'anno
+// recupero l'anno per inserirlo nel title del grafico e per inserire il numero corretto di giorni per febbraio
 let year = new Date().getFullYear();
 let title = "Grafico delle donazioni ricevute nel " + year
+// giorni a febbraio rispetto all'anno corrente
 let febDays = ((year % 4 === 0 && year % 0 !== 0) || year % 400 === 0 ? 29 : 28);
 // array da usare per le label e per inserire il numero esatto di giorni al mese
 const mesiGiorni = [
