@@ -58,7 +58,8 @@ public class ServletCookies extends HttpServlet {
             cp.setMaxAge(365 * 24 * 60 * 60);
             response.addCookie(cp);
         }
-        // registro la presa visione anche come attributo nella session in nel caso siano disabilitati nel browser
+        // registro la presa visione anche come attributo nella session in nel caso
+        // i cookies siano disabilitati
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.setAttribute("infoCookies", infoCookies);

@@ -25,21 +25,16 @@ public class SessionFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session = req.getSession(false);
-
         long currentTime = System.currentTimeMillis();
 
         if(session != null) {
             if(session.getAttribute("lastAccessedTime") == null){
                 session.setAttribute("lastAccessedTime", currentTime);
             }
-
             long lastAccessedTime = (long) session.getAttribute("lastAccessedTime");
             long maxIdle = session.getMaxInactiveInterval();
             long remainingTime = maxIdle - (currentTime - lastAccessedTime)/1000;
 
-            // se la sessione scade creo una nuova sessione ma trasferisco
-            // l'attributo infoCookies in modo tale che non venga mostrata
-            // nuovamente l'informativa
             String value = null;
             if(session.getAttribute("infoCookies") != null){
                 value = (String) session.getAttribute("infoCookies");
