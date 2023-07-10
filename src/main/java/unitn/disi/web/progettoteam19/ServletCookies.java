@@ -7,13 +7,11 @@ import java.io.IOException;
 
 
 /**
- * Servlet per la gestione dei cookies, questa servlet prende la preferenza
- * dell'utente nel caso li accetti si genererà un cookie cookiesPref = true
- * quindi quando si invaliderà la sessione non verrà mostrata l'informativa
- * Se l'utente decidesse di rifiutare i cookies, questo cookies non viene
- * impostato ed eventuali cookies aggiuntivi verranno eliminati ed ogni volta
- * che la sessione si invalida verrà mostrata nuovamente l'informativa.
- *
+ * Servlet che salva un cookies aggiuntivo chiamato infoCookies in modo tale che l'informativa
+ * venga mostrata solo se scade il cookies o venga eliminato dal browser
+ * Nel caso che i cookies siano disabilitati allora l'informativa viene visualizzata la prima volta
+ * e finché l'utente naviga usando i collegamenti presenti nelle diverse pagine della webApp non viene
+ * mostrata nuovamente.
 */
 @WebServlet(name = "ServletCookies", value = "/ServletCookies")
 public class ServletCookies extends HttpServlet {
@@ -21,61 +19,49 @@ public class ServletCookies extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
 
+        // controllo la presenza di cookies se trovo il infoCookies allora restituisco true
         Cookie[] allCookies = request.getCookies();
-        if(allCookies != null){
-            for(Cookie c : allCookies){
-                if(c.getName().equals("cookiesPref")){
-                    response.getWriter().print(c.getValue());
-                    return;
+        if (allCookies != null) {
+            for (Cookie c : allCookies) {
+                if (c.getName().equals("infoCookies")) {
+                    response.getWriter().print("true");
                 }
             }
         }
 
+        // se non ho trovato cookies allora mi trovo nel caso in cui i cookies sono disabilitati
+        // e controllo se trovo il parametro infoCookies come attributo della sessione
         HttpSession session = request.getSession(false);
-        String cookiesPref = null;
-        if(session != null){
-            cookiesPref = (String) session.getAttribute("cookiesPref");
+        String infoCookies = null;
+        if (session != null) {
+            infoCookies = (String) session.getAttribute("infoCookies");
         }
-
-        if(cookiesPref == null){
-            response.getWriter().print("no");
+        // se è null allora significa che è la prima iterazione al sito restituisco false
+        if (infoCookies == null) {
+            response.getWriter().print("false");
         } else {
-            response.getWriter().print(cookiesPref);
+        // se è un attributo definito allora restituisco true
+            response.getWriter().print("true");
         }
-
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String cookiesPref = request.getParameter("cookies");
-        if (cookiesPref == null) {
+        // metodo post che registra la conferma dei cookies da parte dell'utente
+        String infoCookies = request.getParameter("cookies");
+
+
+        if (infoCookies == null) {
             request.getRequestDispatcher(response.encodeURL("./error.jsp")).forward(request, response);
         } else {
-            // nel caso
-            if (cookiesPref.equals("false")) {
-                cancellaCookies(request, response);
-            } else if (cookiesPref.equals("true")) {
-                Cookie cp = new Cookie("cookiesPref", "true");
-                cp.setMaxAge(365 * 24 * 60 * 60);
-                response.addCookie(cp);
-            }
-            HttpSession session = request.getSession(false);
-            if (session != null) {
-                session.setAttribute("cookiesPref", cookiesPref);
-            }
+            Cookie cp = new Cookie("infoCookies", "true");
+            cp.setMaxAge(365 * 24 * 60 * 60);
+            response.addCookie(cp);
         }
-    }
-
-
-    private void cancellaCookies (HttpServletRequest request, HttpServletResponse response) {
-        Cookie[] allCookies = request.getCookies();
-        if (allCookies != null) {
-            for (Cookie c : allCookies) {
-                c.setMaxAge(0);
-                c.setPath("/");
-                c.setValue("");
-                response.addCookie(c);
-            }
+        // registro la presa visione anche come attributo nella session in nel caso siano disabilitati nel browser
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.setAttribute("infoCookies", infoCookies);
         }
     }
 }

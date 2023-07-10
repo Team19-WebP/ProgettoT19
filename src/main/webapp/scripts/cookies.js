@@ -8,18 +8,17 @@ function apriInformativa() {
     boxInformativaCookies.style.display = "block";
 }
 
-// funzione per controllare se i cookies siano già stati impostati
-function controllaPreferenza(url) {
+// funzione per controllare se l'utente ha preso visione dell'informativa
+function controllaPresaVisioneCookies(url) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
                 let prefCookies = this.responseText;
                 /* Se non sono settati allora apro l'informativa. */
-                if(prefCookies == "no"){
+                if(prefCookies == "false"){
                     apriInformativa();
                 }
-
             }
         }
     }
@@ -27,8 +26,8 @@ function controllaPreferenza(url) {
     xhttp.send();
 }
 
-// richiesta alla servlet ServletCookies per settare la scelta dell'utente
-function preferenzaCookies(url, pref) {
+// richiesta alla servlet ServletCookies per registrare la presa visione dell'informativa
+function confermaPresaVisioneCookies(url) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
@@ -37,5 +36,5 @@ function preferenzaCookies(url, pref) {
     }
     xhttp.open("POST", url, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("cookies=" + encodeURIComponent(pref));
+    xhttp.send("cookies=" + encodeURIComponent("true"));
 }
