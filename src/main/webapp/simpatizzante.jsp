@@ -1,4 +1,3 @@
-\
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="counterSimpatizzante" class="unitn.disi.web.progettoteam19.Counter" scope="application"/>
 <jsp:useBean id="utenteLoggato" class="unitn.disi.web.progettoteam19.model.User" scope="session"/>
