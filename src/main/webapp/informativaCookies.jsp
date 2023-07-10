@@ -8,17 +8,15 @@
         <br>
         <p>
             Non utilizziamo cookie per scopi pubblicitari o per tracciare il tuo comportamento al di fuori del nostro sito.
-            Se decidessi di rifiutare i cookies alcune funzionalità potrebbero cessare di funzionare.
-
+            Se decidessi di disabilitare i cookies dal browser alcune funzionalità potrebbero cessare di funzionare.
         </p>
         <p id="firma"> Buona navigazione dal team di Tum4World!</p>
-        <button class="buttonCookies" id="accetta" onclick="preferenzaCookies('<%=response.encodeURL("/progettoteam19/ServletCookies")%>', 'true')">Accetta</button>
-        <button class="buttonCookies" id="rifiuta" onclick="preferenzaCookies('<%=response.encodeURL("/progettoteam19/ServletCookies")%>', 'false')">Rifiuta</button>
+        <button class="buttonCookies" id="accetta" onclick="confermaPresaVisioneCookies('<%=response.encodeURL("/progettoteam19/ServletCookies")%>')">Ho capito!</button>
     </div>
 
 </div>
 <script src="scripts/cookies.js"></script>
 <%-- Anche per le richieste fatte con AJAX bisogna usare encodeUrl nel caso i cookies siano disabilitati --%>
 <script>
-    controllaPreferenza('<%=response.encodeURL("/progettoteam19/ServletCookies")%>');
+    controllaPresaVisioneCookies('<%=response.encodeURL("/progettoteam19/ServletCookies")%>');
 </script>
