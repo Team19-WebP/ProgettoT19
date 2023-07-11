@@ -20,7 +20,7 @@ public class Counter implements Serializable {
         this.page = page;
     }
 
-    public synchronized void manuallySet(int newvalue){
+    public synchronized void manuallySetHits(int newvalue){
         hits = newvalue;
     }
 

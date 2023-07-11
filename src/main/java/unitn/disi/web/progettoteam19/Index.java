@@ -17,7 +17,6 @@ import javax.servlet.annotation.*;
 
 @WebServlet(name = "Index", value = "/Index")
 public class Index extends HttpServlet {
-
     /**
      * Variabili usate per inizializzare la connessione con il database. <br>
      * Questa connessione è necessaria per recuperare i valori dei contatori dal database.
@@ -36,13 +35,13 @@ public class Index extends HttpServlet {
      */
     private ArrayList<Counter> contatori;
 
-    /**
+    /**,
      * Inizializza i valori dei vari contatori, con quelli salvati nel database. <br>
      * @throws ServletException
      */
     @Override
     public void init() throws ServletException {
-        contatori = new ArrayList<Counter>();
+        contatori = new ArrayList<>();
         openConnection();
         getValues();
         closeConnection();
@@ -97,7 +96,7 @@ public class Index extends HttpServlet {
             while(rs.next()) {
                 Counter contatore = new Counter();
                 contatore.setPage(rs.getString("PAGINA"));
-                contatore.manuallySet(rs.getInt("VALORE"));
+                contatore.manuallySetHits(rs.getInt("VALORE"));
                 contatori.add(contatore);
             }
         } catch (SQLException e) {

@@ -14,9 +14,9 @@ function controllaPresaVisioneCookies(url) {
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
-                let prefCookies = this.responseText;
+                let infoCookies = this.responseText;
                 /* Se non sono settati allora apro l'informativa. */
-                if(prefCookies == "false"){
+                if(infoCookies == "false"){
                     apriInformativa();
                 }
             }

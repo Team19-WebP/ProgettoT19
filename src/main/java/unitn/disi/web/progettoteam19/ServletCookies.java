@@ -19,7 +19,7 @@ public class ServletCookies extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
 
-        // controllo la presenza di cookies se trovo il infoCookies allora restituisco true
+        // controllo la presenza di cookies se trovo infoCookies allora restituisco true
         Cookie[] allCookies = request.getCookies();
         if (allCookies != null) {
             for (Cookie c : allCookies) {
