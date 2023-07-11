@@ -45,9 +45,8 @@ let buttonDanger = document.getElementById("buttonDanger");     //
 let buttonDonation = document.getElementById("buttonDonation"); //
 /** validatore per il form della pagina aderente sulle donazioni */
 function validaDonazione(){
-    const regexNumero = /([0-9]{0,7})(.[0]{0,2})?$/;
     let element = document.querySelector("#donazione");
-    if( element.value == "" || !regexNumero.test(element.value) || element.value <= 0) {
+    if( element.value == "" || element.value > 9999999 || element.value <= 0) {
         element.focus();
         element.style.borderColor = "#FF0000";
         const messaggioErrore = document.createElement("span");

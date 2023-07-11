@@ -144,7 +144,7 @@
       <br>
       <br>
 
-      <form action= '<%= response.encodeURL("ServletDonazione")%>'  onsubmit="return validaDonazione();">
+      <form action="<%= response.encodeURL("ServletDonazione")%>"  onsubmit="return validaDonazione();">
         <div class="inputAndLabel">
           <label for="donazione">Importo (in €): </label>
           <input type=number step="1" placeholder="Inserisci importo..."  id="donazione" name="donazione"> <br>
