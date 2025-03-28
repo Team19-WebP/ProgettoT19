@@ -19,7 +19,7 @@ import java.sql.*;
 @WebServlet(name = "ServletLogin", value = "/ServletLogin")
 public class ServletLogin extends HttpServlet {
 
-    private final String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private final String dbURL = "jdbc:derby://localhost:1527/Team19DB;";
     private final String user = "APP";
     private final String password = "admin";
     private Connection connection = null;

@@ -12,7 +12,7 @@ import java.sql.*;
 @WebServlet(name = "ServletSignin", value = "/ServletSignin")
 public class ServletSignin extends HttpServlet {
 
-    private final String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    private final String dbURL = "jdbc:derby://localhost:1527/Team19DB;";
     private final String user = "APP";
     private final String password = "admin";
     private Connection connection = null;

@@ -22,7 +22,7 @@ public class Index extends HttpServlet {
      * Questa connessione è necessaria per recuperare i valori dei contatori dal database.
      */
 
-    final String dbURL = "jdbc:derby://localhost:1527/Team19DB";
+    final String dbURL = "jdbc:derby://localhost:1527/Team19DB;";
     final String user = "APP";
     final String password = "admin";
     Connection connection = null;
@@ -111,6 +111,8 @@ public class Index extends HttpServlet {
         try{
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             connection = DriverManager.getConnection(dbURL, user, password);
+            System.out.println("dbURL: " + dbURL + "\nuser: " + user + "\npassword: " + password);
+
         } catch (ClassNotFoundException | SQLException ex){
             ex.printStackTrace();
         }
