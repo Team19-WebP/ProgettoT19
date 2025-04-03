@@ -3,7 +3,7 @@ This is the project for the Introduction to Web Programming course taught by Pro
 
 ### Installation and Demo
 
-1. Clone this repository: `git clone https://github.com/Team19-WebP/ProgettoT19.git .`
+1. Clone this repository: `git clone https://github.com/Team19-WebP/ProgettoT19.git`
 2. Navigate to the root of the project: `cd ProgettoT19`
 3. Run: `mvn wrapper:wrapper`
 4. Run: `./mvnw clean package`
